@@ -243,23 +243,23 @@ func flattenProbe(in kubevirtapiv1.Probe) []interface{} {
 
 	if in.FailureThreshold != 0 {
 		att["failure_threshold"] = int(in.FailureThreshold)
+	}
+	if in.SuccessThreshold != 0 {
 		att["success_threshold"] = int(in.SuccessThreshold)
 	}
-
 	if in.PeriodSeconds != 0 {
 		att["period_seconds"] = int(in.PeriodSeconds)
 	}
-
 	if in.TimeoutSeconds != 0 {
 		att["timeout_seconds"] = int(in.TimeoutSeconds)
 	}
-
 	if in.HTTPGet != nil {
 		att["http_get"] = flattenHTTPGet(in.HTTPGet)
 	}
-
 	if in.TCPSocket != nil {
 		att["tcp_socket"] = flattenTCPSocket(in.TCPSocket)
+	}
+	if in.InitialDelaySeconds != 0 {
 		att["initial_delay_seconds"] = int(in.InitialDelaySeconds)
 	}
 
@@ -282,12 +282,6 @@ func flattenHTTPGet(in *k8sv1.HTTPGetAction) []interface{} {
 
 	if in.Scheme != "" {
 		att["scheme"] = string(in.Scheme)
-		switch in.Scheme {
-		case k8sv1.URISchemeHTTP:
-			att["port"] = "80"
-		case k8sv1.URISchemeHTTPS:
-			att["port"] = "443"
-		}
 	}
 
 	if in.Host != "" {
@@ -320,10 +314,10 @@ func flattenTCPSocket(in *k8sv1.TCPSocketAction) []interface{} {
 	switch in.Port.Type {
 	case intstr.Int:
 		att["port"] = in.Port.IntValue()
-		break
+
 	case intstr.String:
 		att["port"] = in.Port.String()
-		break
+
 	}
 
 	return []interface{}{att}
