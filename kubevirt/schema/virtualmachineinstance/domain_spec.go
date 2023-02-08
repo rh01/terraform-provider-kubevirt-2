@@ -58,6 +58,61 @@ func domainSpecFields() map[string]*schema.Schema {
 			Required:    true,
 			Elem: &schema.Resource{
 				Schema: map[string]*schema.Schema{
+					"watchdog": {
+						Type:        schema.TypeMap,
+						Description: "Watchdog describes the watchdog device that will be added to the vmi.",
+						Optional:    true,
+						Elem: &schema.Resource{
+							Schema: map[string]*schema.Schema{
+								"name": {
+									Type:        schema.TypeString,
+									Description: "Name is the name of the watchdog device.",
+									Optional:    true,
+								},
+							},
+						},
+					},
+					"input": {
+						Type:        schema.TypeList,
+						Description: "Inputs describe input devices",
+						Optional:    true,
+						Elem: &schema.Resource{
+							Schema: map[string]*schema.Schema{
+								"bus": {
+									Type:        schema.TypeString,
+									Description: "Bus indicates the bus of input device to emulate.",
+									Optional:    true,
+								},
+								"type": {
+									Type:        schema.TypeString,
+									Description: "Type indicates the type of input device to emulate.",
+								},
+								"name": {
+									Type:        schema.TypeString,
+									Description: "Name is the name of the input device.",
+								},
+							},
+						},
+					},
+					"gpu": {
+						Type:        schema.TypeList,
+						Description: "Whether to attach a GPU device to the vmi.",
+						Optional:    true,
+						Elem: &schema.Resource{
+							Schema: map[string]*schema.Schema{
+								"name": {
+									Type:        schema.TypeString,
+									Description: "Name of the GPU device as exposed by a device plugin",
+									Optional:    true,
+								},
+								"device_name": {
+									Type:        schema.TypeString,
+									Description: "Name of the GPU device as exposed to the guest",
+									Optional:    true,
+								},
+							},
+						},
+					},
 					"disk": {
 						Type:        schema.TypeList,
 						Description: "Disks describes disks, cdroms, floppy and luns which are connected to the vmi.",
@@ -105,6 +160,16 @@ func domainSpecFields() map[string]*schema.Schema {
 								"serial": {
 									Type:        schema.TypeString,
 									Description: "Serial provides the ability to specify a serial number for the disk device.",
+									Optional:    true,
+								},
+								"tag": {
+									Type:        schema.TypeString,
+									Description: "Tag is the disk tag, which is a unique name to identify the disk resource in the vmi.",
+									Optional:    true,
+								},
+								"boot_order": {
+									Type:        schema.TypeInt,
+									Description: "BootOrder is the boot order for the disk. It is a unique number indicating the preference of the device for booting. If not specified, the VirtualMachineInstance will pick a device for booting based on the boot order of the VirtualMachineInstance.",
 									Optional:    true,
 								},
 							},
@@ -231,8 +296,14 @@ func expandDevices(devices []interface{}) (kubevirtapiv1.Devices, error) {
 	if v, ok := in["disk"].([]interface{}); ok {
 		result.Disks = expandDisks(v)
 	}
+	if v, ok := in["input"].([]interface{}); ok {
+		result.Inputs = expandInputs(v)
+	}
 	if v, ok := in["interface"].([]interface{}); ok {
 		result.Interfaces = expandInterfaces(v)
+	}
+	if v, ok := in["gpu"].([]interface{}); ok {
+		result.GPUs = expandGPUs(v)
 	}
 
 	return result, nil
@@ -254,8 +325,15 @@ func expandDisks(disks []interface{}) []kubevirtapiv1.Disk {
 		if v, ok := in["disk_device"].([]interface{}); ok {
 			result[i].DiskDevice = expandDiskDevice(v)
 		}
+
 		if v, ok := in["serial"].(string); ok {
 			result[i].Serial = v
+		}
+		if v, ok := in["tag"].(string); ok {
+			result[i].Tag = v
+		}
+		if v, ok := in["boot_order"]; ok {
+			result[i].BootOrder = v.(*uint)
 		}
 	}
 
@@ -273,6 +351,60 @@ func expandDiskDevice(diskDevice []interface{}) kubevirtapiv1.DiskDevice {
 
 	if v, ok := in["disk"].([]interface{}); ok {
 		result.Disk = expandDiskTarget(v)
+	}
+
+	return result
+}
+
+func expandInputs(inputs []interface{}) []kubevirtapiv1.Input {
+	result := make([]kubevirtapiv1.Input, 0)
+
+	if len(inputs) == 0 || inputs[0] == nil {
+		return result
+	}
+
+	for _, input := range inputs {
+
+		var r kubevirtapiv1.Input
+
+		in := input.(map[string]interface{})
+
+		if v, ok := in["bus"].(string); ok {
+			r.Bus = v
+		}
+		if v, ok := in["type"].(string); ok {
+			r.Type = v
+		}
+		if v, ok := in["name"].(string); ok {
+			r.Name = v
+		}
+		result = append(result, r)
+	}
+
+	return result
+}
+
+func expandGPUs(gpus []interface{}) []kubevirtapiv1.GPU {
+	result := make([]kubevirtapiv1.GPU, 0)
+
+	if len(gpus) == 0 || gpus[0] == nil {
+		return result
+	}
+
+	for _, input := range gpus {
+
+		var r kubevirtapiv1.GPU
+
+		in := input.(map[string]interface{})
+
+		if v, ok := in["name"].(string); ok {
+			r.Name = v
+		}
+		if v, ok := in["device_name"].(string); ok {
+			r.DeviceName = v
+		}
+
+		result = append(result, r)
 	}
 
 	return result
@@ -372,6 +504,8 @@ func flattenDevices(in kubevirtapiv1.Devices) []interface{} {
 	att := make(map[string]interface{})
 
 	att["disk"] = flattenDisks(in.Disks)
+	att["input"] = flattenInput(in.Inputs)
+	att["gpu"] = flattenGPU(in.GPUs)
 	att["interface"] = flattenInterfaces(in.Interfaces)
 
 	return []interface{}{att}
@@ -385,12 +519,48 @@ func flattenDisks(in []kubevirtapiv1.Disk) []interface{} {
 
 		c["name"] = v.Name
 		c["disk_device"] = flattenDiskDevice(v.DiskDevice)
+		if v.BootOrder != nil {
+			c["boot_order"] = *v.BootOrder
+		}
 		c["serial"] = v.Serial
+		c["tag"] = v.Tag
 
 		att[i] = c
 	}
 
 	return att
+}
+
+func flattenInput(in []kubevirtapiv1.Input) []interface{} {
+	att := make([]interface{}, len(in))
+
+	for i, v := range in {
+		c := make(map[string]interface{})
+
+		c["type"] = v.Type
+		c["bus"] = v.Bus
+		c["name"] = v.Name
+
+		att[i] = c
+	}
+
+	return []interface{}{att}
+}
+
+func flattenGPU(in []kubevirtapiv1.GPU) []interface{} {
+
+	att := make([]interface{}, len(in))
+
+	for i, v := range in {
+		c := make(map[string]interface{})
+
+		c["name"] = v.Name
+		c["device_name"] = v.DeviceName
+
+		att[i] = c
+	}
+
+	return []interface{}{att}
 }
 
 func flattenDiskDevice(in kubevirtapiv1.DiskDevice) []interface{} {
