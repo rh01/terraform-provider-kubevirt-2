@@ -15,7 +15,7 @@ func domainSpecFields() map[string]*schema.Schema {
 			Type:        schema.TypeList,
 			Description: "Machine describes the Compute Resources required by this vmi.",
 			MaxItems:    1,
-			Required:    true,
+			Optional:    true,
 			Elem: &schema.Resource{
 				Schema: map[string]*schema.Schema{
 					"type": {
@@ -86,10 +86,12 @@ func domainSpecFields() map[string]*schema.Schema {
 								"type": {
 									Type:        schema.TypeString,
 									Description: "Type indicates the type of input device to emulate.",
+									Optional:    true,
 								},
 								"name": {
 									Type:        schema.TypeString,
 									Description: "Name is the name of the input device.",
+									Optional:    true,
 								},
 							},
 						},

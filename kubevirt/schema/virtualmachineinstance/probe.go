@@ -52,6 +52,7 @@ func probeFields() map[string]*schema.Schema {
 			MaxItems:    1,
 			Description: "TCP socket probe",
 			Elem: &schema.Resource{
+
 				Schema: map[string]*schema.Schema{
 					"port": {
 						Type:        schema.TypeInt,
@@ -68,53 +69,59 @@ func probeFields() map[string]*schema.Schema {
 		},
 
 		"http_get": {
-			Type: schema.TypeMap,
-			Elem: map[string]*schema.Schema{
-				"path": {
-					Type:        schema.TypeString,
-					Description: "Path to access on the HTTP server.",
-					Optional:    true,
-					Default:     "/",
-				},
-				"port": {
-					Type:        schema.TypeInt,
-					Description: "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
-					Optional:    true,
-					Default:     80,
-				},
-				"host": {
-					Type:        schema.TypeString,
-					Description: "Host name to connect to, defaults to the pod IP.",
-					Optional:    true,
-					Default:     "",
-				},
-				"scheme": {
-					Type:        schema.TypeString,
-					Description: "Scheme to use for connecting to the host. Defaults to HTTP.",
-					Optional:    true,
-					Default:     "HTTP",
-					ValidateFunc: validation.StringInSlice([]string{
-						"HTTP",
-						"HTTPS",
-					}, false),
-				},
-				"http_headers": {
-					Type:        schema.TypeList,
-					Description: "HTTPHeader describes a custom header to be used in HTTP probes",
-					Optional:    true,
-					Elem: &schema.Resource{
-						Schema: map[string]*schema.Schema{
-							"name": {
-								Type:        schema.TypeString,
-								Description: "The header field name",
-								Optional:    true,
-								Default:     "",
-							},
-							"value": {
-								Type:        schema.TypeString,
-								Description: "The header field value",
-								Optional:    true,
-								Default:     "",
+			Type: schema.TypeList,
+			//Optional:    true,
+			MaxItems: 1,
+			Optional: true,
+			Elem: &schema.Resource{
+
+				Schema: map[string]*schema.Schema{
+					"path": {
+						Type:        schema.TypeString,
+						Description: "Path to access on the HTTP server.",
+						Optional:    true,
+						Default:     "/",
+					},
+					"port": {
+						Type:        schema.TypeInt,
+						Description: "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+						Optional:    true,
+						Default:     80,
+					},
+					"host": {
+						Type:        schema.TypeString,
+						Description: "Host name to connect to, defaults to the pod IP.",
+						Optional:    true,
+						Default:     "",
+					},
+					"scheme": {
+						Type:        schema.TypeString,
+						Description: "Scheme to use for connecting to the host. Defaults to HTTP.",
+						Optional:    true,
+						Default:     "HTTP",
+						ValidateFunc: validation.StringInSlice([]string{
+							"HTTP",
+							"HTTPS",
+						}, false),
+					},
+					"http_headers": {
+						Type:        schema.TypeList,
+						Description: "HTTPHeader describes a custom header to be used in HTTP probes",
+						Optional:    true,
+						Elem: &schema.Resource{
+							Schema: map[string]*schema.Schema{
+								"name": {
+									Type:        schema.TypeString,
+									Description: "The header field name",
+									Optional:    true,
+									Default:     "",
+								},
+								"value": {
+									Type:        schema.TypeString,
+									Description: "The header field value",
+									Optional:    true,
+									Default:     "",
+								},
 							},
 						},
 					},
