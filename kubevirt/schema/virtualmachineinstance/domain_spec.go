@@ -76,6 +76,7 @@ func domainSpecFields() map[string]*schema.Schema {
 						Type:        schema.TypeList,
 						Description: "Inputs describe input devices",
 						Optional:    true,
+						MaxItems:    1,
 						Elem: &schema.Resource{
 							Schema: map[string]*schema.Schema{
 								"bus": {
@@ -100,6 +101,7 @@ func domainSpecFields() map[string]*schema.Schema {
 						Type:        schema.TypeList,
 						Description: "Whether to attach a GPU device to the vmi.",
 						Optional:    true,
+						MaxItems:    1,
 						Elem: &schema.Resource{
 							Schema: map[string]*schema.Schema{
 								"name": {
@@ -334,8 +336,8 @@ func expandDisks(disks []interface{}) []kubevirtapiv1.Disk {
 		if v, ok := in["tag"].(string); ok {
 			result[i].Tag = v
 		}
-		if v, ok := in["boot_order"]; ok {
-			result[i].BootOrder = v.(*uint)
+		if v, ok := in["boot_order"].(*uint); ok {
+			result[i].BootOrder = v
 		}
 	}
 
@@ -359,54 +361,48 @@ func expandDiskDevice(diskDevice []interface{}) kubevirtapiv1.DiskDevice {
 }
 
 func expandInputs(inputs []interface{}) []kubevirtapiv1.Input {
-	result := make([]kubevirtapiv1.Input, 0)
+	result := make([]kubevirtapiv1.Input, len(inputs))
 
 	if len(inputs) == 0 || inputs[0] == nil {
-		return result
+		return nil
 	}
 
-	for _, input := range inputs {
-
-		var r kubevirtapiv1.Input
+	for i, input := range inputs {
 
 		in := input.(map[string]interface{})
 
 		if v, ok := in["bus"].(string); ok {
-			r.Bus = v
+			result[i].Bus = v
 		}
 		if v, ok := in["type"].(string); ok {
-			r.Type = v
+			result[i].Type = v
 		}
 		if v, ok := in["name"].(string); ok {
-			r.Name = v
+			result[i].Name = v
 		}
-		result = append(result, r)
 	}
 
 	return result
 }
 
 func expandGPUs(gpus []interface{}) []kubevirtapiv1.GPU {
-	result := make([]kubevirtapiv1.GPU, 0)
+	result := make([]kubevirtapiv1.GPU, len(gpus))
 
 	if len(gpus) == 0 || gpus[0] == nil {
-		return result
+		return nil
 	}
 
-	for _, input := range gpus {
-
-		var r kubevirtapiv1.GPU
+	for i, input := range gpus {
 
 		in := input.(map[string]interface{})
 
 		if v, ok := in["name"].(string); ok {
-			r.Name = v
+			result[i].Name = v
 		}
 		if v, ok := in["device_name"].(string); ok {
-			r.DeviceName = v
+			result[i].DeviceName = v
 		}
 
-		result = append(result, r)
 	}
 
 	return result
@@ -545,8 +541,10 @@ func flattenInput(in []kubevirtapiv1.Input) []interface{} {
 
 		att[i] = c
 	}
-
-	return []interface{}{att}
+	if len(att) > 0 {
+		return []interface{}{att}
+	}
+	return []interface{}{}
 }
 
 func flattenGPU(in []kubevirtapiv1.GPU) []interface{} {
@@ -562,7 +560,10 @@ func flattenGPU(in []kubevirtapiv1.GPU) []interface{} {
 		att[i] = c
 	}
 
-	return []interface{}{att}
+	if len(att) > 0 {
+		return []interface{}{att}
+	}
+	return []interface{}{}
 }
 
 func flattenDiskDevice(in kubevirtapiv1.DiskDevice) []interface{} {

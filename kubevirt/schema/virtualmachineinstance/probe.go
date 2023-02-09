@@ -17,13 +17,13 @@ func probeFields() map[string]*schema.Schema {
 			Type:        schema.TypeInt,
 			Optional:    true,
 			Description: "InitialDelaySeconds is the time to wait before starting to probe after pod startup. This is only applicable for Readiness and Liveness probes, ignored for HTTP probes.",
-			Default:     1,
+			// Default:     1,
 		},
 		"period_seconds": {
-			Type:         schema.TypeInt,
-			Optional:     true,
-			Description:  "PeriodSeconds specifies how often (in seconds between probes) to perform the probe.",
-			Default:      10,
+			Type:        schema.TypeInt,
+			Optional:    true,
+			Description: "PeriodSeconds specifies how often (in seconds between probes) to perform the probe.",
+			// Default:      10,
 			ValidateFunc: validation.IntBetween(1, 300),
 			// TODO: https://github.com/kubevirt/client-go/issues/8
 			// Deprecated: true,
@@ -194,7 +194,12 @@ func expandHTTPGet(httpGet []interface{}) *k8sv1.HTTPGetAction {
 			result.Path = v.(string)
 		}
 		if v, ok := v["port"]; ok {
-			result.Port = intstr.FromString(v.(string))
+			switch v.(type) {
+			case string:
+				result.Port = intstr.Parse(v.(string))
+			case int:
+				result.Port = intstr.FromInt(v.(int))
+			}
 		}
 		if v, ok := v["scheme"]; ok {
 			result.Scheme = k8sv1.URIScheme(v.(string))
@@ -237,8 +242,18 @@ func expandTCPSocket(tcpSocket []interface{}) *k8sv1.TCPSocketAction {
 
 	tcpSocketMap := tcpSocket
 	if v, ok := tcpSocketMap[0].(map[string]interface{}); ok {
+		if v, ok := v["host"]; ok {
+			result.Host = v.(string)
+		}
+
 		if v, ok := v["port"]; ok {
-			result.Port = intstr.FromString(v.(string))
+			// result.Port = intstr.FromString(v.(string))
+			switch v.(type) {
+			case string:
+				result.Port = intstr.FromString(v.(string))
+			case int:
+				result.Port = intstr.FromInt(v.(int))
+			}
 		}
 	}
 
