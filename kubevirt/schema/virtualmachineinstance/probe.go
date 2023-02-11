@@ -17,13 +17,13 @@ func probeFields() map[string]*schema.Schema {
 			Type:        schema.TypeInt,
 			Optional:    true,
 			Description: "InitialDelaySeconds is the time to wait before starting to probe after pod startup. This is only applicable for Readiness and Liveness probes, ignored for HTTP probes.",
-			// Default:     1,
+			Default:     600,
 		},
 		"period_seconds": {
-			Type:        schema.TypeInt,
-			Optional:    true,
-			Description: "PeriodSeconds specifies how often (in seconds between probes) to perform the probe.",
-			// Default:      10,
+			Type:         schema.TypeInt,
+			Optional:     true,
+			Description:  "PeriodSeconds specifies how often (in seconds between probes) to perform the probe.",
+			Default:      60,
 			ValidateFunc: validation.IntBetween(1, 300),
 			// TODO: https://github.com/kubevirt/client-go/issues/8
 			// Deprecated: true,

@@ -123,7 +123,7 @@ func expandPodNetwork(pod []interface{}) *kubevirtapiv1.PodNetwork {
 	result := &kubevirtapiv1.PodNetwork{}
 
 	if len(pod) == 0 || pod[0] == nil {
-		return nil
+		return result
 	}
 
 	in := pod[0].(map[string]interface{})
@@ -184,7 +184,9 @@ func flattenNetworkSource(in kubevirtapiv1.NetworkSource) []interface{} {
 func flattenPodNetwork(in kubevirtapiv1.PodNetwork) []interface{} {
 	att := make(map[string]interface{})
 
-	att["vm_network_cidr"] = in.VMNetworkCIDR
+	if in.VMNetworkCIDR != "" {
+		att["vm_network_cidr"] = in.VMNetworkCIDR
+	}
 
 	return []interface{}{att}
 }
