@@ -71,6 +71,16 @@ func persistentVolumeClaimSpecFields() map[string]*schema.Schema {
 			Computed:    true,
 			ForceNew:    true,
 		},
+		"volume_mode": {
+			Type:        schema.TypeString,
+			Description: "volumeMode defines what type of volume is required by the claim. Value of Filesystem is implied when not included in claim spec. This is an alpha feature and may change in the future.",
+			Optional:    true,
+			Default:     "Filesystem",
+			ValidateFunc: validation.StringInSlice([]string{
+				"Block",
+				"Filesystem",
+			}, false),
+		},
 	}
 }
 
@@ -103,6 +113,9 @@ func FlattenPersistentVolumeClaimSpec(in v1.PersistentVolumeClaimSpec) []interfa
 	}
 	if in.StorageClassName != nil {
 		att["storage_class_name"] = *in.StorageClassName
+	}
+	if in.VolumeMode != nil {
+		att["volume_mode"] = *in.VolumeMode
 	}
 	return []interface{}{att}
 }
@@ -140,6 +153,14 @@ func ExpandPersistentVolumeClaimSpec(l []interface{}) (*v1.PersistentVolumeClaim
 	}
 	if v, ok := in["storage_class_name"].(string); ok && v != "" {
 		obj.StorageClassName = utils.PtrToString(v)
+	}
+	if v, ok := in["volume_mode"].(string); ok && v != "" {
+		if v == "Block" {
+			obj.VolumeMode = (*v1.PersistentVolumeMode)(utils.PtrToString("Block"))
+		}
+		if v == "Filesystem" {
+			obj.VolumeMode = (*v1.PersistentVolumeMode)(utils.PtrToString("Filesystem"))
+		}
 	}
 	return obj, nil
 }
