@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/hashicorp/terraform-plugin-sdk/tfdiags"
+	"github.com/hashicorp/terraform-plugin-sdk/internal/tfdiags"
 )
 
 func readStateV3(src []byte) (*File, tfdiags.Diagnostics) {

@@ -16,8 +16,8 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/internal/configs/hcl2shim"
 	"github.com/hashicorp/terraform-plugin-sdk/internal/plans/objchange"
 	"github.com/hashicorp/terraform-plugin-sdk/internal/plugin/convert"
+	proto "github.com/hashicorp/terraform-plugin-sdk/internal/tfplugin5"
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"
-	proto "github.com/hashicorp/terraform-plugin-sdk/tfplugin5"
 )
 
 const newExtraKey = "_new_extra_shim"
@@ -256,7 +256,11 @@ func (s *GRPCProviderServer) UpgradeResourceState(_ context.Context, req *proto.
 		}
 	// if there's a JSON state, we need to decode it.
 	case len(req.RawState.Json) > 0:
-		err = json.Unmarshal(req.RawState.Json, &jsonMap)
+		if res.UseJSONNumber {
+			err = unmarshalJSON(req.RawState.Json, &jsonMap)
+		} else {
+			err = json.Unmarshal(req.RawState.Json, &jsonMap)
+		}
 		if err != nil {
 			resp.Diagnostics = convert.AppendProtoDiag(resp.Diagnostics, err)
 			return resp, nil
@@ -380,7 +384,13 @@ func (s *GRPCProviderServer) upgradeFlatmapState(version int, m map[string]strin
 		return nil, 0, err
 	}
 
-	jsonMap, err := schema.StateValueToJSONMap(newConfigVal, schemaType)
+	var jsonMap map[string]interface{}
+	if res.UseJSONNumber {
+		jsonMap, err = schema.StateValueToJSONMapJSONNumber(newConfigVal, schemaType)
+	} else {
+		jsonMap, err = schema.StateValueToJSONMap(newConfigVal, schemaType)
+	}
+
 	return jsonMap, upgradedVersion, err
 }
 
