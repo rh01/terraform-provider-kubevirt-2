@@ -258,6 +258,64 @@ func expandDiskDevice(diskDevice []interface{}) kubevirtapiv1.DiskDevice {
 	return result
 }
 
+func expandInputs(inputs []interface{}) []kubevirtapiv1.Input {
+	result := make([]kubevirtapiv1.Input, len(inputs))
+
+	if len(inputs) == 0 || inputs[0] == nil {
+		return nil
+	}
+
+	for i, input := range inputs {
+
+		in := input.(map[string]interface{})
+
+		if v, ok := in["bus"].(string); ok {
+			switch v {
+			case "usb":
+				result[i].Bus = kubevirtapiv1.InputBusUSB
+			case "virtio":
+				result[i].Bus = kubevirtapiv1.InputBusVirtio
+			}
+		}
+		if v, ok := in["type"].(string); ok {
+			switch v {
+			case "tablet":
+				result[i].Type = kubevirtapiv1.InputTypeTablet
+			case "keyboard":
+				result[i].Type = kubevirtapiv1.InputTypeKeyboard
+			}
+		}
+		if v, ok := in["name"].(string); ok {
+			result[i].Name = v
+		}
+	}
+
+	return result
+}
+
+func expandGPUs(gpus []interface{}) []kubevirtapiv1.GPU {
+	result := make([]kubevirtapiv1.GPU, len(gpus))
+
+	if len(gpus) == 0 || gpus[0] == nil {
+		return nil
+	}
+
+	for i, input := range gpus {
+
+		in := input.(map[string]interface{})
+
+		if v, ok := in["name"].(string); ok {
+			result[i].Name = v
+		}
+		if v, ok := in["device_name"].(string); ok {
+			result[i].DeviceName = v
+		}
+
+	}
+
+	return result
+}
+
 func expandDiskTarget(disk []interface{}) *kubevirtapiv1.DiskTarget {
 	if len(disk) == 0 || disk[0] == nil {
 		return nil
@@ -268,7 +326,17 @@ func expandDiskTarget(disk []interface{}) *kubevirtapiv1.DiskTarget {
 	in := disk[0].(map[string]interface{})
 
 	if v, ok := in["bus"].(string); ok {
-		result.Bus = kubevirtapiv1.DiskBus(v)
+		switch v {
+		case "scsi":
+			result.Bus = kubevirtapiv1.DiskBusSCSI
+		case "sata":
+			result.Bus = kubevirtapiv1.DiskBusSATA
+		case "virtio":
+			result.Bus = kubevirtapiv1.DiskBusVirtio
+		case "usb":
+			result.Bus = kubevirtapiv1.DiskBusUSB
+		}
+
 	}
 	if v, ok := in["read_only"].(bool); ok {
 		result.ReadOnly = v
@@ -323,6 +391,14 @@ func flattenDomainSpec(in kubevirtapiv1.DomainSpec) []interface{} {
 
 	att["resources"] = flattenResources(in.Resources)
 	att["devices"] = flattenDevices(in.Devices)
+
+	return []interface{}{att}
+}
+
+func flattenMachine(in *kubevirtapiv1.Machine) []interface{} {
+	att := make(map[string]interface{})
+
+	att["type"] = in.Type
 
 	return []interface{}{att}
 }

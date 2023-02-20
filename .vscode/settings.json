@@ -1,0 +1,5 @@
+{
+    "go.inferGopath": false,
+    "editor.tabCompletion": "on",
+    "diffEditor.codeLens": true
+}

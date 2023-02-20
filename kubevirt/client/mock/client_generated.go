@@ -5,11 +5,10 @@
 package mock
 
 import (
-	reflect "reflect"
-
 	gomock "github.com/golang/mock/gomock"
 	v1 "kubevirt.io/api/core/v1"
-	v1alpha1 "kubevirt.io/containerized-data-importer-api/pkg/apis/core/v1beta1"
+	v1beta1 "kubevirt.io/containerized-data-importer-api/pkg/apis/core/v1beta1"
+	reflect "reflect"
 )
 
 // MockClient is a mock of Client interface
@@ -93,7 +92,7 @@ func (mr *MockClientMockRecorder) DeleteVirtualMachine(namespace, name interface
 }
 
 // CreateDataVolume mocks base method
-func (m *MockClient) CreateDataVolume(vm *v1alpha1.DataVolume) error {
+func (m *MockClient) CreateDataVolume(vm *v1beta1.DataVolume) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CreateDataVolume", vm)
 	ret0, _ := ret[0].(error)
@@ -107,10 +106,10 @@ func (mr *MockClientMockRecorder) CreateDataVolume(vm interface{}) *gomock.Call 
 }
 
 // GetDataVolume mocks base method
-func (m *MockClient) GetDataVolume(namespace, name string) (*v1alpha1.DataVolume, error) {
+func (m *MockClient) GetDataVolume(namespace, name string) (*v1beta1.DataVolume, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetDataVolume", namespace, name)
-	ret0, _ := ret[0].(*v1alpha1.DataVolume)
+	ret0, _ := ret[0].(*v1beta1.DataVolume)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -122,7 +121,7 @@ func (mr *MockClientMockRecorder) GetDataVolume(namespace, name interface{}) *go
 }
 
 // UpdateDataVolume mocks base method
-func (m *MockClient) UpdateDataVolume(namespace, name string, dv *v1alpha1.DataVolume, data []byte) error {
+func (m *MockClient) UpdateDataVolume(namespace, name string, dv *v1beta1.DataVolume, data []byte) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "UpdateDataVolume", namespace, name, dv, data)
 	ret0, _ := ret[0].(error)
