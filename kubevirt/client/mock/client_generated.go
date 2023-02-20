@@ -149,7 +149,7 @@ func (mr *MockClientMockRecorder) DeleteVirtualMachineInstance(namespace, name i
 }
 
 // CreateVirtualMachineInstanceReplicaSet mocks base method
-func (m *MockClient) CreateVirtualMachineInstanceReplicaSet(vmirs *v1.VirtualMachineInstance) error {
+func (m *MockClient) CreateVirtualMachineInstanceReplicaSet(vmirs *v1.VirtualMachineInstanceReplicaSet) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CreateVirtualMachineInstanceReplicaSet", vmirs)
 	ret0, _ := ret[0].(error)
@@ -163,10 +163,10 @@ func (mr *MockClientMockRecorder) CreateVirtualMachineInstanceReplicaSet(vmirs i
 }
 
 // GetVirtualMachineInstanceReplicaSet mocks base method
-func (m *MockClient) GetVirtualMachineInstanceReplicaSet(namespace, name string) (*v1.VirtualMachineInstance, error) {
+func (m *MockClient) GetVirtualMachineInstanceReplicaSet(namespace, name string) (*v1.VirtualMachineInstanceReplicaSet, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetVirtualMachineInstanceReplicaSet", namespace, name)
-	ret0, _ := ret[0].(*v1.VirtualMachineInstance)
+	ret0, _ := ret[0].(*v1.VirtualMachineInstanceReplicaSet)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -178,7 +178,7 @@ func (mr *MockClientMockRecorder) GetVirtualMachineInstanceReplicaSet(namespace,
 }
 
 // UpdateVirtualMachineInstanceReplicaSet mocks base method
-func (m *MockClient) UpdateVirtualMachineInstanceReplicaSet(namespace, name string, vmirs *v1.VirtualMachineInstance, data []byte) error {
+func (m *MockClient) UpdateVirtualMachineInstanceReplicaSet(namespace, name string, vmirs *v1.VirtualMachineInstanceReplicaSet, data []byte) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "UpdateVirtualMachineInstanceReplicaSet", namespace, name, vmirs, data)
 	ret0, _ := ret[0].(error)

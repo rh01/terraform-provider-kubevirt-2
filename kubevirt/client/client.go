@@ -53,9 +53,9 @@ type Client interface {
 
 	// VirtualMachineInstanceReplicaSet CRUD operations
 
-	CreateVirtualMachineInstanceReplicaSet(vmirs *kubevirtapiv1.VirtualMachineInstance) error
-	GetVirtualMachineInstanceReplicaSet(namespace string, name string) (*kubevirtapiv1.VirtualMachineInstance, error)
-	UpdateVirtualMachineInstanceReplicaSet(namespace string, name string, vmirs *kubevirtapiv1.VirtualMachineInstance, data []byte) error
+	CreateVirtualMachineInstanceReplicaSet(vmirs *kubevirtapiv1.VirtualMachineInstanceReplicaSet) error
+	GetVirtualMachineInstanceReplicaSet(namespace string, name string) (*kubevirtapiv1.VirtualMachineInstanceReplicaSet, error)
+	UpdateVirtualMachineInstanceReplicaSet(namespace string, name string, vmirs *kubevirtapiv1.VirtualMachineInstanceReplicaSet, data []byte) error
 	DeleteVirtualMachineInstanceReplicaSet(namespace string, name string) error
 
 	// DataVolume CRUD operations
@@ -139,7 +139,7 @@ func vmRes() schema.GroupVersionResource {
 // VirtualMachineInstanceReplicaSet CRUD operations
 
 // CreateVirtualMachineInstanceReplicaSet implements Client
-func (c *client) CreateVirtualMachineInstanceReplicaSet(vmirs *kubevirtapiv1.VirtualMachineInstance) error {
+func (c *client) CreateVirtualMachineInstanceReplicaSet(vmirs *kubevirtapiv1.VirtualMachineInstanceReplicaSet) error {
 
 	return c.createResource(vmirs, vmirs.Namespace, vmirsRes())
 }
@@ -150,8 +150,8 @@ func (c *client) DeleteVirtualMachineInstanceReplicaSet(namespace string, name s
 }
 
 // GetVirtualMachineInstanceReplicaSet implements Client
-func (c *client) GetVirtualMachineInstanceReplicaSet(namespace string, name string) (*kubevirtapiv1.VirtualMachineInstance, error) {
-	var vmirs kubevirtapiv1.VirtualMachineInstance
+func (c *client) GetVirtualMachineInstanceReplicaSet(namespace string, name string) (*kubevirtapiv1.VirtualMachineInstanceReplicaSet, error) {
+	var vmirs kubevirtapiv1.VirtualMachineInstanceReplicaSet
 	resp, err := c.getResource(namespace, name, vmirsRes())
 	if err != nil {
 		return nil, err
@@ -166,12 +166,12 @@ func (c *client) GetVirtualMachineInstanceReplicaSet(namespace string, name stri
 }
 
 // UpdateVirtualMachineInstanceReplicaSet implements Client
-func (c *client) UpdateVirtualMachineInstanceReplicaSet(namespace string, name string, vmirs *kubevirtapiv1.VirtualMachineInstance, data []byte) error {
+func (c *client) UpdateVirtualMachineInstanceReplicaSet(namespace string, name string, vmirs *kubevirtapiv1.VirtualMachineInstanceReplicaSet, data []byte) error {
 	vmirsUpdateTypeMeta(vmirs)
 	return c.updateResource(namespace, name, vmirsRes(), vmirs, data)
 }
 
-func vmirsUpdateTypeMeta(vm *kubevirtapiv1.VirtualMachineInstance) {
+func vmirsUpdateTypeMeta(vm *kubevirtapiv1.VirtualMachineInstanceReplicaSet) {
 	vm.TypeMeta = metav1.TypeMeta{
 		Kind:       "VirtualMachineInstanceReplicaSet",
 		APIVersion: kubevirtapiv1.GroupVersion.String(),

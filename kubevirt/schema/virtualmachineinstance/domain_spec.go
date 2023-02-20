@@ -185,6 +185,7 @@ func domainSpecFields() map[string]*schema.Schema {
 						Optional:    true,
 						Elem: &schema.Resource{
 							Schema: map[string]*schema.Schema{
+
 								"name": {
 									Type:        schema.TypeString,
 									Description: "Logical name of the interface as well as a reference to the associated networks.",
@@ -449,6 +450,7 @@ func expandInterfaces(interfaces []interface{}) []kubevirtapiv1.Interface {
 		if v, ok := in["interface_binding_method"].(string); ok {
 			result[i].InterfaceBindingMethod = expandInterfaceBindingMethod(v)
 		}
+
 	}
 
 	return result

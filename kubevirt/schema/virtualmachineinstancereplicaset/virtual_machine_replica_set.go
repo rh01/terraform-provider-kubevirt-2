@@ -7,7 +7,7 @@ import (
 	kubevirtapiv1 "kubevirt.io/client-go/api/v1"
 )
 
-func VirtualMachineReplicaSetFields() map[string]*schema.Schema {
+func VirtualMachineInstanceReplicaSetFields() map[string]*schema.Schema {
 	return map[string]*schema.Schema{
 		"metadata": k8s.NamespacedMetadataSchema("VirtualMachineInstanceReplicaSet", false),
 		"spec":     virtualMachineInstanceReplicaSetSpecSchema(),
