@@ -123,7 +123,7 @@ func expandPodNetwork(pod []interface{}) *kubevirtapiv1.PodNetwork {
 	result := &kubevirtapiv1.PodNetwork{}
 
 	if len(pod) == 0 || pod[0] == nil {
-		return result
+		return nil
 	}
 
 	in := pod[0].(map[string]interface{})
