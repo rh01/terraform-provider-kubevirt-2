@@ -71,13 +71,12 @@ func resourceKubevirtVirtualMachineInstanceReplicaSetCreate(resourceData *schema
 				return vmirs, "", err
 			}
 
-			// if vmirs.Status. == "Running" {
-			// 	return vmirs, "Succeeded", nil
-			// }
+			log.Printf("[DEBUG] virtual machine instance replicaset %s replicas is %d, readyReplicas is %d",
+				name, vmirs.Spec.Replicas, vmirs.Status.ReadyReplicas)
 
-			// if vmirs.Status.Phase == "Succeeded" {
-			// 	return vmirs, "Succeeded", nil
-			// }
+			if *vmirs.Spec.Replicas == vmirs.Status.ReadyReplicas {
+				return vmirs, "Succeeded", nil
+			}
 
 			log.Printf("[DEBUG] virtual machine instance replicaset %s is being created", name)
 			return vmirs, "Creating", nil

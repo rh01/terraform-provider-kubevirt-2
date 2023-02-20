@@ -140,7 +140,7 @@ func vmRes() schema.GroupVersionResource {
 
 // CreateVirtualMachineInstanceReplicaSet implements Client
 func (c *client) CreateVirtualMachineInstanceReplicaSet(vmirs *kubevirtapiv1.VirtualMachineInstanceReplicaSet) error {
-
+	vmirsUpdateTypeMeta(vmirs)
 	return c.createResource(vmirs, vmirs.Namespace, vmirsRes())
 }
 
@@ -182,7 +182,7 @@ func vmirsRes() schema.GroupVersionResource {
 	return schema.GroupVersionResource{
 		Group:    kubevirtapiv1.GroupVersion.Group,
 		Version:  kubevirtapiv1.GroupVersion.Version,
-		Resource: "virtualmachineinstancereplicaset",
+		Resource: "virtualmachineinstancereplicasets",
 	}
 
 }
@@ -318,7 +318,13 @@ func (c *client) getResource(namespace string, name string, resource schema.Grou
 }
 
 func (c *client) updateResource(namespace string, name string, resource schema.GroupVersionResource, obj interface{}, data []byte) error {
-	resp, err := c.dynamicClient.Resource(resource).Namespace(namespace).Patch(context.Background(), name, pkgApi.JSONPatchType, data, metav1.PatchOptions{})
+	// patch, merge
+	resp, err := c.dynamicClient.Resource(resource).Namespace(namespace).Patch(
+		context.Background(),
+		name,
+		pkgApi.JSONPatchType,
+		data,
+		metav1.PatchOptions{})
 	if err != nil {
 		msg := fmt.Sprintf("Failed to update %s, with error: %v", resource.Resource, err)
 		log.Printf("[Error] %s", msg)

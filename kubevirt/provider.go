@@ -103,8 +103,10 @@ func Provider() terraform.ResourceProvider {
 			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
-			"kubevirt_virtual_machine": resourceKubevirtVirtualMachine(),
-			"kubevirt_data_volume":     resourceKubevirtDataVolume(),
+			"kubevirt_virtual_machine":                      resourceKubevirtVirtualMachine(),
+			"kubevirt_virtual_machine_instance":             resourceKubevirtVirtualMachineInstance(),
+			"kubevirt_virtual_machine_instance_replica_set": resourceKubevirtVirtualMachineInstanceReplicaSet(),
+			"kubevirt_data_volume":                          resourceKubevirtDataVolume(),
 		},
 	}
 	p.ConfigureFunc = func(resourceData *schema.ResourceData) (interface{}, error) {
