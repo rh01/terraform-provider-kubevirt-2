@@ -20,8 +20,11 @@ package v1
 
 import (
 	"context"
+<<<<<<< HEAD
 	json "encoding/json"
 	"fmt"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"time"
 
 	autoscalingv1 "k8s.io/api/autoscaling/v1"
@@ -29,7 +32,10 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
+<<<<<<< HEAD
 	corev1 "k8s.io/client-go/applyconfigurations/core/v1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	scheme "k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
 )
@@ -51,8 +57,11 @@ type ReplicationControllerInterface interface {
 	List(ctx context.Context, opts metav1.ListOptions) (*v1.ReplicationControllerList, error)
 	Watch(ctx context.Context, opts metav1.ListOptions) (watch.Interface, error)
 	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts metav1.PatchOptions, subresources ...string) (result *v1.ReplicationController, err error)
+<<<<<<< HEAD
 	Apply(ctx context.Context, replicationController *corev1.ReplicationControllerApplyConfiguration, opts metav1.ApplyOptions) (result *v1.ReplicationController, err error)
 	ApplyStatus(ctx context.Context, replicationController *corev1.ReplicationControllerApplyConfiguration, opts metav1.ApplyOptions) (result *v1.ReplicationController, err error)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	GetScale(ctx context.Context, replicationControllerName string, options metav1.GetOptions) (*autoscalingv1.Scale, error)
 	UpdateScale(ctx context.Context, replicationControllerName string, scale *autoscalingv1.Scale, opts metav1.UpdateOptions) (*autoscalingv1.Scale, error)
 
@@ -203,6 +212,7 @@ func (c *replicationControllers) Patch(ctx context.Context, name string, pt type
 	return
 }
 
+<<<<<<< HEAD
 // Apply takes the given apply declarative configuration, applies it and returns the applied replicationController.
 func (c *replicationControllers) Apply(ctx context.Context, replicationController *corev1.ReplicationControllerApplyConfiguration, opts metav1.ApplyOptions) (result *v1.ReplicationController, err error) {
 	if replicationController == nil {
@@ -259,6 +269,8 @@ func (c *replicationControllers) ApplyStatus(ctx context.Context, replicationCon
 	return
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // GetScale takes name of the replicationController, and returns the corresponding autoscalingv1.Scale object, and an error if there is any.
 func (c *replicationControllers) GetScale(ctx context.Context, replicationControllerName string, options metav1.GetOptions) (result *autoscalingv1.Scale, err error) {
 	result = &autoscalingv1.Scale{}

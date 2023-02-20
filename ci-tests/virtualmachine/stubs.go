@@ -7,8 +7,13 @@ import (
 	"k8s.io/apimachinery/pkg/api/resource"
 	apiresource "k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+<<<<<<< HEAD
 	kubevirtapiv1 "kubevirt.io/api/core/v1"
 	cdiv1 "kubevirt.io/containerized-data-importer-api/pkg/apis/core/v1beta1"
+=======
+	kubevirtapiv1 "kubevirt.io/client-go/api/v1"
+	cdiv1 "kubevirt.io/containerized-data-importer/pkg/apis/core/v1alpha1"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 )
 
 func getExpectedVirtualMachine(name string, namespace string, source cdiv1.DataVolumeSource, labels map[string]string) *kubevirtapiv1.VirtualMachine {
@@ -18,8 +23,13 @@ func getExpectedVirtualMachine(name string, namespace string, source cdiv1.DataV
 			Namespace: namespace,
 			Labels:    labels,
 			Annotations: map[string]string{
+<<<<<<< HEAD
 				"kubevirt.io/storage-observed-api-version": "v1alpha3",
 				"kubevirt.io/latest-observed-api-version":  "v1",
+=======
+				"kubevirt.io/latest-observed-api-version":  "v1",
+				"kubevirt.io/storage-observed-api-version": "v1alpha3",
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			},
 		},
 		TypeMeta: metav1.TypeMeta{
@@ -30,14 +40,22 @@ func getExpectedVirtualMachine(name string, namespace string, source cdiv1.DataV
 			RunStrategy: func(src kubevirtapiv1.VirtualMachineRunStrategy) *kubevirtapiv1.VirtualMachineRunStrategy {
 				return &src
 			}(kubevirtapiv1.RunStrategyAlways),
+<<<<<<< HEAD
 			DataVolumeTemplates: []kubevirtapiv1.DataVolumeTemplateSpec{
+=======
+			DataVolumeTemplates: []cdiv1.DataVolume{
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				{
 					ObjectMeta: metav1.ObjectMeta{
 						Name:      fmt.Sprintf("%s-bootvolume", name),
 						Namespace: namespace,
 					},
 					Spec: cdiv1.DataVolumeSpec{
+<<<<<<< HEAD
 						Source: &source,
+=======
+						Source: source,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 						PVC: &corev1.PersistentVolumeClaimSpec{
 							AccessModes: []corev1.PersistentVolumeAccessMode{
 								"ReadWriteOnce",
@@ -78,11 +96,19 @@ func getExpectedVirtualMachine(name string, namespace string, source cdiv1.DataV
 					Domain: kubevirtapiv1.DomainSpec{
 						Resources: kubevirtapiv1.ResourceRequirements{
 							Requests: corev1.ResourceList{
+<<<<<<< HEAD
 								corev1.ResourceCPU:    apiresource.MustParse(fmt.Sprint(1)),
 								corev1.ResourceMemory: apiresource.MustParse("120Mi"),
 							},
 						},
 						Machine: &kubevirtapiv1.Machine{
+=======
+								corev1.ResourceMemory: apiresource.MustParse("120Mi"),
+								corev1.ResourceCPU:    apiresource.MustParse(fmt.Sprint(1)),
+							},
+						},
+						Machine: kubevirtapiv1.Machine{
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 							Type: "q35",
 						},
 						Devices: kubevirtapiv1.Devices{
@@ -113,6 +139,7 @@ func getExpectedVirtualMachine(name string, namespace string, source cdiv1.DataV
 			},
 		},
 		Status: kubevirtapiv1.VirtualMachineStatus{
+<<<<<<< HEAD
 			Created:         true,
 			Ready:           true,
 			PrintableStatus: "Running",
@@ -123,6 +150,10 @@ func getExpectedVirtualMachine(name string, namespace string, source cdiv1.DataV
 					Reason:  "No VolumeSnapshotClass: Volume snapshots are not configured for this StorageClass [local] [datavolumedisk1]",
 				},
 			},
+=======
+			Created: true,
+			Ready:   true,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		},
 	}
 }

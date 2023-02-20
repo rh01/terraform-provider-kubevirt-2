@@ -18,6 +18,9 @@ limitations under the License.
 
 package v1
 
+<<<<<<< HEAD
 type CronJobExpansion interface{}
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type JobExpansion interface{}

@@ -20,15 +20,21 @@ package v1beta1
 
 import (
 	"context"
+<<<<<<< HEAD
 	json "encoding/json"
 	"fmt"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"time"
 
 	v1beta1 "k8s.io/api/rbac/v1beta1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
+<<<<<<< HEAD
 	rbacv1beta1 "k8s.io/client-go/applyconfigurations/rbac/v1beta1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	scheme "k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
 )
@@ -49,7 +55,10 @@ type ClusterRoleInterface interface {
 	List(ctx context.Context, opts v1.ListOptions) (*v1beta1.ClusterRoleList, error)
 	Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error)
 	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *v1beta1.ClusterRole, err error)
+<<<<<<< HEAD
 	Apply(ctx context.Context, clusterRole *rbacv1beta1.ClusterRoleApplyConfiguration, opts v1.ApplyOptions) (result *v1beta1.ClusterRole, err error)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	ClusterRoleExpansion
 }
 
@@ -170,6 +179,7 @@ func (c *clusterRoles) Patch(ctx context.Context, name string, pt types.PatchTyp
 		Into(result)
 	return
 }
+<<<<<<< HEAD
 
 // Apply takes the given apply declarative configuration, applies it and returns the applied clusterRole.
 func (c *clusterRoles) Apply(ctx context.Context, clusterRole *rbacv1beta1.ClusterRoleApplyConfiguration, opts v1.ApplyOptions) (result *v1beta1.ClusterRole, err error) {
@@ -195,3 +205,5 @@ func (c *clusterRoles) Apply(ctx context.Context, clusterRole *rbacv1beta1.Clust
 		Into(result)
 	return
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

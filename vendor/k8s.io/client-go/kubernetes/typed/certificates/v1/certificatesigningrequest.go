@@ -20,15 +20,21 @@ package v1
 
 import (
 	"context"
+<<<<<<< HEAD
 	json "encoding/json"
 	"fmt"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"time"
 
 	v1 "k8s.io/api/certificates/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
+<<<<<<< HEAD
 	certificatesv1 "k8s.io/client-go/applyconfigurations/certificates/v1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	scheme "k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
 )
@@ -50,8 +56,11 @@ type CertificateSigningRequestInterface interface {
 	List(ctx context.Context, opts metav1.ListOptions) (*v1.CertificateSigningRequestList, error)
 	Watch(ctx context.Context, opts metav1.ListOptions) (watch.Interface, error)
 	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts metav1.PatchOptions, subresources ...string) (result *v1.CertificateSigningRequest, err error)
+<<<<<<< HEAD
 	Apply(ctx context.Context, certificateSigningRequest *certificatesv1.CertificateSigningRequestApplyConfiguration, opts metav1.ApplyOptions) (result *v1.CertificateSigningRequest, err error)
 	ApplyStatus(ctx context.Context, certificateSigningRequest *certificatesv1.CertificateSigningRequestApplyConfiguration, opts metav1.ApplyOptions) (result *v1.CertificateSigningRequest, err error)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	UpdateApproval(ctx context.Context, certificateSigningRequestName string, certificateSigningRequest *v1.CertificateSigningRequest, opts metav1.UpdateOptions) (*v1.CertificateSigningRequest, error)
 
 	CertificateSigningRequestExpansion
@@ -190,6 +199,7 @@ func (c *certificateSigningRequests) Patch(ctx context.Context, name string, pt 
 	return
 }
 
+<<<<<<< HEAD
 // Apply takes the given apply declarative configuration, applies it and returns the applied certificateSigningRequest.
 func (c *certificateSigningRequests) Apply(ctx context.Context, certificateSigningRequest *certificatesv1.CertificateSigningRequestApplyConfiguration, opts metav1.ApplyOptions) (result *v1.CertificateSigningRequest, err error) {
 	if certificateSigningRequest == nil {
@@ -244,6 +254,8 @@ func (c *certificateSigningRequests) ApplyStatus(ctx context.Context, certificat
 	return
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // UpdateApproval takes the top resource name and the representation of a certificateSigningRequest and updates it. Returns the server's representation of the certificateSigningRequest, and an error, if there is any.
 func (c *certificateSigningRequests) UpdateApproval(ctx context.Context, certificateSigningRequestName string, certificateSigningRequest *v1.CertificateSigningRequest, opts metav1.UpdateOptions) (result *v1.CertificateSigningRequest, err error) {
 	result = &v1.CertificateSigningRequest{}

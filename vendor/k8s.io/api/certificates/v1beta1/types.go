@@ -36,17 +36,29 @@ type CertificateSigningRequest struct {
 	// +optional
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
+<<<<<<< HEAD
 	// spec contains the certificate request, and is immutable after creation.
 	// Only the request, signerName, expirationSeconds, and usages fields can be set on creation.
 	// Other fields are derived by Kubernetes and cannot be modified by users.
 	Spec CertificateSigningRequestSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+=======
+	// The certificate request itself and any additional information.
+	// +optional
+	Spec CertificateSigningRequestSpec `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	// Derived information about the request.
 	// +optional
 	Status CertificateSigningRequestStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
+<<<<<<< HEAD
 // CertificateSigningRequestSpec contains the certificate request.
+=======
+// This information is immutable after the request is created. Only the Request
+// and Usages fields can be set on creation, other fields are derived by
+// Kubernetes and cannot be modified by users.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type CertificateSigningRequestSpec struct {
 	// Base64-encoded PKCS#10 CSR data
 	// +listType=atomic
@@ -65,6 +77,7 @@ type CertificateSigningRequestSpec struct {
 	// +optional
 	SignerName *string `json:"signerName,omitempty" protobuf:"bytes,7,opt,name=signerName"`
 
+<<<<<<< HEAD
 	// expirationSeconds is the requested duration of validity of the issued
 	// certificate. The certificate signer may issue a certificate with a different
 	// validity duration so a client must check the delta between the notBefore and
@@ -87,6 +100,8 @@ type CertificateSigningRequestSpec struct {
 	// +optional
 	ExpirationSeconds *int32 `json:"expirationSeconds,omitempty" protobuf:"varint,8,opt,name=expirationSeconds"`
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// allowedUsages specifies a set of usage contexts the key will be
 	// valid for.
 	// See: https://tools.ietf.org/html/rfc5280#section-4.2.1.3
@@ -230,8 +245,12 @@ type CertificateSigningRequestList struct {
 
 // KeyUsages specifies valid usage contexts for keys.
 // See: https://tools.ietf.org/html/rfc5280#section-4.2.1.3
+<<<<<<< HEAD
 //
 //	https://tools.ietf.org/html/rfc5280#section-4.2.1.12
+=======
+//      https://tools.ietf.org/html/rfc5280#section-4.2.1.12
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type KeyUsage string
 
 const (

@@ -3,4 +3,7 @@
 .
 .idea
 gomega.iml
+<<<<<<< HEAD
 TODO.md
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

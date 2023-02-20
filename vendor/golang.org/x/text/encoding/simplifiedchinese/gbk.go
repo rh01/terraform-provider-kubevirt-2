@@ -55,8 +55,11 @@ loop:
 		// Microsoft's Code Page 936 extends GBK 1.0 to encode the euro sign U+20AC
 		// as 0x80. The HTML5 specification at http://encoding.spec.whatwg.org/#gbk
 		// says to treat "gbk" as Code Page 936.
+<<<<<<< HEAD
 		// GBK’s decoder is gb18030’s decoder. https://encoding.spec.whatwg.org/#gbk-decoder
 		// If byte is 0x80, return code point U+20AC. https://encoding.spec.whatwg.org/#gb18030-decoder
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		case c0 == 0x80:
 			r, size = '€', 1
 
@@ -182,9 +185,13 @@ func (e gbkEncoder) Transform(dst, src []byte, atEOF bool) (nDst, nSrc int, err 
 				// Microsoft's Code Page 936 extends GBK 1.0 to encode the euro sign U+20AC
 				// as 0x80. The HTML5 specification at http://encoding.spec.whatwg.org/#gbk
 				// says to treat "gbk" as Code Page 936.
+<<<<<<< HEAD
 				// GBK’s encoder is gb18030’s encoder with its _is GBK_ set to true. https://encoding.spec.whatwg.org/#gbk-encoder
 				// If _is GBK_ is true and code point is U+20AC, return byte 0x80. https://encoding.spec.whatwg.org/#gb18030-encoder
 				if !e.gb18030 && r == '€' {
+=======
+				if r == '€' {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 					r = 0x80
 					goto write1
 				}

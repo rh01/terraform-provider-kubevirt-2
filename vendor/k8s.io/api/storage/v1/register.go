@@ -55,9 +55,12 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 
 		&CSIDriver{},
 		&CSIDriverList{},
+<<<<<<< HEAD
 
 		&CSIStorageCapacity{},
 		&CSIStorageCapacityList{},
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	)
 
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)

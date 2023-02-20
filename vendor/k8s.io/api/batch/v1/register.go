@@ -46,8 +46,11 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
 		&Job{},
 		&JobList{},
+<<<<<<< HEAD
 		&CronJob{},
 		&CronJobList{},
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	)
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil

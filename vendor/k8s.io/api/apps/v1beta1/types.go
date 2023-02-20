@@ -58,7 +58,11 @@ type ScaleStatus struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.6
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=autoscaling,v1,Scale
 
 // Scale represents a scaling request for a resource.
@@ -81,16 +85,25 @@ type Scale struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.5
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=apps,v1,StatefulSet
 
 // DEPRECATED - This group version of StatefulSet is deprecated by apps/v1beta2/StatefulSet. See the release notes for
 // more information.
 // StatefulSet represents a set of pods with consistent identities.
 // Identities are defined as:
+<<<<<<< HEAD
 //   - Network: A single stable DNS and hostname.
 //   - Storage: As many VolumeClaims as requested.
 //
+=======
+//  - Network: A single stable DNS and hostname.
+//  - Storage: As many VolumeClaims as requested.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // The StatefulSet guarantees that a given network identity will always
 // map to the same storage identity.
 type StatefulSet struct {
@@ -154,6 +167,7 @@ const (
 
 // RollingUpdateStatefulSetStrategy is used to communicate parameter for RollingUpdateStatefulSetStrategyType.
 type RollingUpdateStatefulSetStrategy struct {
+<<<<<<< HEAD
 	// Partition indicates the ordinal at which the StatefulSet should be partitioned
 	// for updates. During a rolling update, all pods from ordinal Replicas-1 to
 	// Partition are updated. All pods from ordinal Partition-1 to 0 remain untouched.
@@ -217,6 +231,11 @@ type StatefulSetOrdinals struct {
 	//   [0, .spec.replicas).
 	// +optional
 	Start int32 `json:"start" protobuf:"varint,1,opt,name=start"`
+=======
+	// Partition indicates the ordinal at which the StatefulSet should be
+	// partitioned.
+	Partition *int32 `json:"partition,omitempty" protobuf:"varint,1,opt,name=partition"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // A StatefulSetSpec is the specification of a StatefulSet.
@@ -238,9 +257,13 @@ type StatefulSetSpec struct {
 	// template is the object that describes the pod that will be created if
 	// insufficient replicas are detected. Each pod stamped out by the StatefulSet
 	// will fulfill this Template, but have a unique identity from the rest
+<<<<<<< HEAD
 	// of the StatefulSet. Each pod will be named with the format
 	// <statefulsetname>-<podindex>. For example, a pod in a StatefulSet named
 	// "web" with index number "3" would be named "web-3".
+=======
+	// of the StatefulSet.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	Template v1.PodTemplateSpec `json:"template" protobuf:"bytes,3,opt,name=template"`
 
 	// volumeClaimTemplates is a list of claims that pods are allowed to reference.
@@ -281,6 +304,7 @@ type StatefulSetSpec struct {
 	// consists of all revisions not represented by a currently applied
 	// StatefulSetSpec version. The default value is 10.
 	RevisionHistoryLimit *int32 `json:"revisionHistoryLimit,omitempty" protobuf:"varint,8,opt,name=revisionHistoryLimit"`
+<<<<<<< HEAD
 
 	// Minimum number of seconds for which a newly created pod should be ready
 	// without any of its container crashing for it to be considered available.
@@ -301,6 +325,8 @@ type StatefulSetSpec struct {
 	// enabled, which is alpha.
 	// +optional
 	Ordinals *StatefulSetOrdinals `json:"ordinals,omitempty" protobuf:"bytes,11,opt,name=ordinals"`
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // StatefulSetStatus represents the current state of a StatefulSet.
@@ -313,7 +339,11 @@ type StatefulSetStatus struct {
 	// replicas is the number of Pods created by the StatefulSet controller.
 	Replicas int32 `json:"replicas" protobuf:"varint,2,opt,name=replicas"`
 
+<<<<<<< HEAD
 	// readyReplicas is the number of pods created by this StatefulSet controller with a Ready Condition.
+=======
+	// readyReplicas is the number of Pods created by the StatefulSet controller that have a Ready Condition.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	ReadyReplicas int32 `json:"readyReplicas,omitempty" protobuf:"varint,3,opt,name=readyReplicas"`
 
 	// currentReplicas is the number of Pods created by the StatefulSet controller from the StatefulSet version
@@ -343,10 +373,13 @@ type StatefulSetStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	Conditions []StatefulSetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
+<<<<<<< HEAD
 
 	// Total number of available pods (ready for at least minReadySeconds) targeted by this StatefulSet.
 	// +optional
 	AvailableReplicas int32 `json:"availableReplicas" protobuf:"varint,11,opt,name=availableReplicas"`
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 type StatefulSetConditionType string
@@ -371,7 +404,11 @@ type StatefulSetCondition struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.5
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=apps,v1,StatefulSetList
 
 // StatefulSetList is a collection of StatefulSets.
@@ -386,7 +423,11 @@ type StatefulSetList struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.6
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=apps,v1,Deployment
 
 // DEPRECATED - This group version of Deployment is deprecated by apps/v1beta2/Deployment. See the release notes for
@@ -460,7 +501,11 @@ type DeploymentSpec struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.6
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=apps,v1,DeploymentRollback
 
 // DEPRECATED.
@@ -559,7 +604,11 @@ type DeploymentStatus struct {
 	// +optional
 	UpdatedReplicas int32 `json:"updatedReplicas,omitempty" protobuf:"varint,3,opt,name=updatedReplicas"`
 
+<<<<<<< HEAD
 	// readyReplicas is the number of pods targeted by this Deployment controller with a Ready Condition.
+=======
+	// Total number of ready pods targeted by this deployment.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	ReadyReplicas int32 `json:"readyReplicas,omitempty" protobuf:"varint,7,opt,name=readyReplicas"`
 
@@ -621,7 +670,11 @@ type DeploymentCondition struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.6
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=apps,v1,DeploymentList
 
 // DeploymentList is a list of Deployments.
@@ -639,7 +692,11 @@ type DeploymentList struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.7
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=apps,v1,ControllerRevision
 
 // DEPRECATED - This group version of ControllerRevision is deprecated by apps/v1beta2/ControllerRevision. See the
@@ -670,7 +727,11 @@ type ControllerRevision struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.7
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=apps,v1,ControllerRevisionList
 
 // ControllerRevisionList is a resource containing a list of ControllerRevision objects.

@@ -110,9 +110,15 @@ func (t Token) String() string {
 	case SelfClosingTagToken:
 		return "<" + t.tagString() + "/>"
 	case CommentToken:
+<<<<<<< HEAD
 		return "<!--" + EscapeString(t.Data) + "-->"
 	case DoctypeToken:
 		return "<!DOCTYPE " + EscapeString(t.Data) + ">"
+=======
+		return "<!--" + t.Data + "-->"
+	case DoctypeToken:
+		return "<!DOCTYPE " + t.Data + ">"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	}
 	return "Invalid(" + strconv.Itoa(int(t.Type)) + ")"
 }
@@ -605,10 +611,14 @@ func (z *Tokenizer) readComment() {
 			z.data.end = z.data.start
 		}
 	}()
+<<<<<<< HEAD
 
 	var dashCount int
 	beginning := true
 	for {
+=======
+	for dashCount := 2; ; {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		c := z.readByte()
 		if z.err != nil {
 			// Ignore up to two dashes at EOF.
@@ -623,7 +633,11 @@ func (z *Tokenizer) readComment() {
 			dashCount++
 			continue
 		case '>':
+<<<<<<< HEAD
 			if dashCount >= 2 || beginning {
+=======
+			if dashCount >= 2 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				z.data.end = z.raw.end - len("-->")
 				return
 			}
@@ -641,7 +655,10 @@ func (z *Tokenizer) readComment() {
 			}
 		}
 		dashCount = 0
+<<<<<<< HEAD
 		beginning = false
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	}
 }
 

@@ -545,7 +545,11 @@ type bestMatch struct {
 // match as the preferred match.
 //
 // If pin is true and have and tag are a strong match, it will henceforth only
+<<<<<<< HEAD
 // consider matches for this language. This corresponds to the idea that most
+=======
+// consider matches for this language. This corresponds to the nothing that most
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // users have a strong preference for the first defined language. A user can
 // still prefer a second language over a dialect of the preferred language by
 // explicitly specifying dialects, e.g. "en, nl, en-GB". In this case pin should

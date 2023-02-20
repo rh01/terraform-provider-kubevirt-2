@@ -244,6 +244,7 @@ func (m *IngressClassList) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_IngressClassList proto.InternalMessageInfo
 
+<<<<<<< HEAD
 func (m *IngressClassParametersReference) Reset()      { *m = IngressClassParametersReference{} }
 func (*IngressClassParametersReference) ProtoMessage() {}
 func (*IngressClassParametersReference) Descriptor() ([]byte, []int) {
@@ -276,6 +277,12 @@ func (m *IngressClassSpec) Reset()      { *m = IngressClassSpec{} }
 func (*IngressClassSpec) ProtoMessage() {}
 func (*IngressClassSpec) Descriptor() ([]byte, []int) {
 	return fileDescriptor_1c72867a70a7cc90, []int{8}
+=======
+func (m *IngressClassSpec) Reset()      { *m = IngressClassSpec{} }
+func (*IngressClassSpec) ProtoMessage() {}
+func (*IngressClassSpec) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1c72867a70a7cc90, []int{7}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *IngressClassSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -303,7 +310,11 @@ var xxx_messageInfo_IngressClassSpec proto.InternalMessageInfo
 func (m *IngressList) Reset()      { *m = IngressList{} }
 func (*IngressList) ProtoMessage() {}
 func (*IngressList) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_1c72867a70a7cc90, []int{9}
+=======
+	return fileDescriptor_1c72867a70a7cc90, []int{8}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *IngressList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -328,6 +339,7 @@ func (m *IngressList) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_IngressList proto.InternalMessageInfo
 
+<<<<<<< HEAD
 func (m *IngressLoadBalancerIngress) Reset()      { *m = IngressLoadBalancerIngress{} }
 func (*IngressLoadBalancerIngress) ProtoMessage() {}
 func (*IngressLoadBalancerIngress) Descriptor() ([]byte, []int) {
@@ -416,6 +428,12 @@ func (m *IngressRule) Reset()      { *m = IngressRule{} }
 func (*IngressRule) ProtoMessage() {}
 func (*IngressRule) Descriptor() ([]byte, []int) {
 	return fileDescriptor_1c72867a70a7cc90, []int{13}
+=======
+func (m *IngressRule) Reset()      { *m = IngressRule{} }
+func (*IngressRule) ProtoMessage() {}
+func (*IngressRule) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1c72867a70a7cc90, []int{9}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *IngressRule) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -443,7 +461,11 @@ var xxx_messageInfo_IngressRule proto.InternalMessageInfo
 func (m *IngressRuleValue) Reset()      { *m = IngressRuleValue{} }
 func (*IngressRuleValue) ProtoMessage() {}
 func (*IngressRuleValue) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_1c72867a70a7cc90, []int{14}
+=======
+	return fileDescriptor_1c72867a70a7cc90, []int{10}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *IngressRuleValue) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -471,7 +493,11 @@ var xxx_messageInfo_IngressRuleValue proto.InternalMessageInfo
 func (m *IngressServiceBackend) Reset()      { *m = IngressServiceBackend{} }
 func (*IngressServiceBackend) ProtoMessage() {}
 func (*IngressServiceBackend) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_1c72867a70a7cc90, []int{15}
+=======
+	return fileDescriptor_1c72867a70a7cc90, []int{11}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *IngressServiceBackend) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -499,7 +525,11 @@ var xxx_messageInfo_IngressServiceBackend proto.InternalMessageInfo
 func (m *IngressSpec) Reset()      { *m = IngressSpec{} }
 func (*IngressSpec) ProtoMessage() {}
 func (*IngressSpec) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_1c72867a70a7cc90, []int{16}
+=======
+	return fileDescriptor_1c72867a70a7cc90, []int{12}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *IngressSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -527,7 +557,11 @@ var xxx_messageInfo_IngressSpec proto.InternalMessageInfo
 func (m *IngressStatus) Reset()      { *m = IngressStatus{} }
 func (*IngressStatus) ProtoMessage() {}
 func (*IngressStatus) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_1c72867a70a7cc90, []int{17}
+=======
+	return fileDescriptor_1c72867a70a7cc90, []int{13}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *IngressStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -555,7 +589,11 @@ var xxx_messageInfo_IngressStatus proto.InternalMessageInfo
 func (m *IngressTLS) Reset()      { *m = IngressTLS{} }
 func (*IngressTLS) ProtoMessage() {}
 func (*IngressTLS) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_1c72867a70a7cc90, []int{18}
+=======
+	return fileDescriptor_1c72867a70a7cc90, []int{14}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *IngressTLS) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -583,7 +621,11 @@ var xxx_messageInfo_IngressTLS proto.InternalMessageInfo
 func (m *NetworkPolicy) Reset()      { *m = NetworkPolicy{} }
 func (*NetworkPolicy) ProtoMessage() {}
 func (*NetworkPolicy) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_1c72867a70a7cc90, []int{19}
+=======
+	return fileDescriptor_1c72867a70a7cc90, []int{15}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *NetworkPolicy) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -611,7 +653,11 @@ var xxx_messageInfo_NetworkPolicy proto.InternalMessageInfo
 func (m *NetworkPolicyEgressRule) Reset()      { *m = NetworkPolicyEgressRule{} }
 func (*NetworkPolicyEgressRule) ProtoMessage() {}
 func (*NetworkPolicyEgressRule) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_1c72867a70a7cc90, []int{20}
+=======
+	return fileDescriptor_1c72867a70a7cc90, []int{16}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *NetworkPolicyEgressRule) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -639,7 +685,11 @@ var xxx_messageInfo_NetworkPolicyEgressRule proto.InternalMessageInfo
 func (m *NetworkPolicyIngressRule) Reset()      { *m = NetworkPolicyIngressRule{} }
 func (*NetworkPolicyIngressRule) ProtoMessage() {}
 func (*NetworkPolicyIngressRule) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_1c72867a70a7cc90, []int{21}
+=======
+	return fileDescriptor_1c72867a70a7cc90, []int{17}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *NetworkPolicyIngressRule) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -667,7 +717,11 @@ var xxx_messageInfo_NetworkPolicyIngressRule proto.InternalMessageInfo
 func (m *NetworkPolicyList) Reset()      { *m = NetworkPolicyList{} }
 func (*NetworkPolicyList) ProtoMessage() {}
 func (*NetworkPolicyList) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_1c72867a70a7cc90, []int{22}
+=======
+	return fileDescriptor_1c72867a70a7cc90, []int{18}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *NetworkPolicyList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -695,7 +749,11 @@ var xxx_messageInfo_NetworkPolicyList proto.InternalMessageInfo
 func (m *NetworkPolicyPeer) Reset()      { *m = NetworkPolicyPeer{} }
 func (*NetworkPolicyPeer) ProtoMessage() {}
 func (*NetworkPolicyPeer) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_1c72867a70a7cc90, []int{23}
+=======
+	return fileDescriptor_1c72867a70a7cc90, []int{19}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *NetworkPolicyPeer) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -723,7 +781,11 @@ var xxx_messageInfo_NetworkPolicyPeer proto.InternalMessageInfo
 func (m *NetworkPolicyPort) Reset()      { *m = NetworkPolicyPort{} }
 func (*NetworkPolicyPort) ProtoMessage() {}
 func (*NetworkPolicyPort) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_1c72867a70a7cc90, []int{24}
+=======
+	return fileDescriptor_1c72867a70a7cc90, []int{20}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *NetworkPolicyPort) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -751,7 +813,11 @@ var xxx_messageInfo_NetworkPolicyPort proto.InternalMessageInfo
 func (m *NetworkPolicySpec) Reset()      { *m = NetworkPolicySpec{} }
 func (*NetworkPolicySpec) ProtoMessage() {}
 func (*NetworkPolicySpec) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_1c72867a70a7cc90, []int{25}
+=======
+	return fileDescriptor_1c72867a70a7cc90, []int{21}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *NetworkPolicySpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -776,6 +842,7 @@ func (m *NetworkPolicySpec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_NetworkPolicySpec proto.InternalMessageInfo
 
+<<<<<<< HEAD
 func (m *NetworkPolicyStatus) Reset()      { *m = NetworkPolicyStatus{} }
 func (*NetworkPolicyStatus) ProtoMessage() {}
 func (*NetworkPolicyStatus) Descriptor() ([]byte, []int) {
@@ -808,6 +875,12 @@ func (m *ServiceBackendPort) Reset()      { *m = ServiceBackendPort{} }
 func (*ServiceBackendPort) ProtoMessage() {}
 func (*ServiceBackendPort) Descriptor() ([]byte, []int) {
 	return fileDescriptor_1c72867a70a7cc90, []int{27}
+=======
+func (m *ServiceBackendPort) Reset()      { *m = ServiceBackendPort{} }
+func (*ServiceBackendPort) ProtoMessage() {}
+func (*ServiceBackendPort) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1c72867a70a7cc90, []int{22}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *ServiceBackendPort) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -840,12 +913,17 @@ func init() {
 	proto.RegisterType((*IngressBackend)(nil), "k8s.io.api.networking.v1.IngressBackend")
 	proto.RegisterType((*IngressClass)(nil), "k8s.io.api.networking.v1.IngressClass")
 	proto.RegisterType((*IngressClassList)(nil), "k8s.io.api.networking.v1.IngressClassList")
+<<<<<<< HEAD
 	proto.RegisterType((*IngressClassParametersReference)(nil), "k8s.io.api.networking.v1.IngressClassParametersReference")
 	proto.RegisterType((*IngressClassSpec)(nil), "k8s.io.api.networking.v1.IngressClassSpec")
 	proto.RegisterType((*IngressList)(nil), "k8s.io.api.networking.v1.IngressList")
 	proto.RegisterType((*IngressLoadBalancerIngress)(nil), "k8s.io.api.networking.v1.IngressLoadBalancerIngress")
 	proto.RegisterType((*IngressLoadBalancerStatus)(nil), "k8s.io.api.networking.v1.IngressLoadBalancerStatus")
 	proto.RegisterType((*IngressPortStatus)(nil), "k8s.io.api.networking.v1.IngressPortStatus")
+=======
+	proto.RegisterType((*IngressClassSpec)(nil), "k8s.io.api.networking.v1.IngressClassSpec")
+	proto.RegisterType((*IngressList)(nil), "k8s.io.api.networking.v1.IngressList")
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	proto.RegisterType((*IngressRule)(nil), "k8s.io.api.networking.v1.IngressRule")
 	proto.RegisterType((*IngressRuleValue)(nil), "k8s.io.api.networking.v1.IngressRuleValue")
 	proto.RegisterType((*IngressServiceBackend)(nil), "k8s.io.api.networking.v1.IngressServiceBackend")
@@ -859,7 +937,10 @@ func init() {
 	proto.RegisterType((*NetworkPolicyPeer)(nil), "k8s.io.api.networking.v1.NetworkPolicyPeer")
 	proto.RegisterType((*NetworkPolicyPort)(nil), "k8s.io.api.networking.v1.NetworkPolicyPort")
 	proto.RegisterType((*NetworkPolicySpec)(nil), "k8s.io.api.networking.v1.NetworkPolicySpec")
+<<<<<<< HEAD
 	proto.RegisterType((*NetworkPolicyStatus)(nil), "k8s.io.api.networking.v1.NetworkPolicyStatus")
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	proto.RegisterType((*ServiceBackendPort)(nil), "k8s.io.api.networking.v1.ServiceBackendPort")
 }
 
@@ -868,6 +949,7 @@ func init() {
 }
 
 var fileDescriptor_1c72867a70a7cc90 = []byte{
+<<<<<<< HEAD
 	// 1715 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xbc, 0x58, 0x4b, 0x6f, 0x1b, 0x47,
 	0x12, 0xd6, 0x50, 0xa2, 0x48, 0x35, 0x25, 0x59, 0x6a, 0xdb, 0x58, 0xae, 0x16, 0x4b, 0x6a, 0x07,
@@ -977,6 +1059,100 @@ var fileDescriptor_1c72867a70a7cc90 = []byte{
 	0x9e, 0xf6, 0x0a, 0xda, 0xb3, 0x5e, 0x41, 0xfb, 0xad, 0x57, 0xd0, 0x3e, 0xff, 0xbd, 0x30, 0xf5,
 	0x76, 0x7e, 0xd4, 0x0f, 0xc0, 0x7f, 0x04, 0x00, 0x00, 0xff, 0xff, 0x61, 0x0f, 0x0a, 0xd7, 0x34,
 	0x16, 0x00, 0x00,
+=======
+	// 1441 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xbc, 0x57, 0xcd, 0x6f, 0x1b, 0x45,
+	0x1b, 0xcf, 0x3a, 0x71, 0xec, 0x8c, 0xd3, 0x34, 0x9d, 0xb7, 0xd5, 0x6b, 0xf5, 0xd5, 0x6b, 0xe7,
+	0x5d, 0xbd, 0xb4, 0x81, 0xd2, 0x35, 0x71, 0x2b, 0xc4, 0x0d, 0xd8, 0xf4, 0x2b, 0xe0, 0x26, 0xd6,
+	0xd8, 0x2a, 0x02, 0x51, 0xd4, 0xf1, 0x7a, 0x62, 0x6f, 0xbd, 0xde, 0x59, 0x66, 0xc7, 0xa1, 0xbd,
+	0x71, 0xe1, 0xc0, 0x8d, 0x7f, 0x81, 0x03, 0x37, 0x6e, 0x70, 0x43, 0x50, 0xb8, 0xa0, 0x1e, 0x7b,
+	0xec, 0xc9, 0xa2, 0xe6, 0xbf, 0xc8, 0x09, 0xcd, 0xec, 0xec, 0xa7, 0x63, 0x6c, 0xaa, 0x2a, 0x27,
+	0x7b, 0x9f, 0x8f, 0xdf, 0xf3, 0x39, 0xcf, 0x33, 0x03, 0xde, 0x1f, 0xbc, 0xe3, 0x1b, 0x36, 0xad,
+	0x0d, 0x46, 0x1d, 0xc2, 0x5c, 0xc2, 0x89, 0x5f, 0x3b, 0x22, 0x6e, 0x97, 0xb2, 0x9a, 0x62, 0x60,
+	0xcf, 0xae, 0xb9, 0x84, 0x7f, 0x41, 0xd9, 0xc0, 0x76, 0x7b, 0xb5, 0xa3, 0x9d, 0x5a, 0x8f, 0xb8,
+	0x84, 0x61, 0x4e, 0xba, 0x86, 0xc7, 0x28, 0xa7, 0xb0, 0x1c, 0x48, 0x1a, 0xd8, 0xb3, 0x8d, 0x58,
+	0xd2, 0x38, 0xda, 0xb9, 0x78, 0xb5, 0x67, 0xf3, 0xfe, 0xa8, 0x63, 0x58, 0x74, 0x58, 0xeb, 0xd1,
+	0x1e, 0xad, 0x49, 0x85, 0xce, 0xe8, 0x50, 0x7e, 0xc9, 0x0f, 0xf9, 0x2f, 0x00, 0xba, 0xa8, 0x27,
+	0x4c, 0x5a, 0x94, 0x91, 0x13, 0x8c, 0x5d, 0xbc, 0x1e, 0xcb, 0x0c, 0xb1, 0xd5, 0xb7, 0x5d, 0xc2,
+	0x1e, 0xd7, 0xbc, 0x41, 0x4f, 0x10, 0xfc, 0xda, 0x90, 0x70, 0x7c, 0x92, 0x56, 0x6d, 0x96, 0x16,
+	0x1b, 0xb9, 0xdc, 0x1e, 0x92, 0x29, 0x85, 0xb7, 0xe7, 0x29, 0xf8, 0x56, 0x9f, 0x0c, 0xf1, 0x94,
+	0xde, 0xb5, 0x59, 0x7a, 0x23, 0x6e, 0x3b, 0x35, 0xdb, 0xe5, 0x3e, 0x67, 0x59, 0x25, 0xfd, 0x17,
+	0x0d, 0x9c, 0xbd, 0xd3, 0x6e, 0x37, 0xf7, 0xdc, 0x1e, 0x23, 0xbe, 0xdf, 0xc4, 0xbc, 0x0f, 0xb7,
+	0xc0, 0x8a, 0x87, 0x79, 0xbf, 0xac, 0x6d, 0x69, 0xdb, 0x6b, 0xe6, 0xfa, 0xd3, 0x71, 0x75, 0x69,
+	0x32, 0xae, 0xae, 0x08, 0x1e, 0x92, 0x1c, 0x78, 0x1d, 0x14, 0xc5, 0x6f, 0xfb, 0xb1, 0x47, 0xca,
+	0xcb, 0x52, 0xaa, 0x3c, 0x19, 0x57, 0x8b, 0x4d, 0x45, 0x3b, 0x4e, 0xfc, 0x47, 0x91, 0x24, 0x6c,
+	0x81, 0x42, 0x07, 0x5b, 0x03, 0xe2, 0x76, 0xcb, 0xb9, 0x2d, 0x6d, 0xbb, 0x54, 0xdf, 0x36, 0x66,
+	0x95, 0xcf, 0x50, 0xfe, 0x98, 0x81, 0xbc, 0x79, 0x56, 0x39, 0x51, 0x50, 0x04, 0x14, 0x22, 0xe9,
+	0x87, 0xe0, 0x7c, 0xc2, 0x7f, 0x34, 0x72, 0xc8, 0x3d, 0xec, 0x8c, 0x08, 0xdc, 0x07, 0x79, 0x61,
+	0xd8, 0x2f, 0x6b, 0x5b, 0xcb, 0xdb, 0xa5, 0xfa, 0xeb, 0xb3, 0x4d, 0x65, 0xc2, 0x37, 0xcf, 0x28,
+	0x5b, 0x79, 0xf1, 0xe5, 0xa3, 0x00, 0x46, 0x3f, 0x00, 0x85, 0xbd, 0xa6, 0xe9, 0x50, 0x6b, 0x20,
+	0xf2, 0x63, 0xd9, 0x5d, 0x96, 0xcd, 0xcf, 0xee, 0xde, 0x0d, 0x84, 0x24, 0x07, 0xea, 0x60, 0x95,
+	0x3c, 0xb2, 0x88, 0xc7, 0xcb, 0xb9, 0xad, 0xe5, 0xed, 0x35, 0x13, 0x4c, 0xc6, 0xd5, 0xd5, 0x9b,
+	0x92, 0x82, 0x14, 0x47, 0xff, 0x2a, 0x07, 0x0a, 0xca, 0x2c, 0x7c, 0x00, 0x8a, 0xa2, 0x7d, 0xba,
+	0x98, 0x63, 0x89, 0x5a, 0xaa, 0xbf, 0x95, 0xf0, 0x37, 0xaa, 0xa6, 0xe1, 0x0d, 0x7a, 0x82, 0xe0,
+	0x1b, 0x42, 0x5a, 0xf8, 0x7e, 0xd0, 0x79, 0x48, 0x2c, 0x7e, 0x97, 0x70, 0x6c, 0x42, 0xe5, 0x07,
+	0x88, 0x69, 0x28, 0x42, 0x85, 0xb7, 0xc1, 0x8a, 0xef, 0x11, 0x4b, 0x25, 0xfe, 0xb5, 0xb9, 0x89,
+	0x6f, 0x79, 0xc4, 0x8a, 0x43, 0x13, 0x5f, 0x48, 0x02, 0xc0, 0x03, 0xb0, 0xea, 0x73, 0xcc, 0x47,
+	0xbe, 0x2c, 0x7c, 0xa9, 0x7e, 0x79, 0x3e, 0x94, 0x14, 0x37, 0x37, 0x14, 0xd8, 0x6a, 0xf0, 0x8d,
+	0x14, 0x8c, 0xfe, 0x9b, 0x06, 0x36, 0xd2, 0xd5, 0x86, 0xf7, 0x40, 0xc1, 0x27, 0xec, 0xc8, 0xb6,
+	0x48, 0x79, 0x45, 0x1a, 0xa9, 0xcd, 0x37, 0x12, 0xc8, 0x87, 0xfd, 0x52, 0x12, 0xbd, 0xa2, 0x68,
+	0x28, 0x04, 0x83, 0x1f, 0x81, 0x22, 0x23, 0x3e, 0x1d, 0x31, 0x8b, 0x28, 0xef, 0xaf, 0x26, 0x81,
+	0xc5, 0xb9, 0x17, 0x90, 0xa2, 0x59, 0xbb, 0x0d, 0x6a, 0x61, 0x27, 0x48, 0x25, 0x22, 0x87, 0x84,
+	0x11, 0xd7, 0x22, 0xe6, 0xba, 0xe8, 0x72, 0xa4, 0x20, 0x50, 0x04, 0x26, 0x4e, 0xd1, 0xba, 0x72,
+	0x64, 0xd7, 0xc1, 0xa7, 0x52, 0xd0, 0x46, 0xaa, 0xa0, 0x6f, 0xcc, 0x4d, 0x90, 0xf4, 0x6b, 0x56,
+	0x55, 0xf5, 0x9f, 0x35, 0xb0, 0x99, 0x14, 0x6c, 0xd8, 0x3e, 0x87, 0x9f, 0x4e, 0x05, 0x61, 0x2c,
+	0x16, 0x84, 0xd0, 0x96, 0x21, 0x6c, 0x2a, 0x53, 0xc5, 0x90, 0x92, 0x08, 0xe0, 0x43, 0x90, 0xb7,
+	0x39, 0x19, 0xfa, 0xf2, 0x88, 0x94, 0xea, 0x97, 0x16, 0x8b, 0x20, 0x3e, 0x9d, 0x7b, 0x42, 0x19,
+	0x05, 0x18, 0xfa, 0x77, 0x19, 0xff, 0x45, 0x68, 0xb0, 0x0e, 0x80, 0x45, 0x5d, 0xce, 0xa8, 0xe3,
+	0x90, 0xf0, 0xb4, 0x46, 0x49, 0xdd, 0x8d, 0x38, 0x28, 0x21, 0x05, 0xef, 0x03, 0xe0, 0x61, 0x86,
+	0x87, 0x84, 0x13, 0xe6, 0xab, 0xe4, 0xfe, 0xc3, 0x26, 0xd9, 0x10, 0xf0, 0xcd, 0x08, 0x04, 0x25,
+	0x00, 0xf5, 0x1f, 0x34, 0x50, 0x52, 0x7e, 0x9e, 0x42, 0x8a, 0x6f, 0xa5, 0x53, 0xfc, 0xbf, 0xf9,
+	0xe3, 0xf6, 0xe4, 0xec, 0x7e, 0x1b, 0x7b, 0x2d, 0x06, 0xac, 0x18, 0x80, 0x7d, 0xea, 0xf3, 0xec,
+	0x00, 0xbc, 0x43, 0x7d, 0x8e, 0x24, 0x07, 0x7a, 0x60, 0xd3, 0xce, 0x4c, 0xe4, 0x85, 0x3b, 0x35,
+	0xd2, 0x30, 0xcb, 0x0a, 0x79, 0x33, 0xcb, 0x41, 0x53, 0xe8, 0xfa, 0x03, 0x30, 0x25, 0x25, 0xce,
+	0x48, 0x9f, 0x73, 0xef, 0x84, 0xcc, 0xce, 0x5e, 0x01, 0xb1, 0xf5, 0xa2, 0x8c, 0xa9, 0xdd, 0x6e,
+	0x22, 0x89, 0xa2, 0x7f, 0xad, 0x81, 0x0b, 0x27, 0x4e, 0x1b, 0x91, 0x0f, 0x17, 0x0f, 0x49, 0x36,
+	0x1f, 0xfb, 0x78, 0x48, 0x90, 0xe4, 0xc0, 0x7d, 0xb0, 0xe2, 0x51, 0xc6, 0x55, 0x0e, 0xde, 0x9c,
+	0xed, 0x49, 0x1a, 0xb9, 0x49, 0x19, 0x4f, 0x2c, 0x60, 0xca, 0x38, 0x92, 0x38, 0xfa, 0xef, 0xb9,
+	0xa8, 0x22, 0xb2, 0xd5, 0xdf, 0x8b, 0xf2, 0x2d, 0xdb, 0x5f, 0x58, 0x96, 0xa3, 0x73, 0xcd, 0x3c,
+	0x9f, 0xc8, 0x5f, 0xc4, 0x43, 0x53, 0xd2, 0xb0, 0x0b, 0x36, 0xba, 0xe4, 0x10, 0x8f, 0x1c, 0xae,
+	0x6c, 0xab, 0xac, 0x2d, 0xbe, 0xa3, 0xe1, 0x64, 0x5c, 0xdd, 0xb8, 0x91, 0xc2, 0x40, 0x19, 0x4c,
+	0xb8, 0x0b, 0x96, 0xb9, 0x13, 0xf6, 0xe3, 0xff, 0xe7, 0x42, 0xb7, 0x1b, 0x2d, 0xb3, 0xa4, 0xc2,
+	0x5f, 0x6e, 0x37, 0x5a, 0x48, 0x68, 0xc3, 0x0f, 0x40, 0x9e, 0x8d, 0x1c, 0x22, 0x36, 0xd0, 0xf2,
+	0x42, 0xcb, 0x4c, 0xd4, 0x34, 0x6e, 0x6d, 0xf1, 0xe5, 0xa3, 0x00, 0x42, 0xff, 0x1c, 0x9c, 0x49,
+	0xad, 0x29, 0xf8, 0x00, 0xac, 0x3b, 0x14, 0x77, 0x4d, 0xec, 0x60, 0xd7, 0x52, 0x63, 0x23, 0x33,
+	0x9d, 0xc2, 0x11, 0xd0, 0x48, 0xc8, 0xa9, 0x25, 0x77, 0x5e, 0x19, 0x59, 0x4f, 0xf2, 0x50, 0x0a,
+	0x51, 0xc7, 0x00, 0xc4, 0xe1, 0xc1, 0x2a, 0xc8, 0x8b, 0x13, 0x13, 0xdc, 0x53, 0xd6, 0xcc, 0x35,
+	0xe1, 0xa1, 0x38, 0x48, 0x3e, 0x0a, 0xe8, 0x62, 0x8a, 0xf9, 0xc4, 0x62, 0x84, 0xcb, 0xa2, 0xe6,
+	0xd2, 0x53, 0xac, 0x15, 0x71, 0x50, 0x42, 0x4a, 0xff, 0x55, 0x03, 0x67, 0xf6, 0x83, 0x4c, 0x34,
+	0xa9, 0x63, 0x5b, 0x8f, 0x4f, 0x61, 0x21, 0xdd, 0x4d, 0x2d, 0xa4, 0x2b, 0xb3, 0x8b, 0x92, 0x72,
+	0x6c, 0xe6, 0x46, 0xfa, 0x51, 0x03, 0xff, 0x4e, 0x49, 0xde, 0x8c, 0xe7, 0x4f, 0x13, 0xe4, 0xc5,
+	0x29, 0x08, 0xef, 0x76, 0x8b, 0xda, 0x92, 0xa7, 0x29, 0xbe, 0xdd, 0x09, 0x04, 0x14, 0x00, 0xc1,
+	0xdb, 0x20, 0xc7, 0xa9, 0x6a, 0xcb, 0x85, 0xe1, 0x08, 0x61, 0x26, 0x50, 0x70, 0xb9, 0x36, 0x45,
+	0x39, 0x4e, 0xf5, 0x9f, 0x34, 0x50, 0x4e, 0x49, 0x25, 0xe7, 0xe6, 0xab, 0xf7, 0xfb, 0x2e, 0x58,
+	0x39, 0x64, 0x74, 0xf8, 0x32, 0x9e, 0x47, 0x49, 0xbf, 0xc5, 0xe8, 0x10, 0x49, 0x18, 0xfd, 0x89,
+	0x06, 0xce, 0xa5, 0x24, 0x4f, 0x61, 0x49, 0x35, 0xd2, 0x4b, 0xea, 0xf2, 0x82, 0x31, 0xcc, 0x58,
+	0x55, 0x4f, 0x72, 0x99, 0x08, 0x44, 0xac, 0xf0, 0x10, 0x94, 0x3c, 0xda, 0x6d, 0x11, 0x87, 0x58,
+	0x9c, 0x86, 0x67, 0xfa, 0xda, 0x82, 0x41, 0xe0, 0x0e, 0x71, 0x42, 0x55, 0xf3, 0xec, 0x64, 0x5c,
+	0x2d, 0x35, 0x63, 0x2c, 0x94, 0x04, 0x86, 0x8f, 0xc0, 0x39, 0x31, 0xee, 0x7d, 0x0f, 0x5b, 0x24,
+	0xb2, 0x96, 0x7b, 0x79, 0x6b, 0x17, 0x26, 0xe3, 0xea, 0xb9, 0xfd, 0x2c, 0x22, 0x9a, 0x36, 0x02,
+	0xef, 0x80, 0x82, 0xed, 0xc9, 0xe7, 0x89, 0xba, 0xd9, 0xfe, 0xdd, 0xb2, 0x0f, 0xde, 0x31, 0xc1,
+	0x25, 0x59, 0x7d, 0xa0, 0x50, 0x5d, 0xff, 0x3e, 0xdb, 0x03, 0xa2, 0xe1, 0xe0, 0x6d, 0x50, 0x94,
+	0x0f, 0x46, 0x8b, 0x3a, 0x6a, 0xcd, 0x5d, 0x91, 0x2f, 0x3e, 0x45, 0x3b, 0x1e, 0x57, 0xff, 0x33,
+	0xfd, 0x82, 0x36, 0x42, 0x36, 0x8a, 0x94, 0x33, 0x9b, 0x70, 0xf6, 0x10, 0x12, 0x8f, 0x56, 0x23,
+	0x78, 0xb4, 0x1a, 0x7b, 0x2e, 0x3f, 0x60, 0x2d, 0xce, 0x6c, 0xb7, 0x17, 0x6c, 0xe5, 0xc4, 0x26,
+	0x3c, 0xce, 0x16, 0x5c, 0xee, 0xc3, 0x87, 0xaf, 0xac, 0xe0, 0xff, 0x52, 0x6d, 0x36, 0xbb, 0xe8,
+	0xf7, 0x41, 0x41, 0x6d, 0x53, 0xd5, 0xc2, 0xf5, 0x05, 0x5b, 0x38, 0xb9, 0x9d, 0xa2, 0x07, 0x6e,
+	0x48, 0x0c, 0x31, 0xe1, 0xc7, 0x60, 0x95, 0x04, 0xe8, 0xc1, 0xba, 0xdb, 0x59, 0x10, 0x3d, 0x9e,
+	0x97, 0xf1, 0xd3, 0x4b, 0xd1, 0x14, 0x20, 0x7c, 0x57, 0x64, 0x49, 0xc8, 0x8a, 0xcb, 0xac, 0x5f,
+	0x5e, 0x91, 0x1b, 0xe8, 0xbf, 0x41, 0xb0, 0x11, 0xf9, 0x58, 0xdc, 0x66, 0xa3, 0x4f, 0x94, 0xd4,
+	0xd0, 0x3f, 0x03, 0x70, 0xfa, 0xc2, 0xb2, 0xc0, 0x75, 0xe8, 0x12, 0x58, 0x75, 0x47, 0xc3, 0x0e,
+	0x09, 0x0e, 0x47, 0x3e, 0x76, 0x70, 0x5f, 0x52, 0x91, 0xe2, 0x9a, 0xdb, 0x4f, 0x5f, 0x54, 0x96,
+	0x9e, 0xbd, 0xa8, 0x2c, 0x3d, 0x7f, 0x51, 0x59, 0xfa, 0x72, 0x52, 0xd1, 0x9e, 0x4e, 0x2a, 0xda,
+	0xb3, 0x49, 0x45, 0x7b, 0x3e, 0xa9, 0x68, 0x7f, 0x4c, 0x2a, 0xda, 0x37, 0x7f, 0x56, 0x96, 0x3e,
+	0xc9, 0x1d, 0xed, 0xfc, 0x15, 0x00, 0x00, 0xff, 0xff, 0xc5, 0x87, 0xf6, 0x28, 0x4c, 0x12, 0x00,
+	0x00,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func (m *HTTPIngressPath) Marshal() (dAtA []byte, err error) {
@@ -1288,6 +1464,7 @@ func (m *IngressClassList) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+<<<<<<< HEAD
 func (m *IngressClassParametersReference) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -1342,6 +1519,8 @@ func (m *IngressClassParametersReference) MarshalToSizedBuffer(dAtA []byte) (int
 	return len(dAtA) - i, nil
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *IngressClassSpec) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -1429,6 +1608,7 @@ func (m *IngressList) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+<<<<<<< HEAD
 func (m *IngressLoadBalancerIngress) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -1551,6 +1731,8 @@ func (m *IngressPortStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *IngressRule) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -1823,6 +2005,7 @@ func (m *NetworkPolicy) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	{
+<<<<<<< HEAD
 		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
@@ -1833,6 +2016,8 @@ func (m *NetworkPolicy) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
@@ -2083,11 +2268,14 @@ func (m *NetworkPolicyPort) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+<<<<<<< HEAD
 	if m.EndPort != nil {
 		i = encodeVarintGenerated(dAtA, i, uint64(*m.EndPort))
 		i--
 		dAtA[i] = 0x18
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if m.Port != nil {
 		{
 			size, err := m.Port.MarshalToSizedBuffer(dAtA[:i])
@@ -2180,6 +2368,7 @@ func (m *NetworkPolicySpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+<<<<<<< HEAD
 func (m *NetworkPolicyStatus) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -2217,6 +2406,8 @@ func (m *NetworkPolicyStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *ServiceBackendPort) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -2370,6 +2561,7 @@ func (m *IngressClassList) Size() (n int) {
 	return n
 }
 
+<<<<<<< HEAD
 func (m *IngressClassParametersReference) Size() (n int) {
 	if m == nil {
 		return 0
@@ -2395,6 +2587,8 @@ func (m *IngressClassParametersReference) Size() (n int) {
 	return n
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *IngressClassSpec) Size() (n int) {
 	if m == nil {
 		return 0
@@ -2427,6 +2621,7 @@ func (m *IngressList) Size() (n int) {
 	return n
 }
 
+<<<<<<< HEAD
 func (m *IngressLoadBalancerIngress) Size() (n int) {
 	if m == nil {
 		return 0
@@ -2477,6 +2672,8 @@ func (m *IngressPortStatus) Size() (n int) {
 	return n
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *IngressRule) Size() (n int) {
 	if m == nil {
 		return 0
@@ -2583,8 +2780,11 @@ func (m *NetworkPolicy) Size() (n int) {
 	n += 1 + l + sovGenerated(uint64(l))
 	l = m.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
+<<<<<<< HEAD
 	l = m.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	return n
 }
 
@@ -2682,9 +2882,12 @@ func (m *NetworkPolicyPort) Size() (n int) {
 		l = m.Port.Size()
 		n += 1 + l + sovGenerated(uint64(l))
 	}
+<<<<<<< HEAD
 	if m.EndPort != nil {
 		n += 1 + sovGenerated(uint64(*m.EndPort))
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	return n
 }
 
@@ -2717,6 +2920,7 @@ func (m *NetworkPolicySpec) Size() (n int) {
 	return n
 }
 
+<<<<<<< HEAD
 func (m *NetworkPolicyStatus) Size() (n int) {
 	if m == nil {
 		return 0
@@ -2732,6 +2936,8 @@ func (m *NetworkPolicyStatus) Size() (n int) {
 	return n
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *ServiceBackendPort) Size() (n int) {
 	if m == nil {
 		return 0
@@ -2838,6 +3044,7 @@ func (this *IngressClassList) String() string {
 	}, "")
 	return s
 }
+<<<<<<< HEAD
 func (this *IngressClassParametersReference) String() string {
 	if this == nil {
 		return "nil"
@@ -2852,13 +3059,19 @@ func (this *IngressClassParametersReference) String() string {
 	}, "")
 	return s
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (this *IngressClassSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&IngressClassSpec{`,
 		`Controller:` + fmt.Sprintf("%v", this.Controller) + `,`,
+<<<<<<< HEAD
 		`Parameters:` + strings.Replace(this.Parameters.String(), "IngressClassParametersReference", "IngressClassParametersReference", 1) + `,`,
+=======
+		`Parameters:` + strings.Replace(fmt.Sprintf("%v", this.Parameters), "TypedLocalObjectReference", "v11.TypedLocalObjectReference", 1) + `,`,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		`}`,
 	}, "")
 	return s
@@ -2879,6 +3092,7 @@ func (this *IngressList) String() string {
 	}, "")
 	return s
 }
+<<<<<<< HEAD
 func (this *IngressLoadBalancerIngress) String() string {
 	if this == nil {
 		return "nil"
@@ -2923,6 +3137,8 @@ func (this *IngressPortStatus) String() string {
 	}, "")
 	return s
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (this *IngressRule) String() string {
 	if this == nil {
 		return "nil"
@@ -2983,7 +3199,11 @@ func (this *IngressStatus) String() string {
 		return "nil"
 	}
 	s := strings.Join([]string{`&IngressStatus{`,
+<<<<<<< HEAD
 		`LoadBalancer:` + strings.Replace(strings.Replace(this.LoadBalancer.String(), "IngressLoadBalancerStatus", "IngressLoadBalancerStatus", 1), `&`, ``, 1) + `,`,
+=======
+		`LoadBalancer:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.LoadBalancer), "LoadBalancerStatus", "v11.LoadBalancerStatus", 1), `&`, ``, 1) + `,`,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		`}`,
 	}, "")
 	return s
@@ -3006,7 +3226,10 @@ func (this *NetworkPolicy) String() string {
 	s := strings.Join([]string{`&NetworkPolicy{`,
 		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
 		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "NetworkPolicySpec", "NetworkPolicySpec", 1), `&`, ``, 1) + `,`,
+<<<<<<< HEAD
 		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "NetworkPolicyStatus", "NetworkPolicyStatus", 1), `&`, ``, 1) + `,`,
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		`}`,
 	}, "")
 	return s
@@ -3088,7 +3311,10 @@ func (this *NetworkPolicyPort) String() string {
 	s := strings.Join([]string{`&NetworkPolicyPort{`,
 		`Protocol:` + valueToStringGenerated(this.Protocol) + `,`,
 		`Port:` + strings.Replace(fmt.Sprintf("%v", this.Port), "IntOrString", "intstr.IntOrString", 1) + `,`,
+<<<<<<< HEAD
 		`EndPort:` + valueToStringGenerated(this.EndPort) + `,`,
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		`}`,
 	}, "")
 	return s
@@ -3116,6 +3342,7 @@ func (this *NetworkPolicySpec) String() string {
 	}, "")
 	return s
 }
+<<<<<<< HEAD
 func (this *NetworkPolicyStatus) String() string {
 	if this == nil {
 		return "nil"
@@ -3131,6 +3358,8 @@ func (this *NetworkPolicyStatus) String() string {
 	}, "")
 	return s
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (this *ServiceBackendPort) String() string {
 	if this == nil {
 		return "nil"
@@ -3283,7 +3512,14 @@ func (m *HTTPIngressPath) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3367,7 +3603,14 @@ func (m *HTTPIngressRuleValue) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3481,7 +3724,14 @@ func (m *IPBlock) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3630,7 +3880,14 @@ func (m *Ingress) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3752,7 +4009,14 @@ func (m *IngressBackend) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3868,7 +4132,14 @@ func (m *IngressClass) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3985,6 +4256,7 @@ func (m *IngressClassList) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthGenerated
 			}
@@ -4199,6 +4471,12 @@ func (m *IngressClassParametersReference) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -4304,7 +4582,11 @@ func (m *IngressClassSpec) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Parameters == nil {
+<<<<<<< HEAD
 				m.Parameters = &IngressClassParametersReference{}
+=======
+				m.Parameters = &v11.TypedLocalObjectReference{}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			}
 			if err := m.Parameters.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -4316,7 +4598,14 @@ func (m *IngressClassSpec) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -4433,6 +4722,7 @@ func (m *IngressList) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthGenerated
 			}
@@ -4800,6 +5090,12 @@ func (m *IngressPortStatus) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -4914,7 +5210,14 @@ func (m *IngressRule) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5000,7 +5303,14 @@ func (m *IngressRuleValue) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5115,7 +5425,14 @@ func (m *IngressServiceBackend) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5302,7 +5619,14 @@ func (m *IngressSpec) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5385,7 +5709,14 @@ func (m *IngressStatus) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5499,7 +5830,14 @@ func (m *IngressTLS) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5609,6 +5947,7 @@ func (m *NetworkPolicy) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+<<<<<<< HEAD
 		case 3:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
@@ -5642,13 +5981,22 @@ func (m *NetworkPolicy) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		default:
 			iNdEx = preIndex
 			skippy, err := skipGenerated(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5766,7 +6114,14 @@ func (m *NetworkPolicyEgressRule) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5884,7 +6239,14 @@ func (m *NetworkPolicyIngressRule) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -6001,7 +6363,14 @@ func (m *NetworkPolicyList) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -6159,7 +6528,14 @@ func (m *NetworkPolicyPeer) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -6272,6 +6648,7 @@ func (m *NetworkPolicyPort) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+<<<<<<< HEAD
 		case 3:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field EndPort", wireType)
@@ -6292,13 +6669,22 @@ func (m *NetworkPolicyPort) Unmarshal(dAtA []byte) error {
 				}
 			}
 			m.EndPort = &v
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		default:
 			iNdEx = preIndex
 			skippy, err := skipGenerated(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -6481,6 +6867,7 @@ func (m *NetworkPolicySpec) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthGenerated
 			}
@@ -6566,6 +6953,12 @@ func (m *NetworkPolicyStatus) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -6666,7 +7059,14 @@ func (m *ServiceBackendPort) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {

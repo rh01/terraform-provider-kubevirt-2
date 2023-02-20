@@ -20,15 +20,21 @@ package v1beta1
 
 import (
 	"context"
+<<<<<<< HEAD
 	json "encoding/json"
 	"fmt"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"time"
 
 	v1beta1 "k8s.io/api/policy/v1beta1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
+<<<<<<< HEAD
 	policyv1beta1 "k8s.io/client-go/applyconfigurations/policy/v1beta1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	scheme "k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
 )
@@ -50,8 +56,11 @@ type PodDisruptionBudgetInterface interface {
 	List(ctx context.Context, opts v1.ListOptions) (*v1beta1.PodDisruptionBudgetList, error)
 	Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error)
 	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *v1beta1.PodDisruptionBudget, err error)
+<<<<<<< HEAD
 	Apply(ctx context.Context, podDisruptionBudget *policyv1beta1.PodDisruptionBudgetApplyConfiguration, opts v1.ApplyOptions) (result *v1beta1.PodDisruptionBudget, err error)
 	ApplyStatus(ctx context.Context, podDisruptionBudget *policyv1beta1.PodDisruptionBudgetApplyConfiguration, opts v1.ApplyOptions) (result *v1beta1.PodDisruptionBudget, err error)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	PodDisruptionBudgetExpansion
 }
 
@@ -198,6 +207,7 @@ func (c *podDisruptionBudgets) Patch(ctx context.Context, name string, pt types.
 		Into(result)
 	return
 }
+<<<<<<< HEAD
 
 // Apply takes the given apply declarative configuration, applies it and returns the applied podDisruptionBudget.
 func (c *podDisruptionBudgets) Apply(ctx context.Context, podDisruptionBudget *policyv1beta1.PodDisruptionBudgetApplyConfiguration, opts v1.ApplyOptions) (result *v1beta1.PodDisruptionBudget, err error) {
@@ -254,3 +264,5 @@ func (c *podDisruptionBudgets) ApplyStatus(ctx context.Context, podDisruptionBud
 		Into(result)
 	return
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

@@ -24,9 +24,13 @@ import (
 // +genclient
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.16
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:deprecated=1.21
 // +k8s:prerelease-lifecycle-gen:removed=1.25
 // +k8s:prerelease-lifecycle-gen:replacement=discovery.k8s.io,v1,EndpointSlice
+=======
+// +k8s:prerelease-lifecycle-gen:deprecated=1.22
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // EndpointSlice represents a subset of the endpoints that implement a service.
 // For a given service there may be multiple EndpointSlice objects, selected by
@@ -62,6 +66,15 @@ type EndpointSlice struct {
 type AddressType string
 
 const (
+<<<<<<< HEAD
+=======
+	// AddressTypeIP represents an IP Address.
+	// This address type has been deprecated and has been replaced by the IPv4
+	// and IPv6 adddress types. New resources with this address type will be
+	// considered invalid. This will be fully removed in 1.18.
+	// +deprecated
+	AddressTypeIP = AddressType("IP")
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// AddressTypeIPv4 represents an IPv4 Address.
 	AddressTypeIPv4 = AddressType(v1.IPv4Protocol)
 	// AddressTypeIPv6 represents an IPv6 Address.
@@ -76,8 +89,12 @@ type Endpoint struct {
 	// according to the corresponding EndpointSlice addressType field. Consumers
 	// must handle different types of addresses in the context of their own
 	// capabilities. This must contain at least one address but no more than
+<<<<<<< HEAD
 	// 100. These are all assumed to be fungible and clients may choose to only
 	// use the first element. Refer to: https://issue.k8s.io/106267
+=======
+	// 100.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +listType=set
 	Addresses []string `json:"addresses" protobuf:"bytes,1,rep,name=addresses"`
 	// conditions contains information about the current status of the endpoint.
@@ -85,8 +102,13 @@ type Endpoint struct {
 	// hostname of this endpoint. This field may be used by consumers of
 	// endpoints to distinguish endpoints from each other (e.g. in DNS names).
 	// Multiple endpoints which use the same hostname should be considered
+<<<<<<< HEAD
 	// fungible (e.g. multiple A values in DNS). Must be lowercase and pass DNS
 	// Label (RFC 1123) validation.
+=======
+	// fungible (e.g. multiple A values in DNS). Must pass DNS Label (RFC 1123)
+	// validation.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	Hostname *string `json:"hostname,omitempty" protobuf:"bytes,3,opt,name=hostname"`
 	// targetRef is a reference to a Kubernetes object that represents this
@@ -105,6 +127,7 @@ type Endpoint struct {
 	//   endpoint is located. This should match the corresponding node label.
 	// * topology.kubernetes.io/region: the value indicates the region where the
 	//   endpoint is located. This should match the corresponding node label.
+<<<<<<< HEAD
 	// This field is deprecated and will be removed in future api versions.
 	// +optional
 	Topology map[string]string `json:"topology,omitempty" protobuf:"bytes,5,opt,name=topology"`
@@ -117,6 +140,10 @@ type Endpoint struct {
 	// +featureGate=TopologyAwareHints
 	// +optional
 	Hints *EndpointHints `json:"hints,omitempty" protobuf:"bytes,7,opt,name=hints"`
+=======
+	// +optional
+	Topology map[string]string `json:"topology,omitempty" protobuf:"bytes,5,opt,name=topology"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // EndpointConditions represents the current condition of an endpoint.
@@ -124,6 +151,7 @@ type EndpointConditions struct {
 	// ready indicates that this endpoint is prepared to receive traffic,
 	// according to whatever system is managing the endpoint. A nil value
 	// indicates an unknown state. In most cases consumers should interpret this
+<<<<<<< HEAD
 	// unknown state as ready. For compatibility reasons, ready should never be
 	// "true" for terminating endpoints.
 	// +optional
@@ -155,6 +183,11 @@ type EndpointHints struct {
 type ForZone struct {
 	// name represents the name of the zone.
 	Name string `json:"name" protobuf:"bytes,1,name=name"`
+=======
+	// unknown state as ready.
+	// +optional
+	Ready *bool `json:"ready,omitempty" protobuf:"bytes,1,name=ready"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // EndpointPort represents a Port used by an EndpointSlice
@@ -179,7 +212,11 @@ type EndpointPort struct {
 	// The application protocol for this port.
 	// This field follows standard Kubernetes label syntax.
 	// Un-prefixed names are reserved for IANA standard service names (as per
+<<<<<<< HEAD
 	// RFC-6335 and https://www.iana.org/assignments/service-names).
+=======
+	// RFC-6335 and http://www.iana.org/assignments/service-names).
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// Non-standard protocols should use prefixed names such as
 	// mycompany.com/my-custom-protocol.
 	// +optional
@@ -188,9 +225,13 @@ type EndpointPort struct {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.16
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:deprecated=1.21
 // +k8s:prerelease-lifecycle-gen:removed=1.25
 // +k8s:prerelease-lifecycle-gen:replacement=discovery.k8s.io,v1,EndpointSlice
+=======
+// +k8s:prerelease-lifecycle-gen:deprecated=1.22
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // EndpointSliceList represents a list of endpoint slices
 type EndpointSliceList struct {

@@ -6,7 +6,10 @@ package language
 
 import (
 	"errors"
+<<<<<<< HEAD
 	"sort"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"strconv"
 	"strings"
 
@@ -44,6 +47,7 @@ func Parse(s string) (t Tag, err error) {
 // https://www.unicode.org/reports/tr35/#Unicode_Language_and_Locale_Identifiers.
 // The resulting tag is canonicalized using the canonicalization type c.
 func (c CanonType) Parse(s string) (t Tag, err error) {
+<<<<<<< HEAD
 	defer func() {
 		if recover() != nil {
 			t = Tag{}
@@ -51,6 +55,8 @@ func (c CanonType) Parse(s string) (t Tag, err error) {
 		}
 	}()
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	tt, err := language.Parse(s)
 	if err != nil {
 		return makeTag(tt), err
@@ -87,6 +93,7 @@ func Compose(part ...interface{}) (t Tag, err error) {
 // tag is returned after canonicalizing using CanonType c. If one or more errors
 // are encountered, one of the errors is returned.
 func (c CanonType) Compose(part ...interface{}) (t Tag, err error) {
+<<<<<<< HEAD
 	defer func() {
 		if recover() != nil {
 			t = Tag{}
@@ -94,6 +101,8 @@ func (c CanonType) Compose(part ...interface{}) (t Tag, err error) {
 		}
 	}()
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	var b language.Builder
 	if err = update(&b, part...); err != nil {
 		return und, err
@@ -148,7 +157,10 @@ func update(b *language.Builder, part ...interface{}) (err error) {
 }
 
 var errInvalidWeight = errors.New("ParseAcceptLanguage: invalid weight")
+<<<<<<< HEAD
 var errTagListTooLarge = errors.New("tag list exceeds max length")
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // ParseAcceptLanguage parses the contents of an Accept-Language header as
 // defined in http://www.ietf.org/rfc/rfc2616.txt and returns a list of Tags and
@@ -158,6 +170,7 @@ var errTagListTooLarge = errors.New("tag list exceeds max length")
 // Tags with a weight of zero will be dropped. An error will be returned if the
 // input could not be parsed.
 func ParseAcceptLanguage(s string) (tag []Tag, q []float32, err error) {
+<<<<<<< HEAD
 	defer func() {
 		if recover() != nil {
 			tag = nil
@@ -170,6 +183,8 @@ func ParseAcceptLanguage(s string) (tag []Tag, q []float32, err error) {
 		return nil, nil, errTagListTooLarge
 	}
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	var entry string
 	for s != "" {
 		if entry, s = split(s, ','); entry == "" {
@@ -207,7 +222,11 @@ func ParseAcceptLanguage(s string) (tag []Tag, q []float32, err error) {
 		tag = append(tag, t)
 		q = append(q, float32(w))
 	}
+<<<<<<< HEAD
 	sort.Stable(&tagSort{tag, q})
+=======
+	sortStable(&tagSort{tag, q})
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	return tag, q, nil
 }
 

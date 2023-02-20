@@ -33,7 +33,11 @@ func In(rt *unicode.RangeTable) Set {
 	return setFunc(func(r rune) bool { return unicode.Is(rt, r) })
 }
 
+<<<<<<< HEAD
 // NotIn creates a Set with a Contains method that returns true for all runes not
+=======
+// In creates a Set with a Contains method that returns true for all runes not
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // in the given RangeTable.
 func NotIn(rt *unicode.RangeTable) Set {
 	return setFunc(func(r rune) bool { return !unicode.Is(rt, r) })

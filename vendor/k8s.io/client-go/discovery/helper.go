@@ -19,13 +19,17 @@ package discovery
 import (
 	"fmt"
 
+<<<<<<< HEAD
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/sets"
 	apimachineryversion "k8s.io/apimachinery/pkg/version"
 )
 
+<<<<<<< HEAD
 // IsResourceEnabled queries the server to determine if the resource specified is present on the server.
 // This is particularly helpful when writing a controller or an e2e test that requires a particular resource to function.
 func IsResourceEnabled(client DiscoveryInterface, resourceToCheck schema.GroupVersionResource) (bool, error) {
@@ -46,6 +50,8 @@ func IsResourceEnabled(client DiscoveryInterface, resourceToCheck schema.GroupVe
 	return false, nil
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // MatchesServerVersion queries the server to compares the build version
 // (git hash) of the client with the server's build version. It returns an error
 // if it failed to contact the server or if the versions are not an exact match.

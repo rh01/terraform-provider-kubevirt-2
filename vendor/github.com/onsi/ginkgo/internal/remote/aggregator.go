@@ -197,11 +197,19 @@ func (aggregator *Aggregator) announceSpec(specSummary *types.SpecSummary) {
 	switch specSummary.State {
 	case types.SpecStatePassed:
 		if specSummary.IsMeasurement {
+<<<<<<< HEAD
 			aggregator.stenographer.AnnounceSuccessfulMeasurement(specSummary, aggregator.config.Succinct)
 		} else if specSummary.RunTime.Seconds() >= aggregator.config.SlowSpecThreshold {
 			aggregator.stenographer.AnnounceSuccessfulSlowSpec(specSummary, aggregator.config.Succinct)
 		} else {
 			aggregator.stenographer.AnnounceSuccessfulSpec(specSummary)
+=======
+			aggregator.stenographer.AnnounceSuccesfulMeasurement(specSummary, aggregator.config.Succinct)
+		} else if specSummary.RunTime.Seconds() >= aggregator.config.SlowSpecThreshold {
+			aggregator.stenographer.AnnounceSuccesfulSlowSpec(specSummary, aggregator.config.Succinct)
+		} else {
+			aggregator.stenographer.AnnounceSuccesfulSpec(specSummary)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		}
 
 	case types.SpecStatePending:

@@ -33,9 +33,12 @@ type PodDisruptionBudgetSpec struct {
 
 	// Label query over pods whose evictions are managed by the disruption
 	// budget.
+<<<<<<< HEAD
 	// A null selector selects no pods.
 	// An empty selector ({}) also selects no pods, which differs from standard behavior of selecting all pods.
 	// In policy/v1, an empty selector will select all pods in the namespace.
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	Selector *metav1.LabelSelector `json:"selector,omitempty" protobuf:"bytes,2,opt,name=selector"`
 
@@ -45,6 +48,7 @@ type PodDisruptionBudgetSpec struct {
 	// by specifying 0. This is a mutually exclusive setting with "minAvailable".
 	// +optional
 	MaxUnavailable *intstr.IntOrString `json:"maxUnavailable,omitempty" protobuf:"bytes,3,opt,name=maxUnavailable"`
+<<<<<<< HEAD
 
 	// UnhealthyPodEvictionPolicy defines the criteria for when unhealthy pods
 	// should be considered for eviction. Current implementation considers healthy pods,
@@ -95,6 +99,10 @@ const (
 	AlwaysAllow UnhealthyPodEvictionPolicyType = "AlwaysAllow"
 )
 
+=======
+}
+
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // PodDisruptionBudgetStatus represents information about the status of a
 // PodDisruptionBudget. Status may trail the actual state of a system.
 type PodDisruptionBudgetStatus struct {
@@ -128,6 +136,7 @@ type PodDisruptionBudgetStatus struct {
 
 	// total number of pods counted by this disruption budget
 	ExpectedPods int32 `json:"expectedPods" protobuf:"varint,6,opt,name=expectedPods"`
+<<<<<<< HEAD
 
 	// Conditions contain conditions for PDB. The disruption controller sets the
 	// DisruptionAllowed condition. The following are known values for the reason field
@@ -172,13 +181,24 @@ const (
 // +k8s:prerelease-lifecycle-gen:deprecated=1.21
 // +k8s:prerelease-lifecycle-gen:removed=1.25
 // +k8s:prerelease-lifecycle-gen:replacement=policy,v1,PodDisruptionBudget
+=======
+}
+
+// +genclient
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:prerelease-lifecycle-gen:introduced=1.5
+// +k8s:prerelease-lifecycle-gen:deprecated=1.22
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // PodDisruptionBudget is an object to define the max disruption that can be caused to a collection of pods
 type PodDisruptionBudget struct {
 	metav1.TypeMeta `json:",inline"`
+<<<<<<< HEAD
 
 	// Standard object's metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
@@ -192,13 +212,18 @@ type PodDisruptionBudget struct {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.5
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:deprecated=1.21
 // +k8s:prerelease-lifecycle-gen:removed=1.25
 // +k8s:prerelease-lifecycle-gen:replacement=policy,v1,PodDisruptionBudgetList
+=======
+// +k8s:prerelease-lifecycle-gen:deprecated=1.22
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // PodDisruptionBudgetList is a collection of PodDisruptionBudgets.
 type PodDisruptionBudgetList struct {
 	metav1.TypeMeta `json:",inline"`
+<<<<<<< HEAD
 
 	// Standard object's metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -206,6 +231,11 @@ type PodDisruptionBudgetList struct {
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	// items list individual PodDisruptionBudget objects
 	Items []PodDisruptionBudget `json:"items" protobuf:"bytes,2,rep,name=items"`
+=======
+	// +optional
+	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+	Items           []PodDisruptionBudget `json:"items" protobuf:"bytes,2,rep,name=items"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // +genclient
@@ -233,12 +263,19 @@ type Eviction struct {
 // +genclient:nonNamespaced
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.10
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:deprecated=1.21
 // +k8s:prerelease-lifecycle-gen:removed=1.25
 
 // PodSecurityPolicy governs the ability to make requests that affect the Security Context
 // that will be applied to a pod and container.
 // Deprecated in 1.21.
+=======
+// +k8s:prerelease-lifecycle-gen:deprecated=1.22
+
+// PodSecurityPolicy governs the ability to make requests that affect the Security Context
+// that will be applied to a pod and container.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type PodSecurityPolicy struct {
 	metav1.TypeMeta `json:",inline"`
 	// Standard object's metadata.
@@ -326,6 +363,10 @@ type PodSecurityPolicySpec struct {
 	AllowedFlexVolumes []AllowedFlexVolume `json:"allowedFlexVolumes,omitempty" protobuf:"bytes,18,rep,name=allowedFlexVolumes"`
 	// AllowedCSIDrivers is an allowlist of inline CSI drivers that must be explicitly set to be embedded within a pod spec.
 	// An empty value indicates that any CSI driver can be used for inline ephemeral volumes.
+<<<<<<< HEAD
+=======
+	// This is a beta field, and is only honored if the API server enables the CSIInlineVolume feature gate.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	AllowedCSIDrivers []AllowedCSIDriver `json:"allowedCSIDrivers,omitempty" protobuf:"bytes,23,rep,name=allowedCSIDrivers"`
 	// allowedUnsafeSysctls is a list of explicitly allowed unsafe sysctls, defaults to none.
@@ -584,8 +625,12 @@ const AllowAllRuntimeClassNames = "*"
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.10
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:deprecated=1.21
 // +k8s:prerelease-lifecycle-gen:removed=1.25
+=======
+// +k8s:prerelease-lifecycle-gen:deprecated=1.22
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // PodSecurityPolicyList is a list of PodSecurityPolicy objects.
 type PodSecurityPolicyList struct {

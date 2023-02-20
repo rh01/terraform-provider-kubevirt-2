@@ -20,12 +20,18 @@ package kubernetes
 
 import (
 	"fmt"
+<<<<<<< HEAD
 	"net/http"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	discovery "k8s.io/client-go/discovery"
 	admissionregistrationv1 "k8s.io/client-go/kubernetes/typed/admissionregistration/v1"
 	admissionregistrationv1beta1 "k8s.io/client-go/kubernetes/typed/admissionregistration/v1beta1"
+<<<<<<< HEAD
 	internalv1alpha1 "k8s.io/client-go/kubernetes/typed/apiserverinternal/v1alpha1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	appsv1 "k8s.io/client-go/kubernetes/typed/apps/v1"
 	appsv1beta1 "k8s.io/client-go/kubernetes/typed/apps/v1beta1"
 	appsv1beta2 "k8s.io/client-go/kubernetes/typed/apps/v1beta2"
@@ -34,22 +40,34 @@ import (
 	authorizationv1 "k8s.io/client-go/kubernetes/typed/authorization/v1"
 	authorizationv1beta1 "k8s.io/client-go/kubernetes/typed/authorization/v1beta1"
 	autoscalingv1 "k8s.io/client-go/kubernetes/typed/autoscaling/v1"
+<<<<<<< HEAD
 	autoscalingv2 "k8s.io/client-go/kubernetes/typed/autoscaling/v2"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	autoscalingv2beta1 "k8s.io/client-go/kubernetes/typed/autoscaling/v2beta1"
 	autoscalingv2beta2 "k8s.io/client-go/kubernetes/typed/autoscaling/v2beta2"
 	batchv1 "k8s.io/client-go/kubernetes/typed/batch/v1"
 	batchv1beta1 "k8s.io/client-go/kubernetes/typed/batch/v1beta1"
+<<<<<<< HEAD
+=======
+	batchv2alpha1 "k8s.io/client-go/kubernetes/typed/batch/v2alpha1"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	certificatesv1 "k8s.io/client-go/kubernetes/typed/certificates/v1"
 	certificatesv1beta1 "k8s.io/client-go/kubernetes/typed/certificates/v1beta1"
 	coordinationv1 "k8s.io/client-go/kubernetes/typed/coordination/v1"
 	coordinationv1beta1 "k8s.io/client-go/kubernetes/typed/coordination/v1beta1"
 	corev1 "k8s.io/client-go/kubernetes/typed/core/v1"
+<<<<<<< HEAD
 	discoveryv1 "k8s.io/client-go/kubernetes/typed/discovery/v1"
+=======
+	discoveryv1alpha1 "k8s.io/client-go/kubernetes/typed/discovery/v1alpha1"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	discoveryv1beta1 "k8s.io/client-go/kubernetes/typed/discovery/v1beta1"
 	eventsv1 "k8s.io/client-go/kubernetes/typed/events/v1"
 	eventsv1beta1 "k8s.io/client-go/kubernetes/typed/events/v1beta1"
 	extensionsv1beta1 "k8s.io/client-go/kubernetes/typed/extensions/v1beta1"
 	flowcontrolv1alpha1 "k8s.io/client-go/kubernetes/typed/flowcontrol/v1alpha1"
+<<<<<<< HEAD
 	flowcontrolv1beta1 "k8s.io/client-go/kubernetes/typed/flowcontrol/v1beta1"
 	flowcontrolv1beta2 "k8s.io/client-go/kubernetes/typed/flowcontrol/v1beta2"
 	networkingv1 "k8s.io/client-go/kubernetes/typed/networking/v1"
@@ -59,6 +77,12 @@ import (
 	nodev1alpha1 "k8s.io/client-go/kubernetes/typed/node/v1alpha1"
 	nodev1beta1 "k8s.io/client-go/kubernetes/typed/node/v1beta1"
 	policyv1 "k8s.io/client-go/kubernetes/typed/policy/v1"
+=======
+	networkingv1 "k8s.io/client-go/kubernetes/typed/networking/v1"
+	networkingv1beta1 "k8s.io/client-go/kubernetes/typed/networking/v1beta1"
+	nodev1alpha1 "k8s.io/client-go/kubernetes/typed/node/v1alpha1"
+	nodev1beta1 "k8s.io/client-go/kubernetes/typed/node/v1beta1"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	policyv1beta1 "k8s.io/client-go/kubernetes/typed/policy/v1beta1"
 	rbacv1 "k8s.io/client-go/kubernetes/typed/rbac/v1"
 	rbacv1alpha1 "k8s.io/client-go/kubernetes/typed/rbac/v1alpha1"
@@ -66,6 +90,10 @@ import (
 	schedulingv1 "k8s.io/client-go/kubernetes/typed/scheduling/v1"
 	schedulingv1alpha1 "k8s.io/client-go/kubernetes/typed/scheduling/v1alpha1"
 	schedulingv1beta1 "k8s.io/client-go/kubernetes/typed/scheduling/v1beta1"
+<<<<<<< HEAD
+=======
+	settingsv1alpha1 "k8s.io/client-go/kubernetes/typed/settings/v1alpha1"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	storagev1 "k8s.io/client-go/kubernetes/typed/storage/v1"
 	storagev1alpha1 "k8s.io/client-go/kubernetes/typed/storage/v1alpha1"
 	storagev1beta1 "k8s.io/client-go/kubernetes/typed/storage/v1beta1"
@@ -77,7 +105,10 @@ type Interface interface {
 	Discovery() discovery.DiscoveryInterface
 	AdmissionregistrationV1() admissionregistrationv1.AdmissionregistrationV1Interface
 	AdmissionregistrationV1beta1() admissionregistrationv1beta1.AdmissionregistrationV1beta1Interface
+<<<<<<< HEAD
 	InternalV1alpha1() internalv1alpha1.InternalV1alpha1Interface
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	AppsV1() appsv1.AppsV1Interface
 	AppsV1beta1() appsv1beta1.AppsV1beta1Interface
 	AppsV1beta2() appsv1beta2.AppsV1beta2Interface
@@ -86,22 +117,34 @@ type Interface interface {
 	AuthorizationV1() authorizationv1.AuthorizationV1Interface
 	AuthorizationV1beta1() authorizationv1beta1.AuthorizationV1beta1Interface
 	AutoscalingV1() autoscalingv1.AutoscalingV1Interface
+<<<<<<< HEAD
 	AutoscalingV2() autoscalingv2.AutoscalingV2Interface
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	AutoscalingV2beta1() autoscalingv2beta1.AutoscalingV2beta1Interface
 	AutoscalingV2beta2() autoscalingv2beta2.AutoscalingV2beta2Interface
 	BatchV1() batchv1.BatchV1Interface
 	BatchV1beta1() batchv1beta1.BatchV1beta1Interface
+<<<<<<< HEAD
+=======
+	BatchV2alpha1() batchv2alpha1.BatchV2alpha1Interface
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	CertificatesV1() certificatesv1.CertificatesV1Interface
 	CertificatesV1beta1() certificatesv1beta1.CertificatesV1beta1Interface
 	CoordinationV1beta1() coordinationv1beta1.CoordinationV1beta1Interface
 	CoordinationV1() coordinationv1.CoordinationV1Interface
 	CoreV1() corev1.CoreV1Interface
+<<<<<<< HEAD
 	DiscoveryV1() discoveryv1.DiscoveryV1Interface
+=======
+	DiscoveryV1alpha1() discoveryv1alpha1.DiscoveryV1alpha1Interface
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	DiscoveryV1beta1() discoveryv1beta1.DiscoveryV1beta1Interface
 	EventsV1() eventsv1.EventsV1Interface
 	EventsV1beta1() eventsv1beta1.EventsV1beta1Interface
 	ExtensionsV1beta1() extensionsv1beta1.ExtensionsV1beta1Interface
 	FlowcontrolV1alpha1() flowcontrolv1alpha1.FlowcontrolV1alpha1Interface
+<<<<<<< HEAD
 	FlowcontrolV1beta1() flowcontrolv1beta1.FlowcontrolV1beta1Interface
 	FlowcontrolV1beta2() flowcontrolv1beta2.FlowcontrolV1beta2Interface
 	NetworkingV1() networkingv1.NetworkingV1Interface
@@ -111,6 +154,12 @@ type Interface interface {
 	NodeV1alpha1() nodev1alpha1.NodeV1alpha1Interface
 	NodeV1beta1() nodev1beta1.NodeV1beta1Interface
 	PolicyV1() policyv1.PolicyV1Interface
+=======
+	NetworkingV1() networkingv1.NetworkingV1Interface
+	NetworkingV1beta1() networkingv1beta1.NetworkingV1beta1Interface
+	NodeV1alpha1() nodev1alpha1.NodeV1alpha1Interface
+	NodeV1beta1() nodev1beta1.NodeV1beta1Interface
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	PolicyV1beta1() policyv1beta1.PolicyV1beta1Interface
 	RbacV1() rbacv1.RbacV1Interface
 	RbacV1beta1() rbacv1beta1.RbacV1beta1Interface
@@ -118,6 +167,10 @@ type Interface interface {
 	SchedulingV1alpha1() schedulingv1alpha1.SchedulingV1alpha1Interface
 	SchedulingV1beta1() schedulingv1beta1.SchedulingV1beta1Interface
 	SchedulingV1() schedulingv1.SchedulingV1Interface
+<<<<<<< HEAD
+=======
+	SettingsV1alpha1() settingsv1alpha1.SettingsV1alpha1Interface
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	StorageV1beta1() storagev1beta1.StorageV1beta1Interface
 	StorageV1() storagev1.StorageV1Interface
 	StorageV1alpha1() storagev1alpha1.StorageV1alpha1Interface
@@ -129,7 +182,10 @@ type Clientset struct {
 	*discovery.DiscoveryClient
 	admissionregistrationV1      *admissionregistrationv1.AdmissionregistrationV1Client
 	admissionregistrationV1beta1 *admissionregistrationv1beta1.AdmissionregistrationV1beta1Client
+<<<<<<< HEAD
 	internalV1alpha1             *internalv1alpha1.InternalV1alpha1Client
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	appsV1                       *appsv1.AppsV1Client
 	appsV1beta1                  *appsv1beta1.AppsV1beta1Client
 	appsV1beta2                  *appsv1beta2.AppsV1beta2Client
@@ -138,22 +194,34 @@ type Clientset struct {
 	authorizationV1              *authorizationv1.AuthorizationV1Client
 	authorizationV1beta1         *authorizationv1beta1.AuthorizationV1beta1Client
 	autoscalingV1                *autoscalingv1.AutoscalingV1Client
+<<<<<<< HEAD
 	autoscalingV2                *autoscalingv2.AutoscalingV2Client
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	autoscalingV2beta1           *autoscalingv2beta1.AutoscalingV2beta1Client
 	autoscalingV2beta2           *autoscalingv2beta2.AutoscalingV2beta2Client
 	batchV1                      *batchv1.BatchV1Client
 	batchV1beta1                 *batchv1beta1.BatchV1beta1Client
+<<<<<<< HEAD
+=======
+	batchV2alpha1                *batchv2alpha1.BatchV2alpha1Client
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	certificatesV1               *certificatesv1.CertificatesV1Client
 	certificatesV1beta1          *certificatesv1beta1.CertificatesV1beta1Client
 	coordinationV1beta1          *coordinationv1beta1.CoordinationV1beta1Client
 	coordinationV1               *coordinationv1.CoordinationV1Client
 	coreV1                       *corev1.CoreV1Client
+<<<<<<< HEAD
 	discoveryV1                  *discoveryv1.DiscoveryV1Client
+=======
+	discoveryV1alpha1            *discoveryv1alpha1.DiscoveryV1alpha1Client
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	discoveryV1beta1             *discoveryv1beta1.DiscoveryV1beta1Client
 	eventsV1                     *eventsv1.EventsV1Client
 	eventsV1beta1                *eventsv1beta1.EventsV1beta1Client
 	extensionsV1beta1            *extensionsv1beta1.ExtensionsV1beta1Client
 	flowcontrolV1alpha1          *flowcontrolv1alpha1.FlowcontrolV1alpha1Client
+<<<<<<< HEAD
 	flowcontrolV1beta1           *flowcontrolv1beta1.FlowcontrolV1beta1Client
 	flowcontrolV1beta2           *flowcontrolv1beta2.FlowcontrolV1beta2Client
 	networkingV1                 *networkingv1.NetworkingV1Client
@@ -163,6 +231,12 @@ type Clientset struct {
 	nodeV1alpha1                 *nodev1alpha1.NodeV1alpha1Client
 	nodeV1beta1                  *nodev1beta1.NodeV1beta1Client
 	policyV1                     *policyv1.PolicyV1Client
+=======
+	networkingV1                 *networkingv1.NetworkingV1Client
+	networkingV1beta1            *networkingv1beta1.NetworkingV1beta1Client
+	nodeV1alpha1                 *nodev1alpha1.NodeV1alpha1Client
+	nodeV1beta1                  *nodev1beta1.NodeV1beta1Client
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	policyV1beta1                *policyv1beta1.PolicyV1beta1Client
 	rbacV1                       *rbacv1.RbacV1Client
 	rbacV1beta1                  *rbacv1beta1.RbacV1beta1Client
@@ -170,6 +244,10 @@ type Clientset struct {
 	schedulingV1alpha1           *schedulingv1alpha1.SchedulingV1alpha1Client
 	schedulingV1beta1            *schedulingv1beta1.SchedulingV1beta1Client
 	schedulingV1                 *schedulingv1.SchedulingV1Client
+<<<<<<< HEAD
+=======
+	settingsV1alpha1             *settingsv1alpha1.SettingsV1alpha1Client
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	storageV1beta1               *storagev1beta1.StorageV1beta1Client
 	storageV1                    *storagev1.StorageV1Client
 	storageV1alpha1              *storagev1alpha1.StorageV1alpha1Client
@@ -185,11 +263,14 @@ func (c *Clientset) AdmissionregistrationV1beta1() admissionregistrationv1beta1.
 	return c.admissionregistrationV1beta1
 }
 
+<<<<<<< HEAD
 // InternalV1alpha1 retrieves the InternalV1alpha1Client
 func (c *Clientset) InternalV1alpha1() internalv1alpha1.InternalV1alpha1Interface {
 	return c.internalV1alpha1
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // AppsV1 retrieves the AppsV1Client
 func (c *Clientset) AppsV1() appsv1.AppsV1Interface {
 	return c.appsV1
@@ -230,11 +311,14 @@ func (c *Clientset) AutoscalingV1() autoscalingv1.AutoscalingV1Interface {
 	return c.autoscalingV1
 }
 
+<<<<<<< HEAD
 // AutoscalingV2 retrieves the AutoscalingV2Client
 func (c *Clientset) AutoscalingV2() autoscalingv2.AutoscalingV2Interface {
 	return c.autoscalingV2
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // AutoscalingV2beta1 retrieves the AutoscalingV2beta1Client
 func (c *Clientset) AutoscalingV2beta1() autoscalingv2beta1.AutoscalingV2beta1Interface {
 	return c.autoscalingV2beta1
@@ -255,6 +339,14 @@ func (c *Clientset) BatchV1beta1() batchv1beta1.BatchV1beta1Interface {
 	return c.batchV1beta1
 }
 
+<<<<<<< HEAD
+=======
+// BatchV2alpha1 retrieves the BatchV2alpha1Client
+func (c *Clientset) BatchV2alpha1() batchv2alpha1.BatchV2alpha1Interface {
+	return c.batchV2alpha1
+}
+
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // CertificatesV1 retrieves the CertificatesV1Client
 func (c *Clientset) CertificatesV1() certificatesv1.CertificatesV1Interface {
 	return c.certificatesV1
@@ -280,9 +372,15 @@ func (c *Clientset) CoreV1() corev1.CoreV1Interface {
 	return c.coreV1
 }
 
+<<<<<<< HEAD
 // DiscoveryV1 retrieves the DiscoveryV1Client
 func (c *Clientset) DiscoveryV1() discoveryv1.DiscoveryV1Interface {
 	return c.discoveryV1
+=======
+// DiscoveryV1alpha1 retrieves the DiscoveryV1alpha1Client
+func (c *Clientset) DiscoveryV1alpha1() discoveryv1alpha1.DiscoveryV1alpha1Interface {
+	return c.discoveryV1alpha1
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // DiscoveryV1beta1 retrieves the DiscoveryV1beta1Client
@@ -310,6 +408,7 @@ func (c *Clientset) FlowcontrolV1alpha1() flowcontrolv1alpha1.FlowcontrolV1alpha
 	return c.flowcontrolV1alpha1
 }
 
+<<<<<<< HEAD
 // FlowcontrolV1beta1 retrieves the FlowcontrolV1beta1Client
 func (c *Clientset) FlowcontrolV1beta1() flowcontrolv1beta1.FlowcontrolV1beta1Interface {
 	return c.flowcontrolV1beta1
@@ -320,26 +419,34 @@ func (c *Clientset) FlowcontrolV1beta2() flowcontrolv1beta2.FlowcontrolV1beta2In
 	return c.flowcontrolV1beta2
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // NetworkingV1 retrieves the NetworkingV1Client
 func (c *Clientset) NetworkingV1() networkingv1.NetworkingV1Interface {
 	return c.networkingV1
 }
 
+<<<<<<< HEAD
 // NetworkingV1alpha1 retrieves the NetworkingV1alpha1Client
 func (c *Clientset) NetworkingV1alpha1() networkingv1alpha1.NetworkingV1alpha1Interface {
 	return c.networkingV1alpha1
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // NetworkingV1beta1 retrieves the NetworkingV1beta1Client
 func (c *Clientset) NetworkingV1beta1() networkingv1beta1.NetworkingV1beta1Interface {
 	return c.networkingV1beta1
 }
 
+<<<<<<< HEAD
 // NodeV1 retrieves the NodeV1Client
 func (c *Clientset) NodeV1() nodev1.NodeV1Interface {
 	return c.nodeV1
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // NodeV1alpha1 retrieves the NodeV1alpha1Client
 func (c *Clientset) NodeV1alpha1() nodev1alpha1.NodeV1alpha1Interface {
 	return c.nodeV1alpha1
@@ -350,11 +457,14 @@ func (c *Clientset) NodeV1beta1() nodev1beta1.NodeV1beta1Interface {
 	return c.nodeV1beta1
 }
 
+<<<<<<< HEAD
 // PolicyV1 retrieves the PolicyV1Client
 func (c *Clientset) PolicyV1() policyv1.PolicyV1Interface {
 	return c.policyV1
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // PolicyV1beta1 retrieves the PolicyV1beta1Client
 func (c *Clientset) PolicyV1beta1() policyv1beta1.PolicyV1beta1Interface {
 	return c.policyV1beta1
@@ -390,6 +500,14 @@ func (c *Clientset) SchedulingV1() schedulingv1.SchedulingV1Interface {
 	return c.schedulingV1
 }
 
+<<<<<<< HEAD
+=======
+// SettingsV1alpha1 retrieves the SettingsV1alpha1Client
+func (c *Clientset) SettingsV1alpha1() settingsv1alpha1.SettingsV1alpha1Interface {
+	return c.settingsV1alpha1
+}
+
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // StorageV1beta1 retrieves the StorageV1beta1Client
 func (c *Clientset) StorageV1beta1() storagev1beta1.StorageV1beta1Interface {
 	return c.storageV1beta1
@@ -416,6 +534,7 @@ func (c *Clientset) Discovery() discovery.DiscoveryInterface {
 // NewForConfig creates a new Clientset for the given config.
 // If config's RateLimiter is not set and QPS and Burst are acceptable,
 // NewForConfig will generate a rate-limiter in configShallowCopy.
+<<<<<<< HEAD
 // NewForConfig is equivalent to NewForConfigAndClient(c, httpClient),
 // where httpClient was generated with rest.HTTPClientFor(c).
 func NewForConfig(c *rest.Config) (*Clientset, error) {
@@ -440,12 +559,17 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 // NewForConfigAndClient will generate a rate-limiter in configShallowCopy.
 func NewForConfigAndClient(c *rest.Config, httpClient *http.Client) (*Clientset, error) {
 	configShallowCopy := *c
+=======
+func NewForConfig(c *rest.Config) (*Clientset, error) {
+	configShallowCopy := *c
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if configShallowCopy.RateLimiter == nil && configShallowCopy.QPS > 0 {
 		if configShallowCopy.Burst <= 0 {
 			return nil, fmt.Errorf("burst is required to be greater than 0 when RateLimiter is not set and QPS is set to greater than 0")
 		}
 		configShallowCopy.RateLimiter = flowcontrol.NewTokenBucketRateLimiter(configShallowCopy.QPS, configShallowCopy.Burst)
 	}
+<<<<<<< HEAD
 
 	var cs Clientset
 	var err error
@@ -630,11 +754,180 @@ func NewForConfigAndClient(c *rest.Config, httpClient *http.Client) (*Clientset,
 		return nil, err
 	}
 	cs.storageV1alpha1, err = storagev1alpha1.NewForConfigAndClient(&configShallowCopy, httpClient)
+=======
+	var cs Clientset
+	var err error
+	cs.admissionregistrationV1, err = admissionregistrationv1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.admissionregistrationV1beta1, err = admissionregistrationv1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.appsV1, err = appsv1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.appsV1beta1, err = appsv1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.appsV1beta2, err = appsv1beta2.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.authenticationV1, err = authenticationv1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.authenticationV1beta1, err = authenticationv1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.authorizationV1, err = authorizationv1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.authorizationV1beta1, err = authorizationv1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.autoscalingV1, err = autoscalingv1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.autoscalingV2beta1, err = autoscalingv2beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.autoscalingV2beta2, err = autoscalingv2beta2.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.batchV1, err = batchv1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.batchV1beta1, err = batchv1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.batchV2alpha1, err = batchv2alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.certificatesV1, err = certificatesv1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.certificatesV1beta1, err = certificatesv1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.coordinationV1beta1, err = coordinationv1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.coordinationV1, err = coordinationv1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.coreV1, err = corev1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.discoveryV1alpha1, err = discoveryv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.discoveryV1beta1, err = discoveryv1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.eventsV1, err = eventsv1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.eventsV1beta1, err = eventsv1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.extensionsV1beta1, err = extensionsv1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.flowcontrolV1alpha1, err = flowcontrolv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.networkingV1, err = networkingv1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.networkingV1beta1, err = networkingv1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.nodeV1alpha1, err = nodev1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.nodeV1beta1, err = nodev1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.policyV1beta1, err = policyv1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.rbacV1, err = rbacv1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.rbacV1beta1, err = rbacv1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.rbacV1alpha1, err = rbacv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.schedulingV1alpha1, err = schedulingv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.schedulingV1beta1, err = schedulingv1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.schedulingV1, err = schedulingv1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.settingsV1alpha1, err = settingsv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.storageV1beta1, err = storagev1beta1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.storageV1, err = storagev1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.storageV1alpha1, err = storagev1alpha1.NewForConfig(&configShallowCopy)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if err != nil {
 		return nil, err
 	}
 
+<<<<<<< HEAD
 	cs.DiscoveryClient, err = discovery.NewDiscoveryClientForConfigAndClient(&configShallowCopy, httpClient)
+=======
+	cs.DiscoveryClient, err = discovery.NewDiscoveryClientForConfig(&configShallowCopy)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if err != nil {
 		return nil, err
 	}
@@ -644,11 +937,59 @@ func NewForConfigAndClient(c *rest.Config, httpClient *http.Client) (*Clientset,
 // NewForConfigOrDie creates a new Clientset for the given config and
 // panics if there is an error in the config.
 func NewForConfigOrDie(c *rest.Config) *Clientset {
+<<<<<<< HEAD
 	cs, err := NewForConfig(c)
 	if err != nil {
 		panic(err)
 	}
 	return cs
+=======
+	var cs Clientset
+	cs.admissionregistrationV1 = admissionregistrationv1.NewForConfigOrDie(c)
+	cs.admissionregistrationV1beta1 = admissionregistrationv1beta1.NewForConfigOrDie(c)
+	cs.appsV1 = appsv1.NewForConfigOrDie(c)
+	cs.appsV1beta1 = appsv1beta1.NewForConfigOrDie(c)
+	cs.appsV1beta2 = appsv1beta2.NewForConfigOrDie(c)
+	cs.authenticationV1 = authenticationv1.NewForConfigOrDie(c)
+	cs.authenticationV1beta1 = authenticationv1beta1.NewForConfigOrDie(c)
+	cs.authorizationV1 = authorizationv1.NewForConfigOrDie(c)
+	cs.authorizationV1beta1 = authorizationv1beta1.NewForConfigOrDie(c)
+	cs.autoscalingV1 = autoscalingv1.NewForConfigOrDie(c)
+	cs.autoscalingV2beta1 = autoscalingv2beta1.NewForConfigOrDie(c)
+	cs.autoscalingV2beta2 = autoscalingv2beta2.NewForConfigOrDie(c)
+	cs.batchV1 = batchv1.NewForConfigOrDie(c)
+	cs.batchV1beta1 = batchv1beta1.NewForConfigOrDie(c)
+	cs.batchV2alpha1 = batchv2alpha1.NewForConfigOrDie(c)
+	cs.certificatesV1 = certificatesv1.NewForConfigOrDie(c)
+	cs.certificatesV1beta1 = certificatesv1beta1.NewForConfigOrDie(c)
+	cs.coordinationV1beta1 = coordinationv1beta1.NewForConfigOrDie(c)
+	cs.coordinationV1 = coordinationv1.NewForConfigOrDie(c)
+	cs.coreV1 = corev1.NewForConfigOrDie(c)
+	cs.discoveryV1alpha1 = discoveryv1alpha1.NewForConfigOrDie(c)
+	cs.discoveryV1beta1 = discoveryv1beta1.NewForConfigOrDie(c)
+	cs.eventsV1 = eventsv1.NewForConfigOrDie(c)
+	cs.eventsV1beta1 = eventsv1beta1.NewForConfigOrDie(c)
+	cs.extensionsV1beta1 = extensionsv1beta1.NewForConfigOrDie(c)
+	cs.flowcontrolV1alpha1 = flowcontrolv1alpha1.NewForConfigOrDie(c)
+	cs.networkingV1 = networkingv1.NewForConfigOrDie(c)
+	cs.networkingV1beta1 = networkingv1beta1.NewForConfigOrDie(c)
+	cs.nodeV1alpha1 = nodev1alpha1.NewForConfigOrDie(c)
+	cs.nodeV1beta1 = nodev1beta1.NewForConfigOrDie(c)
+	cs.policyV1beta1 = policyv1beta1.NewForConfigOrDie(c)
+	cs.rbacV1 = rbacv1.NewForConfigOrDie(c)
+	cs.rbacV1beta1 = rbacv1beta1.NewForConfigOrDie(c)
+	cs.rbacV1alpha1 = rbacv1alpha1.NewForConfigOrDie(c)
+	cs.schedulingV1alpha1 = schedulingv1alpha1.NewForConfigOrDie(c)
+	cs.schedulingV1beta1 = schedulingv1beta1.NewForConfigOrDie(c)
+	cs.schedulingV1 = schedulingv1.NewForConfigOrDie(c)
+	cs.settingsV1alpha1 = settingsv1alpha1.NewForConfigOrDie(c)
+	cs.storageV1beta1 = storagev1beta1.NewForConfigOrDie(c)
+	cs.storageV1 = storagev1.NewForConfigOrDie(c)
+	cs.storageV1alpha1 = storagev1alpha1.NewForConfigOrDie(c)
+
+	cs.DiscoveryClient = discovery.NewDiscoveryClientForConfigOrDie(c)
+	return &cs
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // New creates a new Clientset for the given RESTClient.
@@ -656,7 +997,10 @@ func New(c rest.Interface) *Clientset {
 	var cs Clientset
 	cs.admissionregistrationV1 = admissionregistrationv1.New(c)
 	cs.admissionregistrationV1beta1 = admissionregistrationv1beta1.New(c)
+<<<<<<< HEAD
 	cs.internalV1alpha1 = internalv1alpha1.New(c)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	cs.appsV1 = appsv1.New(c)
 	cs.appsV1beta1 = appsv1beta1.New(c)
 	cs.appsV1beta2 = appsv1beta2.New(c)
@@ -665,22 +1009,34 @@ func New(c rest.Interface) *Clientset {
 	cs.authorizationV1 = authorizationv1.New(c)
 	cs.authorizationV1beta1 = authorizationv1beta1.New(c)
 	cs.autoscalingV1 = autoscalingv1.New(c)
+<<<<<<< HEAD
 	cs.autoscalingV2 = autoscalingv2.New(c)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	cs.autoscalingV2beta1 = autoscalingv2beta1.New(c)
 	cs.autoscalingV2beta2 = autoscalingv2beta2.New(c)
 	cs.batchV1 = batchv1.New(c)
 	cs.batchV1beta1 = batchv1beta1.New(c)
+<<<<<<< HEAD
+=======
+	cs.batchV2alpha1 = batchv2alpha1.New(c)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	cs.certificatesV1 = certificatesv1.New(c)
 	cs.certificatesV1beta1 = certificatesv1beta1.New(c)
 	cs.coordinationV1beta1 = coordinationv1beta1.New(c)
 	cs.coordinationV1 = coordinationv1.New(c)
 	cs.coreV1 = corev1.New(c)
+<<<<<<< HEAD
 	cs.discoveryV1 = discoveryv1.New(c)
+=======
+	cs.discoveryV1alpha1 = discoveryv1alpha1.New(c)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	cs.discoveryV1beta1 = discoveryv1beta1.New(c)
 	cs.eventsV1 = eventsv1.New(c)
 	cs.eventsV1beta1 = eventsv1beta1.New(c)
 	cs.extensionsV1beta1 = extensionsv1beta1.New(c)
 	cs.flowcontrolV1alpha1 = flowcontrolv1alpha1.New(c)
+<<<<<<< HEAD
 	cs.flowcontrolV1beta1 = flowcontrolv1beta1.New(c)
 	cs.flowcontrolV1beta2 = flowcontrolv1beta2.New(c)
 	cs.networkingV1 = networkingv1.New(c)
@@ -690,6 +1046,12 @@ func New(c rest.Interface) *Clientset {
 	cs.nodeV1alpha1 = nodev1alpha1.New(c)
 	cs.nodeV1beta1 = nodev1beta1.New(c)
 	cs.policyV1 = policyv1.New(c)
+=======
+	cs.networkingV1 = networkingv1.New(c)
+	cs.networkingV1beta1 = networkingv1beta1.New(c)
+	cs.nodeV1alpha1 = nodev1alpha1.New(c)
+	cs.nodeV1beta1 = nodev1beta1.New(c)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	cs.policyV1beta1 = policyv1beta1.New(c)
 	cs.rbacV1 = rbacv1.New(c)
 	cs.rbacV1beta1 = rbacv1beta1.New(c)
@@ -697,6 +1059,10 @@ func New(c rest.Interface) *Clientset {
 	cs.schedulingV1alpha1 = schedulingv1alpha1.New(c)
 	cs.schedulingV1beta1 = schedulingv1beta1.New(c)
 	cs.schedulingV1 = schedulingv1.New(c)
+<<<<<<< HEAD
+=======
+	cs.settingsV1alpha1 = settingsv1alpha1.New(c)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	cs.storageV1beta1 = storagev1beta1.New(c)
 	cs.storageV1 = storagev1.New(c)
 	cs.storageV1alpha1 = storagev1alpha1.New(c)

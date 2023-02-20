@@ -26,13 +26,19 @@ type Rule struct {
 	// APIGroups is the API groups the resources belong to. '*' is all groups.
 	// If '*' is present, the length of the slice must be one.
 	// Required.
+<<<<<<< HEAD
 	// +listType=atomic
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	APIGroups []string `json:"apiGroups,omitempty" protobuf:"bytes,1,rep,name=apiGroups"`
 
 	// APIVersions is the API versions the resources belong to. '*' is all versions.
 	// If '*' is present, the length of the slice must be one.
 	// Required.
+<<<<<<< HEAD
 	// +listType=atomic
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	APIVersions []string `json:"apiVersions,omitempty" protobuf:"bytes,2,rep,name=apiVersions"`
 
 	// Resources is a list of resources this rule applies to.
@@ -50,7 +56,10 @@ type Rule struct {
 	//
 	// Depending on the enclosing object, subresources might not be allowed.
 	// Required.
+<<<<<<< HEAD
 	// +listType=atomic
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	Resources []string `json:"resources,omitempty" protobuf:"bytes,3,rep,name=resources"`
 
 	// scope specifies the scope of this rule.
@@ -66,8 +75,11 @@ type Rule struct {
 	Scope *ScopeType `json:"scope,omitempty" protobuf:"bytes,4,rep,name=scope"`
 }
 
+<<<<<<< HEAD
 // ScopeType specifies a scope for a Rule.
 // +enum
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type ScopeType string
 
 const (
@@ -80,8 +92,11 @@ const (
 	AllScopes ScopeType = "*"
 )
 
+<<<<<<< HEAD
 // FailurePolicyType specifies a failure policy that defines how unrecognized errors from the admission endpoint are handled.
 // +enum
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type FailurePolicyType string
 
 const (
@@ -91,19 +106,30 @@ const (
 	Fail FailurePolicyType = "Fail"
 )
 
+<<<<<<< HEAD
 // MatchPolicyType specifies the type of match policy.
 // +enum
 type MatchPolicyType string
 
 const (
 	// Exact means requests should only be sent to the webhook if they exactly match a given rule.
+=======
+// MatchPolicyType specifies the type of match policy
+type MatchPolicyType string
+
+const (
+	// Exact means requests should only be sent to the webhook if they exactly match a given rule
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	Exact MatchPolicyType = "Exact"
 	// Equivalent means requests should be sent to the webhook if they modify a resource listed in rules via another API group or version.
 	Equivalent MatchPolicyType = "Equivalent"
 )
 
+<<<<<<< HEAD
 // SideEffectClass specifies the types of side effects a webhook may have.
 // +enum
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type SideEffectClass string
 
 const (
@@ -286,7 +312,11 @@ type ValidatingWebhook struct {
 	// SideEffects states whether this webhook has side effects.
 	// Acceptable values are: None, NoneOnDryRun (webhooks created via v1beta1 may also specify Some or Unknown).
 	// Webhooks with side effects MUST implement a reconciliation system, since a request may be
+<<<<<<< HEAD
 	// rejected by a future step in the admission chain and the side effects therefore need to be undone.
+=======
+	// rejected by a future step in the admission change and the side effects therefore need to be undone.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// Requests with the dryRun attribute will be auto-rejected if they match a webhook with
 	// sideEffects == Unknown or Some.
 	SideEffects *SideEffectClass `json:"sideEffects" protobuf:"bytes,6,opt,name=sideEffects,casttype=SideEffectClass"`
@@ -415,7 +445,11 @@ type MutatingWebhook struct {
 	// SideEffects states whether this webhook has side effects.
 	// Acceptable values are: None, NoneOnDryRun (webhooks created via v1beta1 may also specify Some or Unknown).
 	// Webhooks with side effects MUST implement a reconciliation system, since a request may be
+<<<<<<< HEAD
 	// rejected by a future step in the admission chain and the side effects therefore need to be undone.
+=======
+	// rejected by a future step in the admission change and the side effects therefore need to be undone.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// Requests with the dryRun attribute will be auto-rejected if they match a webhook with
 	// sideEffects == Unknown or Some.
 	SideEffects *SideEffectClass `json:"sideEffects" protobuf:"bytes,6,opt,name=sideEffects,casttype=SideEffectClass"`
@@ -457,7 +491,10 @@ type MutatingWebhook struct {
 }
 
 // ReinvocationPolicyType specifies what type of policy the admission hook uses.
+<<<<<<< HEAD
 // +enum
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type ReinvocationPolicyType string
 
 const (
@@ -477,15 +514,21 @@ type RuleWithOperations struct {
 	// for all of those operations and any future admission operations that are added.
 	// If '*' is present, the length of the slice must be one.
 	// Required.
+<<<<<<< HEAD
 	// +listType=atomic
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	Operations []OperationType `json:"operations,omitempty" protobuf:"bytes,1,rep,name=operations,casttype=OperationType"`
 	// Rule is embedded, it describes other criteria of the rule, like
 	// APIGroups, APIVersions, Resources, etc.
 	Rule `json:",inline" protobuf:"bytes,2,opt,name=rule"`
 }
 
+<<<<<<< HEAD
 // OperationType specifies an operation for a request.
 // +enum
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type OperationType string
 
 // The constants should be kept in sync with those defined in k8s.io/kubernetes/pkg/admission/interface.go.

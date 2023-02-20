@@ -17,7 +17,11 @@ limitations under the License.
 package v1alpha1
 
 import (
+<<<<<<< HEAD
 	v1 "k8s.io/api/core/v1"
+=======
+	"k8s.io/api/core/v1"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -25,9 +29,12 @@ import (
 // +genclient
 // +genclient:nonNamespaced
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:introduced=1.9
 // +k8s:prerelease-lifecycle-gen:deprecated=1.21
 // +k8s:prerelease-lifecycle-gen:replacement=storage.k8s.io,v1,VolumeAttachment
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // VolumeAttachment captures the intent to attach or detach the specified volume
 // to/from the specified node.
@@ -53,9 +60,12 @@ type VolumeAttachment struct {
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:introduced=1.9
 // +k8s:prerelease-lifecycle-gen:deprecated=1.21
 // +k8s:prerelease-lifecycle-gen:replacement=storage.k8s.io,v1,VolumeAttachmentList
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // VolumeAttachmentList is a collection of VolumeAttachment objects.
 type VolumeAttachmentList struct {
@@ -144,9 +154,12 @@ type VolumeError struct {
 
 // +genclient
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:introduced=1.19
 // +k8s:prerelease-lifecycle-gen:deprecated=1.21
 // +k8s:prerelease-lifecycle-gen:replacement=storage.k8s.io,v1beta1,CSIStorageCapacity
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // CSIStorageCapacity stores the result of one CSI GetCapacity call.
 // For a given StorageClass, this describes the available capacity in a
@@ -165,6 +178,7 @@ type VolumeError struct {
 //
 // The producer of these objects can decide which approach is more suitable.
 //
+<<<<<<< HEAD
 // They are consumed by the kube-scheduler when a CSI driver opts into
 // capacity-aware scheduling with CSIDriverSpec.StorageCapacity. The scheduler
 // compares the MaximumVolumeSize against the requested size of pending volumes
@@ -172,6 +186,9 @@ type VolumeError struct {
 // to a comparison against the less precise Capacity. If that is also unset,
 // the scheduler assumes that capacity is insufficient and tries some other
 // node.
+=======
+// This is an alpha feature and only available when the CSIStorageCapacity feature is enabled.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type CSIStorageCapacity struct {
 	metav1.TypeMeta `json:",inline"`
 	// Standard object's metadata. The name has no particular meaning. It must be
@@ -210,6 +227,7 @@ type CSIStorageCapacity struct {
 	// The semantic is currently (CSI spec 1.2) defined as:
 	// The available capacity, in bytes, of the storage that can be used
 	// to provision volumes. If not set, that information is currently
+<<<<<<< HEAD
 	// unavailable.
 	//
 	// +optional
@@ -234,6 +252,15 @@ type CSIStorageCapacity struct {
 // +k8s:prerelease-lifecycle-gen:introduced=1.19
 // +k8s:prerelease-lifecycle-gen:deprecated=1.21
 // +k8s:prerelease-lifecycle-gen:replacement=storage.k8s.io,v1beta1,CSIStorageCapacityList
+=======
+	// unavailable and treated like zero capacity.
+	//
+	// +optional
+	Capacity *resource.Quantity `json:"capacity,omitempty" protobuf:"bytes,4,opt,name=capacity"`
+}
+
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // CSIStorageCapacityList is a collection of CSIStorageCapacity objects.
 type CSIStorageCapacityList struct {

@@ -26,15 +26,21 @@ import (
 
 	proto "github.com/gogo/protobuf/proto"
 	k8s_io_api_core_v1 "k8s.io/api/core/v1"
+<<<<<<< HEAD
 	v11 "k8s.io/api/core/v1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
 	math "math"
 	math_bits "math/bits"
 	reflect "reflect"
 	strings "strings"
+<<<<<<< HEAD
 
 	k8s_io_apimachinery_pkg_types "k8s.io/apimachinery/pkg/types"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -48,6 +54,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
+<<<<<<< HEAD
 func (m *CronJob) Reset()      { *m = CronJob{} }
 func (*CronJob) ProtoMessage() {}
 func (*CronJob) Descriptor() ([]byte, []int) {
@@ -164,6 +171,12 @@ func (m *Job) Reset()      { *m = Job{} }
 func (*Job) ProtoMessage() {}
 func (*Job) Descriptor() ([]byte, []int) {
 	return fileDescriptor_3b52da57c93de713, []int{4}
+=======
+func (m *Job) Reset()      { *m = Job{} }
+func (*Job) ProtoMessage() {}
+func (*Job) Descriptor() ([]byte, []int) {
+	return fileDescriptor_3b52da57c93de713, []int{0}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *Job) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -191,7 +204,11 @@ var xxx_messageInfo_Job proto.InternalMessageInfo
 func (m *JobCondition) Reset()      { *m = JobCondition{} }
 func (*JobCondition) ProtoMessage() {}
 func (*JobCondition) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_3b52da57c93de713, []int{5}
+=======
+	return fileDescriptor_3b52da57c93de713, []int{1}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *JobCondition) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -219,7 +236,11 @@ var xxx_messageInfo_JobCondition proto.InternalMessageInfo
 func (m *JobList) Reset()      { *m = JobList{} }
 func (*JobList) ProtoMessage() {}
 func (*JobList) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_3b52da57c93de713, []int{6}
+=======
+	return fileDescriptor_3b52da57c93de713, []int{2}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *JobList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -247,7 +268,11 @@ var xxx_messageInfo_JobList proto.InternalMessageInfo
 func (m *JobSpec) Reset()      { *m = JobSpec{} }
 func (*JobSpec) ProtoMessage() {}
 func (*JobSpec) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_3b52da57c93de713, []int{7}
+=======
+	return fileDescriptor_3b52da57c93de713, []int{3}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *JobSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -275,7 +300,11 @@ var xxx_messageInfo_JobSpec proto.InternalMessageInfo
 func (m *JobStatus) Reset()      { *m = JobStatus{} }
 func (*JobStatus) ProtoMessage() {}
 func (*JobStatus) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_3b52da57c93de713, []int{8}
+=======
+	return fileDescriptor_3b52da57c93de713, []int{4}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *JobStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -300,6 +329,7 @@ func (m *JobStatus) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_JobStatus proto.InternalMessageInfo
 
+<<<<<<< HEAD
 func (m *JobTemplateSpec) Reset()      { *m = JobTemplateSpec{} }
 func (*JobTemplateSpec) ProtoMessage() {}
 func (*JobTemplateSpec) Descriptor() ([]byte, []int) {
@@ -477,17 +507,23 @@ func init() {
 	proto.RegisterType((*CronJobList)(nil), "k8s.io.api.batch.v1.CronJobList")
 	proto.RegisterType((*CronJobSpec)(nil), "k8s.io.api.batch.v1.CronJobSpec")
 	proto.RegisterType((*CronJobStatus)(nil), "k8s.io.api.batch.v1.CronJobStatus")
+=======
+func init() {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	proto.RegisterType((*Job)(nil), "k8s.io.api.batch.v1.Job")
 	proto.RegisterType((*JobCondition)(nil), "k8s.io.api.batch.v1.JobCondition")
 	proto.RegisterType((*JobList)(nil), "k8s.io.api.batch.v1.JobList")
 	proto.RegisterType((*JobSpec)(nil), "k8s.io.api.batch.v1.JobSpec")
 	proto.RegisterType((*JobStatus)(nil), "k8s.io.api.batch.v1.JobStatus")
+<<<<<<< HEAD
 	proto.RegisterType((*JobTemplateSpec)(nil), "k8s.io.api.batch.v1.JobTemplateSpec")
 	proto.RegisterType((*PodFailurePolicy)(nil), "k8s.io.api.batch.v1.PodFailurePolicy")
 	proto.RegisterType((*PodFailurePolicyOnExitCodesRequirement)(nil), "k8s.io.api.batch.v1.PodFailurePolicyOnExitCodesRequirement")
 	proto.RegisterType((*PodFailurePolicyOnPodConditionsPattern)(nil), "k8s.io.api.batch.v1.PodFailurePolicyOnPodConditionsPattern")
 	proto.RegisterType((*PodFailurePolicyRule)(nil), "k8s.io.api.batch.v1.PodFailurePolicyRule")
 	proto.RegisterType((*UncountedTerminatedPods)(nil), "k8s.io.api.batch.v1.UncountedTerminatedPods")
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func init() {
@@ -495,6 +531,7 @@ func init() {
 }
 
 var fileDescriptor_3b52da57c93de713 = []byte{
+<<<<<<< HEAD
 	// 1696 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xcc, 0x58, 0x4f, 0x73, 0xe3, 0x48,
 	0x15, 0x8f, 0xe2, 0xd8, 0xb1, 0xdb, 0xc9, 0xc4, 0xd3, 0xb3, 0x33, 0x63, 0xc2, 0x96, 0x95, 0xd5,
@@ -838,6 +875,68 @@ func (m *CronJobStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		}
 	}
 	return len(dAtA) - i, nil
+=======
+	// 929 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x54, 0x5d, 0x6f, 0xe3, 0x44,
+	0x14, 0xad, 0x9b, 0xa6, 0x4d, 0xa6, 0x1f, 0x5b, 0x06, 0x55, 0x1b, 0x0a, 0xb2, 0x97, 0x20, 0xa1,
+	0x82, 0x84, 0x4d, 0x4b, 0x85, 0x10, 0x02, 0xa4, 0x75, 0x51, 0x25, 0xaa, 0x54, 0x5b, 0x26, 0x59,
+	0x21, 0x21, 0x90, 0x18, 0xdb, 0x37, 0x89, 0x89, 0xed, 0xb1, 0x3c, 0x93, 0x48, 0x7d, 0xe3, 0x27,
+	0xf0, 0x23, 0x10, 0x7f, 0x82, 0x77, 0xd4, 0xc7, 0x7d, 0xdc, 0x27, 0x8b, 0x9a, 0x1f, 0xc0, 0xfb,
+	0x3e, 0xa1, 0x19, 0x3b, 0xb6, 0xd3, 0x26, 0xa2, 0xcb, 0x5b, 0xe6, 0xcc, 0x39, 0xe7, 0x5e, 0xcf,
+	0x3d, 0xb9, 0xe8, 0x8b, 0xc9, 0x67, 0xdc, 0xf4, 0x99, 0x35, 0x99, 0x3a, 0x90, 0x44, 0x20, 0x80,
+	0x5b, 0x33, 0x88, 0x3c, 0x96, 0x58, 0xc5, 0x05, 0x8d, 0x7d, 0xcb, 0xa1, 0xc2, 0x1d, 0x5b, 0xb3,
+	0x63, 0x6b, 0x04, 0x11, 0x24, 0x54, 0x80, 0x67, 0xc6, 0x09, 0x13, 0x0c, 0xbf, 0x99, 0x93, 0x4c,
+	0x1a, 0xfb, 0xa6, 0x22, 0x99, 0xb3, 0xe3, 0xc3, 0x8f, 0x46, 0xbe, 0x18, 0x4f, 0x1d, 0xd3, 0x65,
+	0xa1, 0x35, 0x62, 0x23, 0x66, 0x29, 0xae, 0x33, 0x1d, 0xaa, 0x93, 0x3a, 0xa8, 0x5f, 0xb9, 0xc7,
+	0x61, 0xb7, 0x56, 0xc8, 0x65, 0x09, 0x2c, 0xa9, 0x73, 0x78, 0x5a, 0x71, 0x42, 0xea, 0x8e, 0xfd,
+	0x08, 0x92, 0x6b, 0x2b, 0x9e, 0x8c, 0x24, 0xc0, 0xad, 0x10, 0x04, 0x5d, 0xa6, 0xb2, 0x56, 0xa9,
+	0x92, 0x69, 0x24, 0xfc, 0x10, 0xee, 0x09, 0x3e, 0xfd, 0x2f, 0x01, 0x77, 0xc7, 0x10, 0xd2, 0xbb,
+	0xba, 0xee, 0x3f, 0x1a, 0x6a, 0x5c, 0x30, 0x07, 0xff, 0x84, 0x5a, 0xb2, 0x17, 0x8f, 0x0a, 0xda,
+	0xd1, 0x9e, 0x68, 0x47, 0xdb, 0x27, 0x1f, 0x9b, 0xd5, 0x0b, 0x95, 0x96, 0x66, 0x3c, 0x19, 0x49,
+	0x80, 0x9b, 0x92, 0x6d, 0xce, 0x8e, 0xcd, 0x67, 0xce, 0xcf, 0xe0, 0x8a, 0x4b, 0x10, 0xd4, 0xc6,
+	0x37, 0xa9, 0xb1, 0x96, 0xa5, 0x06, 0xaa, 0x30, 0x52, 0xba, 0xe2, 0xaf, 0xd0, 0x06, 0x8f, 0xc1,
+	0xed, 0xac, 0x2b, 0xf7, 0x77, 0xcc, 0x25, 0xef, 0x6f, 0x5e, 0x30, 0xa7, 0x1f, 0x83, 0x6b, 0xef,
+	0x14, 0x4e, 0x1b, 0xf2, 0x44, 0x94, 0x0e, 0x9f, 0xa3, 0x4d, 0x2e, 0xa8, 0x98, 0xf2, 0x4e, 0x43,
+	0x39, 0xe8, 0x2b, 0x1d, 0x14, 0xcb, 0xde, 0x2b, 0x3c, 0x36, 0xf3, 0x33, 0x29, 0xd4, 0xdd, 0x3f,
+	0x1b, 0x68, 0xe7, 0x82, 0x39, 0x67, 0x2c, 0xf2, 0x7c, 0xe1, 0xb3, 0x08, 0x9f, 0xa2, 0x0d, 0x71,
+	0x1d, 0x83, 0xfa, 0xec, 0xb6, 0xfd, 0x64, 0x5e, 0x7a, 0x70, 0x1d, 0xc3, 0xab, 0xd4, 0xd8, 0xaf,
+	0x73, 0x25, 0x46, 0x14, 0x1b, 0xf7, 0xca, 0x76, 0xd6, 0x95, 0xee, 0x74, 0xb1, 0xdc, 0xab, 0xd4,
+	0x58, 0x92, 0x0e, 0xb3, 0x74, 0x5a, 0x6c, 0x0a, 0x8f, 0xd0, 0x6e, 0x40, 0xb9, 0xb8, 0x4a, 0x98,
+	0x03, 0x03, 0x3f, 0x84, 0xe2, 0x1b, 0x3f, 0x7c, 0xd8, 0x0c, 0xa4, 0xc2, 0x3e, 0x28, 0x1a, 0xd8,
+	0xed, 0xd5, 0x8d, 0xc8, 0xa2, 0x2f, 0x9e, 0x21, 0x2c, 0x81, 0x41, 0x42, 0x23, 0x9e, 0x7f, 0x92,
+	0xac, 0xb6, 0xf1, 0xda, 0xd5, 0x0e, 0x8b, 0x6a, 0xb8, 0x77, 0xcf, 0x8d, 0x2c, 0xa9, 0x80, 0xdf,
+	0x47, 0x9b, 0x09, 0x50, 0xce, 0xa2, 0x4e, 0x53, 0x3d, 0x57, 0x39, 0x1d, 0xa2, 0x50, 0x52, 0xdc,
+	0xe2, 0x0f, 0xd0, 0x56, 0x08, 0x9c, 0xd3, 0x11, 0x74, 0x36, 0x15, 0xf1, 0x51, 0x41, 0xdc, 0xba,
+	0xcc, 0x61, 0x32, 0xbf, 0xef, 0xfe, 0xae, 0xa1, 0xad, 0x0b, 0xe6, 0xf4, 0x7c, 0x2e, 0xf0, 0x0f,
+	0xf7, 0xe2, 0x6b, 0x3e, 0xec, 0x63, 0xa4, 0x5a, 0x85, 0x77, 0xbf, 0xa8, 0xd3, 0x9a, 0x23, 0xb5,
+	0xe8, 0x7e, 0x89, 0x9a, 0xbe, 0x80, 0x50, 0x8e, 0xba, 0x71, 0xb4, 0x7d, 0xd2, 0x59, 0x95, 0x3c,
+	0x7b, 0xb7, 0x30, 0x69, 0x7e, 0x23, 0xe9, 0x24, 0x57, 0x75, 0xff, 0xd8, 0x50, 0x8d, 0xca, 0x2c,
+	0xe3, 0x63, 0xb4, 0x1d, 0xd3, 0x84, 0x06, 0x01, 0x04, 0x3e, 0x0f, 0x55, 0xaf, 0x4d, 0xfb, 0x51,
+	0x96, 0x1a, 0xdb, 0x57, 0x15, 0x4c, 0xea, 0x1c, 0x29, 0x71, 0x59, 0x18, 0x07, 0x20, 0x1f, 0x33,
+	0x8f, 0x5b, 0x21, 0x39, 0xab, 0x60, 0x52, 0xe7, 0xe0, 0x67, 0xe8, 0x80, 0xba, 0xc2, 0x9f, 0xc1,
+	0xd7, 0x40, 0xbd, 0xc0, 0x8f, 0xa0, 0x0f, 0x2e, 0x8b, 0xbc, 0xfc, 0xaf, 0xd3, 0xb0, 0xdf, 0xca,
+	0x52, 0xe3, 0xe0, 0xe9, 0x32, 0x02, 0x59, 0xae, 0xc3, 0xa7, 0x68, 0xc7, 0xa1, 0xee, 0x84, 0x0d,
+	0x87, 0x3d, 0x3f, 0xf4, 0x45, 0x67, 0x4b, 0x35, 0xb1, 0x9f, 0xa5, 0xc6, 0x8e, 0x5d, 0xc3, 0xc9,
+	0x02, 0x0b, 0xff, 0x88, 0x5a, 0x1c, 0x02, 0x70, 0x05, 0x4b, 0x8a, 0x88, 0x7d, 0xf2, 0xc0, 0xa9,
+	0x50, 0x07, 0x82, 0x7e, 0x21, 0xb5, 0x77, 0xe4, 0x58, 0xe6, 0x27, 0x52, 0x5a, 0xe2, 0xcf, 0xd1,
+	0x5e, 0x48, 0xa3, 0x29, 0x2d, 0x99, 0x2a, 0x5b, 0x2d, 0x1b, 0x67, 0xa9, 0xb1, 0x77, 0xb9, 0x70,
+	0x43, 0xee, 0x30, 0xf1, 0xb7, 0xa8, 0x25, 0x20, 0x8c, 0x03, 0x2a, 0xf2, 0xa0, 0x6d, 0x9f, 0xbc,
+	0x57, 0x9f, 0xaa, 0xfc, 0xbf, 0xca, 0x46, 0xae, 0x98, 0x37, 0x28, 0x68, 0x6a, 0x31, 0x95, 0x29,
+	0x99, 0xa3, 0xa4, 0xb4, 0xc1, 0xcf, 0xd1, 0x63, 0x21, 0x82, 0xe2, 0xc5, 0x9e, 0x0e, 0x05, 0x24,
+	0xe7, 0x7e, 0xe4, 0xf3, 0x31, 0x78, 0x9d, 0x96, 0x7a, 0xae, 0xb7, 0xb3, 0xd4, 0x78, 0x3c, 0x18,
+	0xf4, 0x96, 0x51, 0xc8, 0x2a, 0x6d, 0xf7, 0xb7, 0x06, 0x6a, 0x97, 0x5b, 0x0d, 0x3f, 0x47, 0xc8,
+	0x9d, 0xef, 0x10, 0xde, 0xd1, 0x54, 0x1e, 0xdf, 0x5d, 0x95, 0xc7, 0x72, 0xdb, 0x54, 0xab, 0xb9,
+	0x84, 0x38, 0xa9, 0x19, 0xe1, 0xef, 0x50, 0x9b, 0x0b, 0x9a, 0x08, 0xb5, 0x0d, 0xd6, 0x5f, 0x7b,
+	0x1b, 0xec, 0x66, 0xa9, 0xd1, 0xee, 0xcf, 0x0d, 0x48, 0xe5, 0x85, 0x87, 0x68, 0xaf, 0x0a, 0xe6,
+	0xff, 0xdc, 0x6c, 0x6a, 0x9e, 0x67, 0x0b, 0x2e, 0xe4, 0x8e, 0xab, 0xdc, 0x2f, 0x79, 0x72, 0x55,
+	0xd0, 0x9a, 0xd5, 0x7e, 0xc9, 0x63, 0x4e, 0x8a, 0x5b, 0x6c, 0xa1, 0x36, 0x9f, 0xba, 0x2e, 0x80,
+	0x07, 0x9e, 0x8a, 0x4b, 0xd3, 0x7e, 0xa3, 0xa0, 0xb6, 0xfb, 0xf3, 0x0b, 0x52, 0x71, 0xa4, 0xf1,
+	0x90, 0xfa, 0x01, 0x78, 0x2a, 0x26, 0x35, 0xe3, 0x73, 0x85, 0x92, 0xe2, 0xd6, 0x3e, 0xba, 0xb9,
+	0xd5, 0xd7, 0x5e, 0xdc, 0xea, 0x6b, 0x2f, 0x6f, 0xf5, 0xb5, 0x5f, 0x32, 0x5d, 0xbb, 0xc9, 0x74,
+	0xed, 0x45, 0xa6, 0x6b, 0x2f, 0x33, 0x5d, 0xfb, 0x2b, 0xd3, 0xb5, 0x5f, 0xff, 0xd6, 0xd7, 0xbe,
+	0x5f, 0x9f, 0x1d, 0xff, 0x1b, 0x00, 0x00, 0xff, 0xff, 0xc8, 0x73, 0xe7, 0x7a, 0xb8, 0x08, 0x00,
+	0x00,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func (m *Job) Marshal() (dAtA []byte, err error) {
@@ -1023,6 +1122,7 @@ func (m *JobSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+<<<<<<< HEAD
 	if m.PodFailurePolicy != nil {
 		{
 			size, err := m.PodFailurePolicy.MarshalToSizedBuffer(dAtA[:i])
@@ -1052,6 +1152,8 @@ func (m *JobSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x4a
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if m.TTLSecondsAfterFinished != nil {
 		i = encodeVarintGenerated(dAtA, i, uint64(*m.TTLSecondsAfterFinished))
 		i--
@@ -1132,6 +1234,7 @@ func (m *JobStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+<<<<<<< HEAD
 	if m.Ready != nil {
 		i = encodeVarintGenerated(dAtA, i, uint64(*m.Ready))
 		i--
@@ -1154,6 +1257,8 @@ func (m *JobStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i = encodeVarintGenerated(dAtA, i, uint64(len(m.CompletedIndexes)))
 	i--
 	dAtA[i] = 0x3a
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	i = encodeVarintGenerated(dAtA, i, uint64(m.Failed))
 	i--
 	dAtA[i] = 0x30
@@ -1204,6 +1309,7 @@ func (m *JobStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+<<<<<<< HEAD
 func (m *JobTemplateSpec) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -1454,6 +1560,8 @@ func (m *UncountedTerminatedPods) MarshalToSizedBuffer(dAtA []byte) (int, error)
 	return len(dAtA) - i, nil
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func encodeVarintGenerated(dAtA []byte, offset int, v uint64) int {
 	offset -= sovGenerated(v)
 	base := offset
@@ -1465,6 +1573,7 @@ func encodeVarintGenerated(dAtA []byte, offset int, v uint64) int {
 	dAtA[offset] = uint8(v)
 	return base
 }
+<<<<<<< HEAD
 func (m *CronJob) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1551,6 +1660,8 @@ func (m *CronJobStatus) Size() (n int) {
 	return n
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *Job) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1634,6 +1745,7 @@ func (m *JobSpec) Size() (n int) {
 	if m.TTLSecondsAfterFinished != nil {
 		n += 1 + sovGenerated(uint64(*m.TTLSecondsAfterFinished))
 	}
+<<<<<<< HEAD
 	if m.CompletionMode != nil {
 		l = len(*m.CompletionMode)
 		n += 1 + l + sovGenerated(uint64(l))
@@ -1645,6 +1757,8 @@ func (m *JobSpec) Size() (n int) {
 		l = m.PodFailurePolicy.Size()
 		n += 1 + l + sovGenerated(uint64(l))
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	return n
 }
 
@@ -1671,6 +1785,7 @@ func (m *JobStatus) Size() (n int) {
 	n += 1 + sovGenerated(uint64(m.Active))
 	n += 1 + sovGenerated(uint64(m.Succeeded))
 	n += 1 + sovGenerated(uint64(m.Failed))
+<<<<<<< HEAD
 	l = len(m.CompletedIndexes)
 	n += 1 + l + sovGenerated(uint64(l))
 	if m.UncountedTerminatedPods != nil {
@@ -1783,6 +1898,8 @@ func (m *UncountedTerminatedPods) Size() (n int) {
 			n += 1 + l + sovGenerated(uint64(l))
 		}
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	return n
 }
 
@@ -1792,6 +1909,7 @@ func sovGenerated(x uint64) (n int) {
 func sozGenerated(x uint64) (n int) {
 	return sovGenerated(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
+<<<<<<< HEAD
 func (this *CronJob) String() string {
 	if this == nil {
 		return "nil"
@@ -1854,6 +1972,8 @@ func (this *CronJobStatus) String() string {
 	}, "")
 	return s
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (this *Job) String() string {
 	if this == nil {
 		return "nil"
@@ -1910,9 +2030,12 @@ func (this *JobSpec) String() string {
 		`Template:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Template), "PodTemplateSpec", "v11.PodTemplateSpec", 1), `&`, ``, 1) + `,`,
 		`BackoffLimit:` + valueToStringGenerated(this.BackoffLimit) + `,`,
 		`TTLSecondsAfterFinished:` + valueToStringGenerated(this.TTLSecondsAfterFinished) + `,`,
+<<<<<<< HEAD
 		`CompletionMode:` + valueToStringGenerated(this.CompletionMode) + `,`,
 		`Suspend:` + valueToStringGenerated(this.Suspend) + `,`,
 		`PodFailurePolicy:` + strings.Replace(this.PodFailurePolicy.String(), "PodFailurePolicy", "PodFailurePolicy", 1) + `,`,
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		`}`,
 	}, "")
 	return s
@@ -1933,6 +2056,7 @@ func (this *JobStatus) String() string {
 		`Active:` + fmt.Sprintf("%v", this.Active) + `,`,
 		`Succeeded:` + fmt.Sprintf("%v", this.Succeeded) + `,`,
 		`Failed:` + fmt.Sprintf("%v", this.Failed) + `,`,
+<<<<<<< HEAD
 		`CompletedIndexes:` + fmt.Sprintf("%v", this.CompletedIndexes) + `,`,
 		`UncountedTerminatedPods:` + strings.Replace(this.UncountedTerminatedPods.String(), "UncountedTerminatedPods", "UncountedTerminatedPods", 1) + `,`,
 		`Ready:` + valueToStringGenerated(this.Ready) + `,`,
@@ -2013,6 +2137,8 @@ func (this *UncountedTerminatedPods) String() string {
 	s := strings.Join([]string{`&UncountedTerminatedPods{`,
 		`Succeeded:` + fmt.Sprintf("%v", this.Succeeded) + `,`,
 		`Failed:` + fmt.Sprintf("%v", this.Failed) + `,`,
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		`}`,
 	}, "")
 	return s
@@ -2025,6 +2151,7 @@ func valueToStringGenerated(v interface{}) string {
 	pv := reflect.Indirect(rv).Interface()
 	return fmt.Sprintf("*%v", pv)
 }
+<<<<<<< HEAD
 func (m *CronJob) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -2708,6 +2835,8 @@ func (m *CronJobStatus) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *Job) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -2842,7 +2971,14 @@ func (m *Job) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3086,7 +3222,14 @@ func (m *JobCondition) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3203,7 +3346,14 @@ func (m *JobList) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3437,6 +3587,7 @@ func (m *JobSpec) Unmarshal(dAtA []byte) error {
 				}
 			}
 			m.TTLSecondsAfterFinished = &v
+<<<<<<< HEAD
 		case 9:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field CompletionMode", wireType)
@@ -3527,13 +3678,22 @@ func (m *JobSpec) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		default:
 			iNdEx = preIndex
 			skippy, err := skipGenerated(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3740,6 +3900,7 @@ func (m *JobStatus) Unmarshal(dAtA []byte) error {
 					break
 				}
 			}
+<<<<<<< HEAD
 		case 7:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field CompletedIndexes", wireType)
@@ -3828,12 +3989,15 @@ func (m *JobStatus) Unmarshal(dAtA []byte) error {
 				}
 			}
 			m.Ready = &v
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		default:
 			iNdEx = preIndex
 			skippy, err := skipGenerated(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthGenerated
 			}
@@ -4606,6 +4770,12 @@ func (m *UncountedTerminatedPods) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {

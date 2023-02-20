@@ -22,6 +22,7 @@ type ginkgoTestingT interface {
 	Fail()
 }
 
+<<<<<<< HEAD
 type deferredContainerNode struct {
 	text         string
 	body         func()
@@ -42,17 +43,35 @@ type Suite struct {
 	failer              *failer.Failer
 	running             bool
 	expandTopLevelNodes bool
+=======
+type Suite struct {
+	topLevelContainer *containernode.ContainerNode
+	currentContainer  *containernode.ContainerNode
+	containerIndex    int
+	beforeSuiteNode   leafnodes.SuiteNode
+	afterSuiteNode    leafnodes.SuiteNode
+	runner            *specrunner.SpecRunner
+	failer            *failer.Failer
+	running           bool
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func New(failer *failer.Failer) *Suite {
 	topLevelContainer := containernode.New("[Top Level]", types.FlagTypeNone, types.CodeLocation{})
 
 	return &Suite{
+<<<<<<< HEAD
 		topLevelContainer:      topLevelContainer,
 		currentContainer:       topLevelContainer,
 		failer:                 failer,
 		containerIndex:         1,
 		deferredContainerNodes: []deferredContainerNode{},
+=======
+		topLevelContainer: topLevelContainer,
+		currentContainer:  topLevelContainer,
+		failer:            failer,
+		containerIndex:    1,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	}
 }
 
@@ -65,11 +84,14 @@ func (suite *Suite) Run(t ginkgoTestingT, description string, reporters []report
 		panic("ginkgo.parallel.node is one-indexed and must be <= ginkgo.parallel.total")
 	}
 
+<<<<<<< HEAD
 	suite.expandTopLevelNodes = true
 	for _, deferredNode := range suite.deferredContainerNodes {
 		suite.PushContainerNode(deferredNode.text, deferredNode.body, deferredNode.flag, deferredNode.codeLocation)
 	}
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	r := rand.New(rand.NewSource(config.RandomSeed))
 	suite.topLevelContainer.Shuffle(r)
 	iterator, hasProgrammaticFocus := suite.generateSpecsIterator(description, config)
@@ -97,7 +119,11 @@ func (suite *Suite) generateSpecsIterator(description string, config config.Gink
 		specs.Shuffle(rand.New(rand.NewSource(config.RandomSeed)))
 	}
 
+<<<<<<< HEAD
 	specs.ApplyFocus(description, config.FocusStrings, config.SkipStrings)
+=======
+	specs.ApplyFocus(description, config.FocusString, config.SkipString)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	if config.SkipMeasurements {
 		specs.SkipMeasurements()
@@ -119,9 +145,12 @@ func (suite *Suite) generateSpecsIterator(description string, config config.Gink
 }
 
 func (suite *Suite) CurrentRunningSpecSummary() (*types.SpecSummary, bool) {
+<<<<<<< HEAD
 	if !suite.running {
 		return nil, false
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	return suite.runner.CurrentSpecSummary()
 }
 
@@ -154,6 +183,7 @@ func (suite *Suite) SetSynchronizedAfterSuiteNode(bodyA interface{}, bodyB inter
 }
 
 func (suite *Suite) PushContainerNode(text string, body func(), flag types.FlagType, codeLocation types.CodeLocation) {
+<<<<<<< HEAD
 	/*
 		We defer walking the container nodes (which immediately evaluates the `body` function)
 		until `RunSpecs` is called.  We do this by storing off the deferred container nodes.  Then, when
@@ -171,6 +201,8 @@ func (suite *Suite) PushContainerNode(text string, body func(), flag types.FlagT
 		return
 	}
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	container := containernode.New(text, flag, codeLocation)
 	suite.currentContainer.PushContainerNode(container)
 

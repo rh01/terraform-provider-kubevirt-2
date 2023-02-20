@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## 1.16.5
 
 Ginkgo 2.0 now has a Release Candidate.  1.16.5 advertises the existence of the RC.
@@ -125,6 +126,8 @@ You can silence the RC advertisement by setting an `ACK_GINKG_RC=true` environme
 ### Features
 - Add module definition (#630) [78916ab]
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 ## 1.11.0
 
 ### Features
@@ -330,7 +333,11 @@ New Features:
 - `ginkgo -tags=TAG_LIST` passes a list of tags down to the `go build` command.
 - `ginkgo --failFast` aborts the test suite after the first failure.
 - `ginkgo generate file_1 file_2` can take multiple file arguments.
+<<<<<<< HEAD
 - Ginkgo now summarizes any spec failures that occurred at the end of the test run. 
+=======
+- Ginkgo now summarizes any spec failures that occured at the end of the test run. 
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 - `ginkgo --randomizeSuites` will run tests *suites* in random order using the generated/passed-in seed.
 
 Improvements:

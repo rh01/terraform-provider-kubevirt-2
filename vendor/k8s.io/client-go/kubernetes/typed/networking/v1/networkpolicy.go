@@ -20,15 +20,21 @@ package v1
 
 import (
 	"context"
+<<<<<<< HEAD
 	json "encoding/json"
 	"fmt"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"time"
 
 	v1 "k8s.io/api/networking/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
+<<<<<<< HEAD
 	networkingv1 "k8s.io/client-go/applyconfigurations/networking/v1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	scheme "k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
 )
@@ -43,15 +49,21 @@ type NetworkPoliciesGetter interface {
 type NetworkPolicyInterface interface {
 	Create(ctx context.Context, networkPolicy *v1.NetworkPolicy, opts metav1.CreateOptions) (*v1.NetworkPolicy, error)
 	Update(ctx context.Context, networkPolicy *v1.NetworkPolicy, opts metav1.UpdateOptions) (*v1.NetworkPolicy, error)
+<<<<<<< HEAD
 	UpdateStatus(ctx context.Context, networkPolicy *v1.NetworkPolicy, opts metav1.UpdateOptions) (*v1.NetworkPolicy, error)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	Delete(ctx context.Context, name string, opts metav1.DeleteOptions) error
 	DeleteCollection(ctx context.Context, opts metav1.DeleteOptions, listOpts metav1.ListOptions) error
 	Get(ctx context.Context, name string, opts metav1.GetOptions) (*v1.NetworkPolicy, error)
 	List(ctx context.Context, opts metav1.ListOptions) (*v1.NetworkPolicyList, error)
 	Watch(ctx context.Context, opts metav1.ListOptions) (watch.Interface, error)
 	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts metav1.PatchOptions, subresources ...string) (result *v1.NetworkPolicy, err error)
+<<<<<<< HEAD
 	Apply(ctx context.Context, networkPolicy *networkingv1.NetworkPolicyApplyConfiguration, opts metav1.ApplyOptions) (result *v1.NetworkPolicy, err error)
 	ApplyStatus(ctx context.Context, networkPolicy *networkingv1.NetworkPolicyApplyConfiguration, opts metav1.ApplyOptions) (result *v1.NetworkPolicy, err error)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	NetworkPolicyExpansion
 }
 
@@ -141,6 +153,7 @@ func (c *networkPolicies) Update(ctx context.Context, networkPolicy *v1.NetworkP
 	return
 }
 
+<<<<<<< HEAD
 // UpdateStatus was generated because the type contains a Status member.
 // Add a +genclient:noStatus comment above the type to avoid generating UpdateStatus().
 func (c *networkPolicies) UpdateStatus(ctx context.Context, networkPolicy *v1.NetworkPolicy, opts metav1.UpdateOptions) (result *v1.NetworkPolicy, err error) {
@@ -157,6 +170,8 @@ func (c *networkPolicies) UpdateStatus(ctx context.Context, networkPolicy *v1.Ne
 	return
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // Delete takes name of the networkPolicy and deletes it. Returns an error if one occurs.
 func (c *networkPolicies) Delete(ctx context.Context, name string, opts metav1.DeleteOptions) error {
 	return c.client.Delete().
@@ -198,6 +213,7 @@ func (c *networkPolicies) Patch(ctx context.Context, name string, pt types.Patch
 		Into(result)
 	return
 }
+<<<<<<< HEAD
 
 // Apply takes the given apply declarative configuration, applies it and returns the applied networkPolicy.
 func (c *networkPolicies) Apply(ctx context.Context, networkPolicy *networkingv1.NetworkPolicyApplyConfiguration, opts metav1.ApplyOptions) (result *v1.NetworkPolicy, err error) {
@@ -254,3 +270,5 @@ func (c *networkPolicies) ApplyStatus(ctx context.Context, networkPolicy *networ
 		Into(result)
 	return
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

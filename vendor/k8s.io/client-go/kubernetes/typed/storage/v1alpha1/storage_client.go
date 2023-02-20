@@ -19,8 +19,11 @@ limitations under the License.
 package v1alpha1
 
 import (
+<<<<<<< HEAD
 	"net/http"
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	v1alpha1 "k8s.io/api/storage/v1alpha1"
 	"k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
@@ -46,13 +49,17 @@ func (c *StorageV1alpha1Client) VolumeAttachments() VolumeAttachmentInterface {
 }
 
 // NewForConfig creates a new StorageV1alpha1Client for the given config.
+<<<<<<< HEAD
 // NewForConfig is equivalent to NewForConfigAndClient(c, httpClient),
 // where httpClient was generated with rest.HTTPClientFor(c).
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func NewForConfig(c *rest.Config) (*StorageV1alpha1Client, error) {
 	config := *c
 	if err := setConfigDefaults(&config); err != nil {
 		return nil, err
 	}
+<<<<<<< HEAD
 	httpClient, err := rest.HTTPClientFor(&config)
 	if err != nil {
 		return nil, err
@@ -68,6 +75,9 @@ func NewForConfigAndClient(c *rest.Config, h *http.Client) (*StorageV1alpha1Clie
 		return nil, err
 	}
 	client, err := rest.RESTClientForConfigAndClient(&config, h)
+=======
+	client, err := rest.RESTClientFor(&config)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if err != nil {
 		return nil, err
 	}

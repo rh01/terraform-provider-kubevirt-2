@@ -53,6 +53,7 @@ var _ = AfterSuite(func() {
 })
 
 var _ = Describe("Data Volume Test", func() {
+<<<<<<< HEAD
 	testName := "datavolume"
 	tfExecPath := "terraform"
 	It("terraform init", func() {
@@ -61,43 +62,71 @@ var _ = Describe("Data Volume Test", func() {
 		}
 	})
 	It("terraform apply (create new)", func() {
+=======
+	It("create", func() {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		data, err := json.MarshalIndent(vars, "", "  ")
 		if err != nil {
 			Fail(fmt.Sprintf("failed to get data for tfvars file, with error: %s", err))
 		}
+<<<<<<< HEAD
 		tfVarFiles := []*terraform.TfVarFile{
+=======
+		tfVarFiles := []*exec.TfVarFile{
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			{
 				Filename: "terraform.auto.tfvars.json",
 				Data:     data,
 			},
 		}
+<<<<<<< HEAD
 		var extraOpts []tfexec.ApplyOption
 		if err = terraform.Apply(testDir, tfExecPath, tfVarFiles, extraOpts...); err != nil {
+=======
+		if _, err = exec.Apply(testDir, "datavolume", tfVarFiles); err != nil {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			Fail(fmt.Sprintf("failed to create data volumes [%s, %s] in namespace %s, with error: %s", vars.DvFromHttpName, vars.DvFromPVCName, namespace, err))
 		}
 		validateDVs(vars)
 	})
+<<<<<<< HEAD
 	It("terraform apply (update)", func() {
+=======
+	It("update", func() {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		vars.Labels["key2"] = "value2"
 		data, err := json.MarshalIndent(vars, "", "  ")
 		if err != nil {
 			Fail(fmt.Sprintf("failed to get data for tfvars file, with error: %s", err))
 		}
+<<<<<<< HEAD
 		tfVarFiles := []*terraform.TfVarFile{
+=======
+		tfVarFiles := []*exec.TfVarFile{
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			{
 				Filename: "terraform.auto.tfvars.json",
 				Data:     data,
 			},
 		}
+<<<<<<< HEAD
 		var extraOpts []tfexec.ApplyOption
 		if err = terraform.Apply(testDir, tfExecPath, tfVarFiles, extraOpts...); err != nil {
+=======
+		if _, err = exec.Apply(testDir, "datavolume", tfVarFiles); err != nil {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			Fail(fmt.Sprintf("failed to update data volumes [%s, %s] in namespace %s, with error: %s", vars.DvFromHttpName, vars.DvFromPVCName, namespace, err))
 		}
 		validateDVs(vars)
 	})
+<<<<<<< HEAD
 	It("terraform destroy", func() {
 		var extraOpts []tfexec.DestroyOption
 		if err := terraform.Destroy(testDir, tfExecPath, extraOpts...); err != nil {
+=======
+	It("delete", func() {
+		if err := exec.Destroy(testDir, "datavolume"); err != nil {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			Fail(fmt.Sprintf("failed to delete data volumes [%s, %s] in namespace %s, with error: %s", vars.DvFromHttpName, vars.DvFromPVCName, namespace, err))
 		}
 		common.ValidateDatavolume(vars.DvFromHttpName, namespace, nil)

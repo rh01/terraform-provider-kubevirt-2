@@ -34,20 +34,31 @@ const (
 // +genclient
 // +genclient:method=GetScale,verb=get,subresource=scale,result=k8s.io/api/autoscaling/v1.Scale
 // +genclient:method=UpdateScale,verb=update,subresource=scale,input=k8s.io/api/autoscaling/v1.Scale,result=k8s.io/api/autoscaling/v1.Scale
+<<<<<<< HEAD
 // +genclient:method=ApplyScale,verb=apply,subresource=scale,input=k8s.io/api/autoscaling/v1.Scale,result=k8s.io/api/autoscaling/v1.Scale
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 // StatefulSet represents a set of pods with consistent identities.
 // Identities are defined as:
+<<<<<<< HEAD
 //   - Network: A single stable DNS and hostname.
 //   - Storage: As many VolumeClaims as requested.
 //
+=======
+//  - Network: A single stable DNS and hostname.
+//  - Storage: As many VolumeClaims as requested.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // The StatefulSet guarantees that a given network identity will always
 // map to the same storage identity.
 type StatefulSet struct {
 	metav1.TypeMeta `json:",inline"`
+<<<<<<< HEAD
 	// Standard object's metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
@@ -62,7 +73,10 @@ type StatefulSet struct {
 }
 
 // PodManagementPolicyType defines the policy for creating pods under a stateful set.
+<<<<<<< HEAD
 // +enum
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type PodManagementPolicyType string
 
 const (
@@ -92,7 +106,10 @@ type StatefulSetUpdateStrategy struct {
 
 // StatefulSetUpdateStrategyType is a string enumeration type that enumerates
 // all possible update strategies for the StatefulSet controller.
+<<<<<<< HEAD
 // +enum
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type StatefulSetUpdateStrategyType string
 
 const (
@@ -112,6 +129,7 @@ const (
 
 // RollingUpdateStatefulSetStrategy is used to communicate parameter for RollingUpdateStatefulSetStrategyType.
 type RollingUpdateStatefulSetStrategy struct {
+<<<<<<< HEAD
 	// Partition indicates the ordinal at which the StatefulSet should be partitioned
 	// for updates. During a rolling update, all pods from ordinal Replicas-1 to
 	// Partition are updated. All pods from ordinal Partition-1 to 0 remain untouched.
@@ -176,6 +194,13 @@ type StatefulSetOrdinals struct {
 	//   [0, .spec.replicas).
 	// +optional
 	Start int32 `json:"start" protobuf:"varint,1,opt,name=start"`
+=======
+	// Partition indicates the ordinal at which the StatefulSet should be
+	// partitioned.
+	// Default value is 0.
+	// +optional
+	Partition *int32 `json:"partition,omitempty" protobuf:"varint,1,opt,name=partition"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // A StatefulSetSpec is the specification of a StatefulSet.
@@ -196,9 +221,13 @@ type StatefulSetSpec struct {
 	// template is the object that describes the pod that will be created if
 	// insufficient replicas are detected. Each pod stamped out by the StatefulSet
 	// will fulfill this Template, but have a unique identity from the rest
+<<<<<<< HEAD
 	// of the StatefulSet. Each pod will be named with the format
 	// <statefulsetname>-<podindex>. For example, a pod in a StatefulSet named
 	// "web" with index number "3" would be named "web-3".
+=======
+	// of the StatefulSet.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	Template v1.PodTemplateSpec `json:"template" protobuf:"bytes,3,opt,name=template"`
 
 	// volumeClaimTemplates is a list of claims that pods are allowed to reference.
@@ -239,6 +268,7 @@ type StatefulSetSpec struct {
 	// consists of all revisions not represented by a currently applied
 	// StatefulSetSpec version. The default value is 10.
 	RevisionHistoryLimit *int32 `json:"revisionHistoryLimit,omitempty" protobuf:"varint,8,opt,name=revisionHistoryLimit"`
+<<<<<<< HEAD
 
 	// Minimum number of seconds for which a newly created pod should be ready
 	// without any of its container crashing for it to be considered available.
@@ -262,6 +292,8 @@ type StatefulSetSpec struct {
 	// enabled, which is alpha.
 	// +optional
 	Ordinals *StatefulSetOrdinals `json:"ordinals,omitempty" protobuf:"bytes,11,opt,name=ordinals"`
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // StatefulSetStatus represents the current state of a StatefulSet.
@@ -274,7 +306,11 @@ type StatefulSetStatus struct {
 	// replicas is the number of Pods created by the StatefulSet controller.
 	Replicas int32 `json:"replicas" protobuf:"varint,2,opt,name=replicas"`
 
+<<<<<<< HEAD
 	// readyReplicas is the number of pods created for this StatefulSet with a Ready Condition.
+=======
+	// readyReplicas is the number of Pods created by the StatefulSet controller that have a Ready Condition.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	ReadyReplicas int32 `json:"readyReplicas,omitempty" protobuf:"varint,3,opt,name=readyReplicas"`
 
 	// currentReplicas is the number of Pods created by the StatefulSet controller from the StatefulSet version
@@ -304,10 +340,13 @@ type StatefulSetStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	Conditions []StatefulSetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
+<<<<<<< HEAD
 
 	// Total number of available pods (ready for at least minReadySeconds) targeted by this statefulset.
 	// +optional
 	AvailableReplicas int32 `json:"availableReplicas" protobuf:"varint,11,opt,name=availableReplicas"`
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 type StatefulSetConditionType string
@@ -334,6 +373,7 @@ type StatefulSetCondition struct {
 // StatefulSetList is a collection of StatefulSets.
 type StatefulSetList struct {
 	metav1.TypeMeta `json:",inline"`
+<<<<<<< HEAD
 	// Standard list's metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
@@ -341,19 +381,31 @@ type StatefulSetList struct {
 
 	// Items is the list of stateful sets.
 	Items []StatefulSet `json:"items" protobuf:"bytes,2,rep,name=items"`
+=======
+	// +optional
+	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+	Items           []StatefulSet `json:"items" protobuf:"bytes,2,rep,name=items"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // +genclient
 // +genclient:method=GetScale,verb=get,subresource=scale,result=k8s.io/api/autoscaling/v1.Scale
 // +genclient:method=UpdateScale,verb=update,subresource=scale,input=k8s.io/api/autoscaling/v1.Scale,result=k8s.io/api/autoscaling/v1.Scale
+<<<<<<< HEAD
 // +genclient:method=ApplyScale,verb=apply,subresource=scale,input=k8s.io/api/autoscaling/v1.Scale,result=k8s.io/api/autoscaling/v1.Scale
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 // Deployment enables declarative updates for Pods and ReplicaSets.
 type Deployment struct {
 	metav1.TypeMeta `json:",inline"`
+<<<<<<< HEAD
 	// Standard object's metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+=======
+	// Standard object metadata.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
@@ -432,7 +484,10 @@ type DeploymentStrategy struct {
 	RollingUpdate *RollingUpdateDeployment `json:"rollingUpdate,omitempty" protobuf:"bytes,2,opt,name=rollingUpdate"`
 }
 
+<<<<<<< HEAD
 // +enum
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type DeploymentStrategyType string
 
 const (
@@ -487,7 +542,11 @@ type DeploymentStatus struct {
 	// +optional
 	UpdatedReplicas int32 `json:"updatedReplicas,omitempty" protobuf:"varint,3,opt,name=updatedReplicas"`
 
+<<<<<<< HEAD
 	// readyReplicas is the number of pods targeted by this Deployment with a Ready Condition.
+=======
+	// Total number of ready pods targeted by this deployment.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	ReadyReplicas int32 `json:"readyReplicas,omitempty" protobuf:"varint,7,opt,name=readyReplicas"`
 
@@ -574,7 +633,10 @@ type DaemonSetUpdateStrategy struct {
 	RollingUpdate *RollingUpdateDaemonSet `json:"rollingUpdate,omitempty" protobuf:"bytes,2,opt,name=rollingUpdate"`
 }
 
+<<<<<<< HEAD
 // +enum
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type DaemonSetUpdateStrategyType string
 
 const (
@@ -591,6 +653,7 @@ type RollingUpdateDaemonSet struct {
 	// update. Value can be an absolute number (ex: 5) or a percentage of total
 	// number of DaemonSet pods at the start of the update (ex: 10%). Absolute
 	// number is calculated from percentage by rounding up.
+<<<<<<< HEAD
 	// This cannot be 0 if MaxSurge is 0
 	// Default value is 1.
 	// Example: when this is set to 30%, at most 30% of the total number of nodes
@@ -624,6 +687,20 @@ type RollingUpdateDaemonSet struct {
 	// cause evictions during disruption.
 	// +optional
 	MaxSurge *intstr.IntOrString `json:"maxSurge,omitempty" protobuf:"bytes,2,opt,name=maxSurge"`
+=======
+	// This cannot be 0.
+	// Default value is 1.
+	// Example: when this is set to 30%, at most 30% of the total number of nodes
+	// that should be running the daemon pod (i.e. status.desiredNumberScheduled)
+	// can have their pods stopped for an update at any given
+	// time. The update starts by stopping at most 30% of those DaemonSet pods
+	// and then brings up new DaemonSet pods in their place. Once the new pods
+	// are available, it then proceeds onto other DaemonSet pods, thus ensuring
+	// that at least 70% of original number of DaemonSet pods are available at
+	// all times during the update.
+	// +optional
+	MaxUnavailable *intstr.IntOrString `json:"maxUnavailable,omitempty" protobuf:"bytes,1,opt,name=maxUnavailable"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // DaemonSetSpec is the specification of a daemon set.
@@ -676,8 +753,13 @@ type DaemonSetStatus struct {
 	// More info: https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
 	DesiredNumberScheduled int32 `json:"desiredNumberScheduled" protobuf:"varint,3,opt,name=desiredNumberScheduled"`
 
+<<<<<<< HEAD
 	// numberReady is the number of nodes that should be running the daemon pod and have one
 	// or more of the daemon pod running with a Ready Condition.
+=======
+	// The number of nodes that should be running the daemon pod and have one
+	// or more of the daemon pod running and ready.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	NumberReady int32 `json:"numberReady" protobuf:"varint,4,opt,name=numberReady"`
 
 	// The most recent generation observed by the daemon set controller.
@@ -783,7 +865,10 @@ type DaemonSetList struct {
 // +genclient
 // +genclient:method=GetScale,verb=get,subresource=scale,result=k8s.io/api/autoscaling/v1.Scale
 // +genclient:method=UpdateScale,verb=update,subresource=scale,input=k8s.io/api/autoscaling/v1.Scale,result=k8s.io/api/autoscaling/v1.Scale
+<<<<<<< HEAD
 // +genclient:method=ApplyScale,verb=apply,subresource=scale,input=k8s.io/api/autoscaling/v1.Scale,result=k8s.io/api/autoscaling/v1.Scale
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 // ReplicaSet ensures that a specified number of pod replicas are running at any given time.
@@ -792,8 +877,12 @@ type ReplicaSet struct {
 
 	// If the Labels of a ReplicaSet are empty, they are defaulted to
 	// be the same as the Pod(s) that the ReplicaSet manages.
+<<<<<<< HEAD
 	// Standard object's metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+=======
+	// Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
@@ -856,7 +945,11 @@ type ReplicaSetSpec struct {
 
 // ReplicaSetStatus represents the current status of a ReplicaSet.
 type ReplicaSetStatus struct {
+<<<<<<< HEAD
 	// Replicas is the most recently observed number of replicas.
+=======
+	// Replicas is the most recently oberved number of replicas.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/#what-is-a-replicationcontroller
 	Replicas int32 `json:"replicas" protobuf:"varint,1,opt,name=replicas"`
 
@@ -864,7 +957,11 @@ type ReplicaSetStatus struct {
 	// +optional
 	FullyLabeledReplicas int32 `json:"fullyLabeledReplicas,omitempty" protobuf:"varint,2,opt,name=fullyLabeledReplicas"`
 
+<<<<<<< HEAD
 	// readyReplicas is the number of pods targeted by this ReplicaSet with a Ready Condition.
+=======
+	// The number of ready replicas for this replica set.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	ReadyReplicas int32 `json:"readyReplicas,omitempty" protobuf:"varint,4,opt,name=readyReplicas"`
 

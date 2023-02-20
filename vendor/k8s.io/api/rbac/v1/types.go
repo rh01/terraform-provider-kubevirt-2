@@ -47,6 +47,7 @@ const (
 // PolicyRule holds information that describes a policy rule, but does not contain information
 // about who the rule applies to or which namespace the rule applies to.
 type PolicyRule struct {
+<<<<<<< HEAD
 	// Verbs is a list of Verbs that apply to ALL the ResourceKinds contained in this rule. '*' represents all verbs.
 	Verbs []string `json:"verbs" protobuf:"bytes,1,rep,name=verbs"`
 
@@ -55,6 +56,16 @@ type PolicyRule struct {
 	// +optional
 	APIGroups []string `json:"apiGroups,omitempty" protobuf:"bytes,2,rep,name=apiGroups"`
 	// Resources is a list of resources this rule applies to. '*' represents all resources.
+=======
+	// Verbs is a list of Verbs that apply to ALL the ResourceKinds and AttributeRestrictions contained in this rule.  VerbAll represents all kinds.
+	Verbs []string `json:"verbs" protobuf:"bytes,1,rep,name=verbs"`
+
+	// APIGroups is the name of the APIGroup that contains the resources.  If multiple API groups are specified, any action requested against one of
+	// the enumerated resources in any API group will be allowed.
+	// +optional
+	APIGroups []string `json:"apiGroups,omitempty" protobuf:"bytes,2,rep,name=apiGroups"`
+	// Resources is a list of resources this rule applies to.  ResourceAll represents all resources.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	Resources []string `json:"resources,omitempty" protobuf:"bytes,3,rep,name=resources"`
 	// ResourceNames is an optional white list of names that the rule applies to.  An empty set means that everything is allowed.
@@ -70,7 +81,10 @@ type PolicyRule struct {
 
 // Subject contains a reference to the object or user identities a role binding applies to.  This can either hold a direct API object reference,
 // or a value for non-objects such as user and group names.
+<<<<<<< HEAD
 // +structType=atomic
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type Subject struct {
 	// Kind of object being referenced. Values defined by this API group are "User", "Group", and "ServiceAccount".
 	// If the Authorizer does not recognized the kind value, the Authorizer should report an error.
@@ -89,7 +103,10 @@ type Subject struct {
 }
 
 // RoleRef contains information that points to the role being used
+<<<<<<< HEAD
 // +structType=atomic
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type RoleRef struct {
 	// APIGroup is the group for the resource being referenced
 	APIGroup string `json:"apiGroup" protobuf:"bytes,1,opt,name=apiGroup"`

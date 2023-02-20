@@ -33,19 +33,34 @@ type JUnitTestSuite struct {
 type JUnitTestCase struct {
 	Name           string               `xml:"name,attr"`
 	ClassName      string               `xml:"classname,attr"`
+<<<<<<< HEAD
+=======
+	PassedMessage  *JUnitPassedMessage  `xml:"passed,omitempty"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	FailureMessage *JUnitFailureMessage `xml:"failure,omitempty"`
 	Skipped        *JUnitSkipped        `xml:"skipped,omitempty"`
 	Time           float64              `xml:"time,attr"`
 	SystemOut      string               `xml:"system-out,omitempty"`
 }
 
+<<<<<<< HEAD
+=======
+type JUnitPassedMessage struct {
+	Message string `xml:",chardata"`
+}
+
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type JUnitFailureMessage struct {
 	Type    string `xml:"type,attr"`
 	Message string `xml:",chardata"`
 }
 
 type JUnitSkipped struct {
+<<<<<<< HEAD
 	Message string `xml:",chardata"`
+=======
+	XMLName xml.Name `xml:"skipped"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 type JUnitReporter struct {
@@ -109,7 +124,13 @@ func (reporter *JUnitReporter) SpecDidComplete(specSummary *types.SpecSummary) {
 		ClassName: reporter.testSuiteName,
 	}
 	if reporter.ReporterConfig.ReportPassed && specSummary.State == types.SpecStatePassed {
+<<<<<<< HEAD
 		testCase.SystemOut = specSummary.CapturedOutput
+=======
+		testCase.PassedMessage = &JUnitPassedMessage{
+			Message: specSummary.CapturedOutput,
+		}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	}
 	if specSummary.State == types.SpecStateFailed || specSummary.State == types.SpecStateTimedOut || specSummary.State == types.SpecStatePanicked {
 		testCase.FailureMessage = &JUnitFailureMessage{
@@ -125,9 +146,12 @@ func (reporter *JUnitReporter) SpecDidComplete(specSummary *types.SpecSummary) {
 	}
 	if specSummary.State == types.SpecStateSkipped || specSummary.State == types.SpecStatePending {
 		testCase.Skipped = &JUnitSkipped{}
+<<<<<<< HEAD
 		if specSummary.Failure.Message != "" {
 			testCase.Skipped.Message = failureMessage(specSummary.Failure)
 		}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	}
 	testCase.Time = specSummary.RunTime.Seconds()
 	reporter.suite.TestCases = append(reporter.suite.TestCases, testCase)

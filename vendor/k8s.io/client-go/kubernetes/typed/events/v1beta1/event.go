@@ -20,15 +20,21 @@ package v1beta1
 
 import (
 	"context"
+<<<<<<< HEAD
 	json "encoding/json"
 	"fmt"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"time"
 
 	v1beta1 "k8s.io/api/events/v1beta1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
+<<<<<<< HEAD
 	eventsv1beta1 "k8s.io/client-go/applyconfigurations/events/v1beta1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	scheme "k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
 )
@@ -49,7 +55,10 @@ type EventInterface interface {
 	List(ctx context.Context, opts v1.ListOptions) (*v1beta1.EventList, error)
 	Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error)
 	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *v1beta1.Event, err error)
+<<<<<<< HEAD
 	Apply(ctx context.Context, event *eventsv1beta1.EventApplyConfiguration, opts v1.ApplyOptions) (result *v1beta1.Event, err error)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	EventExpansion
 }
 
@@ -180,6 +189,7 @@ func (c *events) Patch(ctx context.Context, name string, pt types.PatchType, dat
 		Into(result)
 	return
 }
+<<<<<<< HEAD
 
 // Apply takes the given apply declarative configuration, applies it and returns the applied event.
 func (c *events) Apply(ctx context.Context, event *eventsv1beta1.EventApplyConfiguration, opts v1.ApplyOptions) (result *v1beta1.Event, err error) {
@@ -206,3 +216,5 @@ func (c *events) Apply(ctx context.Context, event *eventsv1beta1.EventApplyConfi
 		Into(result)
 	return
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

@@ -5,6 +5,7 @@ package logrus
 import (
 	"io"
 	"os"
+<<<<<<< HEAD
 
 	"golang.org/x/sys/windows"
 )
@@ -24,4 +25,32 @@ func checkIfTerminal(w io.Writer) bool {
 		return true
 	}
 	return false
+=======
+	"syscall"
+
+	sequences "github.com/konsorten/go-windows-terminal-sequences"
+)
+
+func initTerminal(w io.Writer) {
+	switch v := w.(type) {
+	case *os.File:
+		sequences.EnableVirtualTerminalProcessing(syscall.Handle(v.Fd()), true)
+	}
+}
+
+func checkIfTerminal(w io.Writer) bool {
+	var ret bool
+	switch v := w.(type) {
+	case *os.File:
+		var mode uint32
+		err := syscall.GetConsoleMode(syscall.Handle(v.Fd()), &mode)
+		ret = (err == nil)
+	default:
+		ret = false
+	}
+	if ret {
+		initTerminal(w)
+	}
+	return ret
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }

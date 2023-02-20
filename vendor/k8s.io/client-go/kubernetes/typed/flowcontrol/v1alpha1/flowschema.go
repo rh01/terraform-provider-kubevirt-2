@@ -20,15 +20,21 @@ package v1alpha1
 
 import (
 	"context"
+<<<<<<< HEAD
 	json "encoding/json"
 	"fmt"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"time"
 
 	v1alpha1 "k8s.io/api/flowcontrol/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
+<<<<<<< HEAD
 	flowcontrolv1alpha1 "k8s.io/client-go/applyconfigurations/flowcontrol/v1alpha1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	scheme "k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
 )
@@ -50,8 +56,11 @@ type FlowSchemaInterface interface {
 	List(ctx context.Context, opts v1.ListOptions) (*v1alpha1.FlowSchemaList, error)
 	Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error)
 	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *v1alpha1.FlowSchema, err error)
+<<<<<<< HEAD
 	Apply(ctx context.Context, flowSchema *flowcontrolv1alpha1.FlowSchemaApplyConfiguration, opts v1.ApplyOptions) (result *v1alpha1.FlowSchema, err error)
 	ApplyStatus(ctx context.Context, flowSchema *flowcontrolv1alpha1.FlowSchemaApplyConfiguration, opts v1.ApplyOptions) (result *v1alpha1.FlowSchema, err error)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	FlowSchemaExpansion
 }
 
@@ -187,6 +196,7 @@ func (c *flowSchemas) Patch(ctx context.Context, name string, pt types.PatchType
 		Into(result)
 	return
 }
+<<<<<<< HEAD
 
 // Apply takes the given apply declarative configuration, applies it and returns the applied flowSchema.
 func (c *flowSchemas) Apply(ctx context.Context, flowSchema *flowcontrolv1alpha1.FlowSchemaApplyConfiguration, opts v1.ApplyOptions) (result *v1alpha1.FlowSchema, err error) {
@@ -241,3 +251,5 @@ func (c *flowSchemas) ApplyStatus(ctx context.Context, flowSchema *flowcontrolv1
 		Into(result)
 	return
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

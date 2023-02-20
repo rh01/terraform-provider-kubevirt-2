@@ -1,5 +1,6 @@
 package bipartitegraph
 
+<<<<<<< HEAD
 import (
 	. "github.com/onsi/gomega/matchers/support/goraph/edge"
 	. "github.com/onsi/gomega/matchers/support/goraph/node"
@@ -9,6 +10,12 @@ import (
 // LargestMatching implements the Hopcroft–Karp algorithm taking as input a bipartite graph
 // and outputting a maximum cardinality matching, i.e. a set of as many edges as possible
 // with the property that no two edges share an endpoint.
+=======
+import . "github.com/onsi/gomega/matchers/support/goraph/node"
+import . "github.com/onsi/gomega/matchers/support/goraph/edge"
+import "github.com/onsi/gomega/matchers/support/goraph/util"
+
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (bg *BipartiteGraph) LargestMatching() (matching EdgeSet) {
 	paths := bg.maximalDisjointSLAPCollection(matching)
 
@@ -28,7 +35,11 @@ func (bg *BipartiteGraph) maximalDisjointSLAPCollection(matching EdgeSet) (resul
 		return
 	}
 
+<<<<<<< HEAD
 	used := make(map[int]bool)
+=======
+	used := make(map[Node]bool)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	for _, u := range guideLayers[len(guideLayers)-1] {
 		slap, found := bg.findDisjointSLAP(u, matching, guideLayers, used)
@@ -48,7 +59,11 @@ func (bg *BipartiteGraph) findDisjointSLAP(
 	start Node,
 	matching EdgeSet,
 	guideLayers []NodeOrderedSet,
+<<<<<<< HEAD
 	used map[int]bool,
+=======
+	used map[Node]bool,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 ) ([]Edge, bool) {
 	return bg.findDisjointSLAPHelper(start, EdgeSet{}, len(guideLayers)-1, matching, guideLayers, used)
 }
@@ -59,16 +74,26 @@ func (bg *BipartiteGraph) findDisjointSLAPHelper(
 	currentLevel int,
 	matching EdgeSet,
 	guideLayers []NodeOrderedSet,
+<<<<<<< HEAD
 	used map[int]bool,
 ) (EdgeSet, bool) {
 	used[currentNode.ID] = true
+=======
+	used map[Node]bool,
+) (EdgeSet, bool) {
+	used[currentNode] = true
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	if currentLevel == 0 {
 		return currentSLAP, true
 	}
 
 	for _, nextNode := range guideLayers[currentLevel-1] {
+<<<<<<< HEAD
 		if used[nextNode.ID] {
+=======
+		if used[nextNode] {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			continue
 		}
 
@@ -89,17 +114,29 @@ func (bg *BipartiteGraph) findDisjointSLAPHelper(
 		currentSLAP = currentSLAP[:len(currentSLAP)-1]
 	}
 
+<<<<<<< HEAD
 	used[currentNode.ID] = false
+=======
+	used[currentNode] = false
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	return nil, false
 }
 
 func (bg *BipartiteGraph) createSLAPGuideLayers(matching EdgeSet) (guideLayers []NodeOrderedSet) {
+<<<<<<< HEAD
 	used := make(map[int]bool)
+=======
+	used := make(map[Node]bool)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	currentLayer := NodeOrderedSet{}
 
 	for _, node := range bg.Left {
 		if matching.Free(node) {
+<<<<<<< HEAD
 			used[node.ID] = true
+=======
+			used[node] = true
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			currentLayer = append(currentLayer, node)
 		}
 	}
@@ -118,7 +155,11 @@ func (bg *BipartiteGraph) createSLAPGuideLayers(matching EdgeSet) (guideLayers [
 		if util.Odd(len(guideLayers)) {
 			for _, leftNode := range lastLayer {
 				for _, rightNode := range bg.Right {
+<<<<<<< HEAD
 					if used[rightNode.ID] {
+=======
+					if used[rightNode] {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 						continue
 					}
 
@@ -128,7 +169,11 @@ func (bg *BipartiteGraph) createSLAPGuideLayers(matching EdgeSet) (guideLayers [
 					}
 
 					currentLayer = append(currentLayer, rightNode)
+<<<<<<< HEAD
 					used[rightNode.ID] = true
+=======
+					used[rightNode] = true
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 					if matching.Free(rightNode) {
 						done = true
@@ -138,7 +183,11 @@ func (bg *BipartiteGraph) createSLAPGuideLayers(matching EdgeSet) (guideLayers [
 		} else {
 			for _, rightNode := range lastLayer {
 				for _, leftNode := range bg.Left {
+<<<<<<< HEAD
 					if used[leftNode.ID] {
+=======
+					if used[leftNode] {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 						continue
 					}
 
@@ -148,7 +197,11 @@ func (bg *BipartiteGraph) createSLAPGuideLayers(matching EdgeSet) (guideLayers [
 					}
 
 					currentLayer = append(currentLayer, leftNode)
+<<<<<<< HEAD
 					used[leftNode.ID] = true
+=======
+					used[leftNode] = true
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				}
 			}
 

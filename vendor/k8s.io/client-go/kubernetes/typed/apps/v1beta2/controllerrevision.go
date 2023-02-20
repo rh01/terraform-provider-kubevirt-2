@@ -20,15 +20,21 @@ package v1beta2
 
 import (
 	"context"
+<<<<<<< HEAD
 	json "encoding/json"
 	"fmt"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"time"
 
 	v1beta2 "k8s.io/api/apps/v1beta2"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
+<<<<<<< HEAD
 	appsv1beta2 "k8s.io/client-go/applyconfigurations/apps/v1beta2"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	scheme "k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
 )
@@ -49,7 +55,10 @@ type ControllerRevisionInterface interface {
 	List(ctx context.Context, opts v1.ListOptions) (*v1beta2.ControllerRevisionList, error)
 	Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error)
 	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *v1beta2.ControllerRevision, err error)
+<<<<<<< HEAD
 	Apply(ctx context.Context, controllerRevision *appsv1beta2.ControllerRevisionApplyConfiguration, opts v1.ApplyOptions) (result *v1beta2.ControllerRevision, err error)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	ControllerRevisionExpansion
 }
 
@@ -180,6 +189,7 @@ func (c *controllerRevisions) Patch(ctx context.Context, name string, pt types.P
 		Into(result)
 	return
 }
+<<<<<<< HEAD
 
 // Apply takes the given apply declarative configuration, applies it and returns the applied controllerRevision.
 func (c *controllerRevisions) Apply(ctx context.Context, controllerRevision *appsv1beta2.ControllerRevisionApplyConfiguration, opts v1.ApplyOptions) (result *v1beta2.ControllerRevision, err error) {
@@ -206,3 +216,5 @@ func (c *controllerRevisions) Apply(ctx context.Context, controllerRevision *app
 		Into(result)
 	return
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

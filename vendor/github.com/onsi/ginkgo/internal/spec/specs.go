@@ -4,7 +4,10 @@ import (
 	"math/rand"
 	"regexp"
 	"sort"
+<<<<<<< HEAD
 	"strings"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 )
 
 type Specs struct {
@@ -47,11 +50,19 @@ func (e *Specs) Shuffle(r *rand.Rand) {
 	e.names = names
 }
 
+<<<<<<< HEAD
 func (e *Specs) ApplyFocus(description string, focus, skip []string) {
 	if len(focus)+len(skip) == 0 {
 		e.applyProgrammaticFocus()
 	} else {
 		e.applyRegExpFocusAndSkip(description, focus, skip)
+=======
+func (e *Specs) ApplyFocus(description string, focusString string, skipString string) {
+	if focusString == "" && skipString == "" {
+		e.applyProgrammaticFocus()
+	} else {
+		e.applyRegExpFocusAndSkip(description, focusString, skipString)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	}
 }
 
@@ -91,6 +102,7 @@ func (e *Specs) toMatch(description string, i int) []byte {
 	}
 }
 
+<<<<<<< HEAD
 func (e *Specs) applyRegExpFocusAndSkip(description string, focus, skip []string) {
 	var focusFilter, skipFilter *regexp.Regexp
 	if len(focus) > 0 {
@@ -98,6 +110,16 @@ func (e *Specs) applyRegExpFocusAndSkip(description string, focus, skip []string
 	}
 	if len(skip) > 0 {
 		skipFilter = regexp.MustCompile(strings.Join(skip, "|"))
+=======
+func (e *Specs) applyRegExpFocusAndSkip(description string, focusString string, skipString string) {
+	var focusFilter *regexp.Regexp
+	if focusString != "" {
+		focusFilter = regexp.MustCompile(focusString)
+	}
+	var skipFilter *regexp.Regexp
+	if skipString != "" {
+		skipFilter = regexp.MustCompile(skipString)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	}
 
 	for i, spec := range e.specs {

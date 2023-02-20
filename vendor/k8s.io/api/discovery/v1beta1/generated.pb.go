@@ -102,6 +102,7 @@ func (m *EndpointConditions) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_EndpointConditions proto.InternalMessageInfo
 
+<<<<<<< HEAD
 func (m *EndpointHints) Reset()      { *m = EndpointHints{} }
 func (*EndpointHints) ProtoMessage() {}
 func (*EndpointHints) Descriptor() ([]byte, []int) {
@@ -134,6 +135,12 @@ func (m *EndpointPort) Reset()      { *m = EndpointPort{} }
 func (*EndpointPort) ProtoMessage() {}
 func (*EndpointPort) Descriptor() ([]byte, []int) {
 	return fileDescriptor_ece80bbc872d519b, []int{3}
+=======
+func (m *EndpointPort) Reset()      { *m = EndpointPort{} }
+func (*EndpointPort) ProtoMessage() {}
+func (*EndpointPort) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ece80bbc872d519b, []int{2}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *EndpointPort) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -161,7 +168,11 @@ var xxx_messageInfo_EndpointPort proto.InternalMessageInfo
 func (m *EndpointSlice) Reset()      { *m = EndpointSlice{} }
 func (*EndpointSlice) ProtoMessage() {}
 func (*EndpointSlice) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_ece80bbc872d519b, []int{4}
+=======
+	return fileDescriptor_ece80bbc872d519b, []int{3}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *EndpointSlice) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -189,7 +200,11 @@ var xxx_messageInfo_EndpointSlice proto.InternalMessageInfo
 func (m *EndpointSliceList) Reset()      { *m = EndpointSliceList{} }
 func (*EndpointSliceList) ProtoMessage() {}
 func (*EndpointSliceList) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_ece80bbc872d519b, []int{5}
+=======
+	return fileDescriptor_ece80bbc872d519b, []int{4}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *EndpointSliceList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -214,6 +229,7 @@ func (m *EndpointSliceList) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_EndpointSliceList proto.InternalMessageInfo
 
+<<<<<<< HEAD
 func (m *ForZone) Reset()      { *m = ForZone{} }
 func (*ForZone) ProtoMessage() {}
 func (*ForZone) Descriptor() ([]byte, []int) {
@@ -242,15 +258,23 @@ func (m *ForZone) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ForZone proto.InternalMessageInfo
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func init() {
 	proto.RegisterType((*Endpoint)(nil), "k8s.io.api.discovery.v1beta1.Endpoint")
 	proto.RegisterMapType((map[string]string)(nil), "k8s.io.api.discovery.v1beta1.Endpoint.TopologyEntry")
 	proto.RegisterType((*EndpointConditions)(nil), "k8s.io.api.discovery.v1beta1.EndpointConditions")
+<<<<<<< HEAD
 	proto.RegisterType((*EndpointHints)(nil), "k8s.io.api.discovery.v1beta1.EndpointHints")
 	proto.RegisterType((*EndpointPort)(nil), "k8s.io.api.discovery.v1beta1.EndpointPort")
 	proto.RegisterType((*EndpointSlice)(nil), "k8s.io.api.discovery.v1beta1.EndpointSlice")
 	proto.RegisterType((*EndpointSliceList)(nil), "k8s.io.api.discovery.v1beta1.EndpointSliceList")
 	proto.RegisterType((*ForZone)(nil), "k8s.io.api.discovery.v1beta1.ForZone")
+=======
+	proto.RegisterType((*EndpointPort)(nil), "k8s.io.api.discovery.v1beta1.EndpointPort")
+	proto.RegisterType((*EndpointSlice)(nil), "k8s.io.api.discovery.v1beta1.EndpointSlice")
+	proto.RegisterType((*EndpointSliceList)(nil), "k8s.io.api.discovery.v1beta1.EndpointSliceList")
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func init() {
@@ -258,6 +282,7 @@ func init() {
 }
 
 var fileDescriptor_ece80bbc872d519b = []byte{
+<<<<<<< HEAD
 	// 871 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x55, 0x41, 0x6f, 0xe3, 0x44,
 	0x14, 0x8e, 0x9b, 0x86, 0xda, 0x93, 0x56, 0xec, 0x8e, 0x38, 0x44, 0xa5, 0xb2, 0x23, 0xa3, 0x45,
@@ -314,6 +339,56 @@ var fileDescriptor_ece80bbc872d519b = []byte{
 	0x94, 0xae, 0x75, 0x5b, 0xba, 0xd6, 0x9b, 0xd2, 0xb5, 0xde, 0x96, 0xae, 0xf5, 0x57, 0xe9, 0x5a,
 	0xbf, 0xfd, 0xed, 0x76, 0x5e, 0x1f, 0x3d, 0xf4, 0xc3, 0xfe, 0x27, 0x00, 0x00, 0xff, 0xff, 0xd2,
 	0xeb, 0x52, 0x19, 0xe8, 0x07, 0x00, 0x00,
+=======
+	// 745 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x53, 0xcf, 0x6b, 0xdb, 0x48,
+	0x14, 0xb6, 0xe2, 0x88, 0x95, 0xc6, 0x31, 0x9b, 0x0c, 0x7b, 0x30, 0xde, 0x20, 0x19, 0x2f, 0x2c,
+	0x66, 0x43, 0xa4, 0x75, 0xc8, 0x2e, 0x61, 0xf7, 0x14, 0xed, 0x86, 0xb6, 0xd0, 0x36, 0x66, 0x1a,
+	0x28, 0x94, 0x1e, 0x3a, 0x96, 0x26, 0xb2, 0x6a, 0x5b, 0x23, 0x34, 0x63, 0x83, 0x6f, 0xfd, 0x13,
+	0xfa, 0xf7, 0xf4, 0x5a, 0x28, 0x39, 0xe6, 0x98, 0x93, 0xa8, 0xd5, 0xff, 0x22, 0xa7, 0x32, 0xa3,
+	0x5f, 0x76, 0xdd, 0x1f, 0xbe, 0xcd, 0x7c, 0xf3, 0xbe, 0xef, 0xbd, 0xf7, 0xcd, 0x7b, 0xe0, 0x62,
+	0x7c, 0xc6, 0xac, 0x80, 0xda, 0xe3, 0xd9, 0x90, 0xc4, 0x21, 0xe1, 0x84, 0xd9, 0x73, 0x12, 0x7a,
+	0x34, 0xb6, 0xf3, 0x07, 0x1c, 0x05, 0xb6, 0x17, 0x30, 0x97, 0xce, 0x49, 0xbc, 0xb0, 0xe7, 0xfd,
+	0x21, 0xe1, 0xb8, 0x6f, 0xfb, 0x24, 0x24, 0x31, 0xe6, 0xc4, 0xb3, 0xa2, 0x98, 0x72, 0x0a, 0x0f,
+	0xb3, 0x68, 0x0b, 0x47, 0x81, 0x55, 0x46, 0x5b, 0x79, 0x74, 0xfb, 0xd8, 0x0f, 0xf8, 0x68, 0x36,
+	0xb4, 0x5c, 0x3a, 0xb5, 0x7d, 0xea, 0x53, 0x5b, 0x92, 0x86, 0xb3, 0x6b, 0x79, 0x93, 0x17, 0x79,
+	0xca, 0xc4, 0xda, 0xdd, 0x95, 0xd4, 0x2e, 0x8d, 0x89, 0x3d, 0xdf, 0x48, 0xd8, 0x3e, 0xad, 0x62,
+	0xa6, 0xd8, 0x1d, 0x05, 0xa1, 0xa8, 0x2e, 0x1a, 0xfb, 0x02, 0x60, 0xf6, 0x94, 0x70, 0xfc, 0x35,
+	0x96, 0xfd, 0x2d, 0x56, 0x3c, 0x0b, 0x79, 0x30, 0x25, 0x1b, 0x84, 0xbf, 0x7f, 0x44, 0x60, 0xee,
+	0x88, 0x4c, 0xf1, 0x97, 0xbc, 0xee, 0xbb, 0x3a, 0xd0, 0x2e, 0x42, 0x2f, 0xa2, 0x41, 0xc8, 0xe1,
+	0x11, 0xd0, 0xb1, 0xe7, 0xc5, 0x84, 0x31, 0xc2, 0x5a, 0x4a, 0xa7, 0xde, 0xd3, 0x9d, 0x66, 0x9a,
+	0x98, 0xfa, 0x79, 0x01, 0xa2, 0xea, 0x1d, 0x7a, 0x00, 0xb8, 0x34, 0xf4, 0x02, 0x1e, 0xd0, 0x90,
+	0xb5, 0x76, 0x3a, 0x4a, 0xaf, 0x71, 0xf2, 0xa7, 0xf5, 0x3d, 0x7b, 0xad, 0x22, 0xd1, 0x7f, 0x25,
+	0xcf, 0x81, 0x37, 0x89, 0x59, 0x4b, 0x13, 0x13, 0x54, 0x18, 0x5a, 0xd1, 0x85, 0x3d, 0xa0, 0x8d,
+	0x28, 0xe3, 0x21, 0x9e, 0x92, 0x56, 0xbd, 0xa3, 0xf4, 0x74, 0x67, 0x2f, 0x4d, 0x4c, 0xed, 0x61,
+	0x8e, 0xa1, 0xf2, 0x15, 0x0e, 0x80, 0xce, 0x71, 0xec, 0x13, 0x8e, 0xc8, 0x75, 0x6b, 0x57, 0x96,
+	0xf3, 0xdb, 0x6a, 0x39, 0xe2, 0x83, 0xac, 0x79, 0xdf, 0xba, 0x1c, 0xbe, 0x26, 0xae, 0x08, 0x22,
+	0x31, 0x09, 0x5d, 0x92, 0x75, 0x78, 0x55, 0x30, 0x51, 0x25, 0x02, 0x87, 0x40, 0xe3, 0x34, 0xa2,
+	0x13, 0xea, 0x2f, 0x5a, 0x6a, 0xa7, 0xde, 0x6b, 0x9c, 0x9c, 0x6e, 0xd7, 0x9f, 0x75, 0x95, 0xd3,
+	0x2e, 0x42, 0x1e, 0x2f, 0x9c, 0xfd, 0xbc, 0x47, 0xad, 0x80, 0x51, 0xa9, 0xdb, 0xfe, 0x17, 0x34,
+	0xd7, 0x82, 0xe1, 0x3e, 0xa8, 0x8f, 0xc9, 0xa2, 0xa5, 0x88, 0x5e, 0x91, 0x38, 0xc2, 0x5f, 0x80,
+	0x3a, 0xc7, 0x93, 0x19, 0x91, 0x1e, 0xeb, 0x28, 0xbb, 0xfc, 0xb3, 0x73, 0xa6, 0x74, 0xff, 0x02,
+	0x70, 0xd3, 0x52, 0x68, 0x02, 0x35, 0x26, 0xd8, 0xcb, 0x34, 0x34, 0x47, 0x4f, 0x13, 0x53, 0x45,
+	0x02, 0x40, 0x19, 0xde, 0xfd, 0xa0, 0x80, 0xbd, 0x82, 0x37, 0xa0, 0x31, 0x87, 0x87, 0x60, 0x57,
+	0x1a, 0x2c, 0x93, 0x3a, 0x5a, 0x9a, 0x98, 0xbb, 0x4f, 0x85, 0xb9, 0x12, 0x85, 0x0f, 0x80, 0x26,
+	0x67, 0xc5, 0xa5, 0x93, 0xac, 0x04, 0xe7, 0x48, 0x34, 0x33, 0xc8, 0xb1, 0xfb, 0xc4, 0xfc, 0x75,
+	0x73, 0x0f, 0xac, 0xe2, 0x19, 0x95, 0x64, 0x91, 0x26, 0xa2, 0x31, 0x97, 0xff, 0xa8, 0x66, 0x69,
+	0x44, 0x7a, 0x24, 0x51, 0xd8, 0x07, 0x0d, 0x1c, 0x45, 0x05, 0x4d, 0xfe, 0xa0, 0xee, 0xfc, 0x9c,
+	0x26, 0x66, 0xe3, 0xbc, 0x82, 0xd1, 0x6a, 0x4c, 0x77, 0xb9, 0x03, 0x9a, 0x45, 0x23, 0xcf, 0x26,
+	0x81, 0x4b, 0xe0, 0x2b, 0xa0, 0x89, 0x95, 0xf2, 0x30, 0xc7, 0xb2, 0x9b, 0xf5, 0x91, 0x2c, 0x37,
+	0xc3, 0x8a, 0xc6, 0xbe, 0x00, 0x98, 0x25, 0xa2, 0xab, 0xa9, 0x78, 0x42, 0x38, 0xae, 0x46, 0xb2,
+	0xc2, 0x50, 0xa9, 0x0a, 0xff, 0x07, 0x8d, 0x7c, 0x07, 0xae, 0x16, 0x11, 0xc9, 0xcb, 0xec, 0xe6,
+	0x94, 0xc6, 0x79, 0xf5, 0x74, 0xbf, 0x7e, 0x45, 0xab, 0x34, 0xf8, 0x1c, 0xe8, 0x24, 0x2f, 0x5c,
+	0xec, 0x8e, 0x98, 0xad, 0xdf, 0xb7, 0x9b, 0x2d, 0xe7, 0x20, 0xcf, 0xa5, 0x17, 0x08, 0x43, 0x95,
+	0x16, 0xbc, 0x04, 0xaa, 0x70, 0x93, 0xb5, 0xea, 0x52, 0xf4, 0x8f, 0xed, 0x44, 0xc5, 0x37, 0x38,
+	0xcd, 0x5c, 0x58, 0x15, 0x37, 0x86, 0x32, 0x9d, 0xee, 0x7b, 0x05, 0x1c, 0xac, 0x79, 0xfc, 0x38,
+	0x60, 0x1c, 0xbe, 0xdc, 0xf0, 0xd9, 0xda, 0xce, 0x67, 0xc1, 0x96, 0x2e, 0x97, 0x4b, 0x51, 0x20,
+	0x2b, 0x1e, 0x0f, 0x80, 0x1a, 0x70, 0x32, 0x2d, 0x9c, 0x39, 0xda, 0xae, 0x09, 0x59, 0x5d, 0xd5,
+	0xc5, 0x23, 0xa1, 0x80, 0x32, 0x21, 0xe7, 0xf8, 0x66, 0x69, 0xd4, 0x6e, 0x97, 0x46, 0xed, 0x6e,
+	0x69, 0xd4, 0xde, 0xa4, 0x86, 0x72, 0x93, 0x1a, 0xca, 0x6d, 0x6a, 0x28, 0x77, 0xa9, 0xa1, 0x7c,
+	0x4c, 0x0d, 0xe5, 0xed, 0x27, 0xa3, 0xf6, 0xe2, 0xa7, 0x5c, 0xf2, 0x73, 0x00, 0x00, 0x00, 0xff,
+	0xff, 0x29, 0x1a, 0xa2, 0x6f, 0x6d, 0x06, 0x00, 0x00,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func (m *Endpoint) Marshal() (dAtA []byte, err error) {
@@ -336,6 +411,7 @@ func (m *Endpoint) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+<<<<<<< HEAD
 	if m.Hints != nil {
 		{
 			size, err := m.Hints.MarshalToSizedBuffer(dAtA[:i])
@@ -355,6 +431,8 @@ func (m *Endpoint) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x32
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if len(m.Topology) > 0 {
 		keysForTopology := make([]string, 0, len(m.Topology))
 		for k := range m.Topology {
@@ -440,6 +518,7 @@ func (m *EndpointConditions) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+<<<<<<< HEAD
 	if m.Terminating != nil {
 		i--
 		if *m.Terminating {
@@ -460,6 +539,8 @@ func (m *EndpointConditions) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x10
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if m.Ready != nil {
 		i--
 		if *m.Ready {
@@ -473,6 +554,7 @@ func (m *EndpointConditions) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+<<<<<<< HEAD
 func (m *EndpointHints) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -510,6 +592,8 @@ func (m *EndpointHints) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *EndpointPort) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -672,6 +756,7 @@ func (m *EndpointSliceList) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+<<<<<<< HEAD
 func (m *ForZone) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -700,6 +785,8 @@ func (m *ForZone) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func encodeVarintGenerated(dAtA []byte, offset int, v uint64) int {
 	offset -= sovGenerated(v)
 	base := offset
@@ -741,6 +828,7 @@ func (m *Endpoint) Size() (n int) {
 			n += mapEntrySize + 1 + sovGenerated(uint64(mapEntrySize))
 		}
 	}
+<<<<<<< HEAD
 	if m.NodeName != nil {
 		l = len(*m.NodeName)
 		n += 1 + l + sovGenerated(uint64(l))
@@ -749,6 +837,8 @@ func (m *Endpoint) Size() (n int) {
 		l = m.Hints.Size()
 		n += 1 + l + sovGenerated(uint64(l))
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	return n
 }
 
@@ -761,6 +851,7 @@ func (m *EndpointConditions) Size() (n int) {
 	if m.Ready != nil {
 		n += 2
 	}
+<<<<<<< HEAD
 	if m.Serving != nil {
 		n += 2
 	}
@@ -782,6 +873,8 @@ func (m *EndpointHints) Size() (n int) {
 			n += 1 + l + sovGenerated(uint64(l))
 		}
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	return n
 }
 
@@ -851,6 +944,7 @@ func (m *EndpointSliceList) Size() (n int) {
 	return n
 }
 
+<<<<<<< HEAD
 func (m *ForZone) Size() (n int) {
 	if m == nil {
 		return 0
@@ -862,6 +956,8 @@ func (m *ForZone) Size() (n int) {
 	return n
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func sovGenerated(x uint64) (n int) {
 	return (math_bits.Len64(x|1) + 6) / 7
 }
@@ -888,8 +984,11 @@ func (this *Endpoint) String() string {
 		`Hostname:` + valueToStringGenerated(this.Hostname) + `,`,
 		`TargetRef:` + strings.Replace(fmt.Sprintf("%v", this.TargetRef), "ObjectReference", "v1.ObjectReference", 1) + `,`,
 		`Topology:` + mapStringForTopology + `,`,
+<<<<<<< HEAD
 		`NodeName:` + valueToStringGenerated(this.NodeName) + `,`,
 		`Hints:` + strings.Replace(this.Hints.String(), "EndpointHints", "EndpointHints", 1) + `,`,
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		`}`,
 	}, "")
 	return s
@@ -900,6 +999,7 @@ func (this *EndpointConditions) String() string {
 	}
 	s := strings.Join([]string{`&EndpointConditions{`,
 		`Ready:` + valueToStringGenerated(this.Ready) + `,`,
+<<<<<<< HEAD
 		`Serving:` + valueToStringGenerated(this.Serving) + `,`,
 		`Terminating:` + valueToStringGenerated(this.Terminating) + `,`,
 		`}`,
@@ -917,6 +1017,8 @@ func (this *EndpointHints) String() string {
 	repeatedStringForForZones += "}"
 	s := strings.Join([]string{`&EndpointHints{`,
 		`ForZones:` + repeatedStringForForZones + `,`,
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		`}`,
 	}, "")
 	return s
@@ -973,6 +1075,7 @@ func (this *EndpointSliceList) String() string {
 	}, "")
 	return s
 }
+<<<<<<< HEAD
 func (this *ForZone) String() string {
 	if this == nil {
 		return "nil"
@@ -983,6 +1086,8 @@ func (this *ForZone) String() string {
 	}, "")
 	return s
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func valueToStringGenerated(v interface{}) string {
 	rv := reflect.ValueOf(v)
 	if rv.IsNil() {
@@ -1270,7 +1375,11 @@ func (m *Endpoint) Unmarshal(dAtA []byte) error {
 					if err != nil {
 						return err
 					}
+<<<<<<< HEAD
 					if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+					if skippy < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 						return ErrInvalidLengthGenerated
 					}
 					if (iNdEx + skippy) > postIndex {
@@ -1281,6 +1390,7 @@ func (m *Endpoint) Unmarshal(dAtA []byte) error {
 			}
 			m.Topology[mapkey] = mapvalue
 			iNdEx = postIndex
+<<<<<<< HEAD
 		case 6:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field NodeName", wireType)
@@ -1350,13 +1460,22 @@ func (m *Endpoint) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		default:
 			iNdEx = preIndex
 			skippy, err := skipGenerated(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -1421,6 +1540,7 @@ func (m *EndpointConditions) Unmarshal(dAtA []byte) error {
 			}
 			b := bool(v != 0)
 			m.Ready = &b
+<<<<<<< HEAD
 		case 2:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Serving", wireType)
@@ -1463,12 +1583,15 @@ func (m *EndpointConditions) Unmarshal(dAtA []byte) error {
 			}
 			b := bool(v != 0)
 			m.Terminating = &b
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		default:
 			iNdEx = preIndex
 			skippy, err := skipGenerated(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthGenerated
 			}
@@ -1554,6 +1677,12 @@ func (m *EndpointHints) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -1722,7 +1851,14 @@ func (m *EndpointPort) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -1905,7 +2041,14 @@ func (m *EndpointSlice) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -2022,6 +2165,7 @@ func (m *EndpointSliceList) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthGenerated
 			}
@@ -2105,6 +2249,12 @@ func (m *ForZone) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {

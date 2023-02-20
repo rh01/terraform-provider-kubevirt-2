@@ -7,7 +7,6 @@ import (
 )
 
 var JSONEncodeFunc = function.New(&function.Spec{
-	Description: `Returns a string containing a JSON representation of the given value.`,
 	Params: []function.Parameter{
 		{
 			Name:             "val",
@@ -40,7 +39,6 @@ var JSONEncodeFunc = function.New(&function.Spec{
 })
 
 var JSONDecodeFunc = function.New(&function.Spec{
-	Description: `Parses the given string as JSON and returns a value corresponding to what the JSON document describes.`,
 	Params: []function.Parameter{
 		{
 			Name: "str",

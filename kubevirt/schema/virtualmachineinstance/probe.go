@@ -3,8 +3,16 @@ package virtualmachineinstance
 import (
 	"fmt"
 
+<<<<<<< HEAD
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	kubevirtapiv1 "kubevirt.io/api/core/v1"
+=======
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/validation"
+	k8sv1 "k8s.io/api/core/v1"
+	"k8s.io/apimachinery/pkg/util/intstr"
+	kubevirtapiv1 "kubevirt.io/client-go/api/v1"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 )
 
 func probeFields() map[string]*schema.Schema {

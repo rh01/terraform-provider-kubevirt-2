@@ -57,11 +57,19 @@ func (reporter *DefaultReporter) SpecDidComplete(specSummary *types.SpecSummary)
 	switch specSummary.State {
 	case types.SpecStatePassed:
 		if specSummary.IsMeasurement {
+<<<<<<< HEAD
 			reporter.stenographer.AnnounceSuccessfulMeasurement(specSummary, reporter.config.Succinct)
 		} else if specSummary.RunTime.Seconds() >= reporter.config.SlowSpecThreshold {
 			reporter.stenographer.AnnounceSuccessfulSlowSpec(specSummary, reporter.config.Succinct)
 		} else {
 			reporter.stenographer.AnnounceSuccessfulSpec(specSummary)
+=======
+			reporter.stenographer.AnnounceSuccesfulMeasurement(specSummary, reporter.config.Succinct)
+		} else if specSummary.RunTime.Seconds() >= reporter.config.SlowSpecThreshold {
+			reporter.stenographer.AnnounceSuccesfulSlowSpec(specSummary, reporter.config.Succinct)
+		} else {
+			reporter.stenographer.AnnounceSuccesfulSpec(specSummary)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			if reporter.config.ReportPassed {
 				reporter.stenographer.AnnounceCapturedOutput(specSummary.CapturedOutput)
 			}

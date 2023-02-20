@@ -20,15 +20,21 @@ package v1
 
 import (
 	"context"
+<<<<<<< HEAD
 	json "encoding/json"
 	"fmt"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"time"
 
 	v1 "k8s.io/api/storage/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
+<<<<<<< HEAD
 	storagev1 "k8s.io/client-go/applyconfigurations/storage/v1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	scheme "k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
 )
@@ -49,7 +55,10 @@ type StorageClassInterface interface {
 	List(ctx context.Context, opts metav1.ListOptions) (*v1.StorageClassList, error)
 	Watch(ctx context.Context, opts metav1.ListOptions) (watch.Interface, error)
 	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts metav1.PatchOptions, subresources ...string) (result *v1.StorageClass, err error)
+<<<<<<< HEAD
 	Apply(ctx context.Context, storageClass *storagev1.StorageClassApplyConfiguration, opts metav1.ApplyOptions) (result *v1.StorageClass, err error)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	StorageClassExpansion
 }
 
@@ -170,6 +179,7 @@ func (c *storageClasses) Patch(ctx context.Context, name string, pt types.PatchT
 		Into(result)
 	return
 }
+<<<<<<< HEAD
 
 // Apply takes the given apply declarative configuration, applies it and returns the applied storageClass.
 func (c *storageClasses) Apply(ctx context.Context, storageClass *storagev1.StorageClassApplyConfiguration, opts metav1.ApplyOptions) (result *v1.StorageClass, err error) {
@@ -195,3 +205,5 @@ func (c *storageClasses) Apply(ctx context.Context, storageClass *storagev1.Stor
 		Into(result)
 	return
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

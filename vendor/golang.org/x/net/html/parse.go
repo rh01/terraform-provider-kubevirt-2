@@ -663,6 +663,7 @@ func inHeadIM(p *parser) bool {
 			// Ignore the token.
 			return true
 		case a.Template:
+<<<<<<< HEAD
 			// TODO: remove this divergence from the HTML5 spec.
 			//
 			// We don't handle all of the corner cases when mixing foreign
@@ -681,6 +682,8 @@ func inHeadIM(p *parser) bool {
 				}
 			}
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			p.addElement()
 			p.afe = append(p.afe, &scopeMarker)
 			p.framesetOK = false
@@ -701,7 +704,11 @@ func inHeadIM(p *parser) bool {
 			if !p.oe.contains(a.Template) {
 				return true
 			}
+<<<<<<< HEAD
 			// TODO: remove this further divergence from the HTML5 spec.
+=======
+			// TODO: remove this divergence from the HTML5 spec.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			//
 			// See https://bugs.chromium.org/p/chromium/issues/detail?id=829668
 			p.generateImpliedEndTags()
@@ -734,7 +741,11 @@ func inHeadIM(p *parser) bool {
 	return false
 }
 
+<<<<<<< HEAD
 // Section 12.2.6.4.5.
+=======
+// 12.2.6.4.5.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func inHeadNoscriptIM(p *parser) bool {
 	switch p.tok.Type {
 	case DoctypeToken:
@@ -746,6 +757,7 @@ func inHeadNoscriptIM(p *parser) bool {
 			return inBodyIM(p)
 		case a.Basefont, a.Bgsound, a.Link, a.Meta, a.Noframes, a.Style:
 			return inHeadIM(p)
+<<<<<<< HEAD
 		case a.Head:
 			// Ignore the token.
 			return true
@@ -753,6 +765,9 @@ func inHeadNoscriptIM(p *parser) bool {
 			// Don't let the tokenizer go into raw text mode even when a <noscript>
 			// tag is in "in head noscript" insertion mode.
 			p.tokenizer.NextIsNotRawText()
+=======
+		case a.Head, a.Noscript:
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			// Ignore the token.
 			return true
 		}
@@ -1814,6 +1829,7 @@ func inSelectIM(p *parser) bool {
 			return true
 		case a.Script, a.Template:
 			return inHeadIM(p)
+<<<<<<< HEAD
 		case a.Iframe, a.Noembed, a.Noframes, a.Noscript, a.Plaintext, a.Style, a.Title, a.Xmp:
 			// Don't let the tokenizer go into raw text mode when there are raw tags
 			// to be ignored. These tags should be ignored from the tokenizer
@@ -1821,6 +1837,8 @@ func inSelectIM(p *parser) bool {
 			p.tokenizer.NextIsNotRawText()
 			// Ignore the token.
 			return true
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		}
 	case EndTagToken:
 		switch p.tok.DataAtom {
@@ -2145,10 +2163,13 @@ func afterAfterFramesetIM(p *parser) bool {
 	return true
 }
 
+<<<<<<< HEAD
 func ignoreTheRemainingTokens(p *parser) bool {
 	return true
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 const whitespaceOrNUL = whitespace + "\x00"
 
 // Section 12.2.6.5

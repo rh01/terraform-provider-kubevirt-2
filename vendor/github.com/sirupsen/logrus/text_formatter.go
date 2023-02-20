@@ -53,10 +53,14 @@ type TextFormatter struct {
 	// the time passed since beginning of execution.
 	FullTimestamp bool
 
+<<<<<<< HEAD
 	// TimestampFormat to use for display when a full timestamp is printed.
 	// The format to use is the same than for time.Format or time.Parse from the standard
 	// library.
 	// The standard Library already provides a set of predefined format.
+=======
+	// TimestampFormat to use for display when a full timestamp is printed
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	TimestampFormat string
 
 	// The fields are sorted by default for a consistent output. For applications
@@ -238,8 +242,11 @@ func (f *TextFormatter) printColored(b *bytes.Buffer, entry *Entry, keys []strin
 		levelColor = yellow
 	case ErrorLevel, FatalLevel, PanicLevel:
 		levelColor = red
+<<<<<<< HEAD
 	case InfoLevel:
 		levelColor = blue
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	default:
 		levelColor = blue
 	}

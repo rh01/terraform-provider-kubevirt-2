@@ -5,7 +5,11 @@ import (
 	"strings"
 
 	"github.com/onsi/gomega/format"
+<<<<<<< HEAD
 	"gopkg.in/yaml.v3"
+=======
+	"gopkg.in/yaml.v2"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 )
 
 type MatchYAMLMatcher struct {

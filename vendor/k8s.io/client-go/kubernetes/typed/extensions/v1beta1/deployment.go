@@ -20,15 +20,21 @@ package v1beta1
 
 import (
 	"context"
+<<<<<<< HEAD
 	json "encoding/json"
 	"fmt"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"time"
 
 	v1beta1 "k8s.io/api/extensions/v1beta1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
+<<<<<<< HEAD
 	extensionsv1beta1 "k8s.io/client-go/applyconfigurations/extensions/v1beta1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	scheme "k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
 )
@@ -50,11 +56,16 @@ type DeploymentInterface interface {
 	List(ctx context.Context, opts v1.ListOptions) (*v1beta1.DeploymentList, error)
 	Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error)
 	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *v1beta1.Deployment, err error)
+<<<<<<< HEAD
 	Apply(ctx context.Context, deployment *extensionsv1beta1.DeploymentApplyConfiguration, opts v1.ApplyOptions) (result *v1beta1.Deployment, err error)
 	ApplyStatus(ctx context.Context, deployment *extensionsv1beta1.DeploymentApplyConfiguration, opts v1.ApplyOptions) (result *v1beta1.Deployment, err error)
 	GetScale(ctx context.Context, deploymentName string, options v1.GetOptions) (*v1beta1.Scale, error)
 	UpdateScale(ctx context.Context, deploymentName string, scale *v1beta1.Scale, opts v1.UpdateOptions) (*v1beta1.Scale, error)
 	ApplyScale(ctx context.Context, deploymentName string, scale *extensionsv1beta1.ScaleApplyConfiguration, opts v1.ApplyOptions) (*v1beta1.Scale, error)
+=======
+	GetScale(ctx context.Context, deploymentName string, options v1.GetOptions) (*v1beta1.Scale, error)
+	UpdateScale(ctx context.Context, deploymentName string, scale *v1beta1.Scale, opts v1.UpdateOptions) (*v1beta1.Scale, error)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	DeploymentExpansion
 }
@@ -203,6 +214,7 @@ func (c *deployments) Patch(ctx context.Context, name string, pt types.PatchType
 	return
 }
 
+<<<<<<< HEAD
 // Apply takes the given apply declarative configuration, applies it and returns the applied deployment.
 func (c *deployments) Apply(ctx context.Context, deployment *extensionsv1beta1.DeploymentApplyConfiguration, opts v1.ApplyOptions) (result *v1beta1.Deployment, err error) {
 	if deployment == nil {
@@ -259,6 +271,8 @@ func (c *deployments) ApplyStatus(ctx context.Context, deployment *extensionsv1b
 	return
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // GetScale takes name of the deployment, and returns the corresponding v1beta1.Scale object, and an error if there is any.
 func (c *deployments) GetScale(ctx context.Context, deploymentName string, options v1.GetOptions) (result *v1beta1.Scale, err error) {
 	result = &v1beta1.Scale{}
@@ -287,6 +301,7 @@ func (c *deployments) UpdateScale(ctx context.Context, deploymentName string, sc
 		Into(result)
 	return
 }
+<<<<<<< HEAD
 
 // ApplyScale takes top resource name and the apply declarative configuration for scale,
 // applies it and returns the applied scale, and an error, if there is any.
@@ -312,3 +327,5 @@ func (c *deployments) ApplyScale(ctx context.Context, deploymentName string, sca
 		Into(result)
 	return
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

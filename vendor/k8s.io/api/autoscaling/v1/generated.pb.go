@@ -47,6 +47,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
+<<<<<<< HEAD
 func (m *ContainerResourceMetricSource) Reset()      { *m = ContainerResourceMetricSource{} }
 func (*ContainerResourceMetricSource) ProtoMessage() {}
 func (*ContainerResourceMetricSource) Descriptor() ([]byte, []int) {
@@ -107,6 +108,12 @@ func (m *CrossVersionObjectReference) Reset()      { *m = CrossVersionObjectRefe
 func (*CrossVersionObjectReference) ProtoMessage() {}
 func (*CrossVersionObjectReference) Descriptor() ([]byte, []int) {
 	return fileDescriptor_2bb1f2101a7f10e2, []int{2}
+=======
+func (m *CrossVersionObjectReference) Reset()      { *m = CrossVersionObjectReference{} }
+func (*CrossVersionObjectReference) ProtoMessage() {}
+func (*CrossVersionObjectReference) Descriptor() ([]byte, []int) {
+	return fileDescriptor_2bb1f2101a7f10e2, []int{0}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *CrossVersionObjectReference) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -134,7 +141,11 @@ var xxx_messageInfo_CrossVersionObjectReference proto.InternalMessageInfo
 func (m *ExternalMetricSource) Reset()      { *m = ExternalMetricSource{} }
 func (*ExternalMetricSource) ProtoMessage() {}
 func (*ExternalMetricSource) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{3}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{1}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *ExternalMetricSource) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -162,7 +173,11 @@ var xxx_messageInfo_ExternalMetricSource proto.InternalMessageInfo
 func (m *ExternalMetricStatus) Reset()      { *m = ExternalMetricStatus{} }
 func (*ExternalMetricStatus) ProtoMessage() {}
 func (*ExternalMetricStatus) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{4}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{2}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *ExternalMetricStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -190,7 +205,11 @@ var xxx_messageInfo_ExternalMetricStatus proto.InternalMessageInfo
 func (m *HorizontalPodAutoscaler) Reset()      { *m = HorizontalPodAutoscaler{} }
 func (*HorizontalPodAutoscaler) ProtoMessage() {}
 func (*HorizontalPodAutoscaler) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{5}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{3}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *HorizontalPodAutoscaler) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -218,7 +237,11 @@ var xxx_messageInfo_HorizontalPodAutoscaler proto.InternalMessageInfo
 func (m *HorizontalPodAutoscalerCondition) Reset()      { *m = HorizontalPodAutoscalerCondition{} }
 func (*HorizontalPodAutoscalerCondition) ProtoMessage() {}
 func (*HorizontalPodAutoscalerCondition) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{6}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{4}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *HorizontalPodAutoscalerCondition) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -246,7 +269,11 @@ var xxx_messageInfo_HorizontalPodAutoscalerCondition proto.InternalMessageInfo
 func (m *HorizontalPodAutoscalerList) Reset()      { *m = HorizontalPodAutoscalerList{} }
 func (*HorizontalPodAutoscalerList) ProtoMessage() {}
 func (*HorizontalPodAutoscalerList) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{7}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{5}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *HorizontalPodAutoscalerList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -274,7 +301,11 @@ var xxx_messageInfo_HorizontalPodAutoscalerList proto.InternalMessageInfo
 func (m *HorizontalPodAutoscalerSpec) Reset()      { *m = HorizontalPodAutoscalerSpec{} }
 func (*HorizontalPodAutoscalerSpec) ProtoMessage() {}
 func (*HorizontalPodAutoscalerSpec) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{8}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{6}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *HorizontalPodAutoscalerSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -302,7 +333,11 @@ var xxx_messageInfo_HorizontalPodAutoscalerSpec proto.InternalMessageInfo
 func (m *HorizontalPodAutoscalerStatus) Reset()      { *m = HorizontalPodAutoscalerStatus{} }
 func (*HorizontalPodAutoscalerStatus) ProtoMessage() {}
 func (*HorizontalPodAutoscalerStatus) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{9}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{7}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *HorizontalPodAutoscalerStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -330,7 +365,11 @@ var xxx_messageInfo_HorizontalPodAutoscalerStatus proto.InternalMessageInfo
 func (m *MetricSpec) Reset()      { *m = MetricSpec{} }
 func (*MetricSpec) ProtoMessage() {}
 func (*MetricSpec) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{10}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{8}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *MetricSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -358,7 +397,11 @@ var xxx_messageInfo_MetricSpec proto.InternalMessageInfo
 func (m *MetricStatus) Reset()      { *m = MetricStatus{} }
 func (*MetricStatus) ProtoMessage() {}
 func (*MetricStatus) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{11}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{9}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *MetricStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -386,7 +429,11 @@ var xxx_messageInfo_MetricStatus proto.InternalMessageInfo
 func (m *ObjectMetricSource) Reset()      { *m = ObjectMetricSource{} }
 func (*ObjectMetricSource) ProtoMessage() {}
 func (*ObjectMetricSource) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{12}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{10}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *ObjectMetricSource) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -414,7 +461,11 @@ var xxx_messageInfo_ObjectMetricSource proto.InternalMessageInfo
 func (m *ObjectMetricStatus) Reset()      { *m = ObjectMetricStatus{} }
 func (*ObjectMetricStatus) ProtoMessage() {}
 func (*ObjectMetricStatus) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{13}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{11}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *ObjectMetricStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -442,7 +493,11 @@ var xxx_messageInfo_ObjectMetricStatus proto.InternalMessageInfo
 func (m *PodsMetricSource) Reset()      { *m = PodsMetricSource{} }
 func (*PodsMetricSource) ProtoMessage() {}
 func (*PodsMetricSource) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{14}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{12}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *PodsMetricSource) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -470,7 +525,11 @@ var xxx_messageInfo_PodsMetricSource proto.InternalMessageInfo
 func (m *PodsMetricStatus) Reset()      { *m = PodsMetricStatus{} }
 func (*PodsMetricStatus) ProtoMessage() {}
 func (*PodsMetricStatus) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{15}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{13}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *PodsMetricStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -498,7 +557,11 @@ var xxx_messageInfo_PodsMetricStatus proto.InternalMessageInfo
 func (m *ResourceMetricSource) Reset()      { *m = ResourceMetricSource{} }
 func (*ResourceMetricSource) ProtoMessage() {}
 func (*ResourceMetricSource) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{16}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{14}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *ResourceMetricSource) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -526,7 +589,11 @@ var xxx_messageInfo_ResourceMetricSource proto.InternalMessageInfo
 func (m *ResourceMetricStatus) Reset()      { *m = ResourceMetricStatus{} }
 func (*ResourceMetricStatus) ProtoMessage() {}
 func (*ResourceMetricStatus) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{17}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{15}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *ResourceMetricStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -554,7 +621,11 @@ var xxx_messageInfo_ResourceMetricStatus proto.InternalMessageInfo
 func (m *Scale) Reset()      { *m = Scale{} }
 func (*Scale) ProtoMessage() {}
 func (*Scale) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{18}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{16}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *Scale) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -582,7 +653,11 @@ var xxx_messageInfo_Scale proto.InternalMessageInfo
 func (m *ScaleSpec) Reset()      { *m = ScaleSpec{} }
 func (*ScaleSpec) ProtoMessage() {}
 func (*ScaleSpec) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{19}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{17}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *ScaleSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -610,7 +685,11 @@ var xxx_messageInfo_ScaleSpec proto.InternalMessageInfo
 func (m *ScaleStatus) Reset()      { *m = ScaleStatus{} }
 func (*ScaleStatus) ProtoMessage() {}
 func (*ScaleStatus) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_2bb1f2101a7f10e2, []int{20}
+=======
+	return fileDescriptor_2bb1f2101a7f10e2, []int{18}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *ScaleStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -636,8 +715,11 @@ func (m *ScaleStatus) XXX_DiscardUnknown() {
 var xxx_messageInfo_ScaleStatus proto.InternalMessageInfo
 
 func init() {
+<<<<<<< HEAD
 	proto.RegisterType((*ContainerResourceMetricSource)(nil), "k8s.io.api.autoscaling.v1.ContainerResourceMetricSource")
 	proto.RegisterType((*ContainerResourceMetricStatus)(nil), "k8s.io.api.autoscaling.v1.ContainerResourceMetricStatus")
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	proto.RegisterType((*CrossVersionObjectReference)(nil), "k8s.io.api.autoscaling.v1.CrossVersionObjectReference")
 	proto.RegisterType((*ExternalMetricSource)(nil), "k8s.io.api.autoscaling.v1.ExternalMetricSource")
 	proto.RegisterType((*ExternalMetricStatus)(nil), "k8s.io.api.autoscaling.v1.ExternalMetricStatus")
@@ -664,6 +746,7 @@ func init() {
 }
 
 var fileDescriptor_2bb1f2101a7f10e2 = []byte{
+<<<<<<< HEAD
 	// 1608 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x59, 0x4d, 0x6c, 0xd4, 0xc6,
 	0x17, 0xcf, 0x7e, 0x24, 0x24, 0x6f, 0x43, 0x3e, 0x06, 0xfe, 0x90, 0x84, 0x3f, 0xeb, 0xc8, 0x7f,
@@ -864,6 +947,104 @@ func (m *ContainerResourceMetricStatus) MarshalToSizedBuffer(dAtA []byte) (int, 
 	i--
 	dAtA[i] = 0xa
 	return len(dAtA) - i, nil
+=======
+	// 1516 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xdc, 0x58, 0xcf, 0x6f, 0x13, 0xc7,
+	0x17, 0x8f, 0x7f, 0x24, 0x24, 0xe3, 0x90, 0xe4, 0x3b, 0x20, 0x08, 0xe1, 0x8b, 0x37, 0xda, 0x22,
+	0x44, 0x7f, 0xb0, 0x6e, 0x52, 0x8a, 0xe8, 0x31, 0x76, 0x4b, 0x41, 0x8d, 0x21, 0x4c, 0x02, 0xa5,
+	0x3f, 0xc5, 0x64, 0x3d, 0x38, 0x43, 0xbc, 0xbb, 0xd6, 0xec, 0xd8, 0x22, 0x48, 0x95, 0xda, 0x43,
+	0xef, 0xbd, 0xb4, 0xea, 0xb1, 0x95, 0x7a, 0xed, 0x99, 0x73, 0x6f, 0x1c, 0x39, 0x20, 0x95, 0xd3,
+	0xaa, 0x6c, 0x8f, 0xfd, 0x0f, 0x38, 0x55, 0xf3, 0xc3, 0xeb, 0x5d, 0xdb, 0xeb, 0x24, 0x26, 0x44,
+	0x6d, 0x6f, 0x3b, 0x33, 0xef, 0x7d, 0xde, 0xec, 0x7b, 0x6f, 0xde, 0x2f, 0x50, 0xde, 0xbe, 0xec,
+	0x5b, 0xd4, 0x2b, 0x6d, 0xb7, 0x36, 0x09, 0x73, 0x09, 0x27, 0x7e, 0xa9, 0x4d, 0xdc, 0x9a, 0xc7,
+	0x4a, 0xfa, 0x00, 0x37, 0x69, 0x09, 0xb7, 0xb8, 0xe7, 0xdb, 0xb8, 0x41, 0xdd, 0x7a, 0xa9, 0xbd,
+	0x54, 0xaa, 0x13, 0x97, 0x30, 0xcc, 0x49, 0xcd, 0x6a, 0x32, 0x8f, 0x7b, 0xf0, 0x94, 0x22, 0xb5,
+	0x70, 0x93, 0x5a, 0x31, 0x52, 0xab, 0xbd, 0xb4, 0x70, 0xa1, 0x4e, 0xf9, 0x56, 0x6b, 0xd3, 0xb2,
+	0x3d, 0xa7, 0x54, 0xf7, 0xea, 0x5e, 0x49, 0x72, 0x6c, 0xb6, 0xee, 0xc9, 0x95, 0x5c, 0xc8, 0x2f,
+	0x85, 0xb4, 0x60, 0xc6, 0x84, 0xda, 0x1e, 0x23, 0x03, 0xa4, 0x2d, 0x5c, 0xec, 0xd2, 0x38, 0xd8,
+	0xde, 0xa2, 0x2e, 0x61, 0x3b, 0xa5, 0xe6, 0x76, 0x5d, 0x32, 0x31, 0xe2, 0x7b, 0x2d, 0x66, 0x93,
+	0x7d, 0x71, 0xf9, 0x25, 0x87, 0x70, 0x3c, 0x48, 0x56, 0x29, 0x8d, 0x8b, 0xb5, 0x5c, 0x4e, 0x9d,
+	0x7e, 0x31, 0x97, 0x76, 0x63, 0xf0, 0xed, 0x2d, 0xe2, 0xe0, 0x5e, 0x3e, 0xf3, 0xfb, 0x0c, 0x38,
+	0x5d, 0x61, 0x9e, 0xef, 0xdf, 0x26, 0xcc, 0xa7, 0x9e, 0x7b, 0x63, 0xf3, 0x3e, 0xb1, 0x39, 0x22,
+	0xf7, 0x08, 0x23, 0xae, 0x4d, 0xe0, 0x22, 0xc8, 0x6f, 0x53, 0xb7, 0x36, 0x9f, 0x59, 0xcc, 0x9c,
+	0x9f, 0x2a, 0x4f, 0x3f, 0x0e, 0x8c, 0xb1, 0x30, 0x30, 0xf2, 0x1f, 0x51, 0xb7, 0x86, 0xe4, 0x89,
+	0xa0, 0x70, 0xb1, 0x43, 0xe6, 0xb3, 0x49, 0x8a, 0xeb, 0xd8, 0x21, 0x48, 0x9e, 0xc0, 0x65, 0x00,
+	0x70, 0x93, 0x6a, 0x01, 0xf3, 0x39, 0x49, 0x07, 0x35, 0x1d, 0x58, 0x59, 0xbb, 0xa6, 0x4f, 0x50,
+	0x8c, 0xca, 0xfc, 0x21, 0x07, 0x8e, 0x7f, 0xf0, 0x80, 0x13, 0xe6, 0xe2, 0x46, 0x95, 0x70, 0x46,
+	0xed, 0x75, 0xa9, 0x5f, 0x01, 0xe6, 0xc8, 0xb5, 0x10, 0xa0, 0xaf, 0x15, 0x81, 0x55, 0xa3, 0x13,
+	0x14, 0xa3, 0x82, 0x1e, 0x98, 0x51, 0xab, 0x75, 0xd2, 0x20, 0x36, 0xf7, 0x98, 0xbc, 0x6c, 0x61,
+	0xf9, 0x1d, 0xab, 0xeb, 0x40, 0x91, 0xd6, 0xac, 0xe6, 0x76, 0x5d, 0x6c, 0xf8, 0x96, 0x30, 0x8e,
+	0xd5, 0x5e, 0xb2, 0x56, 0xf1, 0x26, 0x69, 0x74, 0x58, 0xcb, 0x30, 0x0c, 0x8c, 0x99, 0x6a, 0x02,
+	0x0e, 0xf5, 0xc0, 0x43, 0x0c, 0x0a, 0x1c, 0xb3, 0x3a, 0xe1, 0xb7, 0x71, 0xa3, 0x45, 0xe4, 0x2f,
+	0x17, 0x96, 0xad, 0x61, 0xd2, 0xac, 0x8e, 0x03, 0x59, 0x37, 0x5b, 0xd8, 0xe5, 0x94, 0xef, 0x94,
+	0x67, 0xc3, 0xc0, 0x28, 0x6c, 0x74, 0x61, 0x50, 0x1c, 0x13, 0xb6, 0x01, 0x54, 0xcb, 0x95, 0x36,
+	0x61, 0xb8, 0x4e, 0x94, 0xa4, 0xfc, 0x48, 0x92, 0x4e, 0x84, 0x81, 0x01, 0x37, 0xfa, 0xd0, 0xd0,
+	0x00, 0x09, 0xe6, 0x4f, 0xfd, 0x86, 0xe1, 0x98, 0xb7, 0xfc, 0x7f, 0x87, 0x61, 0xb6, 0xc0, 0xb4,
+	0xdd, 0x62, 0x8c, 0xb8, 0x2f, 0x65, 0x99, 0xe3, 0xfa, 0xb7, 0xa6, 0x2b, 0x31, 0x2c, 0x94, 0x40,
+	0x86, 0x3b, 0xe0, 0x98, 0x5e, 0x1f, 0x80, 0x81, 0x4e, 0x86, 0x81, 0x71, 0xac, 0xd2, 0x0f, 0x87,
+	0x06, 0xc9, 0x30, 0x1f, 0x65, 0xc1, 0xc9, 0xab, 0x1e, 0xa3, 0x0f, 0x3d, 0x97, 0xe3, 0xc6, 0x9a,
+	0x57, 0x5b, 0xd1, 0xb1, 0x91, 0x30, 0x78, 0x17, 0x4c, 0x0a, 0xed, 0xd5, 0x30, 0xc7, 0xd2, 0x46,
+	0x85, 0xe5, 0xb7, 0xf7, 0xa6, 0x6b, 0x15, 0x18, 0xaa, 0x84, 0xe3, 0xae, 0x55, 0xbb, 0x7b, 0x28,
+	0x42, 0x85, 0x77, 0x40, 0xde, 0x6f, 0x12, 0x5b, 0x5b, 0xf2, 0x92, 0x95, 0x1a, 0xa3, 0xad, 0x94,
+	0x3b, 0xae, 0x37, 0x89, 0xdd, 0x8d, 0x23, 0x62, 0x85, 0x24, 0x22, 0xbc, 0x0b, 0x26, 0x7c, 0xe9,
+	0x6b, 0xda, 0x6c, 0x97, 0x47, 0xc0, 0x96, 0xfc, 0xe5, 0x19, 0x8d, 0x3e, 0xa1, 0xd6, 0x48, 0xe3,
+	0x9a, 0xdf, 0xe6, 0xc0, 0x62, 0x0a, 0x67, 0xc5, 0x73, 0x6b, 0x94, 0x53, 0xcf, 0x85, 0x57, 0x41,
+	0x9e, 0xef, 0x34, 0x3b, 0x2e, 0x7e, 0xb1, 0x73, 0xd1, 0x8d, 0x9d, 0x26, 0x79, 0x11, 0x18, 0x67,
+	0x77, 0xe3, 0x17, 0x74, 0x48, 0x22, 0xc0, 0xd5, 0xe8, 0x87, 0xb2, 0x09, 0x2c, 0x7d, 0xad, 0x17,
+	0x81, 0x31, 0x20, 0x2f, 0x59, 0x11, 0x52, 0xf2, 0xf2, 0x22, 0x22, 0x34, 0xb0, 0xcf, 0x37, 0x18,
+	0x76, 0x7d, 0x25, 0x89, 0x3a, 0x1d, 0x0f, 0x7f, 0x63, 0x6f, 0x46, 0x16, 0x1c, 0xe5, 0x05, 0x7d,
+	0x0b, 0xb8, 0xda, 0x87, 0x86, 0x06, 0x48, 0x80, 0xe7, 0xc0, 0x04, 0x23, 0xd8, 0xf7, 0x5c, 0xe9,
+	0xdc, 0x53, 0x5d, 0xe5, 0x22, 0xb9, 0x8b, 0xf4, 0x29, 0x7c, 0x1d, 0x1c, 0x71, 0x88, 0xef, 0xe3,
+	0x3a, 0x99, 0x1f, 0x97, 0x84, 0xb3, 0x9a, 0xf0, 0x48, 0x55, 0x6d, 0xa3, 0xce, 0xb9, 0xf9, 0x34,
+	0x03, 0x4e, 0xa7, 0xe8, 0x71, 0x95, 0xfa, 0x1c, 0x7e, 0xde, 0xe7, 0xc5, 0xd6, 0x1e, 0x23, 0x06,
+	0xf5, 0x95, 0x0f, 0xcf, 0x69, 0xd9, 0x93, 0x9d, 0x9d, 0x98, 0x07, 0x7f, 0x0c, 0xc6, 0x29, 0x27,
+	0x8e, 0xb0, 0x4a, 0xee, 0x7c, 0x61, 0x79, 0x79, 0xff, 0x6e, 0x56, 0x3e, 0xaa, 0xe1, 0xc7, 0xaf,
+	0x09, 0x20, 0xa4, 0xf0, 0xcc, 0xbf, 0xb2, 0xa9, 0xbf, 0x25, 0xdc, 0x1c, 0xb6, 0xc1, 0x8c, 0x5c,
+	0xa9, 0x50, 0x8c, 0xc8, 0x3d, 0xfd, 0x73, 0xc3, 0x1e, 0xd1, 0x90, 0xe4, 0x5d, 0x3e, 0xa1, 0x6f,
+	0x31, 0xb3, 0x9e, 0x40, 0x45, 0x3d, 0x52, 0xe0, 0x12, 0x28, 0x38, 0xd4, 0x45, 0xa4, 0xd9, 0xa0,
+	0x36, 0x56, 0xce, 0x38, 0xae, 0xd2, 0x4f, 0xb5, 0xbb, 0x8d, 0xe2, 0x34, 0xf0, 0x5d, 0x50, 0x70,
+	0xf0, 0x83, 0x88, 0x25, 0x27, 0x59, 0x8e, 0x69, 0x79, 0x85, 0x6a, 0xf7, 0x08, 0xc5, 0xe9, 0xe0,
+	0x7d, 0x50, 0x54, 0x39, 0xa5, 0xb2, 0x76, 0xeb, 0x16, 0xa7, 0x0d, 0xfa, 0x10, 0x0b, 0x3f, 0x5a,
+	0x23, 0xcc, 0x26, 0x2e, 0x17, 0xae, 0x91, 0x97, 0x48, 0x66, 0x18, 0x18, 0xc5, 0x8d, 0xa1, 0x94,
+	0x68, 0x17, 0x24, 0xf3, 0xb7, 0x1c, 0x38, 0x33, 0x34, 0x0c, 0xc0, 0x2b, 0x00, 0x7a, 0x9b, 0x3e,
+	0x61, 0x6d, 0x52, 0xfb, 0x50, 0xd5, 0x45, 0xa2, 0x40, 0x11, 0x3a, 0xcf, 0xa9, 0x9c, 0x78, 0xa3,
+	0xef, 0x14, 0x0d, 0xe0, 0x80, 0x36, 0x38, 0x2a, 0xde, 0x85, 0xd2, 0x32, 0xd5, 0xb5, 0xd0, 0xfe,
+	0x1e, 0xdd, 0xff, 0xc2, 0xc0, 0x38, 0xba, 0x1a, 0x07, 0x41, 0x49, 0x4c, 0xb8, 0x02, 0x66, 0x75,
+	0xb0, 0xef, 0xd1, 0xfa, 0x49, 0xad, 0xf5, 0xd9, 0x4a, 0xf2, 0x18, 0xf5, 0xd2, 0x0b, 0x88, 0x1a,
+	0xf1, 0x29, 0x23, 0xb5, 0x08, 0x22, 0x9f, 0x84, 0x78, 0x3f, 0x79, 0x8c, 0x7a, 0xe9, 0xa1, 0x03,
+	0x0c, 0x8d, 0x9a, 0x6a, 0xc1, 0x71, 0x09, 0xf9, 0x5a, 0x18, 0x18, 0x46, 0x65, 0x38, 0x29, 0xda,
+	0x0d, 0x4b, 0x94, 0x81, 0xba, 0x76, 0x90, 0x0f, 0xe4, 0x62, 0x22, 0xf4, 0x2e, 0xf6, 0x84, 0xde,
+	0xb9, 0x78, 0xa1, 0x18, 0x0b, 0xb3, 0x37, 0xc1, 0x84, 0x27, 0x5f, 0x86, 0xb6, 0xcb, 0x85, 0x21,
+	0xcf, 0x29, 0x4a, 0x69, 0x11, 0x50, 0x19, 0x88, 0x58, 0xa6, 0x9f, 0x96, 0x06, 0x82, 0xd7, 0x40,
+	0xbe, 0xe9, 0xd5, 0x3a, 0x89, 0xe8, 0xcd, 0x21, 0x80, 0x6b, 0x5e, 0xcd, 0x4f, 0xc0, 0x4d, 0x8a,
+	0x1b, 0x8b, 0x5d, 0x24, 0x21, 0xe0, 0x27, 0x60, 0xb2, 0x93, 0xf0, 0x75, 0x75, 0x50, 0x1a, 0x02,
+	0x87, 0x34, 0x69, 0x02, 0x72, 0x5a, 0x04, 0xb2, 0xce, 0x09, 0x8a, 0xe0, 0x04, 0x34, 0xd1, 0xa5,
+	0x9a, 0xb4, 0xca, 0x70, 0xe8, 0x41, 0xe5, 0xb6, 0x82, 0xee, 0x9c, 0xa0, 0x08, 0xce, 0xfc, 0x31,
+	0x07, 0xa6, 0x13, 0xe5, 0xdf, 0x21, 0x9b, 0x46, 0xe5, 0xf1, 0x03, 0x33, 0x8d, 0x82, 0x3b, 0x50,
+	0xd3, 0x28, 0xc8, 0x57, 0x62, 0x9a, 0x18, 0xf4, 0x00, 0xd3, 0x3c, 0xcd, 0x01, 0xd8, 0xef, 0xc6,
+	0xf0, 0x4b, 0x30, 0xa1, 0x02, 0xe6, 0x4b, 0x26, 0x95, 0x28, 0xbd, 0xeb, 0xfc, 0xa1, 0x51, 0x7b,
+	0xea, 0xff, 0xec, 0x9e, 0xea, 0x7f, 0x72, 0x10, 0x7d, 0x52, 0x94, 0x75, 0x52, 0x7b, 0xa5, 0x2f,
+	0xc0, 0xa4, 0xdf, 0x69, 0x30, 0xf2, 0xa3, 0x37, 0x18, 0x52, 0xe1, 0x51, 0x6b, 0x11, 0x41, 0xc2,
+	0x1a, 0x98, 0xc6, 0xf1, 0x1a, 0x7f, 0x7c, 0xa4, 0xdf, 0x98, 0x13, 0x0d, 0x45, 0xa2, 0xb8, 0x4f,
+	0xa0, 0x9a, 0xbf, 0xf7, 0x9a, 0x55, 0xbd, 0xbb, 0x7f, 0xa2, 0x59, 0x0f, 0xaf, 0xcb, 0xfa, 0x4f,
+	0x58, 0xf6, 0xe7, 0x2c, 0x98, 0xeb, 0x4d, 0x13, 0x23, 0xb5, 0xd3, 0x0f, 0x07, 0xce, 0x04, 0xb2,
+	0x23, 0x5d, 0x3a, 0xea, 0x02, 0xf6, 0x36, 0x17, 0x48, 0x58, 0x22, 0x77, 0xe0, 0x96, 0x30, 0x7f,
+	0x49, 0xea, 0x68, 0xf4, 0x91, 0xc3, 0x57, 0x83, 0xfb, 0xf2, 0xd1, 0x94, 0x74, 0x5a, 0x0b, 0xdb,
+	0x73, 0x6f, 0xfe, 0xaa, 0xd5, 0xf4, 0x6b, 0x16, 0x1c, 0x1f, 0x54, 0x22, 0xc0, 0x8a, 0x9e, 0xd2,
+	0x29, 0x25, 0x95, 0xe2, 0x53, 0xba, 0x17, 0x81, 0x61, 0x0c, 0x68, 0x33, 0x3b, 0x30, 0xb1, 0x41,
+	0xde, 0x1d, 0x30, 0x9f, 0xb0, 0x7c, 0xac, 0x66, 0xd3, 0x4d, 0xc3, 0xff, 0xc3, 0xc0, 0x98, 0xdf,
+	0x48, 0xa1, 0x41, 0xa9, 0xdc, 0x29, 0xd3, 0xac, 0xdc, 0x2b, 0x9f, 0x66, 0x3d, 0xea, 0xd7, 0x97,
+	0x72, 0xad, 0x03, 0xd1, 0xd7, 0x67, 0xe0, 0x54, 0xd2, 0x07, 0xfa, 0x15, 0x76, 0x26, 0x0c, 0x8c,
+	0x53, 0x95, 0x34, 0x22, 0x94, 0xce, 0x9f, 0xe6, 0xc8, 0xb9, 0xc3, 0x71, 0x64, 0xf3, 0x9b, 0x2c,
+	0x18, 0x97, 0xcd, 0xc9, 0x21, 0x8c, 0x94, 0xae, 0x24, 0x46, 0x4a, 0x67, 0x87, 0x64, 0x38, 0x79,
+	0xa3, 0xd4, 0x01, 0xd2, 0xf5, 0x9e, 0x01, 0xd2, 0xb9, 0x5d, 0x91, 0x86, 0x8f, 0x8b, 0xde, 0x03,
+	0x53, 0x91, 0x40, 0xf8, 0x96, 0x28, 0x16, 0x75, 0x57, 0x95, 0x91, 0xb6, 0x8d, 0x66, 0x0c, 0x51,
+	0x3b, 0x15, 0x51, 0x98, 0x14, 0x14, 0x62, 0x12, 0xf6, 0xc7, 0x2c, 0xa8, 0xfd, 0xf8, 0xc0, 0x74,
+	0xaa, 0x4b, 0xdd, 0x1f, 0x13, 0xca, 0xe7, 0x1f, 0x3f, 0x2f, 0x8e, 0x3d, 0x79, 0x5e, 0x1c, 0x7b,
+	0xf6, 0xbc, 0x38, 0xf6, 0x75, 0x58, 0xcc, 0x3c, 0x0e, 0x8b, 0x99, 0x27, 0x61, 0x31, 0xf3, 0x2c,
+	0x2c, 0x66, 0xfe, 0x08, 0x8b, 0x99, 0xef, 0xfe, 0x2c, 0x8e, 0x7d, 0x9a, 0x6d, 0x2f, 0xfd, 0x1d,
+	0x00, 0x00, 0xff, 0xff, 0x3c, 0x26, 0x41, 0xcb, 0x94, 0x19, 0x00, 0x00,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func (m *CrossVersionObjectReference) Marshal() (dAtA []byte, err error) {
@@ -1300,6 +1481,7 @@ func (m *MetricSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+<<<<<<< HEAD
 	if m.ContainerResource != nil {
 		{
 			size, err := m.ContainerResource.MarshalToSizedBuffer(dAtA[:i])
@@ -1312,6 +1494,8 @@ func (m *MetricSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x3a
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if m.External != nil {
 		{
 			size, err := m.External.MarshalToSizedBuffer(dAtA[:i])
@@ -1388,6 +1572,7 @@ func (m *MetricStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+<<<<<<< HEAD
 	if m.ContainerResource != nil {
 		{
 			size, err := m.ContainerResource.MarshalToSizedBuffer(dAtA[:i])
@@ -1400,6 +1585,8 @@ func (m *MetricStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x3a
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if m.External != nil {
 		{
 			size, err := m.External.MarshalToSizedBuffer(dAtA[:i])
@@ -1909,6 +2096,7 @@ func encodeVarintGenerated(dAtA []byte, offset int, v uint64) int {
 	dAtA[offset] = uint8(v)
 	return base
 }
+<<<<<<< HEAD
 func (m *ContainerResourceMetricSource) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1947,6 +2135,8 @@ func (m *ContainerResourceMetricStatus) Size() (n int) {
 	return n
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *CrossVersionObjectReference) Size() (n int) {
 	if m == nil {
 		return 0
@@ -2120,10 +2310,13 @@ func (m *MetricSpec) Size() (n int) {
 		l = m.External.Size()
 		n += 1 + l + sovGenerated(uint64(l))
 	}
+<<<<<<< HEAD
 	if m.ContainerResource != nil {
 		l = m.ContainerResource.Size()
 		n += 1 + l + sovGenerated(uint64(l))
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	return n
 }
 
@@ -2151,10 +2344,13 @@ func (m *MetricStatus) Size() (n int) {
 		l = m.External.Size()
 		n += 1 + l + sovGenerated(uint64(l))
 	}
+<<<<<<< HEAD
 	if m.ContainerResource != nil {
 		l = m.ContainerResource.Size()
 		n += 1 + l + sovGenerated(uint64(l))
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	return n
 }
 
@@ -2315,6 +2511,7 @@ func sovGenerated(x uint64) (n int) {
 func sozGenerated(x uint64) (n int) {
 	return sovGenerated(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
+<<<<<<< HEAD
 func (this *ContainerResourceMetricSource) String() string {
 	if this == nil {
 		return "nil"
@@ -2341,6 +2538,8 @@ func (this *ContainerResourceMetricStatus) String() string {
 	}, "")
 	return s
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (this *CrossVersionObjectReference) String() string {
 	if this == nil {
 		return "nil"
@@ -2458,7 +2657,10 @@ func (this *MetricSpec) String() string {
 		`Pods:` + strings.Replace(this.Pods.String(), "PodsMetricSource", "PodsMetricSource", 1) + `,`,
 		`Resource:` + strings.Replace(this.Resource.String(), "ResourceMetricSource", "ResourceMetricSource", 1) + `,`,
 		`External:` + strings.Replace(this.External.String(), "ExternalMetricSource", "ExternalMetricSource", 1) + `,`,
+<<<<<<< HEAD
 		`ContainerResource:` + strings.Replace(this.ContainerResource.String(), "ContainerResourceMetricSource", "ContainerResourceMetricSource", 1) + `,`,
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		`}`,
 	}, "")
 	return s
@@ -2473,7 +2675,10 @@ func (this *MetricStatus) String() string {
 		`Pods:` + strings.Replace(this.Pods.String(), "PodsMetricStatus", "PodsMetricStatus", 1) + `,`,
 		`Resource:` + strings.Replace(this.Resource.String(), "ResourceMetricStatus", "ResourceMetricStatus", 1) + `,`,
 		`External:` + strings.Replace(this.External.String(), "ExternalMetricStatus", "ExternalMetricStatus", 1) + `,`,
+<<<<<<< HEAD
 		`ContainerResource:` + strings.Replace(this.ContainerResource.String(), "ContainerResourceMetricStatus", "ContainerResourceMetricStatus", 1) + `,`,
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		`}`,
 	}, "")
 	return s
@@ -2595,6 +2800,7 @@ func valueToStringGenerated(v interface{}) string {
 	pv := reflect.Indirect(rv).Interface()
 	return fmt.Sprintf("*%v", pv)
 }
+<<<<<<< HEAD
 func (m *ContainerResourceMetricSource) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -2932,6 +3138,8 @@ func (m *ContainerResourceMetricStatus) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *CrossVersionObjectReference) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -3063,7 +3271,14 @@ func (m *CrossVersionObjectReference) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3253,7 +3468,14 @@ func (m *ExternalMetricSource) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3440,7 +3662,14 @@ func (m *ExternalMetricStatus) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3589,7 +3818,14 @@ func (m *HorizontalPodAutoscaler) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3800,7 +4036,14 @@ func (m *HorizontalPodAutoscalerCondition) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3917,7 +4160,14 @@ func (m *HorizontalPodAutoscalerList) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -4059,7 +4309,14 @@ func (m *HorizontalPodAutoscalerSpec) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -4223,7 +4480,14 @@ func (m *HorizontalPodAutoscalerStatus) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -4443,6 +4707,7 @@ func (m *MetricSpec) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+<<<<<<< HEAD
 		case 7:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field ContainerResource", wireType)
@@ -4479,13 +4744,22 @@ func (m *MetricSpec) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		default:
 			iNdEx = preIndex
 			skippy, err := skipGenerated(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -4705,6 +4979,7 @@ func (m *MetricStatus) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+<<<<<<< HEAD
 		case 7:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field ContainerResource", wireType)
@@ -4741,13 +5016,22 @@ func (m *MetricStatus) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		default:
 			iNdEx = preIndex
 			skippy, err := skipGenerated(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -4967,7 +5251,14 @@ func (m *ObjectMetricSource) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5187,7 +5478,14 @@ func (m *ObjectMetricStatus) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5338,7 +5636,14 @@ func (m *PodsMetricSource) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5489,7 +5794,14 @@ func (m *PodsMetricStatus) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5627,7 +5939,14 @@ func (m *ResourceMetricSource) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5762,7 +6081,14 @@ func (m *ResourceMetricStatus) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5911,7 +6237,14 @@ func (m *Scale) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5980,7 +6313,14 @@ func (m *ScaleSpec) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -6081,7 +6421,14 @@ func (m *ScaleStatus) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {

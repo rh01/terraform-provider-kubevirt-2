@@ -47,9 +47,15 @@ type Stenographer interface {
 
 	AnnounceCapturedOutput(output string)
 
+<<<<<<< HEAD
 	AnnounceSuccessfulSpec(spec *types.SpecSummary)
 	AnnounceSuccessfulSlowSpec(spec *types.SpecSummary, succinct bool)
 	AnnounceSuccessfulMeasurement(spec *types.SpecSummary, succinct bool)
+=======
+	AnnounceSuccesfulSpec(spec *types.SpecSummary)
+	AnnounceSuccesfulSlowSpec(spec *types.SpecSummary, succinct bool)
+	AnnounceSuccesfulMeasurement(spec *types.SpecSummary, succinct bool)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	AnnouncePendingSpec(spec *types.SpecSummary, noisy bool)
 	AnnounceSkippedSpec(spec *types.SpecSummary, succinct bool, fullTrace bool)
@@ -245,12 +251,20 @@ func (s *consoleStenographer) AnnounceCapturedOutput(output string) {
 	s.midBlock()
 }
 
+<<<<<<< HEAD
 func (s *consoleStenographer) AnnounceSuccessfulSpec(spec *types.SpecSummary) {
+=======
+func (s *consoleStenographer) AnnounceSuccesfulSpec(spec *types.SpecSummary) {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	s.print(0, s.colorize(greenColor, s.denoter))
 	s.stream()
 }
 
+<<<<<<< HEAD
 func (s *consoleStenographer) AnnounceSuccessfulSlowSpec(spec *types.SpecSummary, succinct bool) {
+=======
+func (s *consoleStenographer) AnnounceSuccesfulSlowSpec(spec *types.SpecSummary, succinct bool) {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	s.printBlockWithMessage(
 		s.colorize(greenColor, "%s [SLOW TEST:%.3f seconds]", s.denoter, spec.RunTime.Seconds()),
 		"",
@@ -259,7 +273,11 @@ func (s *consoleStenographer) AnnounceSuccessfulSlowSpec(spec *types.SpecSummary
 	)
 }
 
+<<<<<<< HEAD
 func (s *consoleStenographer) AnnounceSuccessfulMeasurement(spec *types.SpecSummary, succinct bool) {
+=======
+func (s *consoleStenographer) AnnounceSuccesfulMeasurement(spec *types.SpecSummary, succinct bool) {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	s.printBlockWithMessage(
 		s.colorize(greenColor, "%s [MEASUREMENT]", s.denoter),
 		s.measurementReport(spec, succinct),

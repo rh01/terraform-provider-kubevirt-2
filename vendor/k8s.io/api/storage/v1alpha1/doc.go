@@ -18,6 +18,9 @@ limitations under the License.
 // +k8s:protobuf-gen=package
 // +groupName=storage.k8s.io
 // +k8s:openapi-gen=true
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen=true
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 package v1alpha1 // import "k8s.io/api/storage/v1alpha1"

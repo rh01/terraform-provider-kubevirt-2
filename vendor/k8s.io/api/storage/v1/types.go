@@ -18,7 +18,10 @@ package v1
 
 import (
 	v1 "k8s.io/api/core/v1"
+<<<<<<< HEAD
 	"k8s.io/apimachinery/pkg/api/resource"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -72,7 +75,10 @@ type StorageClass struct {
 	// An empty TopologySelectorTerm list means there is no topology restriction.
 	// This field is only honored by servers that enable the VolumeScheduling feature.
 	// +optional
+<<<<<<< HEAD
 	// +listType=atomic
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	AllowedTopologies []v1.TopologySelectorTerm `json:"allowedTopologies,omitempty" protobuf:"bytes,8,rep,name=allowedTopologies"`
 }
 
@@ -91,7 +97,10 @@ type StorageClassList struct {
 }
 
 // VolumeBindingMode indicates how PersistentVolumeClaims should be bound.
+<<<<<<< HEAD
 // +enum
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type VolumeBindingMode string
 
 const (
@@ -173,7 +182,11 @@ type VolumeAttachmentSource struct {
 	// a persistent volume defined by a pod's inline VolumeSource. This field
 	// is populated only for the CSIMigration feature. It contains
 	// translated fields from a pod's inline VolumeSource to a
+<<<<<<< HEAD
 	// PersistentVolumeSpec. This field is beta-level and is only
+=======
+	// PersistentVolumeSpec. This field is alpha-level and is only
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// honored by servers that enabled the CSIMigration feature.
 	// +optional
 	InlineVolumeSpec *v1.PersistentVolumeSpec `json:"inlineVolumeSpec,omitempty" protobuf:"bytes,2,opt,name=inlineVolumeSpec"`
@@ -273,9 +286,12 @@ type CSIDriverSpec struct {
 	// If the CSIDriverRegistry feature gate is enabled and the value is
 	// specified to false, the attach operation will be skipped.
 	// Otherwise the attach operation will be called.
+<<<<<<< HEAD
 	//
 	// This field is immutable.
 	//
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	AttachRequired *bool `json:"attachRequired,omitempty" protobuf:"varint,1,opt,name=attachRequired"`
 
@@ -294,7 +310,11 @@ type CSIDriverSpec struct {
 	// "csi.storage.k8s.io/pod.name": pod.Name
 	// "csi.storage.k8s.io/pod.namespace": pod.Namespace
 	// "csi.storage.k8s.io/pod.uid": string(pod.UID)
+<<<<<<< HEAD
 	// "csi.storage.k8s.io/ephemeral": "true" if the volume is an ephemeral inline volume
+=======
+	// "csi.storage.k8s.io/ephemeral": "true" iff the volume is an ephemeral inline volume
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	//                                 defined by a CSIVolumeSource, otherwise "false"
 	//
 	// "csi.storage.k8s.io/ephemeral" is a new feature in Kubernetes 1.16. It is only
@@ -303,9 +323,12 @@ type CSIDriverSpec struct {
 	// As Kubernetes 1.15 doesn't support this field, drivers can only support one mode when
 	// deployed on such a cluster and the deployment determines which mode that is, for example
 	// via a command line parameter of the driver.
+<<<<<<< HEAD
 	//
 	// This field is immutable.
 	//
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	PodInfoOnMount *bool `json:"podInfoOnMount,omitempty" protobuf:"bytes,2,opt,name=podInfoOnMount"`
 
@@ -322,9 +345,12 @@ type CSIDriverSpec struct {
 	// A driver can support one or more of these modes and
 	// more modes may be added in the future.
 	// This field is beta.
+<<<<<<< HEAD
 	//
 	// This field is immutable.
 	//
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	// +listType=set
 	VolumeLifecycleModes []VolumeLifecycleMode `json:"volumeLifecycleModes,omitempty" protobuf:"bytes,3,opt,name=volumeLifecycleModes"`
@@ -343,15 +369,23 @@ type CSIDriverSpec struct {
 	// unset or false and it can be flipped later when storage
 	// capacity information has been published.
 	//
+<<<<<<< HEAD
 	// This field was immutable in Kubernetes <= 1.22 and now is mutable.
 	//
 	// +optional
 	// +featureGate=CSIStorageCapacity
+=======
+	// This is an alpha field and only available when the CSIStorageCapacity
+	// feature is enabled. The default is false.
+	//
+	// +optional
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	StorageCapacity *bool `json:"storageCapacity,omitempty" protobuf:"bytes,4,opt,name=storageCapacity"`
 
 	// Defines if the underlying volume supports changing ownership and
 	// permission of the volume before being mounted.
 	// Refer to the specific FSGroupPolicy values for additional details.
+<<<<<<< HEAD
 	//
 	// This field is immutable.
 	//
@@ -413,6 +447,12 @@ type CSIDriverSpec struct {
 	//
 	// +optional
 	SELinuxMount *bool `json:"seLinuxMount,omitempty" protobuf:"varint,8,opt,name=seLinuxMount"`
+=======
+	// This field is alpha-level, and is only honored by servers
+	// that enable the CSIVolumeFSGroupPolicy feature gate.
+	// +optional
+	FSGroupPolicy *FSGroupPolicy `json:"fsGroupPolicy,omitempty" protobuf:"bytes,5,opt,name=fsGroupPolicy"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // FSGroupPolicy specifies if a CSI Driver supports modifying
@@ -431,11 +471,18 @@ const (
 	ReadWriteOnceWithFSTypeFSGroupPolicy FSGroupPolicy = "ReadWriteOnceWithFSType"
 
 	// FileFSGroupPolicy indicates that CSI driver supports volume ownership
+<<<<<<< HEAD
 	// and permission change via fsGroup, and Kubernetes will change the permissions
 	// and ownership of every file in the volume to match the user requested fsGroup in
 	// the pod's SecurityPolicy regardless of fstype or access mode.
 	// Use this mode if Kubernetes should modify the permissions and ownership
 	// of the volume.
+=======
+	// and permission change via fsGroup, and Kubernetes may use fsGroup
+	// to change permissions and ownership of the volume to match user requested fsGroup in
+	// the pod's SecurityPolicy regardless of fstype or access mode.
+	// This mode should be defined if the fsGroup is expected to always change on mount
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	FileFSGroupPolicy FSGroupPolicy = "File"
 
 	// NoneFSGroupPolicy indicates that volumes will be mounted without performing
@@ -451,6 +498,7 @@ const (
 // provided by a CSI driver. More modes may be added in the future.
 type VolumeLifecycleMode string
 
+<<<<<<< HEAD
 // TokenRequest contains parameters of a service account token.
 type TokenRequest struct {
 	// Audience is the intended audience of the token in "TokenRequestSpec".
@@ -465,6 +513,8 @@ type TokenRequest struct {
 	ExpirationSeconds *int64 `json:"expirationSeconds,omitempty" protobuf:"varint,2,opt,name=expirationSeconds"`
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 const (
 	// VolumeLifecyclePersistent explicitly confirms that the driver implements
 	// the full CSI spec. It is the default when CSIDriverSpec.VolumeLifecycleModes is not
@@ -579,6 +629,7 @@ type CSINodeList struct {
 	// items is the list of CSINode
 	Items []CSINode `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
+<<<<<<< HEAD
 
 // +genclient
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -680,3 +731,5 @@ type CSIStorageCapacityList struct {
 	// +listMapKey=name
 	Items []CSIStorageCapacity `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

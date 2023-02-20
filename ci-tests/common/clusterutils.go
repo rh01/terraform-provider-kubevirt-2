@@ -90,7 +90,10 @@ func ValidateDatavolume(dvName string, namespace string, expectedDV *cdiv1.DataV
 			expectedDV.Annotations["cdi.kubevirt.io/cloneType"] = resultDV.Annotations["cdi.kubevirt.io/cloneType"]
 			expectedDV.Annotations["cdi.kubevirt.io/storage.clone.token"] = resultDV.Annotations["cdi.kubevirt.io/storage.clone.token"]
 		}
+<<<<<<< HEAD
 		expectedDV.Status.Conditions = resultDV.Status.Conditions
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 		resultDV.ManagedFields = nil
 	}

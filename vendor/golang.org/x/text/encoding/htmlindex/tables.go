@@ -93,11 +93,16 @@ var canonical = [numEncodings]string{
 
 var nameMap = map[string]htmlEncoding{
 	"unicode-1-1-utf-8":   utf8,
+<<<<<<< HEAD
 	"unicode11utf8":       utf8,
 	"unicode20utf8":       utf8,
 	"utf-8":               utf8,
 	"utf8":                utf8,
 	"x-unicode20utf8":     utf8,
+=======
+	"utf-8":               utf8,
+	"utf8":                utf8,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"866":                 ibm866,
 	"cp866":               ibm866,
 	"csibm866":            ibm866,
@@ -310,6 +315,7 @@ var nameMap = map[string]htmlEncoding{
 	"iso-2022-cn-ext":     replacement,
 	"iso-2022-kr":         replacement,
 	"replacement":         replacement,
+<<<<<<< HEAD
 	"unicodefffe":         utf16be,
 	"utf-16be":            utf16be,
 	"csunicode":           utf16le,
@@ -317,6 +323,9 @@ var nameMap = map[string]htmlEncoding{
 	"ucs-2":               utf16le,
 	"unicode":             utf16le,
 	"unicodefeff":         utf16le,
+=======
+	"utf-16be":            utf16be,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"utf-16":              utf16le,
 	"utf-16le":            utf16le,
 	"x-user-defined":      xUserDefined,

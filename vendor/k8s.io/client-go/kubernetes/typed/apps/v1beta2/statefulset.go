@@ -20,15 +20,21 @@ package v1beta2
 
 import (
 	"context"
+<<<<<<< HEAD
 	json "encoding/json"
 	"fmt"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"time"
 
 	v1beta2 "k8s.io/api/apps/v1beta2"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
+<<<<<<< HEAD
 	appsv1beta2 "k8s.io/client-go/applyconfigurations/apps/v1beta2"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	scheme "k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
 )
@@ -50,11 +56,16 @@ type StatefulSetInterface interface {
 	List(ctx context.Context, opts v1.ListOptions) (*v1beta2.StatefulSetList, error)
 	Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error)
 	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *v1beta2.StatefulSet, err error)
+<<<<<<< HEAD
 	Apply(ctx context.Context, statefulSet *appsv1beta2.StatefulSetApplyConfiguration, opts v1.ApplyOptions) (result *v1beta2.StatefulSet, err error)
 	ApplyStatus(ctx context.Context, statefulSet *appsv1beta2.StatefulSetApplyConfiguration, opts v1.ApplyOptions) (result *v1beta2.StatefulSet, err error)
 	GetScale(ctx context.Context, statefulSetName string, options v1.GetOptions) (*v1beta2.Scale, error)
 	UpdateScale(ctx context.Context, statefulSetName string, scale *v1beta2.Scale, opts v1.UpdateOptions) (*v1beta2.Scale, error)
 	ApplyScale(ctx context.Context, statefulSetName string, scale *appsv1beta2.ScaleApplyConfiguration, opts v1.ApplyOptions) (*v1beta2.Scale, error)
+=======
+	GetScale(ctx context.Context, statefulSetName string, options v1.GetOptions) (*v1beta2.Scale, error)
+	UpdateScale(ctx context.Context, statefulSetName string, scale *v1beta2.Scale, opts v1.UpdateOptions) (*v1beta2.Scale, error)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	StatefulSetExpansion
 }
@@ -203,6 +214,7 @@ func (c *statefulSets) Patch(ctx context.Context, name string, pt types.PatchTyp
 	return
 }
 
+<<<<<<< HEAD
 // Apply takes the given apply declarative configuration, applies it and returns the applied statefulSet.
 func (c *statefulSets) Apply(ctx context.Context, statefulSet *appsv1beta2.StatefulSetApplyConfiguration, opts v1.ApplyOptions) (result *v1beta2.StatefulSet, err error) {
 	if statefulSet == nil {
@@ -259,6 +271,8 @@ func (c *statefulSets) ApplyStatus(ctx context.Context, statefulSet *appsv1beta2
 	return
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // GetScale takes name of the statefulSet, and returns the corresponding v1beta2.Scale object, and an error if there is any.
 func (c *statefulSets) GetScale(ctx context.Context, statefulSetName string, options v1.GetOptions) (result *v1beta2.Scale, err error) {
 	result = &v1beta2.Scale{}
@@ -287,6 +301,7 @@ func (c *statefulSets) UpdateScale(ctx context.Context, statefulSetName string, 
 		Into(result)
 	return
 }
+<<<<<<< HEAD
 
 // ApplyScale takes top resource name and the apply declarative configuration for scale,
 // applies it and returns the applied scale, and an error, if there is any.
@@ -312,3 +327,5 @@ func (c *statefulSets) ApplyScale(ctx context.Context, statefulSetName string, s
 		Into(result)
 	return
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

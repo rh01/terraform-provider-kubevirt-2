@@ -11,9 +11,13 @@ import (
 )
 
 type ConsistOfMatcher struct {
+<<<<<<< HEAD
 	Elements        []interface{}
 	missingElements []interface{}
 	extraElements   []interface{}
+=======
+	Elements []interface{}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func (matcher *ConsistOfMatcher) Match(actual interface{}) (success bool, err error) {
@@ -21,14 +25,46 @@ func (matcher *ConsistOfMatcher) Match(actual interface{}) (success bool, err er
 		return false, fmt.Errorf("ConsistOf matcher expects an array/slice/map.  Got:\n%s", format.Object(actual, 1))
 	}
 
+<<<<<<< HEAD
 	matchers := matchers(matcher.Elements)
 	values := valuesOf(actual)
+=======
+	elements := matcher.Elements
+	if len(matcher.Elements) == 1 && isArrayOrSlice(matcher.Elements[0]) {
+		elements = []interface{}{}
+		value := reflect.ValueOf(matcher.Elements[0])
+		for i := 0; i < value.Len(); i++ {
+			elements = append(elements, value.Index(i).Interface())
+		}
+	}
+
+	matchers := []interface{}{}
+	for _, element := range elements {
+		matcher, isMatcher := element.(omegaMatcher)
+		if !isMatcher {
+			matcher = &EqualMatcher{Expected: element}
+		}
+		matchers = append(matchers, matcher)
+	}
+
+	values := matcher.valuesOf(actual)
+
+	if len(values) != len(matchers) {
+		return false, nil
+	}
+
+	neighbours := func(v, m interface{}) (bool, error) {
+		match, err := m.(omegaMatcher).Match(v)
+		return match && err == nil, nil
+	}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	bipartiteGraph, err := bipartitegraph.NewBipartiteGraph(values, matchers, neighbours)
 	if err != nil {
 		return false, err
 	}
 
+<<<<<<< HEAD
 	edges := bipartiteGraph.LargestMatching()
 	if len(edges) == len(values) && len(edges) == len(matchers) {
 		return true, nil
@@ -105,6 +141,12 @@ func presentable(elems []interface{}) interface{} {
 }
 
 func valuesOf(actual interface{}) []interface{} {
+=======
+	return len(bipartiteGraph.LargestMatching()) == len(values), nil
+}
+
+func (matcher *ConsistOfMatcher) valuesOf(actual interface{}) []interface{} {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	value := reflect.ValueOf(actual)
 	values := []interface{}{}
 	if isMap(actual) {
@@ -122,6 +164,7 @@ func valuesOf(actual interface{}) []interface{} {
 }
 
 func (matcher *ConsistOfMatcher) FailureMessage(actual interface{}) (message string) {
+<<<<<<< HEAD
 	message = format.Message(actual, "to consist of", presentable(matcher.Elements))
 	message = appendMissingElements(message, matcher.missingElements)
 	if len(matcher.extraElements) > 0 {
@@ -141,4 +184,11 @@ func appendMissingElements(message string, missingElements []interface{}) string
 
 func (matcher *ConsistOfMatcher) NegatedFailureMessage(actual interface{}) (message string) {
 	return format.Message(actual, "not to consist of", presentable(matcher.Elements))
+=======
+	return format.Message(actual, "to consist of", matcher.Elements)
+}
+
+func (matcher *ConsistOfMatcher) NegatedFailureMessage(actual interface{}) (message string) {
+	return format.Message(actual, "not to consist of", matcher.Elements)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }

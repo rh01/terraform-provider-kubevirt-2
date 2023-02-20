@@ -13,6 +13,10 @@ import (
 )
 
 var (
+<<<<<<< HEAD
+=======
+	bufferPool *sync.Pool
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	// qualified package name, cached at first use
 	logrusPackage string
@@ -30,6 +34,15 @@ const (
 )
 
 func init() {
+<<<<<<< HEAD
+=======
+	bufferPool = &sync.Pool{
+		New: func() interface{} {
+			return new(bytes.Buffer)
+		},
+	}
+
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// start at the bottom of the stack before the package-name cache is primed
 	minimumCallerDepth = 1
 }
@@ -78,6 +91,7 @@ func NewEntry(logger *Logger) *Entry {
 	}
 }
 
+<<<<<<< HEAD
 func (entry *Entry) Dup() *Entry {
 	data := make(Fields, len(entry.Data))
 	for k, v := range entry.Data {
@@ -86,6 +100,8 @@ func (entry *Entry) Dup() *Entry {
 	return &Entry{Logger: entry.Logger, Data: data, Time: entry.Time, Context: entry.Context, err: entry.err}
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // Returns the bytes representation of this entry from the formatter.
 func (entry *Entry) Bytes() ([]byte, error) {
 	return entry.Logger.Formatter.Format(entry)
@@ -131,9 +147,17 @@ func (entry *Entry) WithFields(fields Fields) *Entry {
 	for k, v := range fields {
 		isErrField := false
 		if t := reflect.TypeOf(v); t != nil {
+<<<<<<< HEAD
 			switch {
 			case t.Kind() == reflect.Func, t.Kind() == reflect.Ptr && t.Elem().Kind() == reflect.Func:
 				isErrField = true
+=======
+			switch t.Kind() {
+			case reflect.Func:
+				isErrField = true
+			case reflect.Ptr:
+				isErrField = t.Elem().Kind() == reflect.Func
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			}
 		}
 		if isErrField {
@@ -218,6 +242,7 @@ func (entry Entry) HasCaller() (has bool) {
 		entry.Caller != nil
 }
 
+<<<<<<< HEAD
 func (entry *Entry) log(level Level, msg string) {
 	var buffer *bytes.Buffer
 
@@ -251,16 +276,55 @@ func (entry *Entry) log(level Level, msg string) {
 	newEntry.write()
 
 	newEntry.Buffer = nil
+=======
+// This function is not declared with a pointer value because otherwise
+// race conditions will occur when using multiple goroutines
+func (entry Entry) log(level Level, msg string) {
+	var buffer *bytes.Buffer
+
+	// Default to now, but allow users to override if they want.
+	//
+	// We don't have to worry about polluting future calls to Entry#log()
+	// with this assignment because this function is declared with a
+	// non-pointer receiver.
+	if entry.Time.IsZero() {
+		entry.Time = time.Now()
+	}
+
+	entry.Level = level
+	entry.Message = msg
+	entry.Logger.mu.Lock()
+	if entry.Logger.ReportCaller {
+		entry.Caller = getCaller()
+	}
+	entry.Logger.mu.Unlock()
+
+	entry.fireHooks()
+
+	buffer = bufferPool.Get().(*bytes.Buffer)
+	buffer.Reset()
+	defer bufferPool.Put(buffer)
+	entry.Buffer = buffer
+
+	entry.write()
+
+	entry.Buffer = nil
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	// To avoid Entry#log() returning a value that only would make sense for
 	// panic() to use in Entry#Panic(), we avoid the allocation by checking
 	// directly here.
 	if level <= PanicLevel {
+<<<<<<< HEAD
 		panic(newEntry)
+=======
+		panic(&entry)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	}
 }
 
 func (entry *Entry) fireHooks() {
+<<<<<<< HEAD
 	var tmpHooks LevelHooks
 	entry.Logger.mu.Lock()
 	tmpHooks = make(LevelHooks, len(entry.Logger.Hooks))
@@ -270,20 +334,34 @@ func (entry *Entry) fireHooks() {
 	entry.Logger.mu.Unlock()
 
 	err := tmpHooks.Fire(entry.Level, entry)
+=======
+	entry.Logger.mu.Lock()
+	defer entry.Logger.mu.Unlock()
+	err := entry.Logger.Hooks.Fire(entry.Level, entry)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Failed to fire hook: %v\n", err)
 	}
 }
 
 func (entry *Entry) write() {
+<<<<<<< HEAD
+=======
+	entry.Logger.mu.Lock()
+	defer entry.Logger.mu.Unlock()
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	serialized, err := entry.Logger.Formatter.Format(entry)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Failed to obtain reader, %v\n", err)
 		return
 	}
+<<<<<<< HEAD
 	entry.Logger.mu.Lock()
 	defer entry.Logger.mu.Unlock()
 	if _, err := entry.Logger.Out.Write(serialized); err != nil {
+=======
+	if _, err = entry.Logger.Out.Write(serialized); err != nil {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		fmt.Fprintf(os.Stderr, "Failed to write to log, %v\n", err)
 	}
 }
@@ -329,6 +407,10 @@ func (entry *Entry) Fatal(args ...interface{}) {
 
 func (entry *Entry) Panic(args ...interface{}) {
 	entry.Log(PanicLevel, args...)
+<<<<<<< HEAD
+=======
+	panic(fmt.Sprint(args...))
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // Entry Printf family functions

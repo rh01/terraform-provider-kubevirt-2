@@ -20,15 +20,21 @@ package v2beta1
 
 import (
 	"context"
+<<<<<<< HEAD
 	json "encoding/json"
 	"fmt"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"time"
 
 	v2beta1 "k8s.io/api/autoscaling/v2beta1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
+<<<<<<< HEAD
 	autoscalingv2beta1 "k8s.io/client-go/applyconfigurations/autoscaling/v2beta1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	scheme "k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
 )
@@ -50,8 +56,11 @@ type HorizontalPodAutoscalerInterface interface {
 	List(ctx context.Context, opts v1.ListOptions) (*v2beta1.HorizontalPodAutoscalerList, error)
 	Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error)
 	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *v2beta1.HorizontalPodAutoscaler, err error)
+<<<<<<< HEAD
 	Apply(ctx context.Context, horizontalPodAutoscaler *autoscalingv2beta1.HorizontalPodAutoscalerApplyConfiguration, opts v1.ApplyOptions) (result *v2beta1.HorizontalPodAutoscaler, err error)
 	ApplyStatus(ctx context.Context, horizontalPodAutoscaler *autoscalingv2beta1.HorizontalPodAutoscalerApplyConfiguration, opts v1.ApplyOptions) (result *v2beta1.HorizontalPodAutoscaler, err error)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	HorizontalPodAutoscalerExpansion
 }
 
@@ -198,6 +207,7 @@ func (c *horizontalPodAutoscalers) Patch(ctx context.Context, name string, pt ty
 		Into(result)
 	return
 }
+<<<<<<< HEAD
 
 // Apply takes the given apply declarative configuration, applies it and returns the applied horizontalPodAutoscaler.
 func (c *horizontalPodAutoscalers) Apply(ctx context.Context, horizontalPodAutoscaler *autoscalingv2beta1.HorizontalPodAutoscalerApplyConfiguration, opts v1.ApplyOptions) (result *v2beta1.HorizontalPodAutoscaler, err error) {
@@ -254,3 +264,5 @@ func (c *horizontalPodAutoscalers) ApplyStatus(ctx context.Context, horizontalPo
 		Into(result)
 	return
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

@@ -13,6 +13,7 @@ type BipartiteGraph struct {
 
 func NewBipartiteGraph(leftValues, rightValues []interface{}, neighbours func(interface{}, interface{}) (bool, error)) (*BipartiteGraph, error) {
 	left := NodeOrderedSet{}
+<<<<<<< HEAD
 	for i, v := range leftValues {
 		left = append(left, Node{ID: i, Value: v})
 	}
@@ -20,6 +21,15 @@ func NewBipartiteGraph(leftValues, rightValues []interface{}, neighbours func(in
 	right := NodeOrderedSet{}
 	for j, v := range rightValues {
 		right = append(right, Node{ID: j + len(left), Value: v})
+=======
+	for i := range leftValues {
+		left = append(left, Node{Id: i})
+	}
+
+	right := NodeOrderedSet{}
+	for j := range rightValues {
+		right = append(right, Node{Id: j + len(left)})
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	}
 
 	edges := EdgeSet{}
@@ -31,13 +41,18 @@ func NewBipartiteGraph(leftValues, rightValues []interface{}, neighbours func(in
 			}
 
 			if neighbours {
+<<<<<<< HEAD
 				edges = append(edges, Edge{Node1: left[i].ID, Node2: right[j].ID})
+=======
+				edges = append(edges, Edge{Node1: left[i], Node2: right[j]})
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			}
 		}
 	}
 
 	return &BipartiteGraph{left, right, edges}, nil
 }
+<<<<<<< HEAD
 
 // FreeLeftRight returns left node values and right node values
 // of the BipartiteGraph's nodes which are not part of the given edges.
@@ -54,3 +69,5 @@ func (bg *BipartiteGraph) FreeLeftRight(edges EdgeSet) (leftValues, rightValues 
 	}
 	return
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

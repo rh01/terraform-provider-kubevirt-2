@@ -28,10 +28,16 @@ package v1
 
 // AUTO-GENERATED FUNCTIONS START HERE. DO NOT EDIT.
 var map_LocalSubjectAccessReview = map[string]string{
+<<<<<<< HEAD
 	"":         "LocalSubjectAccessReview checks whether or not a user or group can perform an action in a given namespace. Having a namespace scoped resource makes it much easier to grant namespace scoped policy that includes permissions checking.",
 	"metadata": "Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata",
 	"spec":     "Spec holds information about the request being evaluated.  spec.namespace must be equal to the namespace you made the request against.  If empty, it is defaulted.",
 	"status":   "Status is filled in by the server and indicates whether the request is allowed or not",
+=======
+	"":       "LocalSubjectAccessReview checks whether or not a user or group can perform an action in a given namespace. Having a namespace scoped resource makes it much easier to grant namespace scoped policy that includes permissions checking.",
+	"spec":   "Spec holds information about the request being evaluated.  spec.namespace must be equal to the namespace you made the request against.  If empty, it is defaulted.",
+	"status": "Status is filled in by the server and indicates whether the request is allowed or not",
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func (LocalSubjectAccessReview) SwaggerDoc() map[string]string {
@@ -86,10 +92,16 @@ func (ResourceRule) SwaggerDoc() map[string]string {
 }
 
 var map_SelfSubjectAccessReview = map[string]string{
+<<<<<<< HEAD
 	"":         "SelfSubjectAccessReview checks whether or the current user can perform an action.  Not filling in a spec.namespace means \"in all namespaces\".  Self is a special case, because users should always be able to check whether they can perform an action",
 	"metadata": "Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata",
 	"spec":     "Spec holds information about the request being evaluated.  user and groups must be empty",
 	"status":   "Status is filled in by the server and indicates whether the request is allowed or not",
+=======
+	"":       "SelfSubjectAccessReview checks whether or the current user can perform an action.  Not filling in a spec.namespace means \"in all namespaces\".  Self is a special case, because users should always be able to check whether they can perform an action",
+	"spec":   "Spec holds information about the request being evaluated.  user and groups must be empty",
+	"status": "Status is filled in by the server and indicates whether the request is allowed or not",
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func (SelfSubjectAccessReview) SwaggerDoc() map[string]string {
@@ -107,10 +119,16 @@ func (SelfSubjectAccessReviewSpec) SwaggerDoc() map[string]string {
 }
 
 var map_SelfSubjectRulesReview = map[string]string{
+<<<<<<< HEAD
 	"":         "SelfSubjectRulesReview enumerates the set of actions the current user can perform within a namespace. The returned list of actions may be incomplete depending on the server's authorization mode, and any errors experienced during the evaluation. SelfSubjectRulesReview should be used by UIs to show/hide actions, or to quickly let an end user reason about their permissions. It should NOT Be used by external systems to drive authorization decisions as this raises confused deputy, cache lifetime/revocation, and correctness concerns. SubjectAccessReview, and LocalAccessReview are the correct way to defer authorization decisions to the API server.",
 	"metadata": "Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata",
 	"spec":     "Spec holds information about the request being evaluated.",
 	"status":   "Status is filled in by the server and indicates the set of actions a user can perform.",
+=======
+	"":       "SelfSubjectRulesReview enumerates the set of actions the current user can perform within a namespace. The returned list of actions may be incomplete depending on the server's authorization mode, and any errors experienced during the evaluation. SelfSubjectRulesReview should be used by UIs to show/hide actions, or to quickly let an end user reason about their permissions. It should NOT Be used by external systems to drive authorization decisions as this raises confused deputy, cache lifetime/revocation, and correctness concerns. SubjectAccessReview, and LocalAccessReview are the correct way to defer authorization decisions to the API server.",
+	"spec":   "Spec holds information about the request being evaluated.",
+	"status": "Status is filled in by the server and indicates the set of actions a user can perform.",
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func (SelfSubjectRulesReview) SwaggerDoc() map[string]string {
@@ -118,7 +136,10 @@ func (SelfSubjectRulesReview) SwaggerDoc() map[string]string {
 }
 
 var map_SelfSubjectRulesReviewSpec = map[string]string{
+<<<<<<< HEAD
 	"":          "SelfSubjectRulesReviewSpec defines the specification for SelfSubjectRulesReview.",
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"namespace": "Namespace to evaluate rules for. Required.",
 }
 
@@ -127,10 +148,16 @@ func (SelfSubjectRulesReviewSpec) SwaggerDoc() map[string]string {
 }
 
 var map_SubjectAccessReview = map[string]string{
+<<<<<<< HEAD
 	"":         "SubjectAccessReview checks whether or not a user or group can perform an action.",
 	"metadata": "Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata",
 	"spec":     "Spec holds information about the request being evaluated",
 	"status":   "Status is filled in by the server and indicates whether the request is allowed or not",
+=======
+	"":       "SubjectAccessReview checks whether or not a user or group can perform an action.",
+	"spec":   "Spec holds information about the request being evaluated",
+	"status": "Status is filled in by the server and indicates whether the request is allowed or not",
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func (SubjectAccessReview) SwaggerDoc() map[string]string {

@@ -1,4 +1,7 @@
 logrus
 vendor
+<<<<<<< HEAD
 
 .idea/
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

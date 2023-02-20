@@ -20,15 +20,21 @@ package v1
 
 import (
 	"context"
+<<<<<<< HEAD
 	json "encoding/json"
 	"fmt"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"time"
 
 	v1 "k8s.io/api/rbac/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
+<<<<<<< HEAD
 	rbacv1 "k8s.io/client-go/applyconfigurations/rbac/v1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	scheme "k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
 )
@@ -49,7 +55,10 @@ type RoleBindingInterface interface {
 	List(ctx context.Context, opts metav1.ListOptions) (*v1.RoleBindingList, error)
 	Watch(ctx context.Context, opts metav1.ListOptions) (watch.Interface, error)
 	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts metav1.PatchOptions, subresources ...string) (result *v1.RoleBinding, err error)
+<<<<<<< HEAD
 	Apply(ctx context.Context, roleBinding *rbacv1.RoleBindingApplyConfiguration, opts metav1.ApplyOptions) (result *v1.RoleBinding, err error)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	RoleBindingExpansion
 }
 
@@ -180,6 +189,7 @@ func (c *roleBindings) Patch(ctx context.Context, name string, pt types.PatchTyp
 		Into(result)
 	return
 }
+<<<<<<< HEAD
 
 // Apply takes the given apply declarative configuration, applies it and returns the applied roleBinding.
 func (c *roleBindings) Apply(ctx context.Context, roleBinding *rbacv1.RoleBindingApplyConfiguration, opts metav1.ApplyOptions) (result *v1.RoleBinding, err error) {
@@ -206,3 +216,5 @@ func (c *roleBindings) Apply(ctx context.Context, roleBinding *rbacv1.RoleBindin
 		Into(result)
 	return
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

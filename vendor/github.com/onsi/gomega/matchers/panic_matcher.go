@@ -8,8 +8,12 @@ import (
 )
 
 type PanicMatcher struct {
+<<<<<<< HEAD
 	Expected interface{}
 	object   interface{}
+=======
+	object interface{}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func (matcher *PanicMatcher) Match(actual interface{}) (success bool, err error) {
@@ -29,6 +33,7 @@ func (matcher *PanicMatcher) Match(actual interface{}) (success bool, err error)
 	defer func() {
 		if e := recover(); e != nil {
 			matcher.object = e
+<<<<<<< HEAD
 
 			if matcher.Expected == nil {
 				success = true
@@ -44,6 +49,9 @@ func (matcher *PanicMatcher) Match(actual interface{}) (success bool, err error)
 			if err != nil {
 				err = fmt.Errorf("PanicMatcher's value matcher failed with:\n%s%s", format.Indent, err.Error())
 			}
+=======
+			success = true
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		}
 	}()
 
@@ -53,6 +61,7 @@ func (matcher *PanicMatcher) Match(actual interface{}) (success bool, err error)
 }
 
 func (matcher *PanicMatcher) FailureMessage(actual interface{}) (message string) {
+<<<<<<< HEAD
 	if matcher.Expected == nil {
 		// We wanted any panic to occur, but none did.
 		return format.Message(actual, "to panic")
@@ -111,4 +120,11 @@ func (matcher *PanicMatcher) NegatedFailureMessage(actual interface{}) (message 
 	default:
 		return format.Message(actual, "not to panic with", matcher.Expected)
 	}
+=======
+	return format.Message(actual, "to panic")
+}
+
+func (matcher *PanicMatcher) NegatedFailureMessage(actual interface{}) (message string) {
+	return format.Message(actual, fmt.Sprintf("not to panic, but panicked with\n%s", format.Object(matcher.object, 1)))
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }

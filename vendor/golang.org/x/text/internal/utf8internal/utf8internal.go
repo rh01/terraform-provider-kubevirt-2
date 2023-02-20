@@ -74,7 +74,11 @@ type AcceptRange struct {
 
 // AcceptRanges is a slice of AcceptRange values. For a given byte sequence b
 //
+<<<<<<< HEAD
 //	AcceptRanges[First[b[0]]>>AcceptShift]
+=======
+//		AcceptRanges[First[b[0]]>>AcceptShift]
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 //
 // will give the value of AcceptRange for the multi-byte UTF-8 sequence starting
 // at b[0].

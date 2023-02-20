@@ -13,14 +13,6 @@ import (
 // if we're converting from a set into a list of the same element type.)
 func conversionCollectionToList(ety cty.Type, conv conversion) conversion {
 	return func(val cty.Value, path cty.Path) (cty.Value, error) {
-		if !val.Length().IsKnown() {
-			// If the input collection has an unknown length (which is true
-			// for a set containing unknown values) then our result must be
-			// an unknown list, because we can't predict how many elements
-			// the resulting list should have.
-			return cty.UnknownVal(cty.List(val.Type().ElementType())), nil
-		}
-
 		elems := make([]cty.Value, 0, val.LengthInt())
 		i := int64(0)
 		elemPath := append(path.Copy(), nil)
@@ -39,27 +31,16 @@ func conversionCollectionToList(ety cty.Type, conv conversion) conversion {
 					return cty.NilVal, err
 				}
 			}
-
-			if val.IsNull() {
-				val = cty.NullVal(val.Type().WithoutOptionalAttributesDeep())
-			}
-
 			elems = append(elems, val)
 
 			i++
 		}
 
 		if len(elems) == 0 {
-			// Prefer a concrete type over a dynamic type when returning an
-			// empty list
 			if ety == cty.DynamicPseudoType {
-				return cty.ListValEmpty(val.Type().ElementType()), nil
+				ety = val.Type().ElementType()
 			}
-			return cty.ListValEmpty(ety.WithoutOptionalAttributesDeep()), nil
-		}
-
-		if !cty.CanListVal(elems) {
-			return cty.NilVal, path.NewErrorf("element types must all match for conversion to list")
+			return cty.ListValEmpty(ety), nil
 		}
 
 		return cty.ListVal(elems), nil
@@ -93,11 +74,6 @@ func conversionCollectionToSet(ety cty.Type, conv conversion) conversion {
 					return cty.NilVal, err
 				}
 			}
-
-			if val.IsNull() {
-				val = cty.NullVal(val.Type().WithoutOptionalAttributesDeep())
-			}
-
 			elems = append(elems, val)
 
 			i++
@@ -107,13 +83,9 @@ func conversionCollectionToSet(ety cty.Type, conv conversion) conversion {
 			// Prefer a concrete type over a dynamic type when returning an
 			// empty set
 			if ety == cty.DynamicPseudoType {
-				return cty.SetValEmpty(val.Type().ElementType()), nil
+				ety = val.Type().ElementType()
 			}
-			return cty.SetValEmpty(ety.WithoutOptionalAttributesDeep()), nil
-		}
-
-		if !cty.CanSetVal(elems) {
-			return cty.NilVal, path.NewErrorf("element types must all match for conversion to set")
+			return cty.SetValEmpty(ety), nil
 		}
 
 		return cty.SetVal(elems), nil
@@ -160,7 +132,7 @@ func conversionCollectionToMap(ety cty.Type, conv conversion) conversion {
 			// Prefer a concrete type over a dynamic type when returning an
 			// empty map
 			if ety == cty.DynamicPseudoType {
-				return cty.MapValEmpty(val.Type().ElementType()), nil
+				ety = val.Type().ElementType()
 			}
 			return cty.MapValEmpty(ety), nil
 		}
@@ -172,8 +144,8 @@ func conversionCollectionToMap(ety cty.Type, conv conversion) conversion {
 			}
 		}
 
-		if !cty.CanMapVal(elems) {
-			return cty.NilVal, path.NewErrorf("element types must all match for conversion to map")
+		if err := conversionCheckMapElementTypes(elems, path); err != nil {
+			return cty.NilVal, err
 		}
 
 		return cty.MapVal(elems), nil
@@ -190,7 +162,7 @@ func conversionTupleToSet(tupleType cty.Type, setEty cty.Type, unsafe bool) conv
 	if len(tupleEtys) == 0 {
 		// Empty tuple short-circuit
 		return func(val cty.Value, path cty.Path) (cty.Value, error) {
-			return cty.SetValEmpty(setEty.WithoutOptionalAttributesDeep()), nil
+			return cty.SetValEmpty(setEty), nil
 		}
 	}
 
@@ -252,18 +224,9 @@ func conversionTupleToSet(tupleType cty.Type, setEty cty.Type, unsafe bool) conv
 					return cty.NilVal, err
 				}
 			}
-
-			if val.IsNull() {
-				val = cty.NullVal(val.Type().WithoutOptionalAttributesDeep())
-			}
-
 			elems = append(elems, val)
 
 			i++
-		}
-
-		if !cty.CanSetVal(elems) {
-			return cty.NilVal, path.NewErrorf("element types must all match for conversion to set")
 		}
 
 		return cty.SetVal(elems), nil
@@ -280,7 +243,7 @@ func conversionTupleToList(tupleType cty.Type, listEty cty.Type, unsafe bool) co
 	if len(tupleEtys) == 0 {
 		// Empty tuple short-circuit
 		return func(val cty.Value, path cty.Path) (cty.Value, error) {
-			return cty.ListValEmpty(listEty.WithoutOptionalAttributesDeep()), nil
+			return cty.ListValEmpty(listEty), nil
 		}
 	}
 
@@ -353,11 +316,6 @@ func conversionTupleToList(tupleType cty.Type, listEty cty.Type, unsafe bool) co
 		if err != nil {
 			return cty.NilVal, err
 		}
-
-		if !cty.CanListVal(elems) {
-			return cty.NilVal, path.NewErrorf("element types must all match for conversion to list")
-		}
-
 		return cty.ListVal(elems), nil
 	}
 }
@@ -372,7 +330,7 @@ func conversionObjectToMap(objectType cty.Type, mapEty cty.Type, unsafe bool) co
 	if len(objectAtys) == 0 {
 		// Empty object short-circuit
 		return func(val cty.Value, path cty.Path) (cty.Value, error) {
-			return cty.MapValEmpty(mapEty.WithoutOptionalAttributesDeep()), nil
+			return cty.MapValEmpty(mapEty), nil
 		}
 	}
 
@@ -436,8 +394,8 @@ func conversionObjectToMap(objectType cty.Type, mapEty cty.Type, unsafe bool) co
 			}
 		}
 
-		if !cty.CanMapVal(elems) {
-			return cty.NilVal, path.NewErrorf("attribute types must all match for conversion to map")
+		if err := conversionCheckMapElementTypes(elems, path); err != nil {
+			return cty.NilVal, err
 		}
 
 		return cty.MapVal(elems), nil
@@ -463,28 +421,13 @@ func conversionMapToObject(mapType cty.Type, objType cty.Type, unsafe bool) conv
 
 		elemConvs[name] = getConversion(mapEty, objectAty, unsafe)
 		if elemConvs[name] == nil {
-			// This means that this conversion is impossible. Typically, we
-			// would give up at this point and declare the whole conversion
-			// impossible. But, if this attribute is optional then maybe we will
-			// be able to do this conversion anyway provided the actual concrete
-			// map doesn't have this value set.
-			//
-			// We only do this in "unsafe" mode, because we cannot guarantee
-			// that the returned conversion will actually succeed once applied.
-			if objType.AttributeOptional(name) && unsafe {
-				// This attribute is optional, so let's leave this conversion in
-				// as a nil, and we can error later if we actually have to
-				// convert this.
-				continue
-			}
-
-			// Otherwise, give up. This conversion is impossible as we have a
-			// required attribute that doesn't match the map's inner type.
+			// If any of our element conversions are impossible, then the our
+			// whole conversion is impossible.
 			return nil
 		}
 	}
 
-	// If we fall out here then a conversion may be possible, using the
+	// If we fall out here then a conversion is possible, using the
 	// element conversions in elemConvs
 	return func(val cty.Value, path cty.Path) (cty.Value, error) {
 		elems := make(map[string]cty.Value, len(elemConvs))
@@ -504,56 +447,15 @@ func conversionMapToObject(mapType cty.Type, objType cty.Type, unsafe bool) conv
 				Key: name,
 			}
 
-			// There are 3 cases here:
-			//   1. This attribute is not in elemConvs
-			//   2. This attribute is in elemConvs and is not nil
-			//   3. This attribute is in elemConvs and is nil.
-
-			// In case 1, we do not enter any of the branches below. This case
-			// means the attribute type is the same between the map and the
-			// object, and we don't need to do any conversion.
-
-			if conv, ok := elemConvs[name.AsString()]; conv != nil {
-				// This is case 2. The attribute type is different between the
-				// map and the object, and we know how to convert between them.
-				// So, we reset val to be the converted value and carry on.
+			conv := elemConvs[name.AsString()]
+			if conv != nil {
 				val, err = conv(val, elemPath)
 				if err != nil {
 					return cty.NilVal, err
 				}
-			} else if ok {
-				// This is case 3 and it is an error. The attribute types are
-				// different between the map and the object, but we cannot
-				// convert between them.
-				//
-				// Now typically, this would be picked earlier on when we were
-				// building elemConvs. However, in the case of optional
-				// attributes there was a chance we could still convert the
-				// overall object even if this particular attribute was not
-				// convertable. This is because it could have not been set in
-				// the map, and we could skip over it here and set a null value.
-				//
-				// Since we reached this branch, we know that map did actually
-				// contain a non-convertable optional attribute. This means we
-				// error.
-				return cty.NilVal, path.NewErrorf("map element type is incompatible with attribute %q: %s", name.AsString(), MismatchMessage(val.Type(), objType.AttributeType(name.AsString())))
-			}
-
-			if val.IsNull() {
-				val = cty.NullVal(val.Type().WithoutOptionalAttributesDeep())
 			}
 
 			elems[name.AsString()] = val
-		}
-
-		for name, aty := range objectAtys {
-			if _, exists := elems[name]; !exists {
-				if optional := objType.AttributeOptional(name); optional {
-					elems[name] = cty.NullVal(aty)
-				} else {
-					return cty.NilVal, path.NewErrorf("map has no element for required attribute %q", name)
-				}
-			}
 		}
 
 		return cty.ObjectVal(elems), nil
@@ -567,7 +469,7 @@ func conversionUnifyCollectionElements(elems map[string]cty.Value, path cty.Path
 	}
 	unifiedType, _ := unify(elemTypes, unsafe)
 	if unifiedType == cty.NilType {
-		return nil, path.NewErrorf("cannot find a common base type for all elements")
+		return nil, path.NewErrorf("collection elements cannot be unified")
 	}
 
 	unifiedElems := make(map[string]cty.Value)
@@ -594,6 +496,26 @@ func conversionUnifyCollectionElements(elems map[string]cty.Value, path cty.Path
 	return unifiedElems, nil
 }
 
+func conversionCheckMapElementTypes(elems map[string]cty.Value, path cty.Path) error {
+	elementType := cty.NilType
+	elemPath := append(path.Copy(), nil)
+
+	for name, elem := range elems {
+		if elementType == cty.NilType {
+			elementType = elem.Type()
+			continue
+		}
+		if !elementType.Equals(elem.Type()) {
+			elemPath[len(elemPath)-1] = cty.IndexStep{
+				Key: cty.StringVal(name),
+			}
+			return elemPath.NewErrorf("%s is required", elementType.FriendlyName())
+		}
+	}
+
+	return nil
+}
+
 func conversionUnifyListElements(elems []cty.Value, path cty.Path, unsafe bool) ([]cty.Value, error) {
 	elemTypes := make([]cty.Type, len(elems))
 	for i, elem := range elems {
@@ -601,7 +523,7 @@ func conversionUnifyListElements(elems []cty.Value, path cty.Path, unsafe bool) 
 	}
 	unifiedType, _ := unify(elemTypes, unsafe)
 	if unifiedType == cty.NilType {
-		return nil, path.NewErrorf("cannot find a common base type for all elements")
+		return nil, path.NewErrorf("collection elements cannot be unified")
 	}
 
 	ret := make([]cty.Value, len(elems))

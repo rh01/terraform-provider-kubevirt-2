@@ -33,7 +33,11 @@ type EventExpansion interface {
 	// UpdateWithEventNamespace is the same as a Update
 	// except that it sends the request to the event.Namespace.
 	UpdateWithEventNamespace(event *v1beta1.Event) (*v1beta1.Event, error)
+<<<<<<< HEAD
 	// PatchWithEventNamespace is the same as a Patch
+=======
+	// PatchWithEventNamespace is the same as an Update
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// except that it sends the request to the event.Namespace.
 	PatchWithEventNamespace(event *v1beta1.Event, data []byte) (*v1beta1.Event, error)
 }
@@ -82,8 +86,12 @@ func (e *events) UpdateWithEventNamespace(event *v1beta1.Event) (*v1beta1.Event,
 // It returns the copy of the event that the server returns, or an error.
 // The namespace and name of the target event is deduced from the event.
 // The namespace must either match this event client's namespace, or this event client must
+<<<<<<< HEAD
 //
 //	have been created with the "" namespace.
+=======
+//  have been created with the "" namespace.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (e *events) PatchWithEventNamespace(event *v1beta1.Event, data []byte) (*v1beta1.Event, error) {
 	if e.ns != "" && event.Namespace != e.ns {
 		return nil, fmt.Errorf("can't patch an event with namespace '%v' in namespace '%v'", event.Namespace, e.ns)

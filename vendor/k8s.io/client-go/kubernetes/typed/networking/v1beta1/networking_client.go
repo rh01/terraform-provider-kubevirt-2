@@ -19,8 +19,11 @@ limitations under the License.
 package v1beta1
 
 import (
+<<<<<<< HEAD
 	"net/http"
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	v1beta1 "k8s.io/api/networking/v1beta1"
 	"k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
@@ -46,13 +49,17 @@ func (c *NetworkingV1beta1Client) IngressClasses() IngressClassInterface {
 }
 
 // NewForConfig creates a new NetworkingV1beta1Client for the given config.
+<<<<<<< HEAD
 // NewForConfig is equivalent to NewForConfigAndClient(c, httpClient),
 // where httpClient was generated with rest.HTTPClientFor(c).
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func NewForConfig(c *rest.Config) (*NetworkingV1beta1Client, error) {
 	config := *c
 	if err := setConfigDefaults(&config); err != nil {
 		return nil, err
 	}
+<<<<<<< HEAD
 	httpClient, err := rest.HTTPClientFor(&config)
 	if err != nil {
 		return nil, err
@@ -68,6 +75,9 @@ func NewForConfigAndClient(c *rest.Config, h *http.Client) (*NetworkingV1beta1Cl
 		return nil, err
 	}
 	client, err := rest.RESTClientForConfigAndClient(&config, h)
+=======
+	client, err := rest.RESTClientFor(&config)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if err != nil {
 		return nil, err
 	}

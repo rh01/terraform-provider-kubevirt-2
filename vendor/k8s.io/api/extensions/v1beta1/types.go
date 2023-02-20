@@ -37,7 +37,10 @@ type ScaleStatus struct {
 
 	// label query over pods that should match the replicas count. More info: http://kubernetes.io/docs/user-guide/labels#label-selectors
 	// +optional
+<<<<<<< HEAD
 	// +mapType=atomic
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	Selector map[string]string `json:"selector,omitempty" protobuf:"bytes,2,rep,name=selector"`
 
 	// label selector for pods that should match the replicas count. This is a serializated
@@ -53,7 +56,11 @@ type ScaleStatus struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.1
 // +k8s:prerelease-lifecycle-gen:deprecated=1.2
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // represents a scaling request for a resource.
 type Scale struct {
@@ -74,11 +81,18 @@ type Scale struct {
 // +genclient
 // +genclient:method=GetScale,verb=get,subresource=scale,result=Scale
 // +genclient:method=UpdateScale,verb=update,subresource=scale,input=Scale,result=Scale
+<<<<<<< HEAD
 // +genclient:method=ApplyScale,verb=apply,subresource=scale,input=Scale,result=Scale
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.1
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:prerelease-lifecycle-gen:introduced=1.1
+// +k8s:prerelease-lifecycle-gen:deprecated=1.8
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=apps,v1,Deployment
 
 // DEPRECATED - This group version of Deployment is deprecated by apps/v1beta2/Deployment. See the release notes for
@@ -155,7 +169,11 @@ type DeploymentSpec struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.2
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // DEPRECATED.
 // DeploymentRollback stores the information required to rollback a deployment.
@@ -315,7 +333,11 @@ type DeploymentCondition struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.1
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=apps,v1,DeploymentList
 
 // DeploymentList is a list of Deployments.
@@ -329,9 +351,12 @@ type DeploymentList struct {
 	Items []Deployment `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
+<<<<<<< HEAD
 // DaemonSetUpdateStrategy indicates the strategy that the DaemonSet
 // controller will use to perform updates. It includes any additional parameters
 // necessary to perform the update for the indicated strategy.
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type DaemonSetUpdateStrategy struct {
 	// Type of daemon set update. Can be "RollingUpdate" or "OnDelete".
 	// Default is OnDelete.
@@ -363,6 +388,7 @@ type RollingUpdateDaemonSet struct {
 	// update. Value can be an absolute number (ex: 5) or a percentage of total
 	// number of DaemonSet pods at the start of the update (ex: 10%). Absolute
 	// number is calculated from percentage by rounding up.
+<<<<<<< HEAD
 	// This cannot be 0 if MaxSurge is 0
 	// Default value is 1.
 	// Example: when this is set to 30%, at most 30% of the total number of nodes
@@ -397,6 +423,20 @@ type RollingUpdateDaemonSet struct {
 	// This is an alpha field and requires enabling DaemonSetUpdateSurge feature gate.
 	// +optional
 	MaxSurge *intstr.IntOrString `json:"maxSurge,omitempty" protobuf:"bytes,2,opt,name=maxSurge"`
+=======
+	// This cannot be 0.
+	// Default value is 1.
+	// Example: when this is set to 30%, at most 30% of the total number of nodes
+	// that should be running the daemon pod (i.e. status.desiredNumberScheduled)
+	// can have their pods stopped for an update at any given
+	// time. The update starts by stopping at most 30% of those DaemonSet pods
+	// and then brings up new DaemonSet pods in their place. Once the new pods
+	// are available, it then proceeds onto other DaemonSet pods, thus ensuring
+	// that at least 70% of original number of DaemonSet pods are available at
+	// all times during the update.
+	// +optional
+	MaxUnavailable *intstr.IntOrString `json:"maxUnavailable,omitempty" protobuf:"bytes,1,opt,name=maxUnavailable"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // DaemonSetSpec is the specification of a daemon set.
@@ -518,7 +558,11 @@ type DaemonSetCondition struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.1
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=apps,v1,DaemonSet
 
 // DEPRECATED - This group version of DaemonSet is deprecated by apps/v1beta2/DaemonSet. See the release notes for
@@ -561,7 +605,11 @@ const (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.1
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=apps,v1,DaemonSetList
 
 // DaemonSetList is a collection of daemon sets.
@@ -683,6 +731,7 @@ type IngressTLS struct {
 type IngressStatus struct {
 	// LoadBalancer contains the current status of the load-balancer.
 	// +optional
+<<<<<<< HEAD
 	LoadBalancer IngressLoadBalancerStatus `json:"loadBalancer,omitempty" protobuf:"bytes,1,opt,name=loadBalancer"`
 }
 
@@ -731,6 +780,9 @@ type IngressPortStatus struct {
 	// +kubebuilder:validation:Pattern=`^([a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*/)?(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])$`
 	// +kubebuilder:validation:MaxLength=316
 	Error *string `json:"error,omitempty" protobuf:"bytes,3,opt,name=error"`
+=======
+	LoadBalancer v1.LoadBalancerStatus `json:"loadBalancer,omitempty" protobuf:"bytes,1,opt,name=loadBalancer"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // IngressRule represents the rules mapping the paths under a specified host to
@@ -781,12 +833,16 @@ type IngressRuleValue struct {
 	// 2. Consider adding fields for ingress-type specific global options
 	// usable by a loadbalancer, like http keep-alive.
 
+<<<<<<< HEAD
 	// http is a list of http selectors pointing to backends.
 	// A path is matched against the path of an incoming request. Currently it can
 	// contain characters disallowed from the conventional "path" part of a URL
 	// as defined by RFC 3986. Paths must begin with a '/'.
 	// A backend defines the referenced service endpoint to which the traffic
 	// will be forwarded to.
+=======
+	// +optional
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	HTTP *HTTPIngressRuleValue `json:"http,omitempty" protobuf:"bytes,1,opt,name=http"`
 }
 
@@ -884,11 +940,18 @@ type IngressBackend struct {
 // +genclient
 // +genclient:method=GetScale,verb=get,subresource=scale,result=Scale
 // +genclient:method=UpdateScale,verb=update,subresource=scale,input=Scale,result=Scale
+<<<<<<< HEAD
 // +genclient:method=ApplyScale,verb=apply,subresource=scale,input=Scale,result=Scale
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.2
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:prerelease-lifecycle-gen:introduced=1.2
+// +k8s:prerelease-lifecycle-gen:deprecated=1.8
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=apps,v1,ReplicaSet
 
 // DEPRECATED - This group version of ReplicaSet is deprecated by apps/v1beta2/ReplicaSet. See the release notes for
@@ -920,7 +983,11 @@ type ReplicaSet struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.2
 // +k8s:prerelease-lifecycle-gen:deprecated=1.8
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=apps,v1,ReplicaSetList
 
 // ReplicaSetList is a collection of ReplicaSets.
@@ -967,7 +1034,11 @@ type ReplicaSetSpec struct {
 
 // ReplicaSetStatus represents the current status of a ReplicaSet.
 type ReplicaSetStatus struct {
+<<<<<<< HEAD
 	// Replicas is the most recently observed number of replicas.
+=======
+	// Replicas is the most recently oberved number of replicas.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/#what-is-a-replicationcontroller
 	Replicas int32 `json:"replicas" protobuf:"varint,1,opt,name=replicas"`
 
@@ -1026,7 +1097,11 @@ type ReplicaSetCondition struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.2
 // +k8s:prerelease-lifecycle-gen:deprecated=1.11
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=policy,v1beta1,PodSecurityPolicy
 
 // PodSecurityPolicy governs the ability to make requests that affect the Security Context
@@ -1388,7 +1463,11 @@ const AllowAllRuntimeClassNames = "*"
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.2
 // +k8s:prerelease-lifecycle-gen:deprecated=1.11
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=policy,v1beta1,PodSecurityPolicyList
 
 // PodSecurityPolicyList is a list of PodSecurityPolicy objects.
@@ -1408,7 +1487,11 @@ type PodSecurityPolicyList struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.3
 // +k8s:prerelease-lifecycle-gen:deprecated=1.9
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=networking.k8s.io,v1,NetworkPolicy
 
 // DEPRECATED 1.9 - This group version of NetworkPolicy is deprecated by networking/v1/NetworkPolicy.
@@ -1423,11 +1506,14 @@ type NetworkPolicy struct {
 	// Specification of the desired behavior for this NetworkPolicy.
 	// +optional
 	Spec NetworkPolicySpec `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
+<<<<<<< HEAD
 
 	// Status is the current state of the NetworkPolicy.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
 	// +optional
 	Status NetworkPolicyStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // DEPRECATED 1.9 - This group version of PolicyType is deprecated by networking/v1/PolicyType.
@@ -1472,7 +1558,11 @@ type NetworkPolicySpec struct {
 	Egress []NetworkPolicyEgressRule `json:"egress,omitempty" protobuf:"bytes,3,rep,name=egress"`
 
 	// List of rule types that the NetworkPolicy relates to.
+<<<<<<< HEAD
 	// Valid options are ["Ingress"], ["Egress"], or ["Ingress", "Egress"].
+=======
+	// Valid options are "Ingress", "Egress", or "Ingress,Egress".
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// If this field is not specified, it will default based on the existence of Ingress or Egress rules;
 	// policies that contain an Egress section are assumed to affect Egress, and all policies
 	// (whether or not they contain an Ingress section) are assumed to affect Ingress.
@@ -1534,6 +1624,7 @@ type NetworkPolicyPort struct {
 	// +optional
 	Protocol *v1.Protocol `json:"protocol,omitempty" protobuf:"bytes,1,opt,name=protocol,casttype=k8s.io/api/core/v1.Protocol"`
 
+<<<<<<< HEAD
 	// The port on the given protocol. This can either be a numerical or named
 	// port on a pod. If this field is not provided, this matches all port names and
 	// numbers.
@@ -1551,14 +1642,34 @@ type NetworkPolicyPort struct {
 
 // DEPRECATED 1.9 - This group version of IPBlock is deprecated by networking/v1/IPBlock.
 // IPBlock describes a particular CIDR (Ex. "192.168.1.0/24","2001:db8::/64") that is allowed
+=======
+	// If specified, the port on the given protocol.  This can
+	// either be a numerical or named port on a pod.  If this field is not provided,
+	// this matches all port names and numbers.
+	// If present, only traffic on the specified protocol AND port
+	// will be matched.
+	// +optional
+	Port *intstr.IntOrString `json:"port,omitempty" protobuf:"bytes,2,opt,name=port"`
+}
+
+// DEPRECATED 1.9 - This group version of IPBlock is deprecated by networking/v1/IPBlock.
+// IPBlock describes a particular CIDR (Ex. "192.168.1.1/24","2001:db9::/64") that is allowed
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // to the pods matched by a NetworkPolicySpec's podSelector. The except entry describes CIDRs
 // that should not be included within this rule.
 type IPBlock struct {
 	// CIDR is a string representing the IP Block
+<<<<<<< HEAD
 	// Valid examples are "192.168.1.0/24" or "2001:db8::/64"
 	CIDR string `json:"cidr" protobuf:"bytes,1,name=cidr"`
 	// Except is a slice of CIDRs that should not be included within an IP Block
 	// Valid examples are "192.168.1.0/24" or "2001:db8::/64"
+=======
+	// Valid examples are "192.168.1.1/24" or "2001:db9::/64"
+	CIDR string `json:"cidr" protobuf:"bytes,1,name=cidr"`
+	// Except is a slice of CIDRs that should not be included within an IP Block
+	// Valid examples are "192.168.1.1/24" or "2001:db9::/64"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// Except values will be rejected if they are outside the CIDR range
 	// +optional
 	Except []string `json:"except,omitempty" protobuf:"bytes,2,rep,name=except"`
@@ -1590,6 +1701,7 @@ type NetworkPolicyPeer struct {
 	IPBlock *IPBlock `json:"ipBlock,omitempty" protobuf:"bytes,3,rep,name=ipBlock"`
 }
 
+<<<<<<< HEAD
 // NetworkPolicyConditionType is the type for status conditions on
 // a NetworkPolicy. This type should be used with the
 // NetworkPolicyStatus.Conditions field.
@@ -1636,6 +1748,12 @@ type NetworkPolicyStatus struct {
 // +k8s:prerelease-lifecycle-gen:introduced=1.3
 // +k8s:prerelease-lifecycle-gen:deprecated=1.9
 // +k8s:prerelease-lifecycle-gen:removed=1.16
+=======
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:prerelease-lifecycle-gen:introduced=1.3
+// +k8s:prerelease-lifecycle-gen:deprecated=1.9
+// +k8s:prerelease-lifecycle-gen:removed=1.18
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:prerelease-lifecycle-gen:replacement=networking.k8s.io,v1,NetworkPolicyList
 
 // DEPRECATED 1.9 - This group version of NetworkPolicyList is deprecated by networking/v1/NetworkPolicyList.

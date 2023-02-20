@@ -17,7 +17,6 @@ limitations under the License.
 package transport
 
 import (
-	"context"
 	"fmt"
 	"net"
 	"net/http"
@@ -37,11 +36,6 @@ type tlsTransportCache struct {
 	transports map[tlsCacheKey]*http.Transport
 }
 
-// DialerStopCh is stop channel that is passed down to dynamic cert dialer.
-// It's exposed as variable for testing purposes to avoid testing for goroutine
-// leakages.
-var DialerStopCh = wait.NeverStop
-
 const idleConnsPerHost = 25
 
 var tlsCache = &tlsTransportCache{transports: make(map[tlsCacheKey]*http.Transport)}
@@ -50,15 +44,15 @@ type tlsCacheKey struct {
 	insecure           bool
 	caData             string
 	certData           string
-	keyData            string `datapolicy:"security-key"`
+	keyData            string
 	certFile           string
 	keyFile            string
+	getCert            string
 	serverName         string
 	nextProtos         string
+	dial               string
 	disableCompression bool
-	// these functions are wrapped to allow them to be used as map keys
-	getCert *GetCertHolder
-	dial    *DialHolder
+	proxy              string
 }
 
 func (t tlsCacheKey) String() string {
@@ -66,25 +60,22 @@ func (t tlsCacheKey) String() string {
 	if len(t.keyData) > 0 {
 		keyText = "<redacted>"
 	}
-	return fmt.Sprintf("insecure:%v, caData:%#v, certData:%#v, keyData:%s, serverName:%s, disableCompression:%t, getCert:%p, dial:%p",
-		t.insecure, t.caData, t.certData, keyText, t.serverName, t.disableCompression, t.getCert, t.dial)
+	return fmt.Sprintf("insecure:%v, caData:%#v, certData:%#v, keyData:%s, getCert: %s, serverName:%s, dial:%s disableCompression:%t, proxy: %s", t.insecure, t.caData, t.certData, keyText, t.getCert, t.serverName, t.dial, t.disableCompression, t.proxy)
 }
 
 func (c *tlsTransportCache) get(config *Config) (http.RoundTripper, error) {
-	key, canCache, err := tlsConfigKey(config)
+	key, err := tlsConfigKey(config)
 	if err != nil {
 		return nil, err
 	}
 
-	if canCache {
-		// Ensure we only create a single transport for the given TLS options
-		c.mu.Lock()
-		defer c.mu.Unlock()
+	// Ensure we only create a single transport for the given TLS options
+	c.mu.Lock()
+	defer c.mu.Unlock()
 
-		// See if we already have a custom transport for this config
-		if t, ok := c.transports[key]; ok {
-			return t, nil
-		}
+	// See if we already have a custom transport for this config
+	if t, ok := c.transports[key]; ok {
+		return t, nil
 	}
 
 	// Get the TLS options for this client config
@@ -97,10 +88,8 @@ func (c *tlsTransportCache) get(config *Config) (http.RoundTripper, error) {
 		return http.DefaultTransport, nil
 	}
 
-	var dial func(ctx context.Context, network, address string) (net.Conn, error)
-	if config.Dial != nil {
-		dial = config.Dial
-	} else {
+	dial := config.Dial
+	if dial == nil {
 		dial = (&net.Dialer{
 			Timeout:   30 * time.Second,
 			KeepAlive: 30 * time.Second,
@@ -113,7 +102,7 @@ func (c *tlsTransportCache) get(config *Config) (http.RoundTripper, error) {
 		dynamicCertDialer := certRotatingDialer(tlsConfig.GetClientCertificate, dial)
 		tlsConfig.GetClientCertificate = dynamicCertDialer.GetClientCertificate
 		dial = dynamicCertDialer.connDialer.DialContext
-		go dynamicCertDialer.Run(DialerStopCh)
+		go dynamicCertDialer.Run(wait.NeverStop)
 	}
 
 	proxy := http.ProxyFromEnvironment
@@ -121,7 +110,8 @@ func (c *tlsTransportCache) get(config *Config) (http.RoundTripper, error) {
 		proxy = config.Proxy
 	}
 
-	transport := utilnet.SetTransportDefaults(&http.Transport{
+	// Cache a single transport for these options
+	c.transports[key] = utilnet.SetTransportDefaults(&http.Transport{
 		Proxy:               proxy,
 		TLSHandshakeTimeout: 10 * time.Second,
 		TLSClientConfig:     tlsConfig,
@@ -129,43 +119,24 @@ func (c *tlsTransportCache) get(config *Config) (http.RoundTripper, error) {
 		DialContext:         dial,
 		DisableCompression:  config.DisableCompression,
 	})
-
-	if canCache {
-		// Cache a single transport for these options
-		c.transports[key] = transport
-	}
-
-	return transport, nil
+	return c.transports[key], nil
 }
 
 // tlsConfigKey returns a unique key for tls.Config objects returned from TLSConfigFor
-func tlsConfigKey(c *Config) (tlsCacheKey, bool, error) {
+func tlsConfigKey(c *Config) (tlsCacheKey, error) {
 	// Make sure ca/key/cert content is loaded
 	if err := loadTLSFiles(c); err != nil {
-		return tlsCacheKey{}, false, err
+		return tlsCacheKey{}, err
 	}
-
-	if c.Proxy != nil {
-		// cannot determine equality for functions
-		return tlsCacheKey{}, false, nil
-	}
-	if c.Dial != nil && c.DialHolder == nil {
-		// cannot determine equality for dial function that doesn't have non-nil DialHolder set as well
-		return tlsCacheKey{}, false, nil
-	}
-	if c.TLS.GetCert != nil && c.TLS.GetCertHolder == nil {
-		// cannot determine equality for getCert function that doesn't have non-nil GetCertHolder set as well
-		return tlsCacheKey{}, false, nil
-	}
-
 	k := tlsCacheKey{
 		insecure:           c.TLS.Insecure,
 		caData:             string(c.TLS.CAData),
+		getCert:            fmt.Sprintf("%p", c.TLS.GetCert),
 		serverName:         c.TLS.ServerName,
 		nextProtos:         strings.Join(c.TLS.NextProtos, ","),
+		dial:               fmt.Sprintf("%p", c.Dial),
 		disableCompression: c.DisableCompression,
-		getCert:            c.TLS.GetCertHolder,
-		dial:               c.DialHolder,
+		proxy:              fmt.Sprintf("%p", c.Proxy),
 	}
 
 	if c.TLS.ReloadTLSFiles {
@@ -176,5 +147,5 @@ func tlsConfigKey(c *Config) (tlsCacheKey, bool, error) {
 		k.keyData = string(c.TLS.KeyData)
 	}
 
-	return k, true, nil
+	return k, nil
 }

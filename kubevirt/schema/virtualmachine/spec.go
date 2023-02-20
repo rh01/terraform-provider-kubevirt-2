@@ -3,10 +3,16 @@ package virtualmachine
 import (
 	"fmt"
 
+<<<<<<< HEAD
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
+=======
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/validation"
+	"github.com/kubevirt/terraform-provider-kubevirt/kubevirt/schema/datavolume"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"github.com/kubevirt/terraform-provider-kubevirt/kubevirt/schema/virtualmachineinstance"
-	kubevirtapiv1 "kubevirt.io/api/core/v1"
+	kubevirtapiv1 "kubevirt.io/client-go/api/v1"
 )
 
 func virtualMachineSpecFields() map[string]*schema.Schema {
@@ -75,7 +81,7 @@ func expandVirtualMachineSpec(virtualMachine []interface{}) (kubevirtapiv1.Virtu
 		result.Template = template
 	}
 	if v, ok := in["data_volume_templates"].([]interface{}); ok {
-		dataVolumeTemplates, err := expandDataVolumeTemplates(v)
+		dataVolumeTemplates, err := datavolume.ExpandDataVolumeTemplates(v)
 		if err != nil {
 			return result, err
 		}
@@ -97,7 +103,7 @@ func flattenVirtualMachineSpec(in kubevirtapiv1.VirtualMachineSpec) []interface{
 	if in.Template != nil {
 		att["template"] = virtualmachineinstance.FlattenVirtualMachineInstanceTemplateSpec(*in.Template)
 	}
-	att["data_volume_templates"] = flattenDataVolumeTemplates(in.DataVolumeTemplates)
+	att["data_volume_templates"] = datavolume.FlattenDataVolumeTemplates(in.DataVolumeTemplates)
 
 	return []interface{}{att}
 }

@@ -17,7 +17,11 @@ limitations under the License.
 package v1
 
 import (
+<<<<<<< HEAD
 	v1 "k8s.io/api/core/v1"
+=======
+	"k8s.io/api/core/v1"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/intstr"
 )
@@ -36,6 +40,7 @@ type NetworkPolicy struct {
 	// Specification of the desired behavior for this NetworkPolicy.
 	// +optional
 	Spec NetworkPolicySpec `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
+<<<<<<< HEAD
 
 	// Status is the current state of the NetworkPolicy.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
@@ -46,6 +51,12 @@ type NetworkPolicy struct {
 // PolicyType string describes the NetworkPolicy type
 // This type is beta-level in 1.8
 // +enum
+=======
+}
+
+// Policy Type string describes the NetworkPolicy type
+// This type is beta-level in 1.8
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type PolicyType string
 
 const (
@@ -86,7 +97,11 @@ type NetworkPolicySpec struct {
 	Egress []NetworkPolicyEgressRule `json:"egress,omitempty" protobuf:"bytes,3,rep,name=egress"`
 
 	// List of rule types that the NetworkPolicy relates to.
+<<<<<<< HEAD
 	// Valid options are ["Ingress"], ["Egress"], or ["Ingress", "Egress"].
+=======
+	// Valid options are "Ingress", "Egress", or "Ingress,Egress".
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// If this field is not specified, it will default based on the existence of Ingress or Egress rules;
 	// policies that contain an Egress section are assumed to affect Egress, and all policies
 	// (whether or not they contain an Ingress section) are assumed to affect Ingress.
@@ -147,6 +162,7 @@ type NetworkPolicyPort struct {
 	// +optional
 	Protocol *v1.Protocol `json:"protocol,omitempty" protobuf:"bytes,1,opt,name=protocol,casttype=k8s.io/api/core/v1.Protocol"`
 
+<<<<<<< HEAD
 	// The port on the given protocol. This can either be a numerical or named
 	// port on a pod. If this field is not provided, this matches all port names and
 	// numbers.
@@ -163,14 +179,30 @@ type NetworkPolicyPort struct {
 }
 
 // IPBlock describes a particular CIDR (Ex. "192.168.1.0/24","2001:db8::/64") that is allowed
+=======
+	// The port on the given protocol. This can either be a numerical or named port on
+	// a pod. If this field is not provided, this matches all port names and numbers.
+	// +optional
+	Port *intstr.IntOrString `json:"port,omitempty" protobuf:"bytes,2,opt,name=port"`
+}
+
+// IPBlock describes a particular CIDR (Ex. "192.168.1.1/24","2001:db9::/64") that is allowed
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // to the pods matched by a NetworkPolicySpec's podSelector. The except entry describes CIDRs
 // that should not be included within this rule.
 type IPBlock struct {
 	// CIDR is a string representing the IP Block
+<<<<<<< HEAD
 	// Valid examples are "192.168.1.0/24" or "2001:db8::/64"
 	CIDR string `json:"cidr" protobuf:"bytes,1,name=cidr"`
 	// Except is a slice of CIDRs that should not be included within an IP Block
 	// Valid examples are "192.168.1.0/24" or "2001:db8::/64"
+=======
+	// Valid examples are "192.168.1.1/24" or "2001:db9::/64"
+	CIDR string `json:"cidr" protobuf:"bytes,1,name=cidr"`
+	// Except is a slice of CIDRs that should not be included within an IP Block
+	// Valid examples are "192.168.1.1/24" or "2001:db9::/64"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// Except values will be rejected if they are outside the CIDR range
 	// +optional
 	Except []string `json:"except,omitempty" protobuf:"bytes,2,rep,name=except"`
@@ -203,6 +235,7 @@ type NetworkPolicyPeer struct {
 	IPBlock *IPBlock `json:"ipBlock,omitempty" protobuf:"bytes,3,rep,name=ipBlock"`
 }
 
+<<<<<<< HEAD
 // NetworkPolicyConditionType is the type for status conditions on
 // a NetworkPolicy. This type should be used with the
 // NetworkPolicyStatus.Conditions field.
@@ -245,6 +278,8 @@ type NetworkPolicyStatus struct {
 	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,1,rep,name=conditions"`
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 // NetworkPolicyList is a list of NetworkPolicy objects.
@@ -300,6 +335,7 @@ type IngressList struct {
 
 // IngressSpec describes the Ingress the user wishes to exist.
 type IngressSpec struct {
+<<<<<<< HEAD
 	// IngressClassName is the name of an IngressClass cluster resource. Ingress
 	// controller implementations use this field to know whether they should be
 	// serving this Ingress resource, by a transitive connection
@@ -310,6 +346,18 @@ type IngressSpec struct {
 	// created Ingress resources should prefer using the field. However, even
 	// though the annotation is officially deprecated, for backwards compatibility
 	// reasons, ingress controllers should still honor that annotation if present.
+=======
+	// IngressClassName is the name of the IngressClass cluster resource. The
+	// associated IngressClass defines which controller will implement the
+	// resource. This replaces the deprecated `kubernetes.io/ingress.class`
+	// annotation. For backwards compatibility, when that annotation is set, it
+	// must be given precedence over this field. The controller may emit a
+	// warning if the field and annotation have different values.
+	// Implementations of this API should ignore Ingresses without a class
+	// specified. An IngressClass resource may be marked as default, which can
+	// be used to set a default value for this field. For more information,
+	// refer to the IngressClass documentation.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	IngressClassName *string `json:"ingressClassName,omitempty" protobuf:"bytes,4,opt,name=ingressClassName"`
 
@@ -358,6 +406,7 @@ type IngressTLS struct {
 type IngressStatus struct {
 	// LoadBalancer contains the current status of the load-balancer.
 	// +optional
+<<<<<<< HEAD
 	LoadBalancer IngressLoadBalancerStatus `json:"loadBalancer,omitempty" protobuf:"bytes,1,opt,name=loadBalancer"`
 }
 
@@ -406,6 +455,9 @@ type IngressPortStatus struct {
 	// +kubebuilder:validation:Pattern=`^([a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*/)?(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])$`
 	// +kubebuilder:validation:MaxLength=316
 	Error *string `json:"error,omitempty" protobuf:"bytes,3,opt,name=error"`
+=======
+	LoadBalancer v1.LoadBalancerStatus `json:"loadBalancer,omitempty" protobuf:"bytes,1,opt,name=loadBalancer"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // IngressRule represents the rules mapping the paths under a specified host to
@@ -466,7 +518,10 @@ type HTTPIngressRuleValue struct {
 }
 
 // PathType represents the type of path referred to by a HTTPIngressPath.
+<<<<<<< HEAD
 // +enum
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type PathType string
 
 const (
@@ -501,8 +556,13 @@ const (
 type HTTPIngressPath struct {
 	// Path is matched against the path of an incoming request. Currently it can
 	// contain characters disallowed from the conventional "path" part of a URL
+<<<<<<< HEAD
 	// as defined by RFC 3986. Paths must begin with a '/' and must be present
 	// when using PathType with value "Exact" or "Prefix".
+=======
+	// as defined by RFC 3986. Paths must begin with a '/'. When unspecified,
+	// all paths from incoming requests are matched.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	Path string `json:"path,omitempty" protobuf:"bytes,1,opt,name=path"`
 
@@ -520,7 +580,11 @@ type HTTPIngressPath struct {
 	//   the IngressClass. Implementations can treat this as a separate PathType
 	//   or treat it identically to Prefix or Exact path types.
 	// Implementations are required to support all path types.
+<<<<<<< HEAD
 	PathType *PathType `json:"pathType" protobuf:"bytes,3,opt,name=pathType"`
+=======
+	PathType *PathType `json:"pathType,omitempty" protobuf:"bytes,3,opt,name=pathType"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	// Backend defines the referenced service endpoint to which the traffic
 	// will be forwarded to.
@@ -602,6 +666,7 @@ type IngressClassSpec struct {
 	// configuration for the controller. This is optional if the controller does
 	// not require extra parameters.
 	// +optional
+<<<<<<< HEAD
 	Parameters *IngressClassParametersReference `json:"parameters,omitempty" protobuf:"bytes,2,opt,name=parameters"`
 }
 
@@ -635,6 +700,9 @@ type IngressClassParametersReference struct {
 	// "Cluster".
 	// +optional
 	Namespace *string `json:"namespace,omitempty" protobuf:"bytes,5,opt,name=namespace"`
+=======
+	Parameters *v1.TypedLocalObjectReference `json:"parameters,omitempty" protobuf:"bytes,2,opt,name=parameters"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

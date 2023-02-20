@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## 1.23.0
 
 ### Features
@@ -292,6 +293,8 @@ In addition, 1.15.0 cleans up some of Gomega's internals.  Most users shouldn't 
 ### Fixes
 - Bump go-yaml version to cover fixed ddos heuristic (#362) [95e431e]
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 ## 1.7.0
 
 ### Features

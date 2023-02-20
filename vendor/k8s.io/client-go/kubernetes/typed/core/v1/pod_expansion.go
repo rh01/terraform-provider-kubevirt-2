@@ -20,8 +20,12 @@ import (
 	"context"
 
 	v1 "k8s.io/api/core/v1"
+<<<<<<< HEAD
 	policyv1 "k8s.io/api/policy/v1"
 	policyv1beta1 "k8s.io/api/policy/v1beta1"
+=======
+	policy "k8s.io/api/policy/v1beta1"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/net"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -31,6 +35,7 @@ import (
 // The PodExpansion interface allows manually adding extra methods to the PodInterface.
 type PodExpansion interface {
 	Bind(ctx context.Context, binding *v1.Binding, opts metav1.CreateOptions) error
+<<<<<<< HEAD
 	// Evict submits a policy/v1beta1 Eviction request to the pod's eviction subresource.
 	// Equivalent to calling EvictV1beta1.
 	// Deprecated: Use EvictV1() (supported in 1.22+) or EvictV1beta1().
@@ -41,6 +46,9 @@ type PodExpansion interface {
 	// EvictV1beta1 submits a policy/v1beta1 Eviction request to the pod's eviction subresource.
 	// Supported in 1.22+.
 	EvictV1beta1(ctx context.Context, eviction *policyv1beta1.Eviction) error
+=======
+	Evict(ctx context.Context, eviction *policy.Eviction) error
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	GetLogs(name string, opts *v1.PodLogOptions) *restclient.Request
 	ProxyGet(scheme, name, port, path string, params map[string]string) restclient.ResponseWrapper
 }
@@ -50,6 +58,7 @@ func (c *pods) Bind(ctx context.Context, binding *v1.Binding, opts metav1.Create
 	return c.client.Post().Namespace(c.ns).Resource("pods").Name(binding.Name).VersionedParams(&opts, scheme.ParameterCodec).SubResource("binding").Body(binding).Do(ctx).Error()
 }
 
+<<<<<<< HEAD
 // Evict submits a policy/v1beta1 Eviction request to the pod's eviction subresource.
 // Equivalent to calling EvictV1beta1.
 // Deprecated: Use EvictV1() (supported in 1.22+) or EvictV1beta1().
@@ -62,6 +71,9 @@ func (c *pods) EvictV1beta1(ctx context.Context, eviction *policyv1beta1.Evictio
 }
 
 func (c *pods) EvictV1(ctx context.Context, eviction *policyv1.Eviction) error {
+=======
+func (c *pods) Evict(ctx context.Context, eviction *policy.Eviction) error {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	return c.client.Post().Namespace(c.ns).Resource("pods").Name(eviction.Name).SubResource("eviction").Body(eviction).Do(ctx).Error()
 }
 

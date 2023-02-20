@@ -51,6 +51,7 @@ const (
 	FlowSchemaMaxMatchingPrecedence int32 = 10000
 )
 
+<<<<<<< HEAD
 // Constants for apiserver response headers.
 const (
 	ResponseHeaderMatchedPriorityLevelConfigurationUID = "X-Kubernetes-PF-PriorityLevel-UID"
@@ -64,6 +65,11 @@ const (
 // +k8s:prerelease-lifecycle-gen:deprecated=1.20
 // +k8s:prerelease-lifecycle-gen:removed=1.21
 // +k8s:prerelease-lifecycle-gen:replacement=flowcontrol.apiserver.k8s.io,v1beta3,FlowSchema
+=======
+// +genclient
+// +genclient:nonNamespaced
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // FlowSchema defines the schema of a group of flows. Note that a flow is made up of a set of inbound API requests with
 // similar attributes and is identified by a pair of strings: the name of the FlowSchema and a "flow distinguisher".
@@ -84,10 +90,13 @@ type FlowSchema struct {
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:introduced=1.18
 // +k8s:prerelease-lifecycle-gen:deprecated=1.20
 // +k8s:prerelease-lifecycle-gen:removed=1.21
 // +k8s:prerelease-lifecycle-gen:replacement=flowcontrol.apiserver.k8s.io,v1beta3,FlowSchemaList
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // FlowSchemaList is a list of FlowSchema objects.
 type FlowSchemaList struct {
@@ -185,6 +194,7 @@ type PolicyRulesWithSubjects struct {
 // ways of matching an originator; by user, group, or service account.
 // +union
 type Subject struct {
+<<<<<<< HEAD
 	// `kind` indicates which one of the other fields is non-empty.
 	// Required
 	// +unionDiscriminator
@@ -196,6 +206,15 @@ type Subject struct {
 	// +optional
 	Group *GroupSubject `json:"group,omitempty" protobuf:"bytes,3,opt,name=group"`
 	// `serviceAccount` matches ServiceAccounts.
+=======
+	// Required
+	// +unionDiscriminator
+	Kind SubjectKind `json:"kind" protobuf:"bytes,1,opt,name=kind"`
+	// +optional
+	User *UserSubject `json:"user,omitempty" protobuf:"bytes,2,opt,name=user"`
+	// +optional
+	Group *GroupSubject `json:"group,omitempty" protobuf:"bytes,3,opt,name=group"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	ServiceAccount *ServiceAccountSubject `json:"serviceAccount,omitempty" protobuf:"bytes,4,opt,name=serviceAccount"`
 }
@@ -241,10 +260,15 @@ type ServiceAccountSubject struct {
 // ResourcePolicyRule matches a resource request if and only if: (a)
 // at least one member of verbs matches the request, (b) at least one
 // member of apiGroups matches the request, (c) at least one member of
+<<<<<<< HEAD
 // resources matches the request, and (d) either (d1) the request does
 // not specify a namespace (i.e., `Namespace==""`) and clusterScope is
 // true or (d2) the request specifies a namespace and least one member
 // of namespaces matches the request's namespace.
+=======
+// resources matches the request, and (d) least one member of
+// namespaces matches the request.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type ResourcePolicyRule struct {
 	// `verbs` is a list of matching verbs and may not be empty.
 	// "*" matches all verbs and, if present, must be the only entry.
@@ -341,10 +365,13 @@ type FlowSchemaConditionType string
 // +genclient
 // +genclient:nonNamespaced
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:introduced=1.18
 // +k8s:prerelease-lifecycle-gen:deprecated=1.20
 // +k8s:prerelease-lifecycle-gen:removed=1.21
 // +k8s:prerelease-lifecycle-gen:replacement=flowcontrol.apiserver.k8s.io,v1beta3,PriorityLevelConfiguration
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // PriorityLevelConfiguration represents the configuration of a priority level.
 type PriorityLevelConfiguration struct {
@@ -364,10 +391,13 @@ type PriorityLevelConfiguration struct {
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:introduced=1.18
 // +k8s:prerelease-lifecycle-gen:deprecated=1.20
 // +k8s:prerelease-lifecycle-gen:removed=1.21
 // +k8s:prerelease-lifecycle-gen:replacement=flowcontrol.apiserver.k8s.io,v1beta3,PriorityLevelConfigurationList
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // PriorityLevelConfigurationList is a list of PriorityLevelConfiguration objects.
 type PriorityLevelConfigurationList struct {
@@ -415,8 +445,13 @@ const (
 
 // LimitedPriorityLevelConfiguration specifies how to handle requests that are subject to limits.
 // It addresses two issues:
+<<<<<<< HEAD
 //   - How are requests for this priority level limited?
 //   - What should be done with requests that exceed the limit?
+=======
+//  * How are requests for this priority level limited?
+//  * What should be done with requests that exceed the limit?
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type LimitedPriorityLevelConfiguration struct {
 	// `assuredConcurrencyShares` (ACS) configures the execution
 	// limit, which is a limit on the number of requests of this
@@ -438,6 +473,7 @@ type LimitedPriorityLevelConfiguration struct {
 
 	// `limitResponse` indicates what to do with requests that can not be executed right now
 	LimitResponse LimitResponse `json:"limitResponse,omitempty" protobuf:"bytes,2,opt,name=limitResponse"`
+<<<<<<< HEAD
 
 	// `lendablePercent` prescribes the fraction of the level's NominalCL that
 	// can be borrowed by other priority levels. The value of this
@@ -467,6 +503,8 @@ type LimitedPriorityLevelConfiguration struct {
 	// When this field is left `nil`, the limit is effectively infinite.
 	// +optional
 	BorrowingLimitPercent *int32 `json:"borrowingLimitPercent,omitempty" protobuf:"varint,4,opt,name=borrowingLimitPercent"`
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // LimitResponse defines how to handle requests that can not be executed right now.

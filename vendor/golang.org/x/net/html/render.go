@@ -85,7 +85,11 @@ func render1(w writer, n *Node) error {
 		if _, err := w.WriteString("<!--"); err != nil {
 			return err
 		}
+<<<<<<< HEAD
 		if err := escape(w, n.Data); err != nil {
+=======
+		if _, err := w.WriteString(n.Data); err != nil {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			return err
 		}
 		if _, err := w.WriteString("-->"); err != nil {
@@ -96,7 +100,11 @@ func render1(w writer, n *Node) error {
 		if _, err := w.WriteString("<!DOCTYPE "); err != nil {
 			return err
 		}
+<<<<<<< HEAD
 		if err := escape(w, n.Data); err != nil {
+=======
+		if _, err := w.WriteString(n.Data); err != nil {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 			return err
 		}
 		if n.Attr != nil {
@@ -263,7 +271,11 @@ var voidElements = map[string]bool{
 	"hr":     true,
 	"img":    true,
 	"input":  true,
+<<<<<<< HEAD
 	"keygen": true, // "keygen" has been removed from the spec, but are kept here for backwards compatibility.
+=======
+	"keygen": true,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"link":   true,
 	"meta":   true,
 	"param":  true,

@@ -22,7 +22,10 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 )
 
+<<<<<<< HEAD
 // GroupName is the group name for this API.
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 const GroupName = "admissionregistration.k8s.io"
 
 // SchemeGroupVersion is group version used to register these objects
@@ -33,6 +36,7 @@ func Resource(resource string) schema.GroupResource {
 	return SchemeGroupVersion.WithResource(resource).GroupResource()
 }
 
+<<<<<<< HEAD
 // TODO: move SchemeBuilder with zz_generated.deepcopy.go to k8s.io/api.
 // localSchemeBuilder and AddToScheme will stay in k8s.io/kubernetes.
 var (
@@ -41,6 +45,14 @@ var (
 	localSchemeBuilder = &SchemeBuilder
 	// AddToScheme is a common registration function for mapping packaged scoped group & version keys to a scheme.
 	AddToScheme = localSchemeBuilder.AddToScheme
+=======
+var (
+	// TODO: move SchemeBuilder with zz_generated.deepcopy.go to k8s.io/api.
+	// localSchemeBuilder and AddToScheme will stay in k8s.io/kubernetes.
+	SchemeBuilder      = runtime.NewSchemeBuilder(addKnownTypes)
+	localSchemeBuilder = &SchemeBuilder
+	AddToScheme        = localSchemeBuilder.AddToScheme
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 )
 
 // Adds the list of known types to scheme.

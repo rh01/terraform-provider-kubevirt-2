@@ -44,7 +44,11 @@ type CertificateSigningRequest struct {
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
 	// spec contains the certificate request, and is immutable after creation.
+<<<<<<< HEAD
 	// Only the request, signerName, expirationSeconds, and usages fields can be set on creation.
+=======
+	// Only the request, signerName, and usages fields can be set on creation.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// Other fields are derived by Kubernetes and cannot be modified by users.
 	Spec CertificateSigningRequestSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 
@@ -84,6 +88,7 @@ type CertificateSigningRequestSpec struct {
 	//  6. Whether or not requests for CA certificates are allowed.
 	SignerName string `json:"signerName" protobuf:"bytes,7,opt,name=signerName"`
 
+<<<<<<< HEAD
 	// expirationSeconds is the requested duration of validity of the issued
 	// certificate. The certificate signer may issue a certificate with a different
 	// validity duration so a client must check the delta between the notBefore and
@@ -106,6 +111,8 @@ type CertificateSigningRequestSpec struct {
 	// +optional
 	ExpirationSeconds *int32 `json:"expirationSeconds,omitempty" protobuf:"varint,8,opt,name=expirationSeconds"`
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// usages specifies a set of key usages requested in the issued certificate.
 	//
 	// Requests for TLS client certificates typically request: "digital signature", "key encipherment", "client auth".
@@ -275,10 +282,14 @@ type CertificateSigningRequestList struct {
 
 // KeyUsage specifies valid usage contexts for keys.
 // See: https://tools.ietf.org/html/rfc5280#section-4.2.1.3
+<<<<<<< HEAD
 //
 //	https://tools.ietf.org/html/rfc5280#section-4.2.1.12
 //
 // +enum
+=======
+//      https://tools.ietf.org/html/rfc5280#section-4.2.1.12
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type KeyUsage string
 
 // Valid key usages

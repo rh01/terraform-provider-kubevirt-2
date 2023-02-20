@@ -52,7 +52,11 @@ var isSpecialElementMap = map[string]bool{
 	"iframe":     true,
 	"img":        true,
 	"input":      true,
+<<<<<<< HEAD
 	"keygen":     true, // "keygen" has been removed from the spec, but are kept here for backwards compatibility.
+=======
+	"keygen":     true,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"li":         true,
 	"link":       true,
 	"listing":    true,

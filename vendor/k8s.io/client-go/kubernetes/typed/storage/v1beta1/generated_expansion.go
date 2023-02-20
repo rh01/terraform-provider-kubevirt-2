@@ -22,8 +22,11 @@ type CSIDriverExpansion interface{}
 
 type CSINodeExpansion interface{}
 
+<<<<<<< HEAD
 type CSIStorageCapacityExpansion interface{}
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type StorageClassExpansion interface{}
 
 type VolumeAttachmentExpansion interface{}

@@ -25,6 +25,7 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 // Event is a report of an event somewhere in the cluster. It generally denotes some state change in the system.
+<<<<<<< HEAD
 // Events have a limited retention time and triggers and messages may evolve
 // with time.  Event consumers should not rely on the timing of an event
 // with a given Reason reflecting a consistent underlying trigger, or the
@@ -37,6 +38,12 @@ type Event struct {
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
+=======
+type Event struct {
+	metav1.TypeMeta `json:",inline"`
+	// +optional
+	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	// eventTime is the time when this Event was first observed. It is required.
 	EventTime metav1.MicroTime `json:"eventTime" protobuf:"bytes,2,opt,name=eventTime"`
@@ -47,10 +54,15 @@ type Event struct {
 
 	// reportingController is the name of the controller that emitted this Event, e.g. `kubernetes.io/kubelet`.
 	// This field cannot be empty for new Events.
+<<<<<<< HEAD
+=======
+	// +optional
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	ReportingController string `json:"reportingController,omitempty" protobuf:"bytes,4,opt,name=reportingController"`
 
 	// reportingInstance is the ID of the controller instance, e.g. `kubelet-xyzf`.
 	// This field cannot be empty for new Events and it can have at most 128 characters.
+<<<<<<< HEAD
 	ReportingInstance string `json:"reportingInstance,omitempty" protobuf:"bytes,5,opt,name=reportingInstance"`
 
 	// action is what action was taken/failed regarding to the regarding object. It is machine-readable.
@@ -59,6 +71,19 @@ type Event struct {
 
 	// reason is why the action was taken. It is human-readable.
 	// This field cannot be empty for new Events and it can have at most 128 characters.
+=======
+	// +optional
+	ReportingInstance string `json:"reportingInstance,omitempty" protobuf:"bytes,5,opt,name=reportingInstance"`
+
+	// action is what action was taken/failed regarding to the regarding object. It is machine-readable.
+	// This field can have at most 128 characters.
+	// +optional
+	Action string `json:"action,omitempty" protobuf:"bytes,6,name=action"`
+
+	// reason is why the action was taken. It is human-readable.
+	// This field can have at most 128 characters.
+	// +optional
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	Reason string `json:"reason,omitempty" protobuf:"bytes,7,name=reason"`
 
 	// regarding contains the object this Event is about. In most cases it's an Object reporting controller
@@ -80,7 +105,11 @@ type Event struct {
 
 	// type is the type of this event (Normal, Warning), new types could be added in the future.
 	// It is machine-readable.
+<<<<<<< HEAD
 	// This field cannot be empty for new Events.
+=======
+	// +optional
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	Type string `json:"type,omitempty" protobuf:"bytes,11,opt,name=type"`
 
 	// deprecatedSource is the deprecated field assuring backward compatibility with core.v1 Event type.

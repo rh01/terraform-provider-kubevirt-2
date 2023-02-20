@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // +build linux aix zos
+=======
+// +build linux aix
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // +build !js
 
 package logrus

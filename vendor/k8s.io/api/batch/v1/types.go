@@ -17,6 +17,7 @@ limitations under the License.
 package v1
 
 import (
+<<<<<<< HEAD
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/types"
@@ -35,6 +36,10 @@ const (
 	// apiserver and job controller will ignore this annotation and they will
 	// always track jobs using finalizers.
 	JobTrackingFinalizer = "batch.kubernetes.io/job-tracking"
+=======
+	"k8s.io/api/core/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 )
 
 // +genclient
@@ -73,6 +78,7 @@ type JobList struct {
 	Items []Job `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
+<<<<<<< HEAD
 // CompletionMode specifies how Pod completions of a Job are tracked.
 // +enum
 type CompletionMode string
@@ -204,6 +210,8 @@ type PodFailurePolicy struct {
 	Rules []PodFailurePolicyRule `json:"rules" protobuf:"bytes,1,opt,name=rules"`
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // JobSpec describes how the job execution will look like.
 type JobSpec struct {
 
@@ -224,6 +232,7 @@ type JobSpec struct {
 	// +optional
 	Completions *int32 `json:"completions,omitempty" protobuf:"varint,2,opt,name=completions"`
 
+<<<<<<< HEAD
 	// Specifies the duration in seconds relative to the startTime that the job
 	// may be continuously active before the system tries to terminate it; value
 	// must be positive integer. If a Job is suspended (at creation or through an
@@ -245,6 +254,13 @@ type JobSpec struct {
 	// +optional
 	PodFailurePolicy *PodFailurePolicy `json:"podFailurePolicy,omitempty" protobuf:"bytes,11,opt,name=podFailurePolicy"`
 
+=======
+	// Specifies the duration in seconds relative to the startTime that the job may be active
+	// before the system tries to terminate it; value must be positive integer
+	// +optional
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,3,opt,name=activeDeadlineSeconds"`
+
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// Specifies the number of retries before marking this job failed.
 	// Defaults to 6
 	// +optional
@@ -276,7 +292,11 @@ type JobSpec struct {
 
 	// Describes the pod that will be created when executing a job.
 	// More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
+<<<<<<< HEAD
 	Template corev1.PodTemplateSpec `json:"template" protobuf:"bytes,6,opt,name=template"`
+=======
+	Template v1.PodTemplateSpec `json:"template" protobuf:"bytes,6,opt,name=template"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	// ttlSecondsAfterFinished limits the lifetime of a Job that has finished
 	// execution (either Complete or Failed). If this field is set,
@@ -285,6 +305,7 @@ type JobSpec struct {
 	// guarantees (e.g. finalizers) will be honored. If this field is unset,
 	// the Job won't be automatically deleted. If this field is set to zero,
 	// the Job becomes eligible to be deleted immediately after it finishes.
+<<<<<<< HEAD
 	// +optional
 	TTLSecondsAfterFinished *int32 `json:"ttlSecondsAfterFinished,omitempty" protobuf:"varint,8,opt,name=ttlSecondsAfterFinished"`
 
@@ -323,20 +344,31 @@ type JobSpec struct {
 	//
 	// +optional
 	Suspend *bool `json:"suspend,omitempty" protobuf:"varint,10,opt,name=suspend"`
+=======
+	// This field is alpha-level and is only honored by servers that enable the
+	// TTLAfterFinished feature.
+	// +optional
+	TTLSecondsAfterFinished *int32 `json:"ttlSecondsAfterFinished,omitempty" protobuf:"varint,8,opt,name=ttlSecondsAfterFinished"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // JobStatus represents the current state of a Job.
 type JobStatus struct {
+<<<<<<< HEAD
 	// The latest available observations of an object's current state. When a Job
 	// fails, one of the conditions will have type "Failed" and status true. When
 	// a Job is suspended, one of the conditions will have type "Suspended" and
 	// status true; when the Job is resumed, the status of this condition will
 	// become false. When a Job is completed, one of the conditions will have
 	// type "Complete" and status true.
+=======
+	// The latest available observations of an object's current state.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
+<<<<<<< HEAD
 	// +listType=atomic
 	Conditions []JobCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,1,rep,name=conditions"`
 
@@ -344,17 +376,31 @@ type JobStatus struct {
 	// Job is created in the suspended state, this field is not set until the
 	// first time it is resumed. This field is reset every time a Job is resumed
 	// from suspension. It is represented in RFC3339 form and is in UTC.
+=======
+	Conditions []JobCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,1,rep,name=conditions"`
+
+	// Represents time when the job was acknowledged by the job controller.
+	// It is not guaranteed to be set in happens-before order across separate operations.
+	// It is represented in RFC3339 form and is in UTC.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`
 
 	// Represents time when the job was completed. It is not guaranteed to
 	// be set in happens-before order across separate operations.
 	// It is represented in RFC3339 form and is in UTC.
+<<<<<<< HEAD
 	// The completion time is only set when the job finishes successfully.
 	// +optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,3,opt,name=completionTime"`
 
 	// The number of pending and running pods.
+=======
+	// +optional
+	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,3,opt,name=completionTime"`
+
+	// The number of actively running pods.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	Active int32 `json:"active,omitempty" protobuf:"varint,4,opt,name=active"`
 
@@ -365,6 +411,7 @@ type JobStatus struct {
 	// The number of pods which reached phase Failed.
 	// +optional
 	Failed int32 `json:"failed,omitempty" protobuf:"varint,6,opt,name=failed"`
+<<<<<<< HEAD
 
 	// CompletedIndexes holds the completed indexes when .spec.completionMode =
 	// "Indexed" in a text format. The indexes are represented as decimal integers
@@ -412,20 +459,30 @@ type UncountedTerminatedPods struct {
 	// +listType=set
 	// +optional
 	Failed []types.UID `json:"failed,omitempty" protobuf:"bytes,2,rep,name=failed,casttype=k8s.io/apimachinery/pkg/types.UID"`
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 type JobConditionType string
 
+<<<<<<< HEAD
 // These are built-in conditions of a job.
 const (
 	// JobSuspended means the job has been suspended.
 	JobSuspended JobConditionType = "Suspended"
+=======
+// These are valid conditions of a job.
+const (
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// JobComplete means the job has completed its execution.
 	JobComplete JobConditionType = "Complete"
 	// JobFailed means the job has failed its execution.
 	JobFailed JobConditionType = "Failed"
+<<<<<<< HEAD
 	// FailureTarget means the job is about to fail its execution.
 	JobFailureTarget JobConditionType = "FailureTarget"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 )
 
 // JobCondition describes current state of a job.
@@ -433,7 +490,11 @@ type JobCondition struct {
 	// Type of job condition, Complete or Failed.
 	Type JobConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=JobConditionType"`
 	// Status of the condition, one of True, False, Unknown.
+<<<<<<< HEAD
 	Status corev1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
+=======
+	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// Last time the condition was checked.
 	// +optional
 	LastProbeTime metav1.Time `json:"lastProbeTime,omitempty" protobuf:"bytes,3,opt,name=lastProbeTime"`
@@ -447,6 +508,7 @@ type JobCondition struct {
 	// +optional
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
+<<<<<<< HEAD
 
 // JobTemplateSpec describes the data a Job should have when created from a template
 type JobTemplateSpec struct {
@@ -583,3 +645,5 @@ type CronJobStatus struct {
 	// +optional
 	LastSuccessfulTime *metav1.Time `json:"lastSuccessfulTime,omitempty" protobuf:"bytes,5,opt,name=lastSuccessfulTime"`
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

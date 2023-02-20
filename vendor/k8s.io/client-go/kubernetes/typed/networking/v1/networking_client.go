@@ -19,8 +19,11 @@ limitations under the License.
 package v1
 
 import (
+<<<<<<< HEAD
 	"net/http"
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	v1 "k8s.io/api/networking/v1"
 	"k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
@@ -51,13 +54,17 @@ func (c *NetworkingV1Client) NetworkPolicies(namespace string) NetworkPolicyInte
 }
 
 // NewForConfig creates a new NetworkingV1Client for the given config.
+<<<<<<< HEAD
 // NewForConfig is equivalent to NewForConfigAndClient(c, httpClient),
 // where httpClient was generated with rest.HTTPClientFor(c).
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func NewForConfig(c *rest.Config) (*NetworkingV1Client, error) {
 	config := *c
 	if err := setConfigDefaults(&config); err != nil {
 		return nil, err
 	}
+<<<<<<< HEAD
 	httpClient, err := rest.HTTPClientFor(&config)
 	if err != nil {
 		return nil, err
@@ -73,6 +80,9 @@ func NewForConfigAndClient(c *rest.Config, h *http.Client) (*NetworkingV1Client,
 		return nil, err
 	}
 	client, err := rest.RESTClientForConfigAndClient(&config, h)
+=======
+	client, err := rest.RESTClientFor(&config)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if err != nil {
 		return nil, err
 	}

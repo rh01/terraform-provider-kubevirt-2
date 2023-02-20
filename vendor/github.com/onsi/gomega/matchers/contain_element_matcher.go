@@ -3,7 +3,10 @@
 package matchers
 
 import (
+<<<<<<< HEAD
 	"errors"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"fmt"
 	"reflect"
 
@@ -12,7 +15,10 @@ import (
 
 type ContainElementMatcher struct {
 	Element interface{}
+<<<<<<< HEAD
 	Result  []interface{}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func (matcher *ContainElementMatcher) Match(actual interface{}) (success bool, err error) {
@@ -20,6 +26,7 @@ func (matcher *ContainElementMatcher) Match(actual interface{}) (success bool, e
 		return false, fmt.Errorf("ContainElement matcher expects an array/slice/map.  Got:\n%s", format.Object(actual, 1))
 	}
 
+<<<<<<< HEAD
 	var actualT reflect.Type
 	var result reflect.Value
 	switch l := len(matcher.Result); {
@@ -63,6 +70,8 @@ func (matcher *ContainElementMatcher) Match(actual interface{}) (success bool, e
 		}
 	}
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	elemMatcher, elementIsMatcher := matcher.Element.(omegaMatcher)
 	if !elementIsMatcher {
 		elemMatcher = &EqualMatcher{Expected: matcher.Element}
@@ -70,15 +79,19 @@ func (matcher *ContainElementMatcher) Match(actual interface{}) (success bool, e
 
 	value := reflect.ValueOf(actual)
 	var valueAt func(int) interface{}
+<<<<<<< HEAD
 
 	var getFindings func() reflect.Value
 	var foundAt func(int)
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if isMap(actual) {
 		keys := value.MapKeys()
 		valueAt = func(i int) interface{} {
 			return value.MapIndex(keys[i]).Interface()
 		}
+<<<<<<< HEAD
 		if result.Kind() != reflect.Invalid {
 			fm := reflect.MakeMap(actualT)
 			getFindings = func() reflect.Value {
@@ -88,10 +101,13 @@ func (matcher *ContainElementMatcher) Match(actual interface{}) (success bool, e
 				fm.SetMapIndex(keys[i], value.MapIndex(keys[i]))
 			}
 		}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	} else {
 		valueAt = func(i int) interface{} {
 			return value.Index(i).Interface()
 		}
+<<<<<<< HEAD
 		if result.Kind() != reflect.Invalid {
 			var f reflect.Value
 			if result.Kind() == reflect.Slice {
@@ -106,17 +122,24 @@ func (matcher *ContainElementMatcher) Match(actual interface{}) (success bool, e
 				f = reflect.Append(f, value.Index(i))
 			}
 		}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	}
 
 	var lastError error
 	for i := 0; i < value.Len(); i++ {
+<<<<<<< HEAD
 		elem := valueAt(i)
 		success, err := elemMatcher.Match(elem)
+=======
+		success, err := elemMatcher.Match(valueAt(i))
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		if err != nil {
 			lastError = err
 			continue
 		}
 		if success {
+<<<<<<< HEAD
 			if result.Kind() == reflect.Invalid {
 				return true, nil
 			}
@@ -163,6 +186,13 @@ func (matcher *ContainElementMatcher) Match(actual interface{}) (success bool, e
 	}
 	result.Set(findings)
 	return true, nil
+=======
+			return true, nil
+		}
+	}
+
+	return false, lastError
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func (matcher *ContainElementMatcher) FailureMessage(actual interface{}) (message string) {

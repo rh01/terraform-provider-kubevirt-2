@@ -20,15 +20,21 @@ package v1beta1
 
 import (
 	"context"
+<<<<<<< HEAD
 	json "encoding/json"
 	"fmt"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	"time"
 
 	v1beta1 "k8s.io/api/scheduling/v1beta1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
+<<<<<<< HEAD
 	schedulingv1beta1 "k8s.io/client-go/applyconfigurations/scheduling/v1beta1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	scheme "k8s.io/client-go/kubernetes/scheme"
 	rest "k8s.io/client-go/rest"
 )
@@ -49,7 +55,10 @@ type PriorityClassInterface interface {
 	List(ctx context.Context, opts v1.ListOptions) (*v1beta1.PriorityClassList, error)
 	Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error)
 	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *v1beta1.PriorityClass, err error)
+<<<<<<< HEAD
 	Apply(ctx context.Context, priorityClass *schedulingv1beta1.PriorityClassApplyConfiguration, opts v1.ApplyOptions) (result *v1beta1.PriorityClass, err error)
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	PriorityClassExpansion
 }
 
@@ -170,6 +179,7 @@ func (c *priorityClasses) Patch(ctx context.Context, name string, pt types.Patch
 		Into(result)
 	return
 }
+<<<<<<< HEAD
 
 // Apply takes the given apply declarative configuration, applies it and returns the applied priorityClass.
 func (c *priorityClasses) Apply(ctx context.Context, priorityClass *schedulingv1beta1.PriorityClassApplyConfiguration, opts v1.ApplyOptions) (result *v1beta1.PriorityClass, err error) {
@@ -195,3 +205,5 @@ func (c *priorityClasses) Apply(ctx context.Context, priorityClass *schedulingv1
 		Into(result)
 	return
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")

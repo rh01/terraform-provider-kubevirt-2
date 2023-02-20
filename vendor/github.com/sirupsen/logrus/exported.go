@@ -134,6 +134,7 @@ func Fatal(args ...interface{}) {
 	std.Fatal(args...)
 }
 
+<<<<<<< HEAD
 // TraceFn logs a message from a func at level Trace on the standard logger.
 func TraceFn(fn LogFunction) {
 	std.TraceFn(fn)
@@ -179,6 +180,8 @@ func FatalFn(fn LogFunction) {
 	std.FatalFn(fn)
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // Tracef logs a message at level Trace on the standard logger.
 func Tracef(format string, args ...interface{}) {
 	std.Tracef(format, args...)

@@ -28,8 +28,11 @@ import (
 	github_com_gogo_protobuf_sortkeys "github.com/gogo/protobuf/sortkeys"
 	k8s_io_api_core_v1 "k8s.io/api/core/v1"
 	v11 "k8s.io/api/core/v1"
+<<<<<<< HEAD
 	resource "k8s.io/apimachinery/pkg/api/resource"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 	math "math"
 	math_bits "math/bits"
@@ -244,6 +247,7 @@ func (m *CSINodeSpec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_CSINodeSpec proto.InternalMessageInfo
 
+<<<<<<< HEAD
 func (m *CSIStorageCapacity) Reset()      { *m = CSIStorageCapacity{} }
 func (*CSIStorageCapacity) ProtoMessage() {}
 func (*CSIStorageCapacity) Descriptor() ([]byte, []int) {
@@ -304,6 +308,12 @@ func (m *StorageClass) Reset()      { *m = StorageClass{} }
 func (*StorageClass) ProtoMessage() {}
 func (*StorageClass) Descriptor() ([]byte, []int) {
 	return fileDescriptor_7d2980599fd0de80, []int{9}
+=======
+func (m *StorageClass) Reset()      { *m = StorageClass{} }
+func (*StorageClass) ProtoMessage() {}
+func (*StorageClass) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7d2980599fd0de80, []int{7}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *StorageClass) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -331,7 +341,11 @@ var xxx_messageInfo_StorageClass proto.InternalMessageInfo
 func (m *StorageClassList) Reset()      { *m = StorageClassList{} }
 func (*StorageClassList) ProtoMessage() {}
 func (*StorageClassList) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_7d2980599fd0de80, []int{10}
+=======
+	return fileDescriptor_7d2980599fd0de80, []int{8}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *StorageClassList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -356,6 +370,7 @@ func (m *StorageClassList) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_StorageClassList proto.InternalMessageInfo
 
+<<<<<<< HEAD
 func (m *TokenRequest) Reset()      { *m = TokenRequest{} }
 func (*TokenRequest) ProtoMessage() {}
 func (*TokenRequest) Descriptor() ([]byte, []int) {
@@ -388,6 +403,12 @@ func (m *VolumeAttachment) Reset()      { *m = VolumeAttachment{} }
 func (*VolumeAttachment) ProtoMessage() {}
 func (*VolumeAttachment) Descriptor() ([]byte, []int) {
 	return fileDescriptor_7d2980599fd0de80, []int{12}
+=======
+func (m *VolumeAttachment) Reset()      { *m = VolumeAttachment{} }
+func (*VolumeAttachment) ProtoMessage() {}
+func (*VolumeAttachment) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7d2980599fd0de80, []int{9}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *VolumeAttachment) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -415,7 +436,11 @@ var xxx_messageInfo_VolumeAttachment proto.InternalMessageInfo
 func (m *VolumeAttachmentList) Reset()      { *m = VolumeAttachmentList{} }
 func (*VolumeAttachmentList) ProtoMessage() {}
 func (*VolumeAttachmentList) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_7d2980599fd0de80, []int{13}
+=======
+	return fileDescriptor_7d2980599fd0de80, []int{10}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *VolumeAttachmentList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -443,7 +468,11 @@ var xxx_messageInfo_VolumeAttachmentList proto.InternalMessageInfo
 func (m *VolumeAttachmentSource) Reset()      { *m = VolumeAttachmentSource{} }
 func (*VolumeAttachmentSource) ProtoMessage() {}
 func (*VolumeAttachmentSource) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_7d2980599fd0de80, []int{14}
+=======
+	return fileDescriptor_7d2980599fd0de80, []int{11}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *VolumeAttachmentSource) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -471,7 +500,11 @@ var xxx_messageInfo_VolumeAttachmentSource proto.InternalMessageInfo
 func (m *VolumeAttachmentSpec) Reset()      { *m = VolumeAttachmentSpec{} }
 func (*VolumeAttachmentSpec) ProtoMessage() {}
 func (*VolumeAttachmentSpec) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_7d2980599fd0de80, []int{15}
+=======
+	return fileDescriptor_7d2980599fd0de80, []int{12}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *VolumeAttachmentSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -499,7 +532,11 @@ var xxx_messageInfo_VolumeAttachmentSpec proto.InternalMessageInfo
 func (m *VolumeAttachmentStatus) Reset()      { *m = VolumeAttachmentStatus{} }
 func (*VolumeAttachmentStatus) ProtoMessage() {}
 func (*VolumeAttachmentStatus) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_7d2980599fd0de80, []int{16}
+=======
+	return fileDescriptor_7d2980599fd0de80, []int{13}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *VolumeAttachmentStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -527,7 +564,11 @@ var xxx_messageInfo_VolumeAttachmentStatus proto.InternalMessageInfo
 func (m *VolumeError) Reset()      { *m = VolumeError{} }
 func (*VolumeError) ProtoMessage() {}
 func (*VolumeError) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_7d2980599fd0de80, []int{17}
+=======
+	return fileDescriptor_7d2980599fd0de80, []int{14}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *VolumeError) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -555,7 +596,11 @@ var xxx_messageInfo_VolumeError proto.InternalMessageInfo
 func (m *VolumeNodeResources) Reset()      { *m = VolumeNodeResources{} }
 func (*VolumeNodeResources) ProtoMessage() {}
 func (*VolumeNodeResources) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return fileDescriptor_7d2980599fd0de80, []int{18}
+=======
+	return fileDescriptor_7d2980599fd0de80, []int{15}
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 func (m *VolumeNodeResources) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -588,12 +633,18 @@ func init() {
 	proto.RegisterType((*CSINodeDriver)(nil), "k8s.io.api.storage.v1beta1.CSINodeDriver")
 	proto.RegisterType((*CSINodeList)(nil), "k8s.io.api.storage.v1beta1.CSINodeList")
 	proto.RegisterType((*CSINodeSpec)(nil), "k8s.io.api.storage.v1beta1.CSINodeSpec")
+<<<<<<< HEAD
 	proto.RegisterType((*CSIStorageCapacity)(nil), "k8s.io.api.storage.v1beta1.CSIStorageCapacity")
 	proto.RegisterType((*CSIStorageCapacityList)(nil), "k8s.io.api.storage.v1beta1.CSIStorageCapacityList")
 	proto.RegisterType((*StorageClass)(nil), "k8s.io.api.storage.v1beta1.StorageClass")
 	proto.RegisterMapType((map[string]string)(nil), "k8s.io.api.storage.v1beta1.StorageClass.ParametersEntry")
 	proto.RegisterType((*StorageClassList)(nil), "k8s.io.api.storage.v1beta1.StorageClassList")
 	proto.RegisterType((*TokenRequest)(nil), "k8s.io.api.storage.v1beta1.TokenRequest")
+=======
+	proto.RegisterType((*StorageClass)(nil), "k8s.io.api.storage.v1beta1.StorageClass")
+	proto.RegisterMapType((map[string]string)(nil), "k8s.io.api.storage.v1beta1.StorageClass.ParametersEntry")
+	proto.RegisterType((*StorageClassList)(nil), "k8s.io.api.storage.v1beta1.StorageClassList")
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	proto.RegisterType((*VolumeAttachment)(nil), "k8s.io.api.storage.v1beta1.VolumeAttachment")
 	proto.RegisterType((*VolumeAttachmentList)(nil), "k8s.io.api.storage.v1beta1.VolumeAttachmentList")
 	proto.RegisterType((*VolumeAttachmentSource)(nil), "k8s.io.api.storage.v1beta1.VolumeAttachmentSource")
@@ -609,6 +660,7 @@ func init() {
 }
 
 var fileDescriptor_7d2980599fd0de80 = []byte{
+<<<<<<< HEAD
 	// 1672 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xbc, 0x58, 0xcd, 0x6f, 0x1b, 0x4d,
 	0x19, 0xcf, 0xc6, 0xce, 0xd7, 0x38, 0x69, 0x92, 0x49, 0x5a, 0x8c, 0x0f, 0x76, 0x64, 0x04, 0x4d,
@@ -715,6 +767,97 @@ var fileDescriptor_7d2980599fd0de80 = []byte{
 	0xac, 0x7d, 0xe8, 0x97, 0xb5, 0x8f, 0xfd, 0xb2, 0xf6, 0xa9, 0x5f, 0xd6, 0xfe, 0xd7, 0x2f, 0x6b,
 	0x7f, 0xf8, 0x7f, 0x79, 0xea, 0x6d, 0x69, 0xfc, 0xbf, 0xb5, 0xdf, 0x06, 0x00, 0x00, 0xff, 0xff,
 	0xee, 0x44, 0x0b, 0xed, 0xe3, 0x15, 0x00, 0x00,
+=======
+	// 1400 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xbc, 0x57, 0x3d, 0x6f, 0xdb, 0x46,
+	0x1f, 0x37, 0x2d, 0xc9, 0x2f, 0x27, 0x3b, 0x96, 0xcf, 0xc6, 0xf3, 0xe8, 0xd1, 0x20, 0x1a, 0x7a,
+	0xd0, 0xc6, 0x09, 0x12, 0x2a, 0x31, 0xd2, 0x20, 0x08, 0x90, 0xc1, 0x72, 0xdc, 0x46, 0x89, 0xe5,
+	0xb8, 0x27, 0x23, 0x28, 0x82, 0x0e, 0x3d, 0x91, 0x67, 0x99, 0xb1, 0xc8, 0x63, 0xc8, 0x93, 0x5a,
+	0x6d, 0x9d, 0x3a, 0x17, 0x1d, 0xfa, 0x09, 0xfa, 0x15, 0x5a, 0xa0, 0x5d, 0x3a, 0x36, 0x53, 0x11,
+	0x74, 0xca, 0x44, 0x34, 0xec, 0x47, 0x28, 0xba, 0x18, 0x1d, 0x8a, 0x3b, 0x9e, 0xc4, 0x17, 0x51,
+	0xb1, 0xdd, 0xc1, 0x1b, 0xef, 0xff, 0xf2, 0xfb, 0xbf, 0xff, 0xef, 0x08, 0x76, 0x4e, 0xee, 0x79,
+	0x9a, 0x49, 0xeb, 0x27, 0xfd, 0x0e, 0x71, 0x6d, 0xc2, 0x88, 0x57, 0x1f, 0x10, 0xdb, 0xa0, 0x6e,
+	0x5d, 0x32, 0xb0, 0x63, 0xd6, 0x3d, 0x46, 0x5d, 0xdc, 0x25, 0xf5, 0xc1, 0xed, 0x0e, 0x61, 0xf8,
+	0x76, 0xbd, 0x4b, 0x6c, 0xe2, 0x62, 0x46, 0x0c, 0xcd, 0x71, 0x29, 0xa3, 0xb0, 0x12, 0xca, 0x6a,
+	0xd8, 0x31, 0x35, 0x29, 0xab, 0x49, 0xd9, 0xca, 0xcd, 0xae, 0xc9, 0x8e, 0xfb, 0x1d, 0x4d, 0xa7,
+	0x56, 0xbd, 0x4b, 0xbb, 0xb4, 0x2e, 0x54, 0x3a, 0xfd, 0x23, 0x71, 0x12, 0x07, 0xf1, 0x15, 0x42,
+	0x55, 0x6a, 0x31, 0xb3, 0x3a, 0x75, 0xb9, 0xcd, 0xb4, 0xb9, 0xca, 0x9d, 0x48, 0xc6, 0xc2, 0xfa,
+	0xb1, 0x69, 0x13, 0x77, 0x58, 0x77, 0x4e, 0xba, 0x9c, 0xe0, 0xd5, 0x2d, 0xc2, 0x70, 0x96, 0x56,
+	0x7d, 0x9a, 0x96, 0xdb, 0xb7, 0x99, 0x69, 0x91, 0x09, 0x85, 0xbb, 0x67, 0x29, 0x78, 0xfa, 0x31,
+	0xb1, 0x70, 0x5a, 0xaf, 0xf6, 0x93, 0x02, 0x16, 0x77, 0xda, 0xcd, 0x87, 0xae, 0x39, 0x20, 0x2e,
+	0xfc, 0x0c, 0x2c, 0x70, 0x8f, 0x0c, 0xcc, 0x70, 0x59, 0xd9, 0x50, 0x36, 0x8b, 0x5b, 0xb7, 0xb4,
+	0x28, 0x5d, 0x63, 0x60, 0xcd, 0x39, 0xe9, 0x72, 0x82, 0xa7, 0x71, 0x69, 0x6d, 0x70, 0x5b, 0x7b,
+	0xda, 0x79, 0x41, 0x74, 0xd6, 0x22, 0x0c, 0x37, 0xe0, 0x2b, 0x5f, 0x9d, 0x09, 0x7c, 0x15, 0x44,
+	0x34, 0x34, 0x46, 0x85, 0x4f, 0x40, 0xde, 0x73, 0x88, 0x5e, 0x9e, 0x15, 0xe8, 0xd7, 0xb4, 0xe9,
+	0xc5, 0xd0, 0xc6, 0x6e, 0xb5, 0x1d, 0xa2, 0x37, 0x96, 0x24, 0x6c, 0x9e, 0x9f, 0x90, 0x00, 0xa9,
+	0xfd, 0xa8, 0x80, 0xe5, 0xb1, 0xd4, 0x9e, 0xe9, 0x31, 0xf8, 0xe9, 0x44, 0x00, 0xda, 0xf9, 0x02,
+	0xe0, 0xda, 0xc2, 0xfd, 0x92, 0xb4, 0xb3, 0x30, 0xa2, 0xc4, 0x9c, 0x7f, 0x0c, 0x0a, 0x26, 0x23,
+	0x96, 0x57, 0x9e, 0xdd, 0xc8, 0x6d, 0x16, 0xb7, 0xde, 0x3b, 0x97, 0xf7, 0x8d, 0x65, 0x89, 0x58,
+	0x68, 0x72, 0x5d, 0x14, 0x42, 0xd4, 0xfe, 0x9a, 0x8d, 0xf9, 0xce, 0x63, 0x82, 0xf7, 0xc1, 0x15,
+	0xcc, 0x18, 0xd6, 0x8f, 0x11, 0x79, 0xd9, 0x37, 0x5d, 0x62, 0x88, 0x08, 0x16, 0x1a, 0x30, 0xf0,
+	0xd5, 0x2b, 0xdb, 0x09, 0x0e, 0x4a, 0x49, 0x72, 0x5d, 0x87, 0x1a, 0x4d, 0xfb, 0x88, 0x3e, 0xb5,
+	0x5b, 0xb4, 0x6f, 0x33, 0x91, 0x60, 0xa9, 0x7b, 0x90, 0xe0, 0xa0, 0x94, 0x24, 0xd4, 0xc1, 0xfa,
+	0x80, 0xf6, 0xfa, 0x16, 0xd9, 0x33, 0x8f, 0x88, 0x3e, 0xd4, 0x7b, 0xa4, 0x45, 0x0d, 0xe2, 0x95,
+	0x73, 0x1b, 0xb9, 0xcd, 0xc5, 0x46, 0x3d, 0xf0, 0xd5, 0xf5, 0x67, 0x19, 0xfc, 0x53, 0x5f, 0x5d,
+	0xcb, 0xa0, 0xa3, 0x4c, 0x30, 0xf8, 0x00, 0xac, 0xc8, 0x0c, 0xed, 0x60, 0x07, 0xeb, 0x26, 0x1b,
+	0x96, 0xf3, 0xc2, 0xc3, 0xb5, 0xc0, 0x57, 0x57, 0xda, 0x49, 0x16, 0x4a, 0xcb, 0xc2, 0x47, 0x60,
+	0xf9, 0xc8, 0xfb, 0xc8, 0xa5, 0x7d, 0xe7, 0x80, 0xf6, 0x4c, 0x7d, 0x58, 0x2e, 0x6c, 0x28, 0x9b,
+	0x8b, 0x8d, 0x5a, 0xe0, 0xab, 0xcb, 0x1f, 0xb6, 0x63, 0x8c, 0xd3, 0x34, 0x01, 0x25, 0x15, 0x6b,
+	0x3f, 0x28, 0x60, 0x7e, 0xa7, 0xdd, 0xdc, 0xa7, 0x06, 0xb9, 0x84, 0x76, 0x6f, 0x26, 0xda, 0xfd,
+	0xea, 0x19, 0x0d, 0xc3, 0x9d, 0x9a, 0xda, 0xec, 0x7f, 0x86, 0xcd, 0xce, 0x65, 0xe4, 0xb4, 0x6e,
+	0x80, 0xbc, 0x8d, 0x2d, 0x22, 0x5c, 0x5f, 0x8c, 0x74, 0xf6, 0xb1, 0x45, 0x90, 0xe0, 0xc0, 0xf7,
+	0xc1, 0x9c, 0x4d, 0x0d, 0xd2, 0x7c, 0x28, 0x1c, 0x58, 0x6c, 0x5c, 0x91, 0x32, 0x73, 0xfb, 0x82,
+	0x8a, 0x24, 0x17, 0xde, 0x01, 0x4b, 0x8c, 0x3a, 0xb4, 0x47, 0xbb, 0xc3, 0x27, 0x64, 0x38, 0x2a,
+	0x7d, 0x29, 0xf0, 0xd5, 0xa5, 0xc3, 0x18, 0x1d, 0x25, 0xa4, 0x60, 0x07, 0x14, 0x71, 0xaf, 0x47,
+	0x75, 0xcc, 0x70, 0xa7, 0x47, 0x44, 0x3d, 0x8b, 0x5b, 0xf5, 0x77, 0xc5, 0x18, 0xf6, 0x0b, 0x37,
+	0x8e, 0x88, 0x47, 0xfb, 0xae, 0x4e, 0xbc, 0xc6, 0x4a, 0xe0, 0xab, 0xc5, 0xed, 0x08, 0x07, 0xc5,
+	0x41, 0x6b, 0xdf, 0x2b, 0xa0, 0x28, 0xa3, 0xbe, 0x84, 0x01, 0x7f, 0x94, 0x1c, 0xf0, 0xff, 0x9f,
+	0xa3, 0x5e, 0x53, 0xc6, 0x5b, 0x1f, 0xbb, 0x2d, 0x66, 0xfb, 0x10, 0xcc, 0x1b, 0xa2, 0x68, 0x5e,
+	0x59, 0x11, 0xd0, 0xd7, 0xce, 0x01, 0x2d, 0xf7, 0xc7, 0x8a, 0x34, 0x30, 0x1f, 0x9e, 0x3d, 0x34,
+	0x82, 0xaa, 0x7d, 0x33, 0x07, 0x96, 0x46, 0xa3, 0xd3, 0xc3, 0x9e, 0x77, 0x09, 0x0d, 0xfd, 0x01,
+	0x28, 0x3a, 0x2e, 0x1d, 0x98, 0x9e, 0x49, 0x6d, 0xe2, 0xca, 0xb6, 0x5a, 0x93, 0x2a, 0xc5, 0x83,
+	0x88, 0x85, 0xe2, 0x72, 0xb0, 0x07, 0x80, 0x83, 0x5d, 0x6c, 0x11, 0xc6, 0x53, 0x90, 0x13, 0x29,
+	0xb8, 0xf7, 0xae, 0x14, 0xc4, 0xc3, 0xd2, 0x0e, 0xc6, 0xaa, 0xbb, 0x36, 0x73, 0x87, 0x91, 0x8b,
+	0x11, 0x03, 0xc5, 0xf0, 0xe1, 0x09, 0x58, 0x76, 0x89, 0xde, 0xc3, 0xa6, 0x25, 0xb7, 0x45, 0x5e,
+	0xb8, 0xb9, 0xcb, 0xb7, 0x05, 0x8a, 0x33, 0x4e, 0x7d, 0xf5, 0xd6, 0xe4, 0x1d, 0xae, 0x1d, 0x10,
+	0xd7, 0x33, 0x3d, 0x46, 0x6c, 0x16, 0x36, 0x6c, 0x42, 0x07, 0x25, 0xb1, 0xf9, 0xec, 0x58, 0x7c,
+	0x8f, 0x3e, 0x75, 0x98, 0x49, 0x6d, 0xaf, 0x5c, 0x88, 0x66, 0xa7, 0x15, 0xa3, 0xa3, 0x84, 0x14,
+	0xdc, 0x03, 0xeb, 0xbc, 0xcd, 0x3f, 0x0f, 0x0d, 0xec, 0x7e, 0xe1, 0x60, 0x9b, 0xa7, 0xaa, 0x3c,
+	0x27, 0x96, 0x62, 0x99, 0x2f, 0xdd, 0xed, 0x0c, 0x3e, 0xca, 0xd4, 0x82, 0x9f, 0x80, 0xd5, 0x70,
+	0xeb, 0x36, 0x4c, 0xdb, 0x30, 0xed, 0x2e, 0xdf, 0xb9, 0xe5, 0x79, 0x11, 0xf4, 0xf5, 0xc0, 0x57,
+	0x57, 0x9f, 0xa5, 0x99, 0xa7, 0x59, 0x44, 0x34, 0x09, 0x02, 0x5f, 0x82, 0x55, 0x61, 0x91, 0x18,
+	0x72, 0x11, 0x98, 0xc4, 0x2b, 0x2f, 0x88, 0xfa, 0x6d, 0xc6, 0xeb, 0xc7, 0x53, 0xc7, 0x1b, 0x69,
+	0xb4, 0x2e, 0xda, 0xa4, 0x47, 0x74, 0x46, 0xdd, 0x43, 0xe2, 0x5a, 0x8d, 0xff, 0xc9, 0x7a, 0xad,
+	0x6e, 0xa7, 0xa1, 0xd0, 0x24, 0x7a, 0xe5, 0x01, 0x58, 0x49, 0x15, 0x1c, 0x96, 0x40, 0xee, 0x84,
+	0x0c, 0xc3, 0x45, 0x87, 0xf8, 0x27, 0x5c, 0x07, 0x85, 0x01, 0xee, 0xf5, 0x49, 0xd8, 0x81, 0x28,
+	0x3c, 0xdc, 0x9f, 0xbd, 0xa7, 0xd4, 0x7e, 0x56, 0x40, 0x29, 0xde, 0x3d, 0x97, 0xb0, 0x36, 0x5a,
+	0xc9, 0xb5, 0xb1, 0x79, 0xde, 0xc6, 0x9e, 0xb2, 0x3b, 0xbe, 0x9b, 0x05, 0xa5, 0xb0, 0x38, 0xe1,
+	0xad, 0x6f, 0x11, 0x9b, 0x5d, 0xc2, 0x68, 0xa3, 0xc4, 0x5d, 0x75, 0xeb, 0xec, 0x3d, 0x1e, 0x79,
+	0x37, 0xed, 0xd2, 0x82, 0xcf, 0xc1, 0x9c, 0xc7, 0x30, 0xeb, 0xf3, 0x99, 0xe7, 0xa8, 0x5b, 0x17,
+	0x42, 0x15, 0x9a, 0xd1, 0xa5, 0x15, 0x9e, 0x91, 0x44, 0xac, 0xfd, 0xa2, 0x80, 0xf5, 0xb4, 0xca,
+	0x25, 0x14, 0xfb, 0xe3, 0x64, 0xb1, 0x6f, 0x5c, 0x24, 0xa2, 0x29, 0x05, 0xff, 0x4d, 0x01, 0xff,
+	0x99, 0x08, 0x5e, 0x5c, 0x8f, 0x7c, 0x4f, 0x38, 0xa9, 0x6d, 0xb4, 0x1f, 0xdd, 0xf9, 0x62, 0x4f,
+	0x1c, 0x64, 0xf0, 0x51, 0xa6, 0x16, 0x7c, 0x01, 0x4a, 0xa6, 0xdd, 0x33, 0x6d, 0x12, 0xd2, 0xda,
+	0x51, 0xb9, 0x33, 0x87, 0x39, 0x8d, 0x2c, 0xca, 0xbc, 0x1e, 0xf8, 0x6a, 0xa9, 0x99, 0x42, 0x41,
+	0x13, 0xb8, 0xb5, 0x5f, 0x33, 0xca, 0x23, 0xee, 0xc2, 0x1b, 0x60, 0x21, 0x7c, 0xbd, 0x12, 0x57,
+	0x86, 0x31, 0x4e, 0xf7, 0xb6, 0xa4, 0xa3, 0xb1, 0x84, 0xe8, 0x20, 0x91, 0x0a, 0xe9, 0xe8, 0xc5,
+	0x3a, 0x48, 0x68, 0xc6, 0x3a, 0x48, 0x9c, 0x91, 0x44, 0xe4, 0x9e, 0xf0, 0x07, 0x90, 0x48, 0x68,
+	0x2e, 0xe9, 0xc9, 0xbe, 0xa4, 0xa3, 0xb1, 0x44, 0xed, 0xef, 0x5c, 0x46, 0x95, 0x44, 0x2b, 0xc6,
+	0x42, 0x1a, 0x3d, 0xda, 0xd3, 0x21, 0x19, 0xe3, 0x90, 0x0c, 0xf8, 0xad, 0x02, 0x20, 0x1e, 0x43,
+	0xb4, 0x46, 0xad, 0x1a, 0xf6, 0xd3, 0xe3, 0x8b, 0x4f, 0x88, 0xb6, 0x3d, 0x01, 0x16, 0xde, 0x93,
+	0x15, 0xe9, 0x04, 0x9c, 0x14, 0x40, 0x19, 0x1e, 0x40, 0x13, 0x14, 0x43, 0xea, 0xae, 0xeb, 0x52,
+	0x57, 0x8e, 0xec, 0xd5, 0xb3, 0x1d, 0x12, 0xe2, 0x8d, 0xaa, 0x78, 0xc8, 0x45, 0xfa, 0xa7, 0xbe,
+	0x5a, 0x8c, 0xf1, 0x51, 0x1c, 0x9b, 0x9b, 0x32, 0x48, 0x64, 0x2a, 0xff, 0x2f, 0x4c, 0x3d, 0x24,
+	0xd3, 0x4d, 0xc5, 0xb0, 0x2b, 0xbb, 0xe0, 0xbf, 0x53, 0x12, 0x74, 0xa1, 0x7b, 0xe5, 0x2b, 0x05,
+	0xc4, 0x6d, 0xc0, 0x3d, 0x90, 0xe7, 0x3f, 0xd6, 0x72, 0xc3, 0x5c, 0x3f, 0xdf, 0x86, 0x39, 0x34,
+	0x2d, 0x12, 0x2d, 0x4a, 0x7e, 0x42, 0x02, 0x05, 0x5e, 0x03, 0xf3, 0x16, 0xf1, 0x3c, 0xdc, 0x95,
+	0x96, 0xa3, 0x57, 0x5f, 0x2b, 0x24, 0xa3, 0x11, 0xbf, 0x76, 0x17, 0xac, 0x65, 0xbc, 0xa3, 0xa1,
+	0x0a, 0x0a, 0xba, 0xf8, 0xf3, 0xe3, 0x0e, 0x15, 0x1a, 0x8b, 0x7c, 0xcb, 0xec, 0x88, 0x1f, 0xbe,
+	0x90, 0xde, 0xb8, 0xf9, 0xea, 0x6d, 0x75, 0xe6, 0xf5, 0xdb, 0xea, 0xcc, 0x9b, 0xb7, 0xd5, 0x99,
+	0x2f, 0x83, 0xaa, 0xf2, 0x2a, 0xa8, 0x2a, 0xaf, 0x83, 0xaa, 0xf2, 0x26, 0xa8, 0x2a, 0xbf, 0x07,
+	0x55, 0xe5, 0xeb, 0x3f, 0xaa, 0x33, 0xcf, 0xe7, 0x65, 0xbe, 0xff, 0x09, 0x00, 0x00, 0xff, 0xff,
+	0x4b, 0x3f, 0x49, 0x6e, 0x6d, 0x11, 0x00, 0x00,
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 func (m *CSIDriver) Marshal() (dAtA []byte, err error) {
@@ -827,6 +970,7 @@ func (m *CSIDriverSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+<<<<<<< HEAD
 	if m.SELinuxMount != nil {
 		i--
 		if *m.SELinuxMount {
@@ -861,6 +1005,8 @@ func (m *CSIDriverSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			dAtA[i] = 0x32
 		}
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	if m.FSGroupPolicy != nil {
 		i -= len(*m.FSGroupPolicy)
 		copy(dAtA[i:], *m.FSGroupPolicy)
@@ -1091,6 +1237,7 @@ func (m *CSINodeSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+<<<<<<< HEAD
 func (m *CSIStorageCapacity) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -1212,6 +1359,8 @@ func (m *CSIStorageCapacityList) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 	return len(dAtA) - i, nil
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *StorageClass) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -1368,6 +1517,7 @@ func (m *StorageClassList) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+<<<<<<< HEAD
 func (m *TokenRequest) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -1401,6 +1551,8 @@ func (m *TokenRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *VolumeAttachment) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -1797,6 +1949,7 @@ func (m *CSIDriverSpec) Size() (n int) {
 		l = len(*m.FSGroupPolicy)
 		n += 1 + l + sovGenerated(uint64(l))
 	}
+<<<<<<< HEAD
 	if len(m.TokenRequests) > 0 {
 		for _, e := range m.TokenRequests {
 			l = e.Size()
@@ -1809,6 +1962,8 @@ func (m *CSIDriverSpec) Size() (n int) {
 	if m.SELinuxMount != nil {
 		n += 2
 	}
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	return n
 }
 
@@ -1880,6 +2035,7 @@ func (m *CSINodeSpec) Size() (n int) {
 	return n
 }
 
+<<<<<<< HEAD
 func (m *CSIStorageCapacity) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1922,6 +2078,8 @@ func (m *CSIStorageCapacityList) Size() (n int) {
 	return n
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *StorageClass) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1983,6 +2141,7 @@ func (m *StorageClassList) Size() (n int) {
 	return n
 }
 
+<<<<<<< HEAD
 func (m *TokenRequest) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1997,6 +2156,8 @@ func (m *TokenRequest) Size() (n int) {
 	return n
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (m *VolumeAttachment) Size() (n int) {
 	if m == nil {
 		return 0
@@ -2149,20 +2310,26 @@ func (this *CSIDriverSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
+<<<<<<< HEAD
 	repeatedStringForTokenRequests := "[]TokenRequest{"
 	for _, f := range this.TokenRequests {
 		repeatedStringForTokenRequests += strings.Replace(strings.Replace(f.String(), "TokenRequest", "TokenRequest", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForTokenRequests += "}"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	s := strings.Join([]string{`&CSIDriverSpec{`,
 		`AttachRequired:` + valueToStringGenerated(this.AttachRequired) + `,`,
 		`PodInfoOnMount:` + valueToStringGenerated(this.PodInfoOnMount) + `,`,
 		`VolumeLifecycleModes:` + fmt.Sprintf("%v", this.VolumeLifecycleModes) + `,`,
 		`StorageCapacity:` + valueToStringGenerated(this.StorageCapacity) + `,`,
 		`FSGroupPolicy:` + valueToStringGenerated(this.FSGroupPolicy) + `,`,
+<<<<<<< HEAD
 		`TokenRequests:` + repeatedStringForTokenRequests + `,`,
 		`RequiresRepublish:` + valueToStringGenerated(this.RequiresRepublish) + `,`,
 		`SELinuxMount:` + valueToStringGenerated(this.SELinuxMount) + `,`,
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		`}`,
 	}, "")
 	return s
@@ -2222,6 +2389,7 @@ func (this *CSINodeSpec) String() string {
 	}, "")
 	return s
 }
+<<<<<<< HEAD
 func (this *CSIStorageCapacity) String() string {
 	if this == nil {
 		return "nil"
@@ -2252,6 +2420,8 @@ func (this *CSIStorageCapacityList) String() string {
 	}, "")
 	return s
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (this *StorageClass) String() string {
 	if this == nil {
 		return "nil"
@@ -2300,6 +2470,7 @@ func (this *StorageClassList) String() string {
 	}, "")
 	return s
 }
+<<<<<<< HEAD
 func (this *TokenRequest) String() string {
 	if this == nil {
 		return "nil"
@@ -2311,6 +2482,8 @@ func (this *TokenRequest) String() string {
 	}, "")
 	return s
 }
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (this *VolumeAttachment) String() string {
 	if this == nil {
 		return "nil"
@@ -2515,7 +2688,14 @@ func (m *CSIDriver) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -2632,7 +2812,14 @@ func (m *CSIDriverList) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -2804,6 +2991,7 @@ func (m *CSIDriverSpec) Unmarshal(dAtA []byte) error {
 			s := FSGroupPolicy(dAtA[iNdEx:postIndex])
 			m.FSGroupPolicy = &s
 			iNdEx = postIndex
+<<<<<<< HEAD
 		case 6:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field TokenRequests", wireType)
@@ -2880,13 +3068,22 @@ func (m *CSIDriverSpec) Unmarshal(dAtA []byte) error {
 			}
 			b := bool(v != 0)
 			m.SELinuxMount = &b
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 		default:
 			iNdEx = preIndex
 			skippy, err := skipGenerated(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3002,7 +3199,14 @@ func (m *CSINode) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3184,7 +3388,14 @@ func (m *CSINodeDriver) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3301,7 +3512,14 @@ func (m *CSINodeList) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3385,6 +3603,7 @@ func (m *CSINodeSpec) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthGenerated
 			}
@@ -3726,6 +3945,12 @@ func (m *CSIStorageCapacityList) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -3950,7 +4175,11 @@ func (m *StorageClass) Unmarshal(dAtA []byte) error {
 					if err != nil {
 						return err
 					}
+<<<<<<< HEAD
 					if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+					if skippy < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 						return ErrInvalidLengthGenerated
 					}
 					if (iNdEx + skippy) > postIndex {
@@ -4120,7 +4349,14 @@ func (m *StorageClass) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -4237,6 +4473,7 @@ func (m *StorageClassList) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthGenerated
 			}
@@ -4340,6 +4577,12 @@ func (m *TokenRequest) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -4488,7 +4731,14 @@ func (m *VolumeAttachment) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -4605,7 +4855,14 @@ func (m *VolumeAttachmentList) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -4724,7 +4981,14 @@ func (m *VolumeAttachmentSource) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -4871,7 +5135,14 @@ func (m *VolumeAttachmentSpec) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5051,7 +5322,11 @@ func (m *VolumeAttachmentStatus) Unmarshal(dAtA []byte) error {
 					if err != nil {
 						return err
 					}
+<<<<<<< HEAD
 					if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+					if skippy < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 						return ErrInvalidLengthGenerated
 					}
 					if (iNdEx + skippy) > postIndex {
@@ -5140,7 +5415,14 @@ func (m *VolumeAttachmentStatus) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5255,7 +5537,14 @@ func (m *VolumeError) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {
@@ -5325,7 +5614,14 @@ func (m *VolumeNodeResources) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
+<<<<<<< HEAD
 			if (skippy < 0) || (iNdEx+skippy) < 0 {
+=======
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				return ErrInvalidLengthGenerated
 			}
 			if (iNdEx + skippy) > l {

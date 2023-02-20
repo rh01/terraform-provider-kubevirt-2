@@ -402,7 +402,11 @@ func (f *MyJSONFormatter) Format(entry *Entry) ([]byte, error) {
   // source of the official loggers.
   serialized, err := json.Marshal(entry.Data)
     if err != nil {
+<<<<<<< HEAD
       return nil, fmt.Errorf("Failed to marshal fields to JSON, %w", err)
+=======
+      return nil, fmt.Errorf("Failed to marshal fields to JSON, %v", err)
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
     }
   return append(serialized, '\n'), nil
 }

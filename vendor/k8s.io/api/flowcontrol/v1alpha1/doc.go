@@ -17,7 +17,10 @@ limitations under the License.
 // +k8s:deepcopy-gen=package
 // +k8s:protobuf-gen=package
 // +k8s:openapi-gen=true
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen=true
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // +groupName=flowcontrol.apiserver.k8s.io
 

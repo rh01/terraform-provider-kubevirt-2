@@ -33,7 +33,11 @@ import (
 // user or cluster provisioner, and referenced in the PodSpec. The Kubelet is
 // responsible for resolving the RuntimeClassName reference before running the
 // pod.  For more details, see
+<<<<<<< HEAD
 // https://git.k8s.io/enhancements/keps/sig-node/585-runtime-class
+=======
+// https://git.k8s.io/enhancements/keps/sig-node/runtime-class.md
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type RuntimeClass struct {
 	metav1.TypeMeta `json:",inline"`
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -48,13 +52,23 @@ type RuntimeClass struct {
 	// For example, a handler called "runc" might specify that the runc OCI
 	// runtime (using native Linux containers) will be used to run the containers
 	// in a pod.
+<<<<<<< HEAD
 	// The Handler must be lowercase, conform to the DNS Label (RFC 1123) requirements,
 	// and is immutable.
+=======
+	// The Handler must conform to the DNS Label (RFC 1123) requirements, and is
+	// immutable.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	Handler string `json:"handler" protobuf:"bytes,2,opt,name=handler"`
 
 	// Overhead represents the resource overhead associated with running a pod for a
 	// given RuntimeClass. For more details, see
+<<<<<<< HEAD
 	// https://git.k8s.io/enhancements/keps/sig-node/688-pod-overhead/README.md
+=======
+	// https://git.k8s.io/enhancements/keps/sig-node/20190226-pod-overhead.md
+	// This field is alpha-level as of Kubernetes v1.15, and is only honored by servers that enable the PodOverhead feature.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	Overhead *Overhead `json:"overhead,omitempty" protobuf:"bytes,3,opt,name=overhead"`
 
@@ -82,7 +96,10 @@ type Scheduling struct {
 	// with a pod's existing nodeSelector. Any conflicts will cause the pod to
 	// be rejected in admission.
 	// +optional
+<<<<<<< HEAD
 	// +mapType=atomic
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	NodeSelector map[string]string `json:"nodeSelector,omitempty" protobuf:"bytes,1,opt,name=nodeSelector"`
 
 	// tolerations are appended (excluding duplicates) to pods running with this

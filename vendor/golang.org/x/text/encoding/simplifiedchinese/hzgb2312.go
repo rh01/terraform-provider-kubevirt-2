@@ -57,7 +57,11 @@ loop:
 					err = transform.ErrShortSrc
 					break loop
 				}
+<<<<<<< HEAD
 				r, size = utf8.RuneError, 1
+=======
+				r = utf8.RuneError
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 				goto write
 			}
 			size = 2

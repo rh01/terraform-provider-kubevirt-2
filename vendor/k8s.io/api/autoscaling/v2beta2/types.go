@@ -27,8 +27,12 @@ import (
 // +genclient
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:prerelease-lifecycle-gen:introduced=1.12
+<<<<<<< HEAD
 // +k8s:prerelease-lifecycle-gen:deprecated=1.23
 // +k8s:prerelease-lifecycle-gen:replacement=autoscaling,v2,HorizontalPodAutoscaler
+=======
+// +k8s:prerelease-lifecycle-gen:deprecated=1.22
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 
 // HorizontalPodAutoscaler is the configuration for a horizontal pod
 // autoscaler, which automatically manages the replica count of any resource
@@ -85,7 +89,11 @@ type HorizontalPodAutoscalerSpec struct {
 
 // CrossVersionObjectReference contains enough information to let you identify the referred resource.
 type CrossVersionObjectReference struct {
+<<<<<<< HEAD
 	// Kind of the referent; More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+=======
+	// Kind of the referent; More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	Kind string `json:"kind" protobuf:"bytes,1,opt,name=kind"`
 	// Name of the referent; More info: http://kubernetes.io/docs/user-guide/identifiers#names
 	Name string `json:"name" protobuf:"bytes,2,opt,name=name"`
@@ -97,10 +105,15 @@ type CrossVersionObjectReference struct {
 // MetricSpec specifies how to scale based on a single metric
 // (only `type` and one other matching field should be set at once).
 type MetricSpec struct {
+<<<<<<< HEAD
 	// type is the type of metric source.  It should be one of "ContainerResource", "External",
 	// "Object", "Pods" or "Resource", each mapping to a matching field in the object.
 	// Note: "ContainerResource" type is available on when the feature-gate
 	// HPAContainerMetrics is enabled
+=======
+	// type is the type of metric source.  It should be one of "Object",
+	// "Pods" or "Resource", each mapping to a matching field in the object.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	Type MetricSourceType `json:"type" protobuf:"bytes,1,name=type"`
 
 	// object refers to a metric describing a single kubernetes object
@@ -119,6 +132,7 @@ type MetricSpec struct {
 	// to normal per-pod metrics using the "pods" source.
 	// +optional
 	Resource *ResourceMetricSource `json:"resource,omitempty" protobuf:"bytes,4,opt,name=resource"`
+<<<<<<< HEAD
 	// container resource refers to a resource metric (such as those specified in
 	// requests and limits) known to Kubernetes describing a single container in
 	// each pod of the current scale target (e.g. CPU or memory). Such metrics are
@@ -127,6 +141,8 @@ type MetricSpec struct {
 	// This is an alpha feature and can be enabled by the HPAContainerMetrics feature flag.
 	// +optional
 	ContainerResource *ContainerResourceMetricSource `json:"containerResource,omitempty" protobuf:"bytes,7,opt,name=containerResource"`
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// external refers to a global metric that is not associated
 	// with any Kubernetes object. It allows autoscaling based on information
 	// coming from components running outside of cluster
@@ -180,7 +196,11 @@ type HPAScalingRules struct {
 	// - For scale up: 0 (i.e. no stabilization is done).
 	// - For scale down: 300 (i.e. the stabilization window is 300 seconds long).
 	// +optional
+<<<<<<< HEAD
 	StabilizationWindowSeconds *int32 `json:"stabilizationWindowSeconds,omitempty" protobuf:"varint,3,opt,name=stabilizationWindowSeconds"`
+=======
+	StabilizationWindowSeconds *int32 `json:"stabilizationWindowSeconds" protobuf:"varint,3,opt,name=stabilizationWindowSeconds"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// selectPolicy is used to specify which policy should be used.
 	// If not set, the default value MaxPolicySelect is used.
 	// +optional
@@ -231,12 +251,15 @@ const (
 	// Kubernetes, and have special scaling options on top of those available
 	// to normal per-pod metrics (the "pods" source).
 	ResourceMetricSourceType MetricSourceType = "Resource"
+<<<<<<< HEAD
 	// ContainerResourceMetricSourceType is a resource metric known to Kubernetes, as
 	// specified in requests and limits, describing a single container in each pod in the current
 	// scale target (e.g. CPU or memory).  Such metrics are built in to
 	// Kubernetes, and have special scaling options on top of those available
 	// to normal per-pod metrics (the "pods" source).
 	ContainerResourceMetricSourceType MetricSourceType = "ContainerResource"
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// ExternalMetricSourceType is a global metric that is not associated
 	// with any Kubernetes object. It allows autoscaling based on information
 	// coming from components running outside of cluster
@@ -280,6 +303,7 @@ type ResourceMetricSource struct {
 	Target MetricTarget `json:"target" protobuf:"bytes,2,name=target"`
 }
 
+<<<<<<< HEAD
 // ContainerResourceMetricSource indicates how to scale on a resource metric known to
 // Kubernetes, as specified in requests and limits, describing each pod in the
 // current scale target (e.g. CPU or memory).  The values will be averaged
@@ -296,6 +320,8 @@ type ContainerResourceMetricSource struct {
 	Container string `json:"container" protobuf:"bytes,3,opt,name=container"`
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // ExternalMetricSource indicates how to scale on a metric not associated with
 // any Kubernetes object (for example length of queue in cloud
 // messaging service, or QPS from loadbalancer running outside of cluster).
@@ -374,7 +400,10 @@ type HorizontalPodAutoscalerStatus struct {
 
 	// conditions is the set of conditions required for this autoscaler to scale its target,
 	// and indicates whether or not those conditions are met.
+<<<<<<< HEAD
 	// +optional
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	Conditions []HorizontalPodAutoscalerCondition `json:"conditions" protobuf:"bytes,6,rep,name=conditions"`
 }
 
@@ -416,10 +445,15 @@ type HorizontalPodAutoscalerCondition struct {
 
 // MetricStatus describes the last-read state of a single metric.
 type MetricStatus struct {
+<<<<<<< HEAD
 	// type is the type of metric source.  It will be one of "ContainerResource", "External",
 	// "Object", "Pods" or "Resource", each corresponds to a matching field in the object.
 	// Note: "ContainerResource" type is available on when the feature-gate
 	// HPAContainerMetrics is enabled
+=======
+	// type is the type of metric source.  It will be one of "Object",
+	// "Pods" or "Resource", each corresponds to a matching field in the object.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	Type MetricSourceType `json:"type" protobuf:"bytes,1,name=type"`
 
 	// object refers to a metric describing a single kubernetes object
@@ -438,6 +472,7 @@ type MetricStatus struct {
 	// to normal per-pod metrics using the "pods" source.
 	// +optional
 	Resource *ResourceMetricStatus `json:"resource,omitempty" protobuf:"bytes,4,opt,name=resource"`
+<<<<<<< HEAD
 	// container resource refers to a resource metric (such as those specified in
 	// requests and limits) known to Kubernetes describing a single container in each pod in the
 	// current scale target (e.g. CPU or memory). Such metrics are built in to
@@ -445,6 +480,8 @@ type MetricStatus struct {
 	// to normal per-pod metrics using the "pods" source.
 	// +optional
 	ContainerResource *ContainerResourceMetricStatus `json:"containerResource,omitempty" protobuf:"bytes,7,opt,name=containerResource"`
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// external refers to a global metric that is not associated
 	// with any Kubernetes object. It allows autoscaling based on information
 	// coming from components running outside of cluster
@@ -486,6 +523,7 @@ type ResourceMetricStatus struct {
 	Current MetricValueStatus `json:"current" protobuf:"bytes,2,name=current"`
 }
 
+<<<<<<< HEAD
 // ContainerResourceMetricStatus indicates the current value of a resource metric known to
 // Kubernetes, as specified in requests and limits, describing a single container in each pod in the
 // current scale target (e.g. CPU or memory).  Such metrics are built in to
@@ -500,6 +538,8 @@ type ContainerResourceMetricStatus struct {
 	Container string `json:"container" protobuf:"bytes,3,opt,name=container"`
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 // ExternalMetricStatus indicates the current value of a global metric
 // not associated with any Kubernetes object.
 type ExternalMetricStatus struct {

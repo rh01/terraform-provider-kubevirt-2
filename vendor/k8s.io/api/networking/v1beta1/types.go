@@ -126,6 +126,7 @@ type IngressTLS struct {
 type IngressStatus struct {
 	// LoadBalancer contains the current status of the load-balancer.
 	// +optional
+<<<<<<< HEAD
 	LoadBalancer IngressLoadBalancerStatus `json:"loadBalancer,omitempty" protobuf:"bytes,1,opt,name=loadBalancer"`
 }
 
@@ -174,6 +175,9 @@ type IngressPortStatus struct {
 	// +kubebuilder:validation:Pattern=`^([a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*/)?(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])$`
 	// +kubebuilder:validation:MaxLength=316
 	Error *string `json:"error,omitempty" protobuf:"bytes,3,opt,name=error"`
+=======
+	LoadBalancer v1.LoadBalancerStatus `json:"loadBalancer,omitempty" protobuf:"bytes,1,opt,name=loadBalancer"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // IngressRule represents the rules mapping the paths under a specified host to
@@ -275,8 +279,13 @@ const (
 type HTTPIngressPath struct {
 	// Path is matched against the path of an incoming request. Currently it can
 	// contain characters disallowed from the conventional "path" part of a URL
+<<<<<<< HEAD
 	// as defined by RFC 3986. Paths must begin with a '/' and must be present
 	// when using PathType with value "Exact" or "Prefix".
+=======
+	// as defined by RFC 3986. Paths must begin with a '/'. When unspecified,
+	// all paths from incoming requests are matched.
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 	// +optional
 	Path string `json:"path,omitempty" protobuf:"bytes,1,opt,name=path"`
 
@@ -358,6 +367,7 @@ type IngressClassSpec struct {
 	// configuration for the controller. This is optional if the controller does
 	// not require extra parameters.
 	// +optional
+<<<<<<< HEAD
 	Parameters *IngressClassParametersReference `json:"parameters,omitempty" protobuf:"bytes,2,opt,name=parameters"`
 }
 
@@ -390,6 +400,9 @@ type IngressClassParametersReference struct {
 	// "Cluster".
 	// +optional
 	Namespace *string `json:"namespace,omitempty" protobuf:"bytes,5,opt,name=namespace"`
+=======
+	Parameters *v1.TypedLocalObjectReference `json:"parameters,omitempty" protobuf:"bytes,2,opt,name=parameters"`
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

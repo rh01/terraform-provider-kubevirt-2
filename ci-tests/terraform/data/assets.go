@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 //go:build !release
 // +build !release
 
+=======
+// +build !release
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 //go:generate go run assets_generate.go
 
 package data

@@ -9,11 +9,14 @@ import (
 	"time"
 )
 
+<<<<<<< HEAD
 // LogFunction For big messages, it can be more efficient to pass a function
 // and only call it if the log level is actually enables rather than
 // generating the log message and then checking if the level is enabled
 type LogFunction func() []interface{}
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 type Logger struct {
 	// The logs are `io.Copy`'d to this in a mutex. It's common to set this to a
 	// file, or leave it default which is `os.Stderr`. You can also set this to
@@ -75,7 +78,11 @@ func (mw *MutexWrap) Disable() {
 //
 //    var log = &logrus.Logger{
 //      Out: os.Stderr,
+<<<<<<< HEAD
 //      Formatter: new(logrus.TextFormatter),
+=======
+//      Formatter: new(logrus.JSONFormatter),
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 //      Hooks: make(logrus.LevelHooks),
 //      Level: logrus.DebugLevel,
 //    }
@@ -200,6 +207,7 @@ func (logger *Logger) Log(level Level, args ...interface{}) {
 	}
 }
 
+<<<<<<< HEAD
 func (logger *Logger) LogFn(level Level, fn LogFunction) {
 	if logger.IsLevelEnabled(level) {
 		entry := logger.newEntry()
@@ -208,6 +216,8 @@ func (logger *Logger) LogFn(level Level, fn LogFunction) {
 	}
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (logger *Logger) Trace(args ...interface{}) {
 	logger.Log(TraceLevel, args...)
 }
@@ -247,6 +257,7 @@ func (logger *Logger) Panic(args ...interface{}) {
 	logger.Log(PanicLevel, args...)
 }
 
+<<<<<<< HEAD
 func (logger *Logger) TraceFn(fn LogFunction) {
 	logger.LogFn(TraceLevel, fn)
 }
@@ -286,6 +297,8 @@ func (logger *Logger) PanicFn(fn LogFunction) {
 	logger.LogFn(PanicLevel, fn)
 }
 
+=======
+>>>>>>> 0faf8ce (Revert "Upgrade go mod and dependencies")
 func (logger *Logger) Logln(level Level, args ...interface{}) {
 	if logger.IsLevelEnabled(level) {
 		entry := logger.newEntry()
