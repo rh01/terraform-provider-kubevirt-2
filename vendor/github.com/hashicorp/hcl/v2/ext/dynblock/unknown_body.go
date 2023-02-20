@@ -20,11 +20,6 @@ type unknownBody struct {
 
 var _ hcl.Body = unknownBody{}
 
-// hcldec.UnkownBody impl
-func (b unknownBody) Unknown() bool {
-	return true
-}
-
 func (b unknownBody) Content(schema *hcl.BodySchema) (*hcl.BodyContent, hcl.Diagnostics) {
 	content, diags := b.template.Content(schema)
 	content = b.fixupContent(content)

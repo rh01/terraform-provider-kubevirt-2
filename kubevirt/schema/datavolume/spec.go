@@ -3,10 +3,10 @@ package datavolume
 import (
 	"fmt"
 
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/validation"
 	"github.com/kubevirt/terraform-provider-kubevirt/kubevirt/schema/k8s"
-	cdiv1 "kubevirt.io/containerized-data-importer-api/pkg/apis/core/v1beta1"
+	cdiv1 "kubevirt.io/containerized-data-importer/pkg/apis/core/v1alpha1"
 )
 
 func dataVolumeSpecFields() map[string]*schema.Schema {
@@ -25,7 +25,7 @@ func dataVolumeSpecFields() map[string]*schema.Schema {
 	}
 }
 
-func DataVolumeSpecSchema() *schema.Schema {
+func dataVolumeSpecSchema() *schema.Schema {
 	fields := dataVolumeSpecFields()
 
 	return &schema.Schema{
@@ -40,7 +40,7 @@ func DataVolumeSpecSchema() *schema.Schema {
 
 }
 
-func ExpandDataVolumeSpec(dataVolumeSpec []interface{}) (cdiv1.DataVolumeSpec, error) {
+func expandDataVolumeSpec(dataVolumeSpec []interface{}) (cdiv1.DataVolumeSpec, error) {
 	result := cdiv1.DataVolumeSpec{}
 
 	if len(dataVolumeSpec) == 0 || dataVolumeSpec[0] == nil {
@@ -63,7 +63,7 @@ func ExpandDataVolumeSpec(dataVolumeSpec []interface{}) (cdiv1.DataVolumeSpec, e
 	return result, nil
 }
 
-func FlattenDataVolumeSpec(spec cdiv1.DataVolumeSpec) []interface{} {
+func flattenDataVolumeSpec(spec cdiv1.DataVolumeSpec) []interface{} {
 	att := map[string]interface{}{
 		"source":       flattenDataVolumeSource(spec.Source),
 		"pvc":          k8s.FlattenPersistentVolumeClaimSpec(*spec.PVC),

@@ -3,10 +3,10 @@ package virtualmachineinstance
 import (
 	"fmt"
 
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/validation"
 	"github.com/kubevirt/terraform-provider-kubevirt/kubevirt/utils"
-	kubevirtapiv1 "kubevirt.io/api/core/v1"
+	kubevirtapiv1 "kubevirt.io/client-go/api/v1"
 )
 
 func domainSpecFields() map[string]*schema.Schema {
@@ -373,20 +373,10 @@ func expandInputs(inputs []interface{}) []kubevirtapiv1.Input {
 		in := input.(map[string]interface{})
 
 		if v, ok := in["bus"].(string); ok {
-			switch v {
-			case "usb":
-				result[i].Bus = kubevirtapiv1.InputBusUSB
-			case "virtio":
-				result[i].Bus = kubevirtapiv1.InputBusVirtio
-			}
+			result[i].Bus = v
 		}
 		if v, ok := in["type"].(string); ok {
-			switch v {
-			case "tablet":
-				result[i].Type = kubevirtapiv1.InputTypeTablet
-			case "keyboard":
-				result[i].Type = kubevirtapiv1.InputTypeKeyboard
-			}
+			result[i].Type = v
 		}
 		if v, ok := in["name"].(string); ok {
 			result[i].Name = v
@@ -429,17 +419,7 @@ func expandDiskTarget(disk []interface{}) *kubevirtapiv1.DiskTarget {
 	in := disk[0].(map[string]interface{})
 
 	if v, ok := in["bus"].(string); ok {
-		switch v {
-		case "scsi":
-			result.Bus = kubevirtapiv1.DiskBusSCSI
-		case "sata":
-			result.Bus = kubevirtapiv1.DiskBusSATA
-		case "virtio":
-			result.Bus = kubevirtapiv1.DiskBusVirtio
-		case "usb":
-			result.Bus = kubevirtapiv1.DiskBusUSB
-		}
-
+		result.Bus = v
 	}
 	if v, ok := in["read_only"].(bool); ok {
 		result.ReadOnly = v
@@ -502,7 +482,7 @@ func flattenDomainSpec(in kubevirtapiv1.DomainSpec) []interface{} {
 	return []interface{}{att}
 }
 
-func flattenMachine(in *kubevirtapiv1.Machine) []interface{} {
+func flattenMachine(in kubevirtapiv1.Machine) []interface{} {
 	att := make(map[string]interface{})
 
 	att["type"] = in.Type

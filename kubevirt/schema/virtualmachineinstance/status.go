@@ -3,9 +3,9 @@ package virtualmachineinstance
 import (
 	"fmt"
 
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
-	kubevirtapiv1 "kubevirt.io/api/core/v1"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/validation"
+	kubevirtapiv1 "kubevirt.io/client-go/api/v1"
 )
 
 func virtualMachineInstanceStatusFields() map[string]*schema.Schema {

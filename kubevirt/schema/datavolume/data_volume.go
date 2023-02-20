@@ -3,16 +3,16 @@ package datavolume
 import (
 	"fmt"
 
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/kubevirt/terraform-provider-kubevirt/kubevirt/schema/k8s"
 	"github.com/kubevirt/terraform-provider-kubevirt/kubevirt/utils/patch"
-	cdiv1 "kubevirt.io/containerized-data-importer-api/pkg/apis/core/v1beta1"
+	cdiv1 "kubevirt.io/containerized-data-importer/pkg/apis/core/v1alpha1"
 )
 
 func DataVolumeFields() map[string]*schema.Schema {
 	return map[string]*schema.Schema{
 		"metadata": k8s.NamespacedMetadataSchema("DataVolume", false),
-		"spec":     DataVolumeSpecSchema(),
+		"spec":     dataVolumeSpecSchema(),
 		"status":   dataVolumeStatusSchema(),
 	}
 }
@@ -23,7 +23,7 @@ func DataVolumeTemplatesSchema() *schema.Schema {
 	return &schema.Schema{
 		Type:        schema.TypeList,
 		Description: fmt.Sprintf("dataVolumeTemplates is a list of dataVolumes that the VirtualMachineInstance template can reference."),
-		Required:    true,
+		Optional:    true,
 		Elem: &schema.Resource{
 			Schema: fields,
 		},
@@ -45,7 +45,7 @@ func ExpandDataVolumeTemplates(dataVolumes []interface{}) ([]cdiv1.DataVolume, e
 			result[i].ObjectMeta = k8s.ExpandMetadata(v)
 		}
 		if v, ok := in["spec"].([]interface{}); ok {
-			spec, err := ExpandDataVolumeSpec(v)
+			spec, err := expandDataVolumeSpec(v)
 			if err != nil {
 				return result, err
 			}
@@ -65,7 +65,7 @@ func FlattenDataVolumeTemplates(in []cdiv1.DataVolume) []interface{} {
 	for i, v := range in {
 		c := make(map[string]interface{})
 		c["metadata"] = k8s.FlattenMetadata(v.ObjectMeta)
-		c["spec"] = FlattenDataVolumeSpec(v.Spec)
+		c["spec"] = flattenDataVolumeSpec(v.Spec)
 		c["status"] = flattenDataVolumeStatus(v.Status)
 		att[i] = c
 	}
@@ -77,7 +77,7 @@ func FromResourceData(resourceData *schema.ResourceData) (*cdiv1.DataVolume, err
 	result := &cdiv1.DataVolume{}
 
 	result.ObjectMeta = k8s.ExpandMetadata(resourceData.Get("metadata").([]interface{}))
-	spec, err := ExpandDataVolumeSpec(resourceData.Get("spec").([]interface{}))
+	spec, err := expandDataVolumeSpec(resourceData.Get("spec").([]interface{}))
 	if err != nil {
 		return result, err
 	}
@@ -91,7 +91,7 @@ func ToResourceData(dv cdiv1.DataVolume, resourceData *schema.ResourceData) erro
 	if err := resourceData.Set("metadata", k8s.FlattenMetadata(dv.ObjectMeta)); err != nil {
 		return err
 	}
-	if err := resourceData.Set("spec", FlattenDataVolumeSpec(dv.Spec)); err != nil {
+	if err := resourceData.Set("spec", flattenDataVolumeSpec(dv.Spec)); err != nil {
 		return err
 	}
 	if err := resourceData.Set("status", flattenDataVolumeStatus(dv.Status)); err != nil {

@@ -1,7 +1,7 @@
 package expand_utils
 
 import (
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	test_entities "github.com/kubevirt/terraform-provider-kubevirt/kubevirt/test_utils/entities"
 	"github.com/kubevirt/terraform-provider-kubevirt/kubevirt/utils"
 
@@ -10,7 +10,7 @@ import (
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	cdiv1 "kubevirt.io/containerized-data-importer/pkg/apis/core/v1alpha1"
 
-	kubevirtapiv1 "kubevirt.io/api/core/v1"
+	kubevirtapiv1 "kubevirt.io/client-go/api/v1"
 )
 
 func GetBaseInputForDataVolume() interface{} {

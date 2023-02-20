@@ -11,7 +11,6 @@ import (
 )
 
 var AbsoluteFunc = function.New(&function.Spec{
-	Description: `If the given number is negative then returns its positive equivalent, or otherwise returns the given number unchanged.`,
 	Params: []function.Parameter{
 		{
 			Name:             "num",
@@ -27,7 +26,6 @@ var AbsoluteFunc = function.New(&function.Spec{
 })
 
 var AddFunc = function.New(&function.Spec{
-	Description: `Returns the sum of the two given numbers.`,
 	Params: []function.Parameter{
 		{
 			Name:             "a",
@@ -61,7 +59,6 @@ var AddFunc = function.New(&function.Spec{
 })
 
 var SubtractFunc = function.New(&function.Spec{
-	Description: `Returns the difference between the two given numbers.`,
 	Params: []function.Parameter{
 		{
 			Name:             "a",
@@ -95,7 +92,6 @@ var SubtractFunc = function.New(&function.Spec{
 })
 
 var MultiplyFunc = function.New(&function.Spec{
-	Description: `Returns the product of the two given numbers.`,
 	Params: []function.Parameter{
 		{
 			Name:             "a",
@@ -130,7 +126,6 @@ var MultiplyFunc = function.New(&function.Spec{
 })
 
 var DivideFunc = function.New(&function.Spec{
-	Description: `Divides the first given number by the second.`,
 	Params: []function.Parameter{
 		{
 			Name:             "a",
@@ -165,7 +160,6 @@ var DivideFunc = function.New(&function.Spec{
 })
 
 var ModuloFunc = function.New(&function.Spec{
-	Description: `Divides the first given number by the second and then returns the remainder.`,
 	Params: []function.Parameter{
 		{
 			Name:             "a",
@@ -200,7 +194,6 @@ var ModuloFunc = function.New(&function.Spec{
 })
 
 var GreaterThanFunc = function.New(&function.Spec{
-	Description: `Returns true if and only if the second number is greater than the first.`,
 	Params: []function.Parameter{
 		{
 			Name:             "a",
@@ -222,7 +215,6 @@ var GreaterThanFunc = function.New(&function.Spec{
 })
 
 var GreaterThanOrEqualToFunc = function.New(&function.Spec{
-	Description: `Returns true if and only if the second number is greater than or equal to the first.`,
 	Params: []function.Parameter{
 		{
 			Name:             "a",
@@ -244,7 +236,6 @@ var GreaterThanOrEqualToFunc = function.New(&function.Spec{
 })
 
 var LessThanFunc = function.New(&function.Spec{
-	Description: `Returns true if and only if the second number is less than the first.`,
 	Params: []function.Parameter{
 		{
 			Name:             "a",
@@ -266,7 +257,6 @@ var LessThanFunc = function.New(&function.Spec{
 })
 
 var LessThanOrEqualToFunc = function.New(&function.Spec{
-	Description: `Returns true if and only if the second number is less than or equal to the first.`,
 	Params: []function.Parameter{
 		{
 			Name:             "a",
@@ -288,7 +278,6 @@ var LessThanOrEqualToFunc = function.New(&function.Spec{
 })
 
 var NegateFunc = function.New(&function.Spec{
-	Description: `Multiplies the given number by -1.`,
 	Params: []function.Parameter{
 		{
 			Name:             "num",
@@ -304,8 +293,7 @@ var NegateFunc = function.New(&function.Spec{
 })
 
 var MinFunc = function.New(&function.Spec{
-	Description: `Returns the numerically smallest of all of the given numbers.`,
-	Params:      []function.Parameter{},
+	Params: []function.Parameter{},
 	VarParam: &function.Parameter{
 		Name:             "numbers",
 		Type:             cty.Number,
@@ -329,8 +317,7 @@ var MinFunc = function.New(&function.Spec{
 })
 
 var MaxFunc = function.New(&function.Spec{
-	Description: `Returns the numerically greatest of all of the given numbers.`,
-	Params:      []function.Parameter{},
+	Params: []function.Parameter{},
 	VarParam: &function.Parameter{
 		Name:             "numbers",
 		Type:             cty.Number,
@@ -354,7 +341,6 @@ var MaxFunc = function.New(&function.Spec{
 })
 
 var IntFunc = function.New(&function.Spec{
-	Description: `Discards any fractional portion of the given number.`,
 	Params: []function.Parameter{
 		{
 			Name:             "num",
@@ -377,7 +363,6 @@ var IntFunc = function.New(&function.Spec{
 // CeilFunc is a function that returns the closest whole number greater
 // than or equal to the given value.
 var CeilFunc = function.New(&function.Spec{
-	Description: `Returns the smallest whole number that is greater than or equal to the given value.`,
 	Params: []function.Parameter{
 		{
 			Name: "num",
@@ -386,28 +371,20 @@ var CeilFunc = function.New(&function.Spec{
 	},
 	Type: function.StaticReturnType(cty.Number),
 	Impl: func(args []cty.Value, retType cty.Type) (ret cty.Value, err error) {
-		f := args[0].AsBigFloat()
-
-		if f.IsInf() {
-			return cty.NumberVal(f), nil
+		var val float64
+		if err := gocty.FromCtyValue(args[0], &val); err != nil {
+			return cty.UnknownVal(cty.String), err
 		}
-
-		i, acc := f.Int(nil)
-		switch acc {
-		case big.Exact, big.Above:
-			// Done.
-		case big.Below:
-			i.Add(i, big.NewInt(1))
+		if math.IsInf(val, 0) {
+			return cty.NumberFloatVal(val), nil
 		}
-
-		return cty.NumberVal(f.SetInt(i)), nil
+		return cty.NumberIntVal(int64(math.Ceil(val))), nil
 	},
 })
 
 // FloorFunc is a function that returns the closest whole number lesser
 // than or equal to the given value.
 var FloorFunc = function.New(&function.Spec{
-	Description: `Returns the greatest whole number that is less than or equal to the given value.`,
 	Params: []function.Parameter{
 		{
 			Name: "num",
@@ -416,27 +393,19 @@ var FloorFunc = function.New(&function.Spec{
 	},
 	Type: function.StaticReturnType(cty.Number),
 	Impl: func(args []cty.Value, retType cty.Type) (ret cty.Value, err error) {
-		f := args[0].AsBigFloat()
-
-		if f.IsInf() {
-			return cty.NumberVal(f), nil
+		var val float64
+		if err := gocty.FromCtyValue(args[0], &val); err != nil {
+			return cty.UnknownVal(cty.String), err
 		}
-
-		i, acc := f.Int(nil)
-		switch acc {
-		case big.Exact, big.Below:
-			// Done.
-		case big.Above:
-			i.Sub(i, big.NewInt(1))
+		if math.IsInf(val, 0) {
+			return cty.NumberFloatVal(val), nil
 		}
-
-		return cty.NumberVal(f.SetInt(i)), nil
+		return cty.NumberIntVal(int64(math.Floor(val))), nil
 	},
 })
 
 // LogFunc is a function that returns the logarithm of a given number in a given base.
 var LogFunc = function.New(&function.Spec{
-	Description: `Returns the logarithm of the given number in the given base.`,
 	Params: []function.Parameter{
 		{
 			Name: "num",
@@ -465,7 +434,6 @@ var LogFunc = function.New(&function.Spec{
 
 // PowFunc is a function that returns the logarithm of a given number in a given base.
 var PowFunc = function.New(&function.Spec{
-	Description: `Returns the given number raised to the given power (exponentiation).`,
 	Params: []function.Parameter{
 		{
 			Name: "num",
@@ -495,7 +463,6 @@ var PowFunc = function.New(&function.Spec{
 // SignumFunc is a function that determines the sign of a number, returning a
 // number between -1 and 1 to represent the sign..
 var SignumFunc = function.New(&function.Spec{
-	Description: `Returns 0 if the given number is zero, 1 if the given number is positive, or -1 if the given number is negative.`,
 	Params: []function.Parameter{
 		{
 			Name: "num",
@@ -521,7 +488,6 @@ var SignumFunc = function.New(&function.Spec{
 
 // ParseIntFunc is a function that parses a string argument and returns an integer of the specified base.
 var ParseIntFunc = function.New(&function.Spec{
-	Description: `Parses the given string as a number of the given base, or raises an error if the string contains invalid characters.`,
 	Params: []function.Parameter{
 		{
 			Name: "number",
